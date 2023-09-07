@@ -118,5 +118,7 @@ Public Class MDIParent2
 
     Private m_ChildFormNumber As Integer
 
+    Private Sub MDIParent2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+    End Sub
 End Class

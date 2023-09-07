@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class MDIParent2
+Partial Class MDIVendedor
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
@@ -62,7 +62,7 @@ Partial Class MDIParent2
         Me.MenuStrip.Name = "MenuStrip"
         Me.MenuStrip.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional
         Me.MenuStrip.Size = New System.Drawing.Size(126, 431)
-        Me.MenuStrip.TabIndex = 10
+        Me.MenuStrip.TabIndex = 11
         Me.MenuStrip.Text = "MenuStrip"
         '
         'ToolStripMenuItem1
@@ -88,7 +88,7 @@ Partial Class MDIParent2
         Me.ToolStripMenuItem3.Name = "ToolStripMenuItem3"
         Me.ToolStripMenuItem3.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.O), System.Windows.Forms.Keys)
         Me.ToolStripMenuItem3.ShowShortcutKeys = False
-        Me.ToolStripMenuItem3.Size = New System.Drawing.Size(111, 38)
+        Me.ToolStripMenuItem3.Size = New System.Drawing.Size(196, 38)
         Me.ToolStripMenuItem3.Text = "&Listar"
         '
         'ViewMenu
@@ -141,7 +141,7 @@ Partial Class MDIParent2
         Me.ListarToolStripMenuItem.Size = New System.Drawing.Size(196, 38)
         Me.ListarToolStripMenuItem.Text = "&Listar"
         '
-        'MDIParent2
+        'MDIVendedor
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -150,8 +150,8 @@ Partial Class MDIParent2
         Me.Controls.Add(Me.MenuStrip)
         Me.Controls.Add(Me.StatusStrip)
         Me.IsMdiContainer = True
-        Me.Name = "MDIParent2"
-        Me.Text = "Vendedor"
+        Me.Name = "MDIVendedor"
+        Me.Text = "MDIVendedor"
         Me.StatusStrip.ResumeLayout(False)
         Me.StatusStrip.PerformLayout()
         Me.MenuStrip.ResumeLayout(False)
@@ -166,9 +166,9 @@ Partial Class MDIParent2
     Friend WithEvents MenuStrip As MenuStrip
     Friend WithEvents ToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents ToolStripMenuItem3 As ToolStripMenuItem
-    Friend WithEvents EditMenu As ToolStripMenuItem
-    Friend WithEvents ListarToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ViewMenu As ToolStripMenuItem
     Friend WithEvents NuevoToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents StatusBarToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents EditMenu As ToolStripMenuItem
+    Friend WithEvents ListarToolStripMenuItem As ToolStripMenuItem
 End Class

@@ -61,7 +61,7 @@ Partial Class MDIParent2
         Me.MenuStrip.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip.Name = "MenuStrip"
         Me.MenuStrip.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional
-        Me.MenuStrip.Size = New System.Drawing.Size(126, 431)
+        Me.MenuStrip.Size = New System.Drawing.Size(117, 431)
         Me.MenuStrip.TabIndex = 10
         Me.MenuStrip.Text = "MenuStrip"
         '
@@ -76,7 +76,7 @@ Partial Class MDIParent2
         Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
         Me.ToolStripMenuItem1.Padding = New System.Windows.Forms.Padding(4, 10, 4, 0)
         Me.ToolStripMenuItem1.ShowShortcutKeys = False
-        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(113, 46)
+        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(104, 46)
         Me.ToolStripMenuItem1.Text = "  &Clientes"
         Me.ToolStripMenuItem1.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
@@ -88,7 +88,7 @@ Partial Class MDIParent2
         Me.ToolStripMenuItem3.Name = "ToolStripMenuItem3"
         Me.ToolStripMenuItem3.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.O), System.Windows.Forms.Keys)
         Me.ToolStripMenuItem3.ShowShortcutKeys = False
-        Me.ToolStripMenuItem3.Size = New System.Drawing.Size(111, 38)
+        Me.ToolStripMenuItem3.Size = New System.Drawing.Size(196, 38)
         Me.ToolStripMenuItem3.Text = "&Listar"
         '
         'ViewMenu
@@ -100,7 +100,7 @@ Partial Class MDIParent2
         Me.ViewMenu.Margin = New System.Windows.Forms.Padding(0, 5, 0, 5)
         Me.ViewMenu.Name = "ViewMenu"
         Me.ViewMenu.Padding = New System.Windows.Forms.Padding(4, 10, 4, 0)
-        Me.ViewMenu.Size = New System.Drawing.Size(113, 46)
+        Me.ViewMenu.Size = New System.Drawing.Size(104, 46)
         Me.ViewMenu.Text = "  &Facturas"
         '
         'NuevoToolStripMenuItem1
@@ -108,7 +108,7 @@ Partial Class MDIParent2
         Me.NuevoToolStripMenuItem1.Image = Global.proyecto_integrador.My.Resources.Resources.anadir_amigo1
         Me.NuevoToolStripMenuItem1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.NuevoToolStripMenuItem1.Name = "NuevoToolStripMenuItem1"
-        Me.NuevoToolStripMenuItem1.Size = New System.Drawing.Size(196, 38)
+        Me.NuevoToolStripMenuItem1.Size = New System.Drawing.Size(125, 38)
         Me.NuevoToolStripMenuItem1.Text = "&Nuevo"
         '
         'StatusBarToolStripMenuItem
@@ -118,7 +118,7 @@ Partial Class MDIParent2
         Me.StatusBarToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.StatusBarToolStripMenuItem.Name = "StatusBarToolStripMenuItem"
         Me.StatusBarToolStripMenuItem.ShowShortcutKeys = False
-        Me.StatusBarToolStripMenuItem.Size = New System.Drawing.Size(196, 38)
+        Me.StatusBarToolStripMenuItem.Size = New System.Drawing.Size(125, 38)
         Me.StatusBarToolStripMenuItem.Text = "&Listar"
         '
         'EditMenu
@@ -130,7 +130,7 @@ Partial Class MDIParent2
         Me.EditMenu.Margin = New System.Windows.Forms.Padding(0, 5, 0, 5)
         Me.EditMenu.Name = "EditMenu"
         Me.EditMenu.Padding = New System.Windows.Forms.Padding(4, 10, 4, 0)
-        Me.EditMenu.Size = New System.Drawing.Size(113, 46)
+        Me.EditMenu.Size = New System.Drawing.Size(104, 46)
         Me.EditMenu.Text = "  &Productos"
         '
         'ListarToolStripMenuItem
@@ -138,7 +138,7 @@ Partial Class MDIParent2
         Me.ListarToolStripMenuItem.Image = Global.proyecto_integrador.My.Resources.Resources.lista_prod1
         Me.ListarToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.ListarToolStripMenuItem.Name = "ListarToolStripMenuItem"
-        Me.ListarToolStripMenuItem.Size = New System.Drawing.Size(196, 38)
+        Me.ListarToolStripMenuItem.Size = New System.Drawing.Size(118, 38)
         Me.ListarToolStripMenuItem.Text = "&Listar"
         '
         'MDIParent2
