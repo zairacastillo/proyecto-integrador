@@ -110,12 +110,6 @@
     <Compile Include="MDIParent1.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MDIParent2.Designer.vb">
-      <DependentUpon>MDIParent2.vb</DependentUpon>
-    </Compile>
-    <Compile Include="MDIParent2.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -131,6 +125,18 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Presentacion\SuperAdmin\ListarEmpleados.Designer.vb">
+      <DependentUpon>ListarEmpleados.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\SuperAdmin\ListarEmpleados.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\SuperAdmin\MDISuperAdmin.Designer.vb">
+      <DependentUpon>MDISuperAdmin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\SuperAdmin\MDISuperAdmin.vb">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="Presentacion\SuperAdmin\NuevoEmpleado.Designer.vb">
       <DependentUpon>NuevoEmpleado.vb</DependentUpon>
@@ -148,6 +154,18 @@
       <DependentUpon>ListarClientes.vb</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\Vendedor\ListarClientes.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Vendedor\ListarProductos.Designer.vb">
+      <DependentUpon>ListarProductos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Vendedor\ListarProductos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Vendedor\ListarVentas.Designer.vb">
+      <DependentUpon>ListarVentas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Vendedor\ListarVentas.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Presentacion\Vendedor\MDIVendedor.Designer.vb">
@@ -179,14 +197,17 @@
     <EmbeddedResource Include="MDIParent1.resx">
       <DependentUpon>MDIParent1.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MDIParent2.resx">
-      <DependentUpon>MDIParent2.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\SuperAdmin\ListarEmpleados.resx">
+      <DependentUpon>ListarEmpleados.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\SuperAdmin\MDISuperAdmin.resx">
+      <DependentUpon>MDISuperAdmin.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\SuperAdmin\NuevoEmpleado.resx">
       <DependentUpon>NuevoEmpleado.vb</DependentUpon>
@@ -196,6 +217,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Vendedor\ListarClientes.resx">
       <DependentUpon>ListarClientes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Vendedor\ListarProductos.resx">
+      <DependentUpon>ListarProductos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Vendedor\ListarVentas.resx">
+      <DependentUpon>ListarVentas.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Vendedor\MDIVendedor.resx">
       <DependentUpon>MDIVendedor.vb</DependentUpon>

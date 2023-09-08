@@ -1,6 +1,6 @@
 ﻿Imports System.Windows.Forms
 
-Public Class MDIParent2
+Public Class MDISuperAdmin
 
     Private Sub ShowNewForm(ByVal sender As Object, ByVal e As EventArgs)
         ' Cree una nueva instancia del formulario secundario.
@@ -14,20 +14,25 @@ Public Class MDIParent2
         ChildForm.Show()
     End Sub
 
+    Private Sub OpenFile(ByVal sender As Object, ByVal e As EventArgs)
+        Dim OpenFileDialog As New OpenFileDialog
+        OpenFileDialog.InitialDirectory = My.Computer.FileSystem.SpecialDirectories.MyDocuments
+        OpenFileDialog.Filter = "Archivos de texto (*.txt)|*.txt|Todos los archivos (*.*)|*.*"
+        If (OpenFileDialog.ShowDialog(Me) = System.Windows.Forms.DialogResult.OK) Then
+            Dim FileName As String = OpenFileDialog.FileName
+            ' TODO: agregue código aquí para abrir el archivo.
+        End If
+    End Sub
 
-    Private Sub OpenFile(ByVal sender As Object, ByVal e As EventArgs) Handles ToolStripMenuItem3.Click
-        For Each ChildForma As Form In Me.MdiChildren
-            ChildForma.Close()
-        Next
-        ' Cree una nueva instancia del formulario secundario.
-        Dim ChildForm As New FormListarClientes
-        ' Conviértalo en un elemento secundario de este formulario MDI antes de mostrarlo.
-        ChildForm.MdiParent = Me
+    Private Sub SaveAsToolStripMenuItem_Click(ByVal sender As Object, ByVal e As EventArgs)
+        Dim SaveFileDialog As New SaveFileDialog
+        SaveFileDialog.InitialDirectory = My.Computer.FileSystem.SpecialDirectories.MyDocuments
+        SaveFileDialog.Filter = "Archivos de texto (*.txt)|*.txt|Todos los archivos (*.*)|*.*"
 
-        m_ChildFormNumber += 1
-        ChildForm.Text = "Buscar Cliente"
-
-        ChildForm.Show()
+        If (SaveFileDialog.ShowDialog(Me) = System.Windows.Forms.DialogResult.OK) Then
+            Dim FileName As String = SaveFileDialog.FileName
+            ' TODO: agregue código aquí para guardar el contenido actual del formulario en un archivo.
+        End If
     End Sub
 
     Private Sub NuevoToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles NuevoToolStripMenuItem1.Click
@@ -35,42 +40,27 @@ Public Class MDIParent2
             ChildForma.Close()
         Next
         ' Cree una nueva instancia del formulario secundario.
-        Dim ChildForm As New NuevaFactura
+        Dim ChildForm As New NuevoEmpleado
         ' Conviértalo en un elemento secundario de este formulario MDI antes de mostrarlo.
         ChildForm.MdiParent = Me
 
         m_ChildFormNumber += 1
-        ChildForm.Text = "Nueva Factura"
+        ChildForm.Text = "Nuevo Empleado"
 
         ChildForm.Show()
     End Sub
 
-    Private Sub MenuItem(sender As Object, e As EventArgs) Handles ListarToolStripMenuItem.Click
+    Private Sub StatusBarToolStripMenuItem_Click_1(sender As Object, e As EventArgs) Handles StatusBarToolStripMenuItem.Click
         For Each ChildForma As Form In Me.MdiChildren
             ChildForma.Close()
         Next
         ' Cree una nueva instancia del formulario secundario.
-        Dim ChildForm As New FormListarClientes
+        Dim ChildForm As New ListarEmpleados
         ' Conviértalo en un elemento secundario de este formulario MDI antes de mostrarlo.
         ChildForm.MdiParent = Me
 
         m_ChildFormNumber += 1
-        ChildForm.Text = "Buscar Producto"
-
-        ChildForm.Show()
-    End Sub
-
-    Private Sub StatusBarToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles StatusBarToolStripMenuItem.Click
-        For Each ChildForma As Form In Me.MdiChildren
-            ChildForma.Close()
-        Next
-        ' Cree una nueva instancia del formulario secundario.
-        Dim ChildForm As New ListaVentas
-        ' Conviértalo en un elemento secundario de este formulario MDI antes de mostrarlo.
-        ChildForm.MdiParent = Me
-
-        m_ChildFormNumber += 1
-        ChildForm.Text = "Buscar Factura"
+        ChildForm.Text = "Listar Empleados"
 
         ChildForm.Show()
     End Sub
@@ -92,6 +82,10 @@ Public Class MDIParent2
     End Sub
 
 
+
+    Private Sub StatusBarToolStripMenuItem_Click(ByVal sender As Object, ByVal e As EventArgs)
+        Me.StatusStrip.Visible = Me.StatusBarToolStripMenuItem.Checked
+    End Sub
 
     Private Sub CascadeToolStripMenuItem_Click(ByVal sender As Object, ByVal e As EventArgs)
         Me.LayoutMdi(MdiLayout.Cascade)
@@ -118,7 +112,5 @@ Public Class MDIParent2
 
     Private m_ChildFormNumber As Integer
 
-    Private Sub MDIParent2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-    End Sub
 End Class
