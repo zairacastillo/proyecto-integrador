@@ -88,7 +88,7 @@ Partial Class MDIVendedor
         Me.ToolStripMenuItem3.Name = "ToolStripMenuItem3"
         Me.ToolStripMenuItem3.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.O), System.Windows.Forms.Keys)
         Me.ToolStripMenuItem3.ShowShortcutKeys = False
-        Me.ToolStripMenuItem3.Size = New System.Drawing.Size(111, 38)
+        Me.ToolStripMenuItem3.Size = New System.Drawing.Size(196, 38)
         Me.ToolStripMenuItem3.Text = "&Listar"
         '
         'ViewMenu
@@ -101,7 +101,7 @@ Partial Class MDIVendedor
         Me.ViewMenu.Name = "ViewMenu"
         Me.ViewMenu.Padding = New System.Windows.Forms.Padding(4, 10, 4, 0)
         Me.ViewMenu.Size = New System.Drawing.Size(113, 46)
-        Me.ViewMenu.Text = "  &Facturas"
+        Me.ViewMenu.Text = "  &Ventas"
         '
         'NuevoToolStripMenuItem1
         '

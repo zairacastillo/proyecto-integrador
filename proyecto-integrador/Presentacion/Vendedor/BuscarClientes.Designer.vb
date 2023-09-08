@@ -34,6 +34,7 @@ Partial Class ListarClientes
         Me.Apellido = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DGV1 = New System.Windows.Forms.DataGridView()
+        Me.Agregar = New System.Windows.Forms.DataGridViewButtonColumn()
         CType(Me.DGV1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -121,12 +122,17 @@ Partial Class ListarClientes
         Me.DGV1.AllowUserToOrderColumns = True
         Me.DGV1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DGV1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DGV1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Nombre, Me.Apellido, Me.Dni, Me.Correo, Me.Telefono, Me.Direccion})
+        Me.DGV1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Nombre, Me.Apellido, Me.Dni, Me.Correo, Me.Telefono, Me.Direccion, Me.Agregar})
         Me.DGV1.Location = New System.Drawing.Point(-1, 274)
         Me.DGV1.Name = "DGV1"
         Me.DGV1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders
         Me.DGV1.Size = New System.Drawing.Size(848, 187)
         Me.DGV1.TabIndex = 21
+        '
+        'Agregar
+        '
+        Me.Agregar.HeaderText = "Agregar"
+        Me.Agregar.Name = "Agregar"
         '
         'ListarClientes
         '
@@ -141,7 +147,7 @@ Partial Class ListarClientes
         Me.Controls.Add(Me.LNombre)
         Me.Controls.Add(Me.TextBox1)
         Me.Name = "ListarClientes"
-        Me.Text = "ListarClientes"
+        Me.Text = "BuscarClientes"
         CType(Me.DGV1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -160,4 +166,5 @@ Partial Class ListarClientes
     Friend WithEvents Apellido As DataGridViewTextBoxColumn
     Friend WithEvents Nombre As DataGridViewTextBoxColumn
     Friend WithEvents DGV1 As DataGridView
+    Friend WithEvents Agregar As DataGridViewButtonColumn
 End Class

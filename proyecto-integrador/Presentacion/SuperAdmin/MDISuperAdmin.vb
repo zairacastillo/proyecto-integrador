@@ -65,6 +65,36 @@ Public Class MDISuperAdmin
         ChildForm.Show()
     End Sub
 
+    Private Sub ListarToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ListarToolStripMenuItem.Click
+        For Each ChildForma As Form In Me.MdiChildren
+            ChildForma.Close()
+        Next
+        ' Cree una nueva instancia del formulario secundario.
+        Dim ChildForm As New ListarProductos
+        ' Conviértalo en un elemento secundario de este formulario MDI antes de mostrarlo.
+        ChildForm.MdiParent = Me
+
+        m_ChildFormNumber += 1
+        ChildForm.Text = "Listar Productos"
+
+        ChildForm.Show()
+    End Sub
+
+    Private Sub ToolStripMenuItem3_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem3.Click
+        For Each ChildForma As Form In Me.MdiChildren
+            ChildForma.Close()
+        Next
+        ' Cree una nueva instancia del formulario secundario.
+        Dim ChildForm As New ListarVentas
+        ' Conviértalo en un elemento secundario de este formulario MDI antes de mostrarlo.
+        ChildForm.MdiParent = Me
+
+        m_ChildFormNumber += 1
+        ChildForm.Text = "Listar Ventas"
+
+        ChildForm.Show()
+    End Sub
+
     Private Sub ExitToolsStripMenuItem_Click(ByVal sender As Object, ByVal e As EventArgs)
         Me.Close()
     End Sub
@@ -111,6 +141,10 @@ Public Class MDISuperAdmin
     End Sub
 
     Private m_ChildFormNumber As Integer
+
+    Private Sub ToolStripMenuItem2_Click(sender As Object, e As EventArgs)
+
+    End Sub
 
 
 End Class

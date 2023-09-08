@@ -80,34 +80,10 @@
       <DependentUpon>Form1.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormListarClientes.Designer.vb">
-      <DependentUpon>FormListarClientes.vb</DependentUpon>
-    </Compile>
-    <Compile Include="FormListarClientes.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formulario5.designer.vb">
-      <DependentUpon>Formulario5.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Formulario5.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormularioProducto.designer.vb">
-      <DependentUpon>FormularioProducto.vb</DependentUpon>
-    </Compile>
-    <Compile Include="FormularioProducto.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="FormularioVendedor.designer.vb">
       <DependentUpon>FormularioVendedor.vb</DependentUpon>
     </Compile>
     <Compile Include="FormularioVendedor.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MDIParent1.Designer.vb">
-      <DependentUpon>MDIParent1.vb</DependentUpon>
-    </Compile>
-    <Compile Include="MDIParent1.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -125,6 +101,30 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Presentacion\Admin\FormListarClientes.Designer.vb">
+      <DependentUpon>FormListarClientes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Admin\FormListarClientes.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Admin\Formulario5.designer.vb">
+      <DependentUpon>Formulario5.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Admin\Formulario5.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Admin\FormularioProducto.designer.vb">
+      <DependentUpon>FormularioProducto.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Admin\FormularioProducto.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Admin\MDIParent1.Designer.vb">
+      <DependentUpon>MDIParent1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Admin\MDIParent1.vb">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="Presentacion\SuperAdmin\ListarEmpleados.Designer.vb">
       <DependentUpon>ListarEmpleados.vb</DependentUpon>
@@ -150,16 +150,16 @@
     <Compile Include="Presentacion\Vendedor\AgregarCliente.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentacion\Vendedor\ListarClientes.Designer.vb">
-      <DependentUpon>ListarClientes.vb</DependentUpon>
+    <Compile Include="Presentacion\Vendedor\BuscarClientes.Designer.vb">
+      <DependentUpon>BuscarClientes.vb</DependentUpon>
     </Compile>
-    <Compile Include="Presentacion\Vendedor\ListarClientes.vb">
+    <Compile Include="Presentacion\Vendedor\BuscarClientes.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentacion\Vendedor\ListarProductos.Designer.vb">
-      <DependentUpon>ListarProductos.vb</DependentUpon>
+    <Compile Include="Presentacion\Vendedor\BuscarProducto.Designer.vb">
+      <DependentUpon>BuscarProducto.vb</DependentUpon>
     </Compile>
-    <Compile Include="Presentacion\Vendedor\ListarProductos.vb">
+    <Compile Include="Presentacion\Vendedor\BuscarProducto.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Presentacion\Vendedor\ListarVentas.Designer.vb">
@@ -182,26 +182,26 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="FormListarClientes.resx">
-      <DependentUpon>FormListarClientes.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formulario5.resx">
-      <DependentUpon>Formulario5.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormularioProducto.resx">
-      <DependentUpon>FormularioProducto.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FormularioVendedor.resx">
       <DependentUpon>FormularioVendedor.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MDIParent1.resx">
-      <DependentUpon>MDIParent1.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Admin\FormListarClientes.resx">
+      <DependentUpon>FormListarClientes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Admin\Formulario5.resx">
+      <DependentUpon>Formulario5.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Admin\FormularioProducto.resx">
+      <DependentUpon>FormularioProducto.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Admin\MDIParent1.resx">
+      <DependentUpon>MDIParent1.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\SuperAdmin\ListarEmpleados.resx">
       <DependentUpon>ListarEmpleados.vb</DependentUpon>
@@ -215,11 +215,11 @@
     <EmbeddedResource Include="Presentacion\Vendedor\AgregarCliente.resx">
       <DependentUpon>AgregarCliente.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentacion\Vendedor\ListarClientes.resx">
-      <DependentUpon>ListarClientes.vb</DependentUpon>
+    <EmbeddedResource Include="Presentacion\Vendedor\BuscarClientes.resx">
+      <DependentUpon>BuscarClientes.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentacion\Vendedor\ListarProductos.resx">
-      <DependentUpon>ListarProductos.vb</DependentUpon>
+    <EmbeddedResource Include="Presentacion\Vendedor\BuscarProducto.resx">
+      <DependentUpon>BuscarProducto.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Vendedor\ListarVentas.resx">
       <DependentUpon>ListarVentas.vb</DependentUpon>
@@ -312,8 +312,6 @@
   <ItemGroup>
     <None Include="Resources\vendedor.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Presentacion\Admin\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

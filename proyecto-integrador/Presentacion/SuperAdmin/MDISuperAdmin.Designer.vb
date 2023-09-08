@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class MDISuperAdmin
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -21,7 +21,7 @@ Partial Class MDISuperAdmin
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.StatusStrip = New System.Windows.Forms.StatusStrip()
@@ -34,7 +34,6 @@ Partial Class MDISuperAdmin
         Me.EditMenu = New System.Windows.Forms.ToolStripMenuItem()
         Me.ListarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem3 = New System.Windows.Forms.ToolStripMenuItem()
         Me.StatusStrip.SuspendLayout()
         Me.MenuStrip.SuspendLayout()
@@ -113,12 +112,12 @@ Partial Class MDISuperAdmin
         Me.ListarToolStripMenuItem.Image = Global.proyecto_integrador.My.Resources.Resources.lista_prod1
         Me.ListarToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.ListarToolStripMenuItem.Name = "ListarToolStripMenuItem"
-        Me.ListarToolStripMenuItem.Size = New System.Drawing.Size(118, 38)
+        Me.ListarToolStripMenuItem.Size = New System.Drawing.Size(196, 38)
         Me.ListarToolStripMenuItem.Text = "&Listar"
         '
         'ToolStripMenuItem1
         '
-        Me.ToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem2, Me.ToolStripMenuItem3})
+        Me.ToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem3})
         Me.ToolStripMenuItem1.Image = Global.proyecto_integrador.My.Resources.Resources.lista_prod1
         Me.ToolStripMenuItem1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.ToolStripMenuItem1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
@@ -126,15 +125,7 @@ Partial Class MDISuperAdmin
         Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
         Me.ToolStripMenuItem1.Padding = New System.Windows.Forms.Padding(4, 10, 4, 0)
         Me.ToolStripMenuItem1.Size = New System.Drawing.Size(113, 46)
-        Me.ToolStripMenuItem1.Text = "  &Facturas"
-        '
-        'ToolStripMenuItem2
-        '
-        Me.ToolStripMenuItem2.Image = Global.proyecto_integrador.My.Resources.Resources.anadir_amigo1
-        Me.ToolStripMenuItem2.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
-        Me.ToolStripMenuItem2.Name = "ToolStripMenuItem2"
-        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(125, 38)
-        Me.ToolStripMenuItem2.Text = "&Nuevo"
+        Me.ToolStripMenuItem1.Text = "  &Ventas"
         '
         'ToolStripMenuItem3
         '
@@ -143,7 +134,7 @@ Partial Class MDISuperAdmin
         Me.ToolStripMenuItem3.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.ToolStripMenuItem3.Name = "ToolStripMenuItem3"
         Me.ToolStripMenuItem3.ShowShortcutKeys = False
-        Me.ToolStripMenuItem3.Size = New System.Drawing.Size(125, 38)
+        Me.ToolStripMenuItem3.Size = New System.Drawing.Size(196, 38)
         Me.ToolStripMenuItem3.Text = "&Listar"
         '
         'MDISuperAdmin
@@ -175,6 +166,5 @@ Partial Class MDISuperAdmin
     Friend WithEvents EditMenu As ToolStripMenuItem
     Friend WithEvents ListarToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ToolStripMenuItem1 As ToolStripMenuItem
-    Friend WithEvents ToolStripMenuItem2 As ToolStripMenuItem
     Friend WithEvents ToolStripMenuItem3 As ToolStripMenuItem
 End Class
