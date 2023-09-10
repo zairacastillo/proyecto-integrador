@@ -1,14 +1,14 @@
 ﻿Imports System.Windows.Forms
 
-Public Class MDIParent1
+Public Class MDIAdmin
 
 
-    Private Sub OpenFile(ByVal sender As Object, ByVal e As EventArgs) Handles OpenToolStripMenuItem.Click
+    Private Sub OpenFile(ByVal sender As Object, ByVal e As EventArgs) Handles BListarClientes.Click
         For Each ChildForma As Form In Me.MdiChildren
             ChildForma.Close()
         Next
         ' Cree una nueva instancia del formulario secundario.
-        Dim ChildForm As New FormListarClientes
+        Dim ChildForm As New ListarClientes
         ' Conviértalo en un elemento secundario de este formulario MDI antes de mostrarlo.
         ChildForm.MdiParent = Me
 
@@ -46,27 +46,14 @@ Public Class MDIParent1
         'Utilice My.Computer.Clipboard.GetText() o My.Computer.Clipboard.GetData para recuperar la información del Portapapeles.
     End Sub
 
-    Private Sub ToolBarToolStripMenuItem_Click(ByVal sender As Object, ByVal e As EventArgs)
+
+
+    Private Sub StatusBarToolStripMenuItem_Click(ByVal sender As Object, ByVal e As EventArgs) Handles BListarVendedores.Click
         For Each ChildForma As Form In Me.MdiChildren
             ChildForma.Close()
         Next
         ' Cree una nueva instancia del formulario secundario.
-        Dim ChildForm As New ListarClientes
-        ' Conviértalo en un elemento secundario de este formulario MDI antes de mostrarlo.
-        ChildForm.MdiParent = Me
-
-        m_ChildFormNumber += 1
-        ChildForm.Text = "Nuevo Vendedor"
-
-        ChildForm.Show()
-    End Sub
-
-    Private Sub StatusBarToolStripMenuItem_Click(ByVal sender As Object, ByVal e As EventArgs) Handles StatusBarToolStripMenuItem.Click
-        For Each ChildForma As Form In Me.MdiChildren
-            ChildForma.Close()
-        Next
-        ' Cree una nueva instancia del formulario secundario.
-        Dim ChildForm As New FormListarClientes
+        Dim ChildForm As New ListarEmpleados
         ' Conviértalo en un elemento secundario de este formulario MDI antes de mostrarlo.
         ChildForm.MdiParent = Me
 
@@ -108,7 +95,7 @@ Public Class MDIParent1
             ChildForma.Close()
         Next
         ' Cree una nueva instancia del formulario secundario.
-        Dim ChildForm As New FormularioProducto
+        Dim ChildForm As New NuevoProducto
         ' Conviértalo en un elemento secundario de este formulario MDI antes de mostrarlo.
         ChildForm.MdiParent = Me
 
@@ -118,46 +105,36 @@ Public Class MDIParent1
         ChildForm.Show()
     End Sub
 
-    Private Sub RedoToolStripMenuItem_Click(sender As Object, e As EventArgs)
-        For Each ChildForma As Form In Me.MdiChildren
-            ChildForma.Close()
-        Next
-        ' Cree una nueva instancia del formulario secundario.
-        Dim ChildForm As New FormListarClientes
-        ' Conviértalo en un elemento secundario de este formulario MDI antes de mostrarlo.
-        ChildForm.MdiParent = Me
 
-        m_ChildFormNumber += 1
-        ChildForm.Text = "Buscar Cliente"
-
-        ChildForm.Show()
-    End Sub
 
     Private Sub MDIParent1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
     End Sub
 
-    Private Sub NuevoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NuevoToolStripMenuItem.Click
+    'Nuevo Cliente
+
+    'Private Sub NuevoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NuevoToolStripMenuItem.Click
+    '    For Each ChildForma As Form In Me.MdiChildren
+    '        ChildForma.Close()
+    '    Next
+    '    ' Cree una nueva instancia del formulario secundario.
+    '    Dim ChildForm As New FormularioVendedor
+    '    ' Conviértalo en un elemento secundario de este formulario MDI antes de mostrarlo.
+    '    ChildForm.MdiParent = Me
+
+    '    m_ChildFormNumber += 1
+    '    ChildForm.Text = "Nuevo Cliente"
+
+    '    ChildForm.Show()
+    'End Sub ''
+
+    'Nuevo Producto
+    Private Sub NuevoToolStripMenuItem2_Click(sender As Object, e As EventArgs) Handles BNuevoProducto.Click
         For Each ChildForma As Form In Me.MdiChildren
             ChildForma.Close()
         Next
         ' Cree una nueva instancia del formulario secundario.
-        Dim ChildForm As New FormularioVendedor
-        ' Conviértalo en un elemento secundario de este formulario MDI antes de mostrarlo.
-        ChildForm.MdiParent = Me
-
-        m_ChildFormNumber += 1
-        ChildForm.Text = "Nuevo Cliente"
-
-        ChildForm.Show()
-    End Sub
-
-    Private Sub NuevoToolStripMenuItem2_Click(sender As Object, e As EventArgs) Handles NuevoToolStripMenuItem2.Click
-        For Each ChildForma As Form In Me.MdiChildren
-            ChildForma.Close()
-        Next
-        ' Cree una nueva instancia del formulario secundario.
-        Dim ChildForm As New FormularioProducto
+        Dim ChildForm As New NuevoProducto
         ' Conviértalo en un elemento secundario de este formulario MDI antes de mostrarlo.
         ChildForm.MdiParent = Me
 
@@ -167,12 +144,13 @@ Public Class MDIParent1
         ChildForm.Show()
     End Sub
 
-    Private Sub ListarToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ListarToolStripMenuItem.Click
+    'Listar Producto
+    Private Sub ListarToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BListarProducto.Click
         For Each ChildForma As Form In Me.MdiChildren
             ChildForma.Close()
         Next
         ' Cree una nueva instancia del formulario secundario.
-        Dim ChildForm As New FormListarClientes
+        Dim ChildForm As New ListarProductos
         ' Conviértalo en un elemento secundario de este formulario MDI antes de mostrarlo.
         ChildForm.MdiParent = Me
 
@@ -182,20 +160,27 @@ Public Class MDIParent1
         ChildForm.Show()
     End Sub
 
-    Private Sub NuevoToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles NuevoToolStripMenuItem1.Click
-        For Each ChildForma As Form In Me.MdiChildren
-            ChildForma.Close()
-        Next
-        ' Cree una nueva instancia del formulario secundario.
-        Dim ChildForm As New FormularioVendedor
-        ' Conviértalo en un elemento secundario de este formulario MDI antes de mostrarlo.
-        ChildForm.MdiParent = Me
+    'Nuevo Vendedor
+    'Private Sub NuevoToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles NuevoToolStripMenuItem1.Click
+    '    For Each ChildForma As Form In Me.MdiChildren
+    '        ChildForma.Close()
+    '    Next
+    '    ' Cree una nueva instancia del formulario secundario.
+    '    Dim ChildForm As New FormularioVendedor
+    '    ' Conviértalo en un elemento secundario de este formulario MDI antes de mostrarlo.
+    '    ChildForm.MdiParent = Me
 
-        m_ChildFormNumber += 1
-        ChildForm.Text = "Nuevo Vendedor"
+    '    m_ChildFormNumber += 1
+    '    ChildForm.Text = "Nuevo Vendedor"
 
-        ChildForm.Show()
+    '    ChildForm.Show()
+    'End Sub
+
+    Private Sub EditMenu_Click(sender As Object, e As EventArgs) Handles BProductos.Click
+
     End Sub
 
+    Private Sub BVendedores_Click(sender As Object, e As EventArgs) Handles BVendedores.Click
 
+    End Sub
 End Class

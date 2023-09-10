@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class ListarProductos
+Partial Class BuscarProductos
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
@@ -30,12 +30,12 @@ Partial Class ListarProductos
         Me.Stock = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Precio = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Estado = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Agregar = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Button4 = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.LNombre = New System.Windows.Forms.Label()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.Agregar = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.DGV1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -88,6 +88,11 @@ Partial Class ListarProductos
         Me.Estado.HeaderText = "Estado"
         Me.Estado.Name = "Estado"
         '
+        'Agregar
+        '
+        Me.Agregar.HeaderText = "Agregar"
+        Me.Agregar.Name = "Agregar"
+        '
         'Button4
         '
         Me.Button4.Location = New System.Drawing.Point(381, 145)
@@ -135,12 +140,7 @@ Partial Class ListarProductos
         Me.TextBox1.Size = New System.Drawing.Size(169, 20)
         Me.TextBox1.TabIndex = 22
         '
-        'Agregar
-        '
-        Me.Agregar.HeaderText = "Agregar"
-        Me.Agregar.Name = "Agregar"
-        '
-        'ListarProductos
+        'BuscarProductos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -152,7 +152,7 @@ Partial Class ListarProductos
         Me.Controls.Add(Me.TextBox2)
         Me.Controls.Add(Me.LNombre)
         Me.Controls.Add(Me.TextBox1)
-        Me.Name = "ListarProductos"
+        Me.Name = "BuscarProductos"
         Me.Text = "BuscarProductos"
         CType(Me.DGV1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)

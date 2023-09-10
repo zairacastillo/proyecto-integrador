@@ -1,3 +1,5 @@
-﻿Public Class ListarProductos
+﻿Public Class BuscarProductos
+    Private Sub BuscarProductos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+    End Sub
 End Class

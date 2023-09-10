@@ -1,5 +1,9 @@
 ﻿Imports System.Text.RegularExpressions ' Regular Expressions
-Public Class Formulario1
+'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$        validar email
+'^[A-Za-z ]+$                            validar alfabetico
+'^[0-9 ]+$                               validar numerico
+
+Public Class NuevoProducto
 
     'variable global para el archivo destino
     Dim destinationPathFile As String
@@ -118,13 +122,6 @@ Public Class Formulario1
                 'completamos los campos
                 DGV1.Rows(numRow).Cells(0).Value = TBApellido.Text.Trim 'Nombre
                 DGV1.Rows(numRow).Cells(1).Value = TBNombre.Text.Trim 'Apellido
-                DGV1.Rows(numRow).Cells(2).Value = DTPFecnac.Text.Trim 'Fecha Nacimiento
-                If RBMasculino.Checked Then 'Si es Masculino
-                    DGV1.Rows(numRow).Cells(3).Value = "Masculino"
-                End If
-                If RBFemenino.Checked Then 'Si es Femenino
-                    DGV1.Rows(numRow).Cells(3).Value = "Femenino"
-                End If
                 DGV1.Rows(numRow).Cells(4).Value = "Eliminar" 'Titulo boton Eliminar
                 DGV1.Rows(numRow).Cells(5).Value = TBSaldo.Text.Trim 'Saldo
                 'Si existe imagen, cargamos en celda
@@ -149,8 +146,6 @@ Public Class Formulario1
                 TBFoto.Clear()
                 PBAvatar.BackgroundImage = My.Resources.avatar
                 destinationPathFile = ""
-                DTPFecnac.ResetText()
-                RBMasculino.Checked = True
 
 
             End If
@@ -188,4 +183,6 @@ Public Class Formulario1
         End If
 
     End Sub
+
+
 End Class

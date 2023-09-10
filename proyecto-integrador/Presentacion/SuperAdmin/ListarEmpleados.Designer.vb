@@ -23,11 +23,6 @@ Partial Class ListarEmpleados
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.DGV1 = New System.Windows.Forms.DataGridView()
-        Me.Button4 = New System.Windows.Forms.Button()
-        Me.LCorreo = New System.Windows.Forms.Label()
-        Me.LCliente = New System.Windows.Forms.Label()
-        Me.TBApellido = New System.Windows.Forms.TextBox()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Apellido = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DNI = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -36,6 +31,11 @@ Partial Class ListarEmpleados
         Me.Contraseña = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Usuario = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Estado = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Button4 = New System.Windows.Forms.Button()
+        Me.LCorreo = New System.Windows.Forms.Label()
+        Me.LCliente = New System.Windows.Forms.Label()
+        Me.TBApellido = New System.Windows.Forms.TextBox()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
         CType(Me.DGV1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -52,6 +52,46 @@ Partial Class ListarEmpleados
         Me.DGV1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders
         Me.DGV1.Size = New System.Drawing.Size(931, 189)
         Me.DGV1.TabIndex = 33
+        '
+        'Nombre
+        '
+        Me.Nombre.HeaderText = "Nombre"
+        Me.Nombre.Name = "Nombre"
+        '
+        'Apellido
+        '
+        Me.Apellido.HeaderText = "Apellido"
+        Me.Apellido.Name = "Apellido"
+        '
+        'DNI
+        '
+        Me.DNI.HeaderText = "DNI"
+        Me.DNI.Name = "DNI"
+        '
+        'Telefono
+        '
+        Me.Telefono.HeaderText = "Telefono"
+        Me.Telefono.Name = "Telefono"
+        '
+        'Correo
+        '
+        Me.Correo.HeaderText = "Correo"
+        Me.Correo.Name = "Correo"
+        '
+        'Contraseña
+        '
+        Me.Contraseña.HeaderText = "Contraseña"
+        Me.Contraseña.Name = "Contraseña"
+        '
+        'Usuario
+        '
+        Me.Usuario.HeaderText = "Usuario"
+        Me.Usuario.Name = "Usuario"
+        '
+        'Estado
+        '
+        Me.Estado.HeaderText = "Estado"
+        Me.Estado.Name = "Estado"
         '
         'Button4
         '
@@ -99,46 +139,6 @@ Partial Class ListarEmpleados
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(169, 20)
         Me.TextBox1.TabIndex = 34
-        '
-        'Nombre
-        '
-        Me.Nombre.HeaderText = "Nombre"
-        Me.Nombre.Name = "Nombre"
-        '
-        'Apellido
-        '
-        Me.Apellido.HeaderText = "Apellido"
-        Me.Apellido.Name = "Apellido"
-        '
-        'DNI
-        '
-        Me.DNI.HeaderText = "DNI"
-        Me.DNI.Name = "DNI"
-        '
-        'Telefono
-        '
-        Me.Telefono.HeaderText = "Telefono"
-        Me.Telefono.Name = "Telefono"
-        '
-        'Correo
-        '
-        Me.Correo.HeaderText = "Correo"
-        Me.Correo.Name = "Correo"
-        '
-        'Contraseña
-        '
-        Me.Contraseña.HeaderText = "Contraseña"
-        Me.Contraseña.Name = "Contraseña"
-        '
-        'Usuario
-        '
-        Me.Usuario.HeaderText = "Usuario"
-        Me.Usuario.Name = "Usuario"
-        '
-        'Estado
-        '
-        Me.Estado.HeaderText = "Estado"
-        Me.Estado.Name = "Estado"
         '
         'ListarEmpleados
         '

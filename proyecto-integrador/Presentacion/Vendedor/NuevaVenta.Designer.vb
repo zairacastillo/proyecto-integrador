@@ -51,10 +51,10 @@ Partial Class NuevaVenta
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.Label7 = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.Label10 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label13 = New System.Windows.Forms.Label()
@@ -65,9 +65,9 @@ Partial Class NuevaVenta
         '
         'BCliente
         '
-        Me.BCliente.Location = New System.Drawing.Point(890, 79)
+        Me.BCliente.Location = New System.Drawing.Point(880, 93)
         Me.BCliente.Name = "BCliente"
-        Me.BCliente.Size = New System.Drawing.Size(56, 30)
+        Me.BCliente.Size = New System.Drawing.Size(56, 24)
         Me.BCliente.TabIndex = 24
         Me.BCliente.Text = "Buscar Cliente"
         Me.BCliente.UseVisualStyleBackColor = True
@@ -315,29 +315,17 @@ Partial Class NuevaVenta
         Me.Panel1.Size = New System.Drawing.Size(936, 196)
         Me.Panel1.TabIndex = 53
         '
-        'Label10
+        'Label11
         '
-        Me.Label10.AutoSize = True
-        Me.Label10.BackColor = System.Drawing.Color.Transparent
-        Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.ForeColor = System.Drawing.Color.White
-        Me.Label10.Location = New System.Drawing.Point(412, 48)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(104, 25)
-        Me.Label10.TabIndex = 54
-        Me.Label10.Text = "Cantidad:"
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.BackColor = System.Drawing.Color.Transparent
-        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.ForeColor = System.Drawing.Color.White
-        Me.Label8.Location = New System.Drawing.Point(12, 43)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(104, 25)
-        Me.Label8.TabIndex = 55
-        Me.Label8.Text = "Producto:"
+        Me.Label11.AutoSize = True
+        Me.Label11.BackColor = System.Drawing.Color.Transparent
+        Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label11.ForeColor = System.Drawing.Color.White
+        Me.Label11.Location = New System.Drawing.Point(412, 97)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(159, 25)
+        Me.Label11.TabIndex = 56
+        Me.Label11.Text = "Precio Unitario:"
         '
         'Label7
         '
@@ -351,17 +339,29 @@ Partial Class NuevaVenta
         Me.Label7.TabIndex = 54
         Me.Label7.Text = "Stock:"
         '
-        'Label11
+        'Label8
         '
-        Me.Label11.AutoSize = True
-        Me.Label11.BackColor = System.Drawing.Color.Transparent
-        Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.ForeColor = System.Drawing.Color.White
-        Me.Label11.Location = New System.Drawing.Point(412, 97)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(159, 25)
-        Me.Label11.TabIndex = 56
-        Me.Label11.Text = "Precio Unitario:"
+        Me.Label8.AutoSize = True
+        Me.Label8.BackColor = System.Drawing.Color.Transparent
+        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.ForeColor = System.Drawing.Color.White
+        Me.Label8.Location = New System.Drawing.Point(12, 43)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(104, 25)
+        Me.Label8.TabIndex = 55
+        Me.Label8.Text = "Producto:"
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.BackColor = System.Drawing.Color.Transparent
+        Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.ForeColor = System.Drawing.Color.White
+        Me.Label10.Location = New System.Drawing.Point(412, 48)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(104, 25)
+        Me.Label10.TabIndex = 54
+        Me.Label10.Text = "Cantidad:"
         '
         'Panel2
         '

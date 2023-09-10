@@ -61,7 +61,7 @@ Partial Class MDIVendedor
         Me.MenuStrip.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip.Name = "MenuStrip"
         Me.MenuStrip.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional
-        Me.MenuStrip.Size = New System.Drawing.Size(126, 431)
+        Me.MenuStrip.Size = New System.Drawing.Size(117, 431)
         Me.MenuStrip.TabIndex = 11
         Me.MenuStrip.Text = "MenuStrip"
         '
@@ -76,7 +76,7 @@ Partial Class MDIVendedor
         Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
         Me.ToolStripMenuItem1.Padding = New System.Windows.Forms.Padding(4, 10, 4, 0)
         Me.ToolStripMenuItem1.ShowShortcutKeys = False
-        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(113, 46)
+        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(104, 46)
         Me.ToolStripMenuItem1.Text = "  &Clientes"
         Me.ToolStripMenuItem1.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
@@ -100,7 +100,7 @@ Partial Class MDIVendedor
         Me.ViewMenu.Margin = New System.Windows.Forms.Padding(0, 5, 0, 5)
         Me.ViewMenu.Name = "ViewMenu"
         Me.ViewMenu.Padding = New System.Windows.Forms.Padding(4, 10, 4, 0)
-        Me.ViewMenu.Size = New System.Drawing.Size(113, 46)
+        Me.ViewMenu.Size = New System.Drawing.Size(104, 46)
         Me.ViewMenu.Text = "  &Ventas"
         '
         'NuevoToolStripMenuItem1
@@ -130,7 +130,7 @@ Partial Class MDIVendedor
         Me.EditMenu.Margin = New System.Windows.Forms.Padding(0, 5, 0, 5)
         Me.EditMenu.Name = "EditMenu"
         Me.EditMenu.Padding = New System.Windows.Forms.Padding(4, 10, 4, 0)
-        Me.EditMenu.Size = New System.Drawing.Size(113, 46)
+        Me.EditMenu.Size = New System.Drawing.Size(104, 46)
         Me.EditMenu.Text = "  &Productos"
         '
         'ListarToolStripMenuItem

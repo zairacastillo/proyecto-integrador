@@ -125,5 +125,7 @@ Public Class MDIVendedor
 
     End Sub
 
+    Private Sub MDIVendedor_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+    End Sub
 End Class
