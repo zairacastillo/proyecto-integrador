@@ -29,7 +29,7 @@ Public Class MDIVendedor
         ChildForm.Show()
     End Sub
 
-    Private Sub NuevoToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles NuevoToolStripMenuItem1.Click
+    Public Sub NuevaVenta_Click(sender As Object, e As EventArgs) Handles NuevaVenta.Click
         For Each ChildForma As Form In Me.MdiChildren
             ChildForma.Close()
         Next
@@ -125,7 +125,33 @@ Public Class MDIVendedor
 
     End Sub
 
-    Private Sub MDIVendedor_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Public Sub buscarClientes(sender As Object, e As EventArgs)
+        For Each ChildForma As Form In Me.MdiChildren
+            ChildForma.Close()
+        Next
+        ' Cree una nueva instancia del formulario secundario.
+        Dim ChildForm As New BuscarClientes
+        ' Conviértalo en un elemento secundario de este formulario MDI antes de mostrarlo.
+        ChildForm.MdiParent = Me
 
+        m_ChildFormNumber += 1
+        ChildForm.Text = "Buscar Clientes"
+
+        ChildForm.Show()
+    End Sub
+
+    Public Sub buscarProductos(sender As Object, e As EventArgs)
+        For Each ChildForma As Form In Me.MdiChildren
+            ChildForma.Close()
+        Next
+        ' Cree una nueva instancia del formulario secundario.
+        Dim ChildForm As New BuscarProductos
+        ' Conviértalo en un elemento secundario de este formulario MDI antes de mostrarlo.
+        ChildForm.MdiParent = Me
+
+        m_ChildFormNumber += 1
+        ChildForm.Text = "Buscar Productos"
+
+        ChildForm.Show()
     End Sub
 End Class

@@ -35,6 +35,7 @@ Partial Class BuscarClientes
         Me.Nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DGV1 = New System.Windows.Forms.DataGridView()
         Me.Agregar = New System.Windows.Forms.DataGridViewButtonColumn()
+        Me.BAtras = New System.Windows.Forms.Button()
         CType(Me.DGV1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -134,12 +135,22 @@ Partial Class BuscarClientes
         Me.Agregar.HeaderText = "Agregar"
         Me.Agregar.Name = "Agregar"
         '
+        'BAtras
+        '
+        Me.BAtras.Location = New System.Drawing.Point(17, 144)
+        Me.BAtras.Name = "BAtras"
+        Me.BAtras.Size = New System.Drawing.Size(108, 36)
+        Me.BAtras.TabIndex = 22
+        Me.BAtras.Text = "Volver"
+        Me.BAtras.UseVisualStyleBackColor = True
+        '
         'BuscarClientes
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.proyecto_integrador.My.Resources.Resources.cuadros_negros_734708
         Me.ClientSize = New System.Drawing.Size(847, 484)
+        Me.Controls.Add(Me.BAtras)
         Me.Controls.Add(Me.DGV1)
         Me.Controls.Add(Me.Button4)
         Me.Controls.Add(Me.Label1)
@@ -167,4 +178,5 @@ Partial Class BuscarClientes
     Friend WithEvents Nombre As DataGridViewTextBoxColumn
     Friend WithEvents DGV1 As DataGridView
     Friend WithEvents Agregar As DataGridViewButtonColumn
+    Friend WithEvents BAtras As Button
 End Class

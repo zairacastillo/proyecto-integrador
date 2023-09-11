@@ -36,6 +36,7 @@ Partial Class BuscarProductos
         Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.LNombre = New System.Windows.Forms.Label()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.BAtras = New System.Windows.Forms.Button()
         CType(Me.DGV1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -140,12 +141,22 @@ Partial Class BuscarProductos
         Me.TextBox1.Size = New System.Drawing.Size(169, 20)
         Me.TextBox1.TabIndex = 22
         '
+        'BAtras
+        '
+        Me.BAtras.Location = New System.Drawing.Point(51, 145)
+        Me.BAtras.Name = "BAtras"
+        Me.BAtras.Size = New System.Drawing.Size(108, 36)
+        Me.BAtras.TabIndex = 28
+        Me.BAtras.Text = "Volver"
+        Me.BAtras.UseVisualStyleBackColor = True
+        '
         'BuscarProductos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.proyecto_integrador.My.Resources.Resources.cuadros_negros_734708
         Me.ClientSize = New System.Drawing.Size(897, 450)
+        Me.Controls.Add(Me.BAtras)
         Me.Controls.Add(Me.DGV1)
         Me.Controls.Add(Me.Button4)
         Me.Controls.Add(Me.Label1)
@@ -174,4 +185,5 @@ Partial Class BuscarProductos
     Friend WithEvents Precio As DataGridViewTextBoxColumn
     Friend WithEvents Estado As DataGridViewTextBoxColumn
     Friend WithEvents Agregar As DataGridViewTextBoxColumn
+    Friend WithEvents BAtras As Button
 End Class

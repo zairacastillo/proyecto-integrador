@@ -8,10 +8,10 @@
     End Sub
 
     Private Sub BProducto_Click(sender As Object, e As EventArgs) Handles BProducto.Click
-
+        MDIVendedor.buscarProductos(sender, e)
     End Sub
 
     Private Sub BCliente_Click(sender As Object, e As EventArgs) Handles BCliente.Click
-
+        MDIVendedor.buscarClientes(sender, e)
     End Sub
 End Class
