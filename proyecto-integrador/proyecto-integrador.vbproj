@@ -167,6 +167,7 @@
     <Compile Include="Presentacion\Vendedor\NuevaVenta.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="validaciones\validar.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="My Project\Resources.resx">

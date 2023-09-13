@@ -5,6 +5,10 @@
 
 Public Class NuevoProducto
 
+
+
+
+
     'variable global para el archivo destino
     Dim destinationPathFile As String
 
@@ -55,50 +59,16 @@ Public Class NuevoProducto
     'agregamos cliente
     Private Sub BAgregar_Click(sender As Object, e As EventArgs) Handles BAgregar.Click
 
-        'variable de control
-        Dim errorCheck As Boolean = False
-
         'variable de mensaje de error
-        Dim msjTxt As String = "Debe Completar todos los campos: "
+        Dim msjTxt As String = "Debe Completar todos los campos correctamente: "
 
-        'verificamos campo vacio Saldo
-        If Regex.IsMatch(TBSaldo.Text.Trim, "^\S+$") = False Then
-            msjTxt = msjTxt + " Introduzca Saldo. "
-            errorCheck = True
-        Else
-            'solo números
-            If IsNumeric(TBSaldo.Text.Trim) = False Then
-                msjTxt = msjTxt + " Introduzca un valor númerico con o sin decimales en el campo Saldo.  "
-                errorCheck = True
-            End If
-        End If
+        ' lista de TB a verificar si estan vacios
+        Dim listaTB = {TBID, TBPrecio, TBEstado, TBStock, TBNombre, TBCategoria, TBDescripcion}
 
-        'verificamos campo vacio Apellido
-        If Regex.IsMatch(TBApellido.Text.Trim, "^\S+$") = False Then
-            msjTxt = msjTxt + " Introduzca Apellido. "
-            errorCheck = True
-        Else
-            'solo caracteres alfabéticos
-            If Regex.IsMatch(TBApellido.Text.Trim, "^[A-Za-z ]+$") = False Then
-                msjTxt = msjTxt + " Introduzca solo caracteres alfabéticos en el campo Apellido. "
-                errorCheck = True
-            End If
-        End If
+        TBVacios(listaTB) ' devuelve true si algun TB esta vacio
 
-        'verificamos campo vacio Nombre
-        If Regex.IsMatch(TBNombre.Text.Trim, "^\S+$") = False Then
-            msjTxt = msjTxt + " Introduzca Nombre. "
-            errorCheck = True
-        Else
-            'solo caracteres alfabéticos
-            If Regex.IsMatch(TBNombre.Text.Trim, "^[A-Za-z ]+$") = False Then
-                msjTxt = msjTxt + " Introduzca solo caracteres alfabéticos en el campo Nombre. "
-                errorCheck = True
-            End If
-        End If
-
-        'si campos no validan
-        If errorCheck Then
+        'si campos estan vacios o empiezan con espacio
+        If TBVacios(listaTB) Then
             'Mensaje
             MsgBox(msjTxt, MsgBoxStyle.Critical, Title:="Error")
         Else
@@ -120,10 +90,17 @@ Public Class NuevoProducto
                 'creamos una fila y obtenemos numero de fila
                 Dim numRow As Integer = DGV1.Rows.Add()
                 'completamos los campos
-                DGV1.Rows(numRow).Cells(0).Value = TBApellido.Text.Trim 'Nombre
+                DGV1.Rows(numRow).Cells(0).Value = TBID.Text.Trim 'Nombre
                 DGV1.Rows(numRow).Cells(1).Value = TBNombre.Text.Trim 'Apellido
-                DGV1.Rows(numRow).Cells(4).Value = "Eliminar" 'Titulo boton Eliminar
-                DGV1.Rows(numRow).Cells(5).Value = TBSaldo.Text.Trim 'Saldo
+                DGV1.Rows(numRow).Cells(2).Value = TBPrecio.Text.Trim 'Apellido
+                DGV1.Rows(numRow).Cells(3).Value = TBStock.Text.Trim 'Apellido
+                DGV1.Rows(numRow).Cells(4).Value = TBCategoria.Text.Trim 'Apellido
+                DGV1.Rows(numRow).Cells(5).Value = TBDescripcion.Text.Trim 'Apellido
+                DGV1.Rows(numRow).Cells(6).Value = TBFoto.Text.Trim 'Apellido
+                DGV1.Rows(numRow).Cells(7).Value = TBEstado.Text.Trim 'Apellido
+                DGV1.Rows(numRow).Cells(8).Value = "Editar" 'Titulo boton Eliminar
+                DGV1.Rows(numRow).Cells(9).Value = "Eliminar" 'Titulo boton Eliminar
+
                 'Si existe imagen, cargamos en celda
                 If (System.IO.File.Exists(destinationPathFile)) Then
                     DGV1.Rows(numRow).Cells(6).Value = Image.FromFile(destinationPathFile)
@@ -133,16 +110,11 @@ Public Class NuevoProducto
                 End If
                 DGV1.Rows(numRow).Cells(7).Value = destinationPathFile 'Ruta del archivo destino
 
-                'Si el saldo es meenor a 50 establecemos fondo rojo
-                Dim ValSaldo As Double = Convert.ToDouble(TBSaldo.Text)
-                If ValSaldo < 50 Then
-                    DGV1.Rows(numRow).DefaultCellStyle.BackColor = Color.Red
-                End If
 
                 'Reseteamos Form
-                TBApellido.Clear()
                 TBNombre.Clear()
-                TBSaldo.Clear()
+                TBID.Clear()
+                TBPrecio.Clear()
                 TBFoto.Clear()
                 PBAvatar.BackgroundImage = My.Resources.avatar
                 destinationPathFile = ""
@@ -170,11 +142,14 @@ Public Class NuevoProducto
                 Select Case bc.Name
                     Case "Eliminar" 'Nombre del boton / celda
                         'mensaje y almacenamiento de resultado en variable
-                        Dim ask As Integer = MsgBox("¿Seguro que desea Eliminar el Cliente?", MsgBoxStyle.YesNo + MsgBoxStyle.DefaultButton1, Title:="Confirmar Inserción")
+                        Dim ask = MsgBox("¿Seguro que desea Eliminar el Cliente?", MsgBoxStyle.YesNo + MsgBoxStyle.DefaultButton1, Title:="Confirmar Inserción")
 
                         'si acepta guardamos / mensaje
-                        'Quitamos fila        
-                        DGV1.Rows.RemoveAt(cell.RowIndex)
+                        If ask = vbYes Then
+                            'Quitamos fila        
+                            DGV1.Rows.RemoveAt(cell.RowIndex)
+                        End If
+
 
                         Exit Select
                 End Select
@@ -184,5 +159,48 @@ Public Class NuevoProducto
 
     End Sub
 
+    Private Sub PanelPrincipal_Paint(sender As Object, e As PaintEventArgs) Handles PanelPrincipal.Paint
 
+    End Sub
+
+    Private Sub TBID_TextChanged(sender As Object, e As KeyPressEventArgs) Handles TBID.KeyPress
+        If Validar_numeros(e) Then
+            MessageBox.Show("Solo se admiten numeros", "Validacion de numeros", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+        End If
+    End Sub
+    Private Sub TBPrecio_TextChanged(sender As Object, e As KeyPressEventArgs) Handles TBPrecio.KeyPress
+        If Validar_numeros(e) Then
+            MessageBox.Show("Solo se admiten numeros", "Validacion de numeros", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+        End If
+    End Sub
+
+    Private Sub TBEstado_TextChanged(sender As Object, e As KeyPressEventArgs) Handles TBEstado.KeyPress
+        If Validar_letras(e) Then
+            MessageBox.Show("Solo se admiten letras", "Validación de letras", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+        End If
+    End Sub
+
+    Private Sub TBStock_TextChanged(sender As Object, e As KeyPressEventArgs) Handles TBStock.KeyPress
+        If Validar_numeros(e) Then
+            MessageBox.Show("Solo se admiten numeros", "Validacion de numeros", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+        End If
+    End Sub
+
+    Private Sub TBNombre_TextChanged(sender As Object, e As KeyPressEventArgs) Handles TBNombre.KeyPress
+        If Validar_letras(e) Then
+            MessageBox.Show("Solo se admiten letras", "Validación de letras", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+        End If
+    End Sub
+
+    Private Sub TBCategoria_TextChanged(sender As Object, e As KeyPressEventArgs) Handles TBCategoria.KeyPress
+        If Validar_letras(e) Then
+            MessageBox.Show("Solo se admiten letras", "Validación de letras", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+        End If
+    End Sub
+
+    Private Sub TBDescripcion_TextChanged(sender As Object, e As KeyPressEventArgs) Handles TBDescripcion.KeyPress
+        If Validar_letras(e) Then
+            MessageBox.Show("Solo se admiten letras", "Validación de letras", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+        End If
+    End Sub
 End Class

@@ -23,19 +23,19 @@ Partial Class NuevoProducto
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.PanelPrincipal = New System.Windows.Forms.Panel()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
+        Me.TBCategoria = New System.Windows.Forms.TextBox()
         Me.LCategoria = New System.Windows.Forms.Label()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
+        Me.TBEstado = New System.Windows.Forms.TextBox()
         Me.LEstado = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.TBStock = New System.Windows.Forms.TextBox()
         Me.LStock = New System.Windows.Forms.Label()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.TBDescripcion = New System.Windows.Forms.TextBox()
         Me.BAgregar = New System.Windows.Forms.Button()
         Me.TBFoto = New System.Windows.Forms.TextBox()
         Me.BFoto = New System.Windows.Forms.Button()
-        Me.TBSaldo = New System.Windows.Forms.TextBox()
-        Me.TBApellido = New System.Windows.Forms.TextBox()
+        Me.TBPrecio = New System.Windows.Forms.TextBox()
         Me.TBNombre = New System.Windows.Forms.TextBox()
+        Me.TBID = New System.Windows.Forms.TextBox()
         Me.LPrecio = New System.Windows.Forms.Label()
         Me.LDescripcion = New System.Windows.Forms.Label()
         Me.LNombre = New System.Windows.Forms.Label()
@@ -61,19 +61,19 @@ Partial Class NuevoProducto
         '
         Me.PanelPrincipal.BackgroundImage = Global.proyecto_integrador.My.Resources.Resources.bg
         Me.PanelPrincipal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PanelPrincipal.Controls.Add(Me.TextBox4)
+        Me.PanelPrincipal.Controls.Add(Me.TBCategoria)
         Me.PanelPrincipal.Controls.Add(Me.LCategoria)
-        Me.PanelPrincipal.Controls.Add(Me.TextBox3)
+        Me.PanelPrincipal.Controls.Add(Me.TBEstado)
         Me.PanelPrincipal.Controls.Add(Me.LEstado)
-        Me.PanelPrincipal.Controls.Add(Me.TextBox1)
+        Me.PanelPrincipal.Controls.Add(Me.TBStock)
         Me.PanelPrincipal.Controls.Add(Me.LStock)
-        Me.PanelPrincipal.Controls.Add(Me.TextBox2)
+        Me.PanelPrincipal.Controls.Add(Me.TBDescripcion)
         Me.PanelPrincipal.Controls.Add(Me.BAgregar)
         Me.PanelPrincipal.Controls.Add(Me.TBFoto)
         Me.PanelPrincipal.Controls.Add(Me.BFoto)
-        Me.PanelPrincipal.Controls.Add(Me.TBSaldo)
-        Me.PanelPrincipal.Controls.Add(Me.TBApellido)
+        Me.PanelPrincipal.Controls.Add(Me.TBPrecio)
         Me.PanelPrincipal.Controls.Add(Me.TBNombre)
+        Me.PanelPrincipal.Controls.Add(Me.TBID)
         Me.PanelPrincipal.Controls.Add(Me.LPrecio)
         Me.PanelPrincipal.Controls.Add(Me.LDescripcion)
         Me.PanelPrincipal.Controls.Add(Me.LNombre)
@@ -84,13 +84,13 @@ Partial Class NuevoProducto
         Me.PanelPrincipal.Size = New System.Drawing.Size(546, 328)
         Me.PanelPrincipal.TabIndex = 0
         '
-        'TextBox4
+        'TBCategoria
         '
-        Me.TextBox4.Location = New System.Drawing.Point(389, 103)
-        Me.TextBox4.Multiline = True
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(122, 39)
-        Me.TextBox4.TabIndex = 22
+        Me.TBCategoria.Location = New System.Drawing.Point(389, 103)
+        Me.TBCategoria.Multiline = True
+        Me.TBCategoria.Name = "TBCategoria"
+        Me.TBCategoria.Size = New System.Drawing.Size(122, 39)
+        Me.TBCategoria.TabIndex = 22
         '
         'LCategoria
         '
@@ -104,12 +104,12 @@ Partial Class NuevoProducto
         Me.LCategoria.TabIndex = 21
         Me.LCategoria.Text = "Categoria:"
         '
-        'TextBox3
+        'TBEstado
         '
-        Me.TextBox3.Location = New System.Drawing.Point(115, 60)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(130, 20)
-        Me.TextBox3.TabIndex = 20
+        Me.TBEstado.Location = New System.Drawing.Point(115, 60)
+        Me.TBEstado.Name = "TBEstado"
+        Me.TBEstado.Size = New System.Drawing.Size(130, 20)
+        Me.TBEstado.TabIndex = 20
         '
         'LEstado
         '
@@ -123,12 +123,12 @@ Partial Class NuevoProducto
         Me.LEstado.TabIndex = 19
         Me.LEstado.Text = "Estado:"
         '
-        'TextBox1
+        'TBStock
         '
-        Me.TextBox1.Location = New System.Drawing.Point(389, 60)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(122, 20)
-        Me.TextBox1.TabIndex = 18
+        Me.TBStock.Location = New System.Drawing.Point(389, 60)
+        Me.TBStock.Name = "TBStock"
+        Me.TBStock.Size = New System.Drawing.Size(122, 20)
+        Me.TBStock.TabIndex = 18
         '
         'LStock
         '
@@ -142,13 +142,13 @@ Partial Class NuevoProducto
         Me.LStock.TabIndex = 17
         Me.LStock.Text = "Stock:"
         '
-        'TextBox2
+        'TBDescripcion
         '
-        Me.TextBox2.Location = New System.Drawing.Point(157, 167)
-        Me.TextBox2.Multiline = True
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(354, 68)
-        Me.TextBox2.TabIndex = 16
+        Me.TBDescripcion.Location = New System.Drawing.Point(157, 167)
+        Me.TBDescripcion.Multiline = True
+        Me.TBDescripcion.Name = "TBDescripcion"
+        Me.TBDescripcion.Size = New System.Drawing.Size(354, 68)
+        Me.TBDescripcion.TabIndex = 16
         '
         'BAgregar
         '
@@ -180,27 +180,27 @@ Partial Class NuevoProducto
         Me.BFoto.Text = "Agregar Foto"
         Me.BFoto.UseVisualStyleBackColor = True
         '
-        'TBSaldo
+        'TBPrecio
         '
-        Me.TBSaldo.Location = New System.Drawing.Point(389, 16)
-        Me.TBSaldo.Name = "TBSaldo"
-        Me.TBSaldo.Size = New System.Drawing.Size(122, 20)
-        Me.TBSaldo.TabIndex = 7
-        '
-        'TBApellido
-        '
-        Me.TBApellido.Location = New System.Drawing.Point(115, 103)
-        Me.TBApellido.Multiline = True
-        Me.TBApellido.Name = "TBApellido"
-        Me.TBApellido.Size = New System.Drawing.Size(130, 39)
-        Me.TBApellido.TabIndex = 5
+        Me.TBPrecio.Location = New System.Drawing.Point(389, 16)
+        Me.TBPrecio.Name = "TBPrecio"
+        Me.TBPrecio.Size = New System.Drawing.Size(122, 20)
+        Me.TBPrecio.TabIndex = 7
         '
         'TBNombre
         '
-        Me.TBNombre.Location = New System.Drawing.Point(115, 15)
+        Me.TBNombre.Location = New System.Drawing.Point(115, 103)
+        Me.TBNombre.Multiline = True
         Me.TBNombre.Name = "TBNombre"
-        Me.TBNombre.Size = New System.Drawing.Size(130, 20)
-        Me.TBNombre.TabIndex = 4
+        Me.TBNombre.Size = New System.Drawing.Size(130, 39)
+        Me.TBNombre.TabIndex = 5
+        '
+        'TBID
+        '
+        Me.TBID.Location = New System.Drawing.Point(115, 15)
+        Me.TBID.Name = "TBID"
+        Me.TBID.Size = New System.Drawing.Size(130, 20)
+        Me.TBID.TabIndex = 4
         '
         'LPrecio
         '
@@ -357,9 +357,9 @@ Partial Class NuevoProducto
     Friend WithEvents PanelPrincipal As Panel
     Friend WithEvents PBAvatar As PictureBox
     Friend WithEvents DGV1 As DataGridView
-    Friend WithEvents TBSaldo As TextBox
-    Friend WithEvents TBApellido As TextBox
+    Friend WithEvents TBPrecio As TextBox
     Friend WithEvents TBNombre As TextBox
+    Friend WithEvents TBID As TextBox
     Friend WithEvents LPrecio As Label
     Friend WithEvents LDescripcion As Label
     Friend WithEvents LNombre As Label
@@ -367,13 +367,13 @@ Partial Class NuevoProducto
     Friend WithEvents BFoto As Button
     Friend WithEvents BAgregar As Button
     Friend WithEvents TBFoto As TextBox
-    Friend WithEvents TextBox4 As TextBox
+    Friend WithEvents TBCategoria As TextBox
     Friend WithEvents LCategoria As Label
-    Friend WithEvents TextBox3 As TextBox
+    Friend WithEvents TBEstado As TextBox
     Friend WithEvents LEstado As Label
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents TBStock As TextBox
     Friend WithEvents LStock As Label
-    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents TBDescripcion As TextBox
     Friend WithEvents ID As DataGridViewTextBoxColumn
     Friend WithEvents Nombre As DataGridViewTextBoxColumn
     Friend WithEvents Precio As DataGridViewTextBoxColumn
