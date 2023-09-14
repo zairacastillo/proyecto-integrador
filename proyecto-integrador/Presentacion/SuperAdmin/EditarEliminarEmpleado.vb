@@ -1,4 +1,4 @@
-﻿Public Class NuevoEmpleado
+﻿Public Class EditarEliminarEmpleado
     Private Sub TBNombre_TextChanged(sender As Object, e As KeyPressEventArgs) Handles TBNombre.KeyPress
         If Validar_letras(e) Then
             MessageBox.Show("Solo se admiten letras", "Validación de letras", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)

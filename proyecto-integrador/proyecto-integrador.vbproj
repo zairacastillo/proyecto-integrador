@@ -89,10 +89,16 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="Presentacion\Admin\NuevoProducto.designer.vb">
-      <DependentUpon>NuevoProducto.vb</DependentUpon>
+    <Compile Include="Presentacion\Admin\EditarEliminarProducto.designer.vb">
+      <DependentUpon>EditarEliminarProducto.vb</DependentUpon>
     </Compile>
-    <Compile Include="Presentacion\Admin\NuevoProducto.vb">
+    <Compile Include="Presentacion\Admin\EditarEliminarProducto.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Admin\SoloListarEmpleados.Designer.vb">
+      <DependentUpon>SoloListarEmpleados.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Admin\SoloListarEmpleados.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Presentacion\Admin\MDIAdmin.Designer.vb">
@@ -101,10 +107,22 @@
     <Compile Include="Presentacion\Admin\MDIAdmin.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentacion\SuperAdmin\ListarEmpleados.Designer.vb">
-      <DependentUpon>ListarEmpleados.vb</DependentUpon>
+    <Compile Include="Presentacion\Admin\NuevoProducto.designer.vb">
+      <DependentUpon>NuevoProducto.vb</DependentUpon>
     </Compile>
-    <Compile Include="Presentacion\SuperAdmin\ListarEmpleados.vb">
+    <Compile Include="Presentacion\Admin\NuevoProducto.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\SuperAdmin\SoloListarVentas.Designer.vb">
+      <DependentUpon>SoloListarVentas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\SuperAdmin\SoloListarVentas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\SuperAdmin\SoloListarProductos.Designer.vb">
+      <DependentUpon>SoloListarProductos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\SuperAdmin\SoloListarProductos.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Presentacion\SuperAdmin\MDISuperAdmin.Designer.vb">
@@ -113,49 +131,31 @@
     <Compile Include="Presentacion\SuperAdmin\MDISuperAdmin.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentacion\SuperAdmin\NuevoEmpleado.Designer.vb">
+    <Compile Include="Presentacion\SuperAdmin\EditarEliminarEmpleado.designer.vb">
+      <DependentUpon>EditarEliminarEmpleado.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\SuperAdmin\EditarEliminarEmpleado.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\SuperAdmin\NuevoEmpleado.designer.vb">
       <DependentUpon>NuevoEmpleado.vb</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\SuperAdmin\NuevoEmpleado.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentacion\Vendedor\AgregarCliente.Designer.vb">
-      <DependentUpon>AgregarCliente.vb</DependentUpon>
+    <Compile Include="Presentacion\Admin\SoloListarClientes.Designer.vb">
+      <DependentUpon>SoloListarClientes.vb</DependentUpon>
     </Compile>
-    <Compile Include="Presentacion\Vendedor\AgregarCliente.vb">
+    <Compile Include="Presentacion\Admin\SoloListarClientes.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentacion\Vendedor\BuscarClientes.Designer.vb">
-      <DependentUpon>BuscarClientes.vb</DependentUpon>
+    <Compile Include="Presentacion\Vendedor\ListarMisVentas.Designer.vb">
+      <DependentUpon>ListarMisVentas.vb</DependentUpon>
     </Compile>
-    <Compile Include="Presentacion\Vendedor\BuscarClientes.vb">
+    <Compile Include="Presentacion\Vendedor\ListarMisVentas.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentacion\Vendedor\BuscarProducto.Designer.vb">
-      <DependentUpon>BuscarProducto.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Presentacion\Vendedor\BuscarProducto.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Presentacion\Vendedor\ListarClientes.Designer.vb">
-      <DependentUpon>ListarClientes.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Presentacion\Vendedor\ListarClientes.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Presentacion\Vendedor\ListarProductos.Designer.vb">
-      <DependentUpon>ListarProductos.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Presentacion\Vendedor\ListarProductos.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Presentacion\Vendedor\ListarVentas.Designer.vb">
-      <DependentUpon>ListarVentas.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Presentacion\Vendedor\ListarVentas.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Presentacion\Vendedor\MDIVendedor.Designer.vb">
+    <Compile Include="Presentacion\Vendedor\MDIVendedor.designer.vb">
       <DependentUpon>MDIVendedor.vb</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\Vendedor\MDIVendedor.vb">
@@ -167,6 +167,30 @@
     <Compile Include="Presentacion\Vendedor\NuevaVenta.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Presentacion\Vendedor\EditarEliminarCliente.designer.vb">
+      <DependentUpon>EditarEliminarCliente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Vendedor\EditarEliminarCliente.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Vendedor\NuevoCliente.designer.vb">
+      <DependentUpon>NuevoCliente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Vendedor\NuevoCliente.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Vendedor\AgregarClienteVenta.Designer.vb">
+      <DependentUpon>AgregarClienteVenta.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Vendedor\AgregarClienteVenta.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Vendedor\AgregarProductoVenta.Designer.vb">
+      <DependentUpon>AgregarProductoVenta.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Vendedor\AgregarProductoVenta.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="validaciones\validar.vb" />
   </ItemGroup>
   <ItemGroup>
@@ -176,44 +200,56 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentacion\Admin\NuevoProducto.resx">
-      <DependentUpon>NuevoProducto.vb</DependentUpon>
+    <EmbeddedResource Include="Presentacion\Admin\EditarEliminarProducto.resx">
+      <DependentUpon>EditarEliminarProducto.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Admin\SoloListarEmpleados.resx">
+      <DependentUpon>SoloListarEmpleados.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Admin\MDIAdmin.resx">
       <DependentUpon>MDIAdmin.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentacion\SuperAdmin\ListarEmpleados.resx">
-      <DependentUpon>ListarEmpleados.vb</DependentUpon>
+    <EmbeddedResource Include="Presentacion\Admin\NuevoProducto.resx">
+      <DependentUpon>NuevoProducto.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\SuperAdmin\SoloListarVentas.resx">
+      <DependentUpon>SoloListarVentas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\SuperAdmin\SoloListarProductos.resx">
+      <DependentUpon>SoloListarProductos.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\SuperAdmin\MDISuperAdmin.resx">
       <DependentUpon>MDISuperAdmin.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\SuperAdmin\EditarEliminarEmpleado.resx">
+      <DependentUpon>EditarEliminarEmpleado.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\SuperAdmin\NuevoEmpleado.resx">
       <DependentUpon>NuevoEmpleado.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentacion\Vendedor\AgregarCliente.resx">
-      <DependentUpon>AgregarCliente.vb</DependentUpon>
+    <EmbeddedResource Include="Presentacion\Admin\SoloListarClientes.resx">
+      <DependentUpon>SoloListarClientes.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentacion\Vendedor\BuscarClientes.resx">
-      <DependentUpon>BuscarClientes.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Presentacion\Vendedor\BuscarProducto.resx">
-      <DependentUpon>BuscarProducto.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Presentacion\Vendedor\ListarClientes.resx">
-      <DependentUpon>ListarClientes.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Presentacion\Vendedor\ListarProductos.resx">
-      <DependentUpon>ListarProductos.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Presentacion\Vendedor\ListarVentas.resx">
-      <DependentUpon>ListarVentas.vb</DependentUpon>
+    <EmbeddedResource Include="Presentacion\Vendedor\ListarMisVentas.resx">
+      <DependentUpon>ListarMisVentas.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Vendedor\MDIVendedor.resx">
       <DependentUpon>MDIVendedor.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Vendedor\NuevaVenta.resx">
       <DependentUpon>NuevaVenta.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Vendedor\EditarEliminarCliente.resx">
+      <DependentUpon>EditarEliminarCliente.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Vendedor\NuevoCliente.resx">
+      <DependentUpon>NuevoCliente.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Vendedor\AgregarClienteVenta.resx">
+      <DependentUpon>AgregarClienteVenta.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Vendedor\AgregarProductoVenta.resx">
+      <DependentUpon>AgregarProductoVenta.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

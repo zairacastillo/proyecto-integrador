@@ -8,7 +8,7 @@ Public Class MDIAdmin
             ChildForma.Close()
         Next
         ' Cree una nueva instancia del formulario secundario.
-        Dim ChildForm As New ListarClientes
+        Dim ChildForm As New SoloListarClientes
         ' Conviértalo en un elemento secundario de este formulario MDI antes de mostrarlo.
         ChildForm.MdiParent = Me
 
@@ -53,7 +53,7 @@ Public Class MDIAdmin
             ChildForma.Close()
         Next
         ' Cree una nueva instancia del formulario secundario.
-        Dim ChildForm As New ListarEmpleados
+        Dim ChildForm As New SoloListarEmpleados
         ' Conviértalo en un elemento secundario de este formulario MDI antes de mostrarlo.
         ChildForm.MdiParent = Me
 
@@ -150,7 +150,7 @@ Public Class MDIAdmin
             ChildForma.Close()
         Next
         ' Cree una nueva instancia del formulario secundario.
-        Dim ChildForm As New ListarProductos
+        Dim ChildForm As New EditarEliminarProducto
         ' Conviértalo en un elemento secundario de este formulario MDI antes de mostrarlo.
         ChildForm.MdiParent = Me
 

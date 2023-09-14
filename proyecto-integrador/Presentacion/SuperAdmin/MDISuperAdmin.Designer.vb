@@ -93,7 +93,7 @@ Partial Class MDISuperAdmin
         Me.StatusBarToolStripMenuItem.Name = "StatusBarToolStripMenuItem"
         Me.StatusBarToolStripMenuItem.ShowShortcutKeys = False
         Me.StatusBarToolStripMenuItem.Size = New System.Drawing.Size(196, 38)
-        Me.StatusBarToolStripMenuItem.Text = "&Listar"
+        Me.StatusBarToolStripMenuItem.Text = "&Editar/Eliminar"
         '
         'EditMenu
         '

@@ -28,10 +28,11 @@ Partial Class MDIVendedor
         Me.ToolStripStatusLabel = New System.Windows.Forms.ToolStripStatusLabel()
         Me.ToolTip = New System.Windows.Forms.ToolTip(Me.components)
         Me.MenuStrip = New System.Windows.Forms.MenuStrip()
-        Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem3 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.FileMenu = New System.Windows.Forms.ToolStripMenuItem()
+        Me.NuevoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.EditarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ViewMenu = New System.Windows.Forms.ToolStripMenuItem()
-        Me.NuevaVenta = New System.Windows.Forms.ToolStripMenuItem()
+        Me.NuevoToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.StatusBarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EditMenu = New System.Windows.Forms.ToolStripMenuItem()
         Me.ListarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -57,7 +58,7 @@ Partial Class MDIVendedor
         'MenuStrip
         '
         Me.MenuStrip.Dock = System.Windows.Forms.DockStyle.Left
-        Me.MenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem1, Me.ViewMenu, Me.EditMenu})
+        Me.MenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileMenu, Me.ViewMenu, Me.EditMenu})
         Me.MenuStrip.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip.Name = "MenuStrip"
         Me.MenuStrip.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional
@@ -65,35 +66,41 @@ Partial Class MDIVendedor
         Me.MenuStrip.TabIndex = 11
         Me.MenuStrip.Text = "MenuStrip"
         '
-        'ToolStripMenuItem1
+        'FileMenu
         '
-        Me.ToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem3})
-        Me.ToolStripMenuItem1.Image = Global.proyecto_integrador.My.Resources.Resources.cliente
-        Me.ToolStripMenuItem1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.ToolStripMenuItem1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
-        Me.ToolStripMenuItem1.ImageTransparentColor = System.Drawing.Color.Transparent
-        Me.ToolStripMenuItem1.Margin = New System.Windows.Forms.Padding(0, 5, 0, 5)
-        Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
-        Me.ToolStripMenuItem1.Padding = New System.Windows.Forms.Padding(4, 10, 4, 0)
-        Me.ToolStripMenuItem1.ShowShortcutKeys = False
-        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(113, 46)
-        Me.ToolStripMenuItem1.Text = "  &Clientes"
-        Me.ToolStripMenuItem1.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.FileMenu.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NuevoToolStripMenuItem, Me.EditarToolStripMenuItem})
+        Me.FileMenu.Image = Global.proyecto_integrador.My.Resources.Resources.cliente
+        Me.FileMenu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.FileMenu.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
+        Me.FileMenu.ImageTransparentColor = System.Drawing.Color.Transparent
+        Me.FileMenu.Margin = New System.Windows.Forms.Padding(0, 5, 0, 5)
+        Me.FileMenu.Name = "FileMenu"
+        Me.FileMenu.Padding = New System.Windows.Forms.Padding(4, 10, 4, 0)
+        Me.FileMenu.ShowShortcutKeys = False
+        Me.FileMenu.Size = New System.Drawing.Size(113, 46)
+        Me.FileMenu.Text = "  &Clientes"
+        Me.FileMenu.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
-        'ToolStripMenuItem3
+        'NuevoToolStripMenuItem
         '
-        Me.ToolStripMenuItem3.Image = Global.proyecto_integrador.My.Resources.Resources.listar
-        Me.ToolStripMenuItem3.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
-        Me.ToolStripMenuItem3.ImageTransparentColor = System.Drawing.Color.Black
-        Me.ToolStripMenuItem3.Name = "ToolStripMenuItem3"
-        Me.ToolStripMenuItem3.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.O), System.Windows.Forms.Keys)
-        Me.ToolStripMenuItem3.ShowShortcutKeys = False
-        Me.ToolStripMenuItem3.Size = New System.Drawing.Size(111, 38)
-        Me.ToolStripMenuItem3.Text = "&Listar"
+        Me.NuevoToolStripMenuItem.Image = Global.proyecto_integrador.My.Resources.Resources.anadir_amigo1
+        Me.NuevoToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
+        Me.NuevoToolStripMenuItem.Name = "NuevoToolStripMenuItem"
+        Me.NuevoToolStripMenuItem.Size = New System.Drawing.Size(196, 38)
+        Me.NuevoToolStripMenuItem.Text = "&Nuevo"
+        '
+        'EditarToolStripMenuItem
+        '
+        Me.EditarToolStripMenuItem.BackColor = System.Drawing.SystemColors.Control
+        Me.EditarToolStripMenuItem.Image = Global.proyecto_integrador.My.Resources.Resources.listar
+        Me.EditarToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
+        Me.EditarToolStripMenuItem.Name = "EditarToolStripMenuItem"
+        Me.EditarToolStripMenuItem.Size = New System.Drawing.Size(196, 38)
+        Me.EditarToolStripMenuItem.Text = "&Editar/Baja"
         '
         'ViewMenu
         '
-        Me.ViewMenu.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NuevaVenta, Me.StatusBarToolStripMenuItem})
+        Me.ViewMenu.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NuevoToolStripMenuItem1, Me.StatusBarToolStripMenuItem})
         Me.ViewMenu.Image = Global.proyecto_integrador.My.Resources.Resources.lista_prod1
         Me.ViewMenu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.ViewMenu.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
@@ -103,13 +110,13 @@ Partial Class MDIVendedor
         Me.ViewMenu.Size = New System.Drawing.Size(113, 46)
         Me.ViewMenu.Text = "  &Ventas"
         '
-        'NuevaVenta
+        'NuevoToolStripMenuItem1
         '
-        Me.NuevaVenta.Image = Global.proyecto_integrador.My.Resources.Resources.anadir_amigo1
-        Me.NuevaVenta.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
-        Me.NuevaVenta.Name = "NuevaVenta"
-        Me.NuevaVenta.Size = New System.Drawing.Size(196, 38)
-        Me.NuevaVenta.Text = "&Nuevo"
+        Me.NuevoToolStripMenuItem1.Image = Global.proyecto_integrador.My.Resources.Resources.anadir_amigo1
+        Me.NuevoToolStripMenuItem1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
+        Me.NuevoToolStripMenuItem1.Name = "NuevoToolStripMenuItem1"
+        Me.NuevoToolStripMenuItem1.Size = New System.Drawing.Size(125, 38)
+        Me.NuevoToolStripMenuItem1.Text = "&Nuevo"
         '
         'StatusBarToolStripMenuItem
         '
@@ -118,7 +125,7 @@ Partial Class MDIVendedor
         Me.StatusBarToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.StatusBarToolStripMenuItem.Name = "StatusBarToolStripMenuItem"
         Me.StatusBarToolStripMenuItem.ShowShortcutKeys = False
-        Me.StatusBarToolStripMenuItem.Size = New System.Drawing.Size(196, 38)
+        Me.StatusBarToolStripMenuItem.Size = New System.Drawing.Size(125, 38)
         Me.StatusBarToolStripMenuItem.Text = "&Listar"
         '
         'EditMenu
@@ -138,7 +145,7 @@ Partial Class MDIVendedor
         Me.ListarToolStripMenuItem.Image = Global.proyecto_integrador.My.Resources.Resources.lista_prod1
         Me.ListarToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.ListarToolStripMenuItem.Name = "ListarToolStripMenuItem"
-        Me.ListarToolStripMenuItem.Size = New System.Drawing.Size(196, 38)
+        Me.ListarToolStripMenuItem.Size = New System.Drawing.Size(118, 38)
         Me.ListarToolStripMenuItem.Text = "&Listar"
         '
         'MDIVendedor
@@ -164,11 +171,12 @@ Partial Class MDIVendedor
     Friend WithEvents ToolStripStatusLabel As System.Windows.Forms.ToolStripStatusLabel
     Friend WithEvents StatusStrip As System.Windows.Forms.StatusStrip
     Friend WithEvents MenuStrip As MenuStrip
-    Friend WithEvents ToolStripMenuItem1 As ToolStripMenuItem
-    Friend WithEvents ToolStripMenuItem3 As ToolStripMenuItem
     Friend WithEvents ViewMenu As ToolStripMenuItem
-    Friend WithEvents NuevaVenta As ToolStripMenuItem
+    Friend WithEvents NuevoToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents StatusBarToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents EditMenu As ToolStripMenuItem
     Friend WithEvents ListarToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents FileMenu As ToolStripMenuItem
+    Friend WithEvents NuevoToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents EditarToolStripMenuItem As ToolStripMenuItem
 End Class

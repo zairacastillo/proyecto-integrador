@@ -73,7 +73,7 @@ Partial Class MDIAdmin
         Me.BListarClientes.Name = "BListarClientes"
         Me.BListarClientes.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.O), System.Windows.Forms.Keys)
         Me.BListarClientes.ShowShortcutKeys = False
-        Me.BListarClientes.Size = New System.Drawing.Size(111, 38)
+        Me.BListarClientes.Size = New System.Drawing.Size(196, 38)
         Me.BListarClientes.Text = "&Listar"
         '
         'BProductos
@@ -102,7 +102,7 @@ Partial Class MDIAdmin
         Me.BListarProducto.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.BListarProducto.Name = "BListarProducto"
         Me.BListarProducto.Size = New System.Drawing.Size(196, 38)
-        Me.BListarProducto.Text = "&Listar"
+        Me.BListarProducto.Text = "&Editar/Baja"
         '
         'BVendedores
         '
@@ -123,7 +123,7 @@ Partial Class MDIAdmin
         Me.BListarVendedores.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.BListarVendedores.Name = "BListarVendedores"
         Me.BListarVendedores.ShowShortcutKeys = False
-        Me.BListarVendedores.Size = New System.Drawing.Size(196, 38)
+        Me.BListarVendedores.Size = New System.Drawing.Size(111, 38)
         Me.BListarVendedores.Text = "&Listar"
         '
         'StatusStrip

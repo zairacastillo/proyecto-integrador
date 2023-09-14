@@ -139,6 +139,21 @@ Module Validaciones
 
     End Sub
 
+    Public Function validar_email(ByRef txt As TextBox) As Boolean
+        If txt.Text <> "" Then
+            Dim texto As New Regex("^[0-9a-zA-Z-_@.]*$", RegexOptions.IgnoreCase)
+            Dim arobase As New Regex("[@]", RegexOptions.IgnoreCase)
+            Dim punto As New Regex("[.]", RegexOptions.IgnoreCase)
+            If (Not arobase.IsMatch(txt.Text)) Or (Not punto.IsMatch(txt.Text)) Or (Not texto.IsMatch(txt.Text)) Then
+                MessageBox.Show("Correo invalido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                Return False
+            End If
+            Return True
+        Else
+            Return False
+        End If
+
+    End Function
 
 
 End Module

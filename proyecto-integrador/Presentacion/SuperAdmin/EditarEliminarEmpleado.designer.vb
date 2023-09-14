@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class NuevoEmpleado
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
+Partial Class EditarEliminarEmpleado
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class NuevoEmpleado
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.DGV1 = New System.Windows.Forms.DataGridView()
         Me.Nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -64,7 +64,7 @@ Partial Class NuevoEmpleado
         Me.DGV1.Location = New System.Drawing.Point(-17, 356)
         Me.DGV1.Name = "DGV1"
         Me.DGV1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders
-        Me.DGV1.Size = New System.Drawing.Size(936, 164)
+        Me.DGV1.Size = New System.Drawing.Size(971, 164)
         Me.DGV1.TabIndex = 7
         '
         'Nombre
@@ -299,7 +299,7 @@ Partial Class NuevoEmpleado
         Me.LNombre.TabIndex = 0
         Me.LNombre.Text = "Nombre:"
         '
-        'NuevoEmpleado
+        'EditarEliminarEmpleado
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -307,8 +307,8 @@ Partial Class NuevoEmpleado
         Me.ClientSize = New System.Drawing.Size(919, 520)
         Me.Controls.Add(Me.DGV1)
         Me.Controls.Add(Me.PanelPrincipal)
-        Me.Name = "NuevoEmpleado"
-        Me.Text = "NuevoEmpleado"
+        Me.Name = "EditarEliminarEmpleado"
+        Me.Text = "Editar/Eliminar Empleado"
         CType(Me.DGV1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelPrincipal.ResumeLayout(False)
         Me.PanelPrincipal.PerformLayout()
