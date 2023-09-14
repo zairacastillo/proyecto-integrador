@@ -34,6 +34,7 @@ Partial Class AgregarClienteVenta
         Me.Apellido = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DGV1 = New System.Windows.Forms.DataGridView()
+        Me.Agregar = New System.Windows.Forms.DataGridViewButtonColumn()
         CType(Me.DGV1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -69,11 +70,11 @@ Partial Class AgregarClienteVenta
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(441, 62)
+        Me.Label1.Location = New System.Drawing.Point(410, 61)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(199, 25)
+        Me.Label1.Size = New System.Drawing.Size(211, 25)
         Me.Label1.TabIndex = 19
-        Me.Label1.Text = "Buscar por Apellido"
+        Me.Label1.Text = "Buscar por Apellido: "
         '
         'Button4
         '
@@ -121,14 +122,19 @@ Partial Class AgregarClienteVenta
         Me.DGV1.AllowUserToOrderColumns = True
         Me.DGV1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DGV1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DGV1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Nombre, Me.Apellido, Me.Dni, Me.Correo, Me.Telefono, Me.Direccion})
+        Me.DGV1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Nombre, Me.Apellido, Me.Dni, Me.Correo, Me.Telefono, Me.Direccion, Me.Agregar})
         Me.DGV1.Location = New System.Drawing.Point(-1, 274)
         Me.DGV1.Name = "DGV1"
         Me.DGV1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders
         Me.DGV1.Size = New System.Drawing.Size(848, 187)
         Me.DGV1.TabIndex = 21
         '
-        'SoloListarClientes
+        'Agregar
+        '
+        Me.Agregar.HeaderText = "Agregar"
+        Me.Agregar.Name = "Agregar"
+        '
+        'AgregarClienteVenta
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -140,7 +146,7 @@ Partial Class AgregarClienteVenta
         Me.Controls.Add(Me.TextBox2)
         Me.Controls.Add(Me.LNombre)
         Me.Controls.Add(Me.TextBox1)
-        Me.Name = "SoloListarClientes"
+        Me.Name = "AgregarClienteVenta"
         Me.Text = "ListarClientes"
         CType(Me.DGV1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
@@ -160,4 +166,5 @@ Partial Class AgregarClienteVenta
     Friend WithEvents Apellido As DataGridViewTextBoxColumn
     Friend WithEvents Nombre As DataGridViewTextBoxColumn
     Friend WithEvents DGV1 As DataGridView
+    Friend WithEvents Agregar As DataGridViewButtonColumn
 End Class

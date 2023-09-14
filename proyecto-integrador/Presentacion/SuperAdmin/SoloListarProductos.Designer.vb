@@ -104,9 +104,9 @@ Partial Class SoloListarProductos
         Me.Label1.ForeColor = System.Drawing.Color.White
         Me.Label1.Location = New System.Drawing.Point(474, 65)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(199, 25)
+        Me.Label1.Size = New System.Drawing.Size(203, 25)
         Me.Label1.TabIndex = 25
-        Me.Label1.Text = "Buscar por Apellido"
+        Me.Label1.Text = "Buscar por Nombre:"
         '
         'TextBox2
         '
@@ -123,9 +123,9 @@ Partial Class SoloListarProductos
         Me.LNombre.ForeColor = System.Drawing.Color.White
         Me.LNombre.Location = New System.Drawing.Point(45, 64)
         Me.LNombre.Name = "LNombre"
-        Me.LNombre.Size = New System.Drawing.Size(193, 25)
+        Me.LNombre.Size = New System.Drawing.Size(196, 25)
         Me.LNombre.TabIndex = 23
-        Me.LNombre.Text = "Buscar por Correo:"
+        Me.LNombre.Text = "Buscar por Codigo:"
         '
         'TextBox1
         '
@@ -134,7 +134,7 @@ Partial Class SoloListarProductos
         Me.TextBox1.Size = New System.Drawing.Size(169, 20)
         Me.TextBox1.TabIndex = 22
         '
-        'ListarProductos
+        'SoloListarProductos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -146,7 +146,7 @@ Partial Class SoloListarProductos
         Me.Controls.Add(Me.TextBox2)
         Me.Controls.Add(Me.LNombre)
         Me.Controls.Add(Me.TextBox1)
-        Me.Name = "ListarProductos"
+        Me.Name = "SoloListarProductos"
         Me.Text = "ListarProductos"
         CType(Me.DGV1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)

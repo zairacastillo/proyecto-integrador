@@ -23,6 +23,11 @@ Partial Class SoloListarEmpleados
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.DGV1 = New System.Windows.Forms.DataGridView()
+        Me.Button4 = New System.Windows.Forms.Button()
+        Me.LCorreo = New System.Windows.Forms.Label()
+        Me.LCliente = New System.Windows.Forms.Label()
+        Me.TBApellido = New System.Windows.Forms.TextBox()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Apellido = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DNI = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -30,12 +35,7 @@ Partial Class SoloListarEmpleados
         Me.Correo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Contraseña = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Usuario = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Estado = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Button4 = New System.Windows.Forms.Button()
-        Me.LCorreo = New System.Windows.Forms.Label()
-        Me.LCliente = New System.Windows.Forms.Label()
-        Me.TBApellido = New System.Windows.Forms.TextBox()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.Perfil = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.DGV1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -46,12 +46,59 @@ Partial Class SoloListarEmpleados
         Me.DGV1.AllowUserToOrderColumns = True
         Me.DGV1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DGV1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DGV1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Nombre, Me.Apellido, Me.DNI, Me.Telefono, Me.Correo, Me.Contraseña, Me.Usuario, Me.Estado})
+        Me.DGV1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Nombre, Me.Apellido, Me.DNI, Me.Telefono, Me.Correo, Me.Contraseña, Me.Usuario, Me.Perfil})
         Me.DGV1.Location = New System.Drawing.Point(-27, 255)
         Me.DGV1.Name = "DGV1"
         Me.DGV1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders
-        Me.DGV1.Size = New System.Drawing.Size(931, 189)
+        Me.DGV1.Size = New System.Drawing.Size(887, 189)
         Me.DGV1.TabIndex = 33
+        '
+        'Button4
+        '
+        Me.Button4.Location = New System.Drawing.Point(358, 137)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(135, 29)
+        Me.Button4.TabIndex = 32
+        Me.Button4.Text = "Buscar"
+        Me.Button4.UseVisualStyleBackColor = True
+        '
+        'LCorreo
+        '
+        Me.LCorreo.AutoSize = True
+        Me.LCorreo.BackColor = System.Drawing.Color.Transparent
+        Me.LCorreo.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LCorreo.ForeColor = System.Drawing.Color.White
+        Me.LCorreo.Location = New System.Drawing.Point(451, 57)
+        Me.LCorreo.Name = "LCorreo"
+        Me.LCorreo.Size = New System.Drawing.Size(202, 25)
+        Me.LCorreo.TabIndex = 31
+        Me.LCorreo.Text = "Buscar por Usuario:"
+        '
+        'LCliente
+        '
+        Me.LCliente.AutoSize = True
+        Me.LCliente.BackColor = System.Drawing.Color.Transparent
+        Me.LCliente.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LCliente.ForeColor = System.Drawing.Color.White
+        Me.LCliente.Location = New System.Drawing.Point(22, 56)
+        Me.LCliente.Name = "LCliente"
+        Me.LCliente.Size = New System.Drawing.Size(205, 25)
+        Me.LCliente.TabIndex = 30
+        Me.LCliente.Text = "Buscar por Apellido:"
+        '
+        'TBApellido
+        '
+        Me.TBApellido.Location = New System.Drawing.Point(231, 61)
+        Me.TBApellido.Name = "TBApellido"
+        Me.TBApellido.Size = New System.Drawing.Size(169, 20)
+        Me.TBApellido.TabIndex = 29
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Location = New System.Drawing.Point(645, 62)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(169, 20)
+        Me.TextBox1.TabIndex = 34
         '
         'Nombre
         '
@@ -88,59 +135,12 @@ Partial Class SoloListarEmpleados
         Me.Usuario.HeaderText = "Usuario"
         Me.Usuario.Name = "Usuario"
         '
-        'Estado
+        'Perfil
         '
-        Me.Estado.HeaderText = "Estado"
-        Me.Estado.Name = "Estado"
+        Me.Perfil.HeaderText = "Perfil"
+        Me.Perfil.Name = "Perfil"
         '
-        'Button4
-        '
-        Me.Button4.Location = New System.Drawing.Point(358, 137)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(135, 29)
-        Me.Button4.TabIndex = 32
-        Me.Button4.Text = "Buscar"
-        Me.Button4.UseVisualStyleBackColor = True
-        '
-        'LCorreo
-        '
-        Me.LCorreo.AutoSize = True
-        Me.LCorreo.BackColor = System.Drawing.Color.Transparent
-        Me.LCorreo.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LCorreo.ForeColor = System.Drawing.Color.White
-        Me.LCorreo.Location = New System.Drawing.Point(451, 57)
-        Me.LCorreo.Name = "LCorreo"
-        Me.LCorreo.Size = New System.Drawing.Size(193, 25)
-        Me.LCorreo.TabIndex = 31
-        Me.LCorreo.Text = "Buscar por Correo:"
-        '
-        'LCliente
-        '
-        Me.LCliente.AutoSize = True
-        Me.LCliente.BackColor = System.Drawing.Color.Transparent
-        Me.LCliente.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LCliente.ForeColor = System.Drawing.Color.White
-        Me.LCliente.Location = New System.Drawing.Point(22, 56)
-        Me.LCliente.Name = "LCliente"
-        Me.LCliente.Size = New System.Drawing.Size(205, 25)
-        Me.LCliente.TabIndex = 30
-        Me.LCliente.Text = "Buscar por Apellido:"
-        '
-        'TBApellido
-        '
-        Me.TBApellido.Location = New System.Drawing.Point(231, 61)
-        Me.TBApellido.Name = "TBApellido"
-        Me.TBApellido.Size = New System.Drawing.Size(169, 20)
-        Me.TBApellido.TabIndex = 29
-        '
-        'TextBox1
-        '
-        Me.TextBox1.Location = New System.Drawing.Point(645, 62)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(169, 20)
-        Me.TextBox1.TabIndex = 34
-        '
-        'ListarEmpleados
+        'SoloListarEmpleados
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -152,7 +152,7 @@ Partial Class SoloListarEmpleados
         Me.Controls.Add(Me.LCorreo)
         Me.Controls.Add(Me.LCliente)
         Me.Controls.Add(Me.TBApellido)
-        Me.Name = "ListarEmpleados"
+        Me.Name = "SoloListarEmpleados"
         Me.Text = "ListarEmpleados"
         CType(Me.DGV1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
@@ -173,5 +173,5 @@ Partial Class SoloListarEmpleados
     Friend WithEvents Correo As DataGridViewTextBoxColumn
     Friend WithEvents Contraseña As DataGridViewTextBoxColumn
     Friend WithEvents Usuario As DataGridViewTextBoxColumn
-    Friend WithEvents Estado As DataGridViewTextBoxColumn
+    Friend WithEvents Perfil As DataGridViewTextBoxColumn
 End Class

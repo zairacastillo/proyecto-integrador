@@ -35,6 +35,7 @@ Partial Class AgregarProductoVenta
         Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.LNombre = New System.Windows.Forms.Label()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.Agregar = New System.Windows.Forms.DataGridViewButtonColumn()
         CType(Me.DGV1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -45,11 +46,11 @@ Partial Class AgregarProductoVenta
         Me.DGV1.AllowUserToOrderColumns = True
         Me.DGV1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DGV1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DGV1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Codigo, Me.Nombre, Me.Descripcion, Me.Categoria, Me.Stock, Me.Precio, Me.Estado})
+        Me.DGV1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Codigo, Me.Nombre, Me.Descripcion, Me.Categoria, Me.Stock, Me.Precio, Me.Estado, Me.Agregar})
         Me.DGV1.Location = New System.Drawing.Point(-8, 260)
         Me.DGV1.Name = "DGV1"
         Me.DGV1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders
-        Me.DGV1.Size = New System.Drawing.Size(931, 189)
+        Me.DGV1.Size = New System.Drawing.Size(903, 189)
         Me.DGV1.TabIndex = 27
         '
         'Codigo
@@ -104,9 +105,9 @@ Partial Class AgregarProductoVenta
         Me.Label1.ForeColor = System.Drawing.Color.White
         Me.Label1.Location = New System.Drawing.Point(474, 65)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(199, 25)
+        Me.Label1.Size = New System.Drawing.Size(203, 25)
         Me.Label1.TabIndex = 25
-        Me.Label1.Text = "Buscar por Apellido"
+        Me.Label1.Text = "Buscar por Nombre:"
         '
         'TextBox2
         '
@@ -123,9 +124,9 @@ Partial Class AgregarProductoVenta
         Me.LNombre.ForeColor = System.Drawing.Color.White
         Me.LNombre.Location = New System.Drawing.Point(45, 64)
         Me.LNombre.Name = "LNombre"
-        Me.LNombre.Size = New System.Drawing.Size(193, 25)
+        Me.LNombre.Size = New System.Drawing.Size(196, 25)
         Me.LNombre.TabIndex = 23
-        Me.LNombre.Text = "Buscar por Correo:"
+        Me.LNombre.Text = "Buscar por Codigo:"
         '
         'TextBox1
         '
@@ -133,6 +134,11 @@ Partial Class AgregarProductoVenta
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(169, 20)
         Me.TextBox1.TabIndex = 22
+        '
+        'Agregar
+        '
+        Me.Agregar.HeaderText = "Agregar"
+        Me.Agregar.Name = "Agregar"
         '
         'AgregarProductoVenta
         '
@@ -167,4 +173,5 @@ Partial Class AgregarProductoVenta
     Friend WithEvents Stock As DataGridViewTextBoxColumn
     Friend WithEvents Precio As DataGridViewTextBoxColumn
     Friend WithEvents Estado As DataGridViewTextBoxColumn
+    Friend WithEvents Agregar As DataGridViewButtonColumn
 End Class

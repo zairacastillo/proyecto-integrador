@@ -13,7 +13,7 @@ Public Class MDIAdmin
         ChildForm.MdiParent = Me
 
         m_ChildFormNumber += 1
-        ChildForm.Text = "Buscar Cliente"
+        ChildForm.Text = "Listar Cliente"
 
         ChildForm.Show()
     End Sub
@@ -58,7 +58,7 @@ Public Class MDIAdmin
         ChildForm.MdiParent = Me
 
         m_ChildFormNumber += 1
-        ChildForm.Text = "Buscar Cliente"
+        ChildForm.Text = "Listar Vendedores"
 
         ChildForm.Show()
     End Sub
@@ -155,7 +155,7 @@ Public Class MDIAdmin
         ChildForm.MdiParent = Me
 
         m_ChildFormNumber += 1
-        ChildForm.Text = "Buscar Producto"
+        ChildForm.Text = "Editar/Eliminar Producto"
 
         ChildForm.Show()
     End Sub
