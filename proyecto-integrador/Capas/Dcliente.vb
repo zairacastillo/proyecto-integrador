@@ -42,30 +42,39 @@
         Return listacliente
     End Function
 
-    Function ExisteMail(ByVal pmail As String) As Boolean
+    Function ExisteMail(ByVal pmail As String, Optional pid As Integer = -1) As Boolean
 
-        Dim buscarCorreo = (From p In ctx.cliente
-                            Where p.correo_cliente = pmail
-                            Select p).Count
-        If buscarCorreo = 0 Then
+        Dim listaClientes = (From p In ctx.cliente
+                             Where p.correo_cliente = pmail
+                             Select p).ToList
+
+        If (listaClientes.Count() = 0) Then
             Return False 'Correo no existe
         Else
+            If (listaClientes.First.Id_cliente = pid) Then
+                Return False 'Correo existe pero es el mismo cliente
+            End If
+
             MsgBox("ERROR: El Correo ya ha sido registrado", Title:="ERROR")
             Return True 'Correo ya existe
         End If
     End Function
 
-    Function ExisteDNI(ByVal pdni As String) As Boolean
+    Function ExisteDNI(ByVal pdni As String, Optional pid As Integer = -1) As Boolean
 
-        Dim buscarCorreo = (From p In ctx.cliente
-                            Where p.dni_cliente = pdni
-                            Select p).Count
+        Dim listaClientes = (From p In ctx.cliente
+                             Where p.dni_cliente = pdni
+                             Select p).ToList
 
-        If buscarCorreo = 0 Then
-            Return False 'Correo no existe
+        If (listaClientes.Count() = 0) Then
+            Return False 'dni no existe
         Else
-            MsgBox("ERROR: El dni ya ha sido registrado", Title:="ERROR")
-            Return True 'Correo ya existe
+            If (listaClientes.First.Id_cliente = pid) Then
+                Return False 'dni existe pero es el mismo cliente
+            End If
+
+            MsgBox("ERROR: El Dni ya ha sido registrado", Title:="ERROR")
+            Return True 'dni ya existe
         End If
     End Function
 
@@ -78,7 +87,7 @@
                      Select p).ToList
         Else
             lista = (From p In ctx.cliente
-                     Where p.apellido_cliente.StartsWith(papellido)
+                     Where p.apellido_cliente.Contains(papellido)
                      Select p).ToList
         End If
 

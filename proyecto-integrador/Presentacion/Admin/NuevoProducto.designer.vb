@@ -291,7 +291,6 @@ Partial Class NuevoProducto
         Me.Name = "NuevoProducto"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Nuevo Producto"
-        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.PanelPrincipal.ResumeLayout(False)
         Me.PanelPrincipal.PerformLayout()
         CType(Me.DGV1, System.ComponentModel.ISupportInitialize).EndInit()

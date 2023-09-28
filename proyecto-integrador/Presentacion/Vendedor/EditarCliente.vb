@@ -37,8 +37,18 @@ Public Class EditarCliente
                 OCliente.estado_cliente = "Activo"
                 OCliente.fecha_cliente = System.DateTime.Now
 
-                ObjCliente.Modificar(OCliente)
-                DGV1.DataSource = ObjCliente.getAll()
+                If Not ObjCliente.ExisteDNI(OCliente.dni_cliente, OCliente.Id_cliente) And Not ObjCliente.ExisteMail(OCliente.correo_cliente, OCliente.Id_cliente) AndAlso ObjCliente.Modificar(OCliente) Then
+
+                    MsgBox("Los datos se guardaron correctamente", Title:="Confirmar Inserción")
+                    'Reseteamos Form
+                    BCancelar_Click(sender, e)
+                    DGV1.DataSource = ObjCliente.getAll()
+
+                Else
+                    MsgBox("ERROR: Los datos NO se guardaron correctamente", Title:="ERROR Inserción")
+                End If
+
+
             End If
         End If
 
@@ -96,13 +106,13 @@ Public Class EditarCliente
             Dim colBoton As New System.Windows.Forms.DataGridViewButtonColumn
             colBoton.HeaderText = "Seleccionar"
             colBoton.Text = "Seleccionar"
-            'DGV1.Columns(0).Visible = False
-            'DGV1.Columns(9).Visible = False
             DGV1.Columns.Add(colBoton)
         End If
 
         'buscamos clientes y llenamos la tabla
         DGV1.DataSource = ObjCliente.buscarCliente(p_dni, TBBuscarAp.Text.Trim)
+        DGV1.Columns(1).Visible = False
+        DGV1.Columns(10).Visible = False
     End Sub
 
     Private Sub DGV1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGV1.CellContentClick
