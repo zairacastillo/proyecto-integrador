@@ -115,10 +115,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ModelProyecto.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="ModelProyecto.Designer.vb">
+    <Compile Include="ModelPROYECTO2.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ModelProyecto.edmx</DependentUpon>
+      <DependentUpon>ModelPROYECTO2.edmx</DependentUpon>
     </Compile>
     <Compile Include="ModelProyecto.vb">
       <AutoGen>True</AutoGen>
@@ -323,12 +323,12 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EntityDeploy Include="ModelProyecto.edmx">
+    <EntityDeploy Include="ModelPROYECTO2.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>ModelProyecto.Designer.vb</LastGenOutput>
+      <LastGenOutput>ModelPROYECTO2.Designer.vb</LastGenOutput>
     </EntityDeploy>
-    <None Include="ModelProyecto.edmx.diagram">
-      <DependentUpon>ModelProyecto.edmx</DependentUpon>
+    <None Include="ModelPROYECTO2.edmx.diagram">
+      <DependentUpon>ModelPROYECTO2.edmx</DependentUpon>
     </None>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
@@ -361,9 +361,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\person-add_icon-icons.com_50077.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\futbol.jpeg" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\person-add.jpg" />
@@ -435,12 +432,12 @@
     <Content Include="ModelProyecto.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>ModelProyecto.Context.vb</LastGenOutput>
-      <DependentUpon>ModelProyecto.edmx</DependentUpon>
+      <DependentUpon>ModelPROYECTO2.edmx</DependentUpon>
     </Content>
-    <Content Include="ModelProyecto.edmx.sql" />
+    <Content Include="ModelPROYECTO2.edmx.sql" />
     <Content Include="ModelProyecto.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ModelProyecto.edmx</DependentUpon>
+      <DependentUpon>ModelPROYECTO2.edmx</DependentUpon>
       <LastGenOutput>ModelProyecto.vb</LastGenOutput>
     </Content>
     <None Include="Resources\copia-de-respaldo.png" />

@@ -147,7 +147,9 @@ Public Class MDIVendedor
 
 
     Public Sub AgregarClienteVenta(sender As Object, e As EventArgs)
-
+        For Each ChildForma As Form In Me.MdiChildren
+            ChildForma.Close()
+        Next
         ' Cree una nueva instancia del formulario secundario.
         Dim ChildForm As New AgregarClienteVenta
         ' Conviértalo en un elemento secundario de este formulario MDI antes de mostrarlo.
@@ -160,6 +162,9 @@ Public Class MDIVendedor
     End Sub
 
     Public Sub AgregarProductoVenta(sender As Object, e As EventArgs)
+        For Each ChildForma As Form In Me.MdiChildren
+            ChildForma.Close()
+        Next
         ' Cree una nueva instancia del formulario secundario.
         Dim ChildForm As New AgregarProductoVenta
         ' Conviértalo en un elemento secundario de este formulario MDI antes de mostrarlo.

@@ -150,7 +150,7 @@ Partial Class NuevoProducto
         Me.BAgregar.Padding = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.BAgregar.Size = New System.Drawing.Size(117, 45)
         Me.BAgregar.TabIndex = 10
-        Me.BAgregar.Text = "Guardar"
+        Me.BAgregar.Text = "Agregar"
         Me.BAgregar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.BAgregar.UseVisualStyleBackColor = True
         '
@@ -291,6 +291,7 @@ Partial Class NuevoProducto
         Me.Name = "NuevoProducto"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Nuevo Producto"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.PanelPrincipal.ResumeLayout(False)
         Me.PanelPrincipal.PerformLayout()
         CType(Me.DGV1, System.ComponentModel.ISupportInitialize).EndInit()

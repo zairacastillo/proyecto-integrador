@@ -36,7 +36,7 @@ Public Class NuevoProducto
             MsgBox(msjTxt, MsgBoxStyle.Critical, Title:="Error")
         Else
             'mensaje y almacenamiento de resultado en variable
-            Dim ask As Integer = MsgBox("¿Seguro que desea Guardar el Cliente?", MsgBoxStyle.YesNo + MsgBoxStyle.DefaultButton1, Title:="Confirmar Inserción")
+            Dim ask As Integer = MsgBox("¿Seguro que desea Guardar el Producto?", MsgBoxStyle.YesNo + MsgBoxStyle.DefaultButton1, Title:="Confirmar Inserción")
 
             'si acepta guardamos / mensaje
             If ask = DialogResult.Yes Then

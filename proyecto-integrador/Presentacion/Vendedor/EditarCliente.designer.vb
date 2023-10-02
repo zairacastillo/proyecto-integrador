@@ -22,8 +22,15 @@ Partial Class EditarCliente
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.DGV1 = New System.Windows.Forms.DataGridView()
+        Me.Nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Apellido = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Dni = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Correo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Telefono = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Direccion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Seleccionar = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.PanelPrincipal = New System.Windows.Forms.Panel()
-        Me.TBNombre = New System.Windows.Forms.TextBox()
         Me.TBTel = New System.Windows.Forms.TextBox()
         Me.LTel = New System.Windows.Forms.Label()
         Me.TBDirec = New System.Windows.Forms.TextBox()
@@ -32,29 +39,76 @@ Partial Class EditarCliente
         Me.LCorreo = New System.Windows.Forms.Label()
         Me.TBDni = New System.Windows.Forms.TextBox()
         Me.LDni = New System.Windows.Forms.Label()
-        Me.BAgregar = New System.Windows.Forms.Button()
         Me.TBApellido = New System.Windows.Forms.TextBox()
+        Me.TBNombre = New System.Windows.Forms.TextBox()
         Me.LApellido = New System.Windows.Forms.Label()
         Me.LNombre = New System.Windows.Forms.Label()
-        Me.TBBuscarDNI = New System.Windows.Forms.TextBox()
+        Me.TBBuscar = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.BEditar = New System.Windows.Forms.Button()
         Me.BCancelar = New System.Windows.Forms.Button()
-        Me.BActializar = New System.Windows.Forms.Button()
+        Me.BActUalizar = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.TBBuscarAp = New System.Windows.Forms.TextBox()
-        Me.Bbuscar = New System.Windows.Forms.Button()
-        Me.DGV1 = New System.Windows.Forms.DataGridView()
-        Me.TBID = New System.Windows.Forms.TextBox()
-        Me.PanelPrincipal.SuspendLayout()
+        Me.BBuscarDni = New System.Windows.Forms.Button()
+        Me.BBuscarAp = New System.Windows.Forms.Button()
         CType(Me.DGV1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.PanelPrincipal.SuspendLayout()
         Me.SuspendLayout()
+        '
+        'DGV1
+        '
+        Me.DGV1.AllowUserToAddRows = False
+        Me.DGV1.AllowUserToDeleteRows = False
+        Me.DGV1.AllowUserToOrderColumns = True
+        Me.DGV1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.DGV1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DGV1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Nombre, Me.Apellido, Me.Dni, Me.Correo, Me.Telefono, Me.Direccion, Me.Seleccionar})
+        Me.DGV1.Location = New System.Drawing.Point(-6, 53)
+        Me.DGV1.Name = "DGV1"
+        Me.DGV1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders
+        Me.DGV1.Size = New System.Drawing.Size(971, 164)
+        Me.DGV1.TabIndex = 5
+        '
+        'Nombre
+        '
+        Me.Nombre.HeaderText = "Nombre"
+        Me.Nombre.Name = "Nombre"
+        '
+        'Apellido
+        '
+        Me.Apellido.HeaderText = "Apellido"
+        Me.Apellido.Name = "Apellido"
+        '
+        'Dni
+        '
+        Me.Dni.HeaderText = "DNI"
+        Me.Dni.Name = "Dni"
+        '
+        'Correo
+        '
+        Me.Correo.HeaderText = "Correo"
+        Me.Correo.Name = "Correo"
+        '
+        'Telefono
+        '
+        Me.Telefono.HeaderText = "Telefono"
+        Me.Telefono.Name = "Telefono"
+        '
+        'Direccion
+        '
+        Me.Direccion.HeaderText = "Direccion"
+        Me.Direccion.Name = "Direccion"
+        '
+        'Seleccionar
+        '
+        Me.Seleccionar.HeaderText = "Seleccionar"
+        Me.Seleccionar.Name = "Seleccionar"
         '
         'PanelPrincipal
         '
         Me.PanelPrincipal.BackgroundImage = Global.proyecto_integrador.My.Resources.Resources.bg
         Me.PanelPrincipal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PanelPrincipal.Controls.Add(Me.TBNombre)
         Me.PanelPrincipal.Controls.Add(Me.TBTel)
         Me.PanelPrincipal.Controls.Add(Me.LTel)
         Me.PanelPrincipal.Controls.Add(Me.TBDirec)
@@ -63,22 +117,15 @@ Partial Class EditarCliente
         Me.PanelPrincipal.Controls.Add(Me.LCorreo)
         Me.PanelPrincipal.Controls.Add(Me.TBDni)
         Me.PanelPrincipal.Controls.Add(Me.LDni)
-        Me.PanelPrincipal.Controls.Add(Me.BAgregar)
         Me.PanelPrincipal.Controls.Add(Me.TBApellido)
+        Me.PanelPrincipal.Controls.Add(Me.TBNombre)
         Me.PanelPrincipal.Controls.Add(Me.LApellido)
         Me.PanelPrincipal.Controls.Add(Me.LNombre)
         Me.PanelPrincipal.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.PanelPrincipal.Location = New System.Drawing.Point(96, 223)
+        Me.PanelPrincipal.Location = New System.Drawing.Point(94, 252)
         Me.PanelPrincipal.Name = "PanelPrincipal"
-        Me.PanelPrincipal.Size = New System.Drawing.Size(401, 341)
+        Me.PanelPrincipal.Size = New System.Drawing.Size(401, 285)
         Me.PanelPrincipal.TabIndex = 3
-        '
-        'TBNombre
-        '
-        Me.TBNombre.Location = New System.Drawing.Point(124, 35)
-        Me.TBNombre.Name = "TBNombre"
-        Me.TBNombre.Size = New System.Drawing.Size(254, 20)
-        Me.TBNombre.TabIndex = 19
         '
         'TBTel
         '
@@ -156,25 +203,19 @@ Partial Class EditarCliente
         Me.LDni.TabIndex = 11
         Me.LDni.Text = "DNI:"
         '
-        'BAgregar
-        '
-        Me.BAgregar.Image = Global.proyecto_integrador.My.Resources.Resources.diskette
-        Me.BAgregar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BAgregar.Location = New System.Drawing.Point(152, 278)
-        Me.BAgregar.Name = "BAgregar"
-        Me.BAgregar.Padding = New System.Windows.Forms.Padding(5, 0, 5, 0)
-        Me.BAgregar.Size = New System.Drawing.Size(110, 47)
-        Me.BAgregar.TabIndex = 10
-        Me.BAgregar.Text = "Agregar"
-        Me.BAgregar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.BAgregar.UseVisualStyleBackColor = True
-        '
         'TBApellido
         '
         Me.TBApellido.Location = New System.Drawing.Point(124, 78)
         Me.TBApellido.Name = "TBApellido"
         Me.TBApellido.Size = New System.Drawing.Size(254, 20)
         Me.TBApellido.TabIndex = 5
+        '
+        'TBNombre
+        '
+        Me.TBNombre.Location = New System.Drawing.Point(124, 35)
+        Me.TBNombre.Name = "TBNombre"
+        Me.TBNombre.Size = New System.Drawing.Size(254, 20)
+        Me.TBNombre.TabIndex = 4
         '
         'LApellido
         '
@@ -200,12 +241,12 @@ Partial Class EditarCliente
         Me.LNombre.TabIndex = 0
         Me.LNombre.Text = "Nombre:"
         '
-        'TBBuscarDNI
+        'TBBuscar
         '
-        Me.TBBuscarDNI.Location = New System.Drawing.Point(197, 23)
-        Me.TBBuscarDNI.Name = "TBBuscarDNI"
-        Me.TBBuscarDNI.Size = New System.Drawing.Size(182, 20)
-        Me.TBBuscarDNI.TabIndex = 6
+        Me.TBBuscar.Location = New System.Drawing.Point(172, 23)
+        Me.TBBuscar.Name = "TBBuscar"
+        Me.TBBuscar.Size = New System.Drawing.Size(182, 20)
+        Me.TBBuscar.TabIndex = 6
         '
         'Label1
         '
@@ -213,7 +254,7 @@ Partial Class EditarCliente
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(29, 21)
+        Me.Label1.Location = New System.Drawing.Point(4, 21)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(162, 20)
         Me.Label1.TabIndex = 8
@@ -223,7 +264,7 @@ Partial Class EditarCliente
         '
         Me.BEditar.Image = Global.proyecto_integrador.My.Resources.Resources.lapiz
         Me.BEditar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.BEditar.Location = New System.Drawing.Point(599, 496)
+        Me.BEditar.Location = New System.Drawing.Point(684, 301)
         Me.BEditar.Name = "BEditar"
         Me.BEditar.Size = New System.Drawing.Size(87, 68)
         Me.BEditar.TabIndex = 10
@@ -244,17 +285,17 @@ Partial Class EditarCliente
         Me.BCancelar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.BCancelar.UseVisualStyleBackColor = True
         '
-        'BActializar
+        'BActUalizar
         '
-        Me.BActializar.Image = Global.proyecto_integrador.My.Resources.Resources.actualizar_flecha
-        Me.BActializar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.BActializar.Location = New System.Drawing.Point(599, 403)
-        Me.BActializar.Name = "BActializar"
-        Me.BActializar.Size = New System.Drawing.Size(87, 67)
-        Me.BActializar.TabIndex = 12
-        Me.BActializar.Text = "Actualizar"
-        Me.BActializar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.BActializar.UseVisualStyleBackColor = True
+        Me.BActUalizar.Image = Global.proyecto_integrador.My.Resources.Resources.actualizar_flecha
+        Me.BActUalizar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.BActUalizar.Location = New System.Drawing.Point(599, 403)
+        Me.BActUalizar.Name = "BActUalizar"
+        Me.BActUalizar.Size = New System.Drawing.Size(87, 67)
+        Me.BActUalizar.TabIndex = 12
+        Me.BActUalizar.Text = "Actualizar"
+        Me.BActUalizar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.BActUalizar.UseVisualStyleBackColor = True
         '
         'Label2
         '
@@ -262,7 +303,7 @@ Partial Class EditarCliente
         Me.Label2.BackColor = System.Drawing.Color.Transparent
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.Location = New System.Drawing.Point(525, 21)
+        Me.Label2.Location = New System.Drawing.Point(494, 23)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(195, 20)
         Me.Label2.TabIndex = 14
@@ -270,42 +311,28 @@ Partial Class EditarCliente
         '
         'TBBuscarAp
         '
-        Me.TBBuscarAp.Location = New System.Drawing.Point(726, 23)
+        Me.TBBuscarAp.Location = New System.Drawing.Point(695, 25)
         Me.TBBuscarAp.Name = "TBBuscarAp"
         Me.TBBuscarAp.Size = New System.Drawing.Size(182, 20)
         Me.TBBuscarAp.TabIndex = 13
         '
-        'Bbuscar
+        'BBuscarDni
         '
-        Me.Bbuscar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.Bbuscar.Location = New System.Drawing.Point(675, 245)
-        Me.Bbuscar.Name = "Bbuscar"
-        Me.Bbuscar.Size = New System.Drawing.Size(87, 33)
-        Me.Bbuscar.TabIndex = 15
-        Me.Bbuscar.Text = "Buscar Cliente"
-        Me.Bbuscar.UseVisualStyleBackColor = True
+        Me.BBuscarDni.Location = New System.Drawing.Point(360, 20)
+        Me.BBuscarDni.Name = "BBuscarDni"
+        Me.BBuscarDni.Size = New System.Drawing.Size(75, 23)
+        Me.BBuscarDni.TabIndex = 15
+        Me.BBuscarDni.Text = "Buscar"
+        Me.BBuscarDni.UseVisualStyleBackColor = True
         '
-        'DGV1
+        'BBuscarAp
         '
-        Me.DGV1.AllowUserToAddRows = False
-        Me.DGV1.AllowUserToDeleteRows = False
-        Me.DGV1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-        Me.DGV1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DGV1.Location = New System.Drawing.Point(16, 49)
-        Me.DGV1.Name = "DGV1"
-        Me.DGV1.ReadOnly = True
-        Me.DGV1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders
-        Me.DGV1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect
-        Me.DGV1.Size = New System.Drawing.Size(931, 164)
-        Me.DGV1.TabIndex = 16
-        '
-        'TBID
-        '
-        Me.TBID.Location = New System.Drawing.Point(33, 501)
-        Me.TBID.Name = "TBID"
-        Me.TBID.Size = New System.Drawing.Size(22, 20)
-        Me.TBID.TabIndex = 20
-        Me.TBID.Visible = False
+        Me.BBuscarAp.Location = New System.Drawing.Point(883, 23)
+        Me.BBuscarAp.Name = "BBuscarAp"
+        Me.BBuscarAp.Size = New System.Drawing.Size(75, 23)
+        Me.BBuscarAp.TabIndex = 16
+        Me.BBuscarAp.Text = "Buscar"
+        Me.BBuscarAp.UseVisualStyleBackColor = True
         '
         'EditarCliente
         '
@@ -313,29 +340,31 @@ Partial Class EditarCliente
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.proyecto_integrador.My.Resources.Resources.cuadros_negros_734708
         Me.ClientSize = New System.Drawing.Size(959, 579)
-        Me.Controls.Add(Me.TBID)
-        Me.Controls.Add(Me.DGV1)
-        Me.Controls.Add(Me.Bbuscar)
+        Me.Controls.Add(Me.BBuscarAp)
+        Me.Controls.Add(Me.BBuscarDni)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.TBBuscarAp)
-        Me.Controls.Add(Me.BActializar)
+        Me.Controls.Add(Me.BActUalizar)
         Me.Controls.Add(Me.BCancelar)
         Me.Controls.Add(Me.BEditar)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.TBBuscarDNI)
+        Me.Controls.Add(Me.TBBuscar)
+        Me.Controls.Add(Me.DGV1)
         Me.Controls.Add(Me.PanelPrincipal)
         Me.Name = "EditarCliente"
         Me.Text = "EditarCliente"
+        CType(Me.DGV1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelPrincipal.ResumeLayout(False)
         Me.PanelPrincipal.PerformLayout()
-        CType(Me.DGV1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
+
+    Friend WithEvents DGV1 As DataGridView
     Friend WithEvents PanelPrincipal As Panel
-    Friend WithEvents BAgregar As Button
     Friend WithEvents TBApellido As TextBox
+    Friend WithEvents TBNombre As TextBox
     Friend WithEvents LApellido As Label
     Friend WithEvents LNombre As Label
     Friend WithEvents TBDirec As TextBox
@@ -344,17 +373,22 @@ Partial Class EditarCliente
     Friend WithEvents LCorreo As Label
     Friend WithEvents TBDni As TextBox
     Friend WithEvents LDni As Label
+    Friend WithEvents Nombre As DataGridViewTextBoxColumn
+    Friend WithEvents Apellido As DataGridViewTextBoxColumn
+    Friend WithEvents Dni As DataGridViewTextBoxColumn
+    Friend WithEvents Correo As DataGridViewTextBoxColumn
+    Friend WithEvents Telefono As DataGridViewTextBoxColumn
+    Friend WithEvents Direccion As DataGridViewTextBoxColumn
     Friend WithEvents TBTel As TextBox
     Friend WithEvents LTel As Label
-    Friend WithEvents TBBuscarDNI As TextBox
+    Friend WithEvents TBBuscar As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents BEditar As Button
     Friend WithEvents BCancelar As Button
-    Friend WithEvents BActializar As Button
+    Friend WithEvents BActUalizar As Button
     Friend WithEvents Label2 As Label
     Friend WithEvents TBBuscarAp As TextBox
-    Friend WithEvents Bbuscar As Button
-    Friend WithEvents DGV1 As DataGridView
-    Friend WithEvents TBNombre As TextBox
-    Friend WithEvents TBID As TextBox
+    Friend WithEvents Seleccionar As DataGridViewButtonColumn
+    Friend WithEvents BBuscarDni As Button
+    Friend WithEvents BBuscarAp As Button
 End Class

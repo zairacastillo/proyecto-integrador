@@ -5,7 +5,9 @@ Imports System.ComponentModel
 
 Public Class NuevoCliente
 
+    'define entidad cliente
     Dim OCliente As New cliente
+    'subclase que maneja la entidad cliente, intermediario entre entity y la tabla
     Dim ObjCliente As Dcliente = New Dcliente
 
     Private Sub BAgregar_Click(sender As Object, e As EventArgs) Handles BAgregar.Click
@@ -24,13 +26,24 @@ Public Class NuevoCliente
         If TBVacios(listaTB) Or Not validar_email(TBCorreo) Then
             'Mensaje
             MsgBox(msjTxt, MsgBoxStyle.Critical, Title:="Error")
+
+        ElseIf objCliente.ExisteCliente(TBDni.Text) = False Then
+            MessageBox.Show("El dni ya ha sido registrado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+
+        ElseIf objCliente.ExisteMail(TBCorreo.Text) = False Then
+            MessageBox.Show("El mail ya ha sido registrado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+
+        ElseIf ObjCliente.ExisteTelefono(TBTel.Text) = False Then
+            MessageBox.Show("El Telefono ya ha sido registrado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+
+
         Else
 
             'mensaje y almacenamiento de resultado en variable
             Dim ask = MsgBox("¿Seguro que desea Guardar el Cliente?", MsgBoxStyle.YesNo, Title:="Confirmar Inserción")
             If ask = vbYes Then
 
-                'cargamos de datos un registro cliente
+
                 OCliente.apellido_cliente = TBApellido.Text.Trim
                 OCliente.correo_cliente = TBCorreo.Text.Trim
                 OCliente.direccion_cliente = TBDirec.Text.Trim
@@ -40,8 +53,7 @@ Public Class NuevoCliente
                 OCliente.estado_cliente = "Activo"
                 OCliente.fecha_cliente = System.DateTime.Now
 
-                'agregamos cliente a la tabla
-                If Not ObjCliente.ExisteDNI(OCliente.dni_cliente) AndAlso Not ObjCliente.ExisteMail(OCliente.correo_cliente) AndAlso ObjCliente.agregrar_cliente(OCliente) Then
+                If ObjCliente.agregrar_cliente(OCliente) Then
 
                     MsgBox("Los datos se guardaron correctamente", Title:="Confirmar Inserción")
                     'Reseteamos Form
@@ -54,7 +66,7 @@ Public Class NuevoCliente
 
                 Else
 
-                    MsgBox("ERROR: Los datos NO se guardaron correctamente", Title:="ERROR Inserción")
+                    MsgBox("Los datos NO se guardaron correctamente", Title:="ERROR Inserción")
                 End If
 
 
@@ -62,10 +74,7 @@ Public Class NuevoCliente
             End If
         End If
 
-        DGV1.DataSource = ObjCliente.getAll()
-        DGV1.Columns(0).Visible = False
-        DGV1.Columns(9).Visible = False
-        'BRecargar_Click(sender, e)
+        ObjCliente.getAllCliente(DGV1)
 
     End Sub
 
@@ -93,9 +102,8 @@ Public Class NuevoCliente
         End If
     End Sub
 
-    Private Sub getClienteAll(ByVal grid As DataGridView)
-        'DataGrid.DataSource = ObjCliente.getAll()
+    Private Sub NuevoCliente_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+        ObjCliente.getAllCliente(DGV1)
     End Sub
-
 End Class

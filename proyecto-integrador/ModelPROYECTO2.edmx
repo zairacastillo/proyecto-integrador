@@ -4,190 +4,190 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="PROYECTO2Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <EntityType Name="categoria">
-          <Key>
-            <PropertyRef Name="Id_categoria" />
-          </Key>
-          <Property Name="Id_categoria" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="descripcion_cat" Type="nvarchar" MaxLength="50" Nullable="false" />
-        </EntityType>
-        <EntityType Name="cliente">
-          <Key>
-            <PropertyRef Name="Id_cliente" />
-          </Key>
-          <Property Name="Id_cliente" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="nombre_cliente" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="apellido_cliente" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="dni_cliente" Type="int" Nullable="false" />
-          <Property Name="correo_cliente" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="telefono_cliente" Type="int" Nullable="false" />
-          <Property Name="direccion_cliente" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="fecha_cliente" Type="datetime" Nullable="false" />
-          <Property Name="estado_cliente" Type="nvarchar" MaxLength="50" Nullable="false" />
-        </EntityType>
-        <EntityType Name="detalle_venta">
-          <Key>
-            <PropertyRef Name="Id_detalle_venta" />
-          </Key>
-          <Property Name="Id_detalle_venta" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Id_producto" Type="int" Nullable="false" />
-          <Property Name="precio_unitario" Type="decimal" Precision="18" Scale="0" Nullable="false" />
-          <Property Name="cantidad" Type="int" Nullable="false" />
-          <Property Name="subtotal" Type="decimal" Precision="18" Scale="0" Nullable="false" />
-        </EntityType>
-        <EntityType Name="empleado">
-          <Key>
-            <PropertyRef Name="Id_empleado" />
-          </Key>
-          <Property Name="Id_empleado" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="nombre_empleado" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="apellido_empleado" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="dni_empleado" Type="int" Nullable="false" />
-          <Property Name="correo_empleado" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="telefono_empleado" Type="int" Nullable="false" />
-          <Property Name="direccion_empleado" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="usuario" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="contraseña" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="Id_perfil" Type="int" Nullable="false" />
-          <Property Name="fecha_empleado" Type="datetime" Nullable="false" />
-          <Property Name="estado_empleado" Type="nvarchar" MaxLength="50" Nullable="false" />
-        </EntityType>
-        <EntityType Name="perfil">
-          <Key>
-            <PropertyRef Name="Id_perfil" />
-          </Key>
-          <Property Name="Id_perfil" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="descripcion_perfil" Type="nvarchar" MaxLength="50" Nullable="false" />
-        </EntityType>
-        <EntityType Name="producto">
-          <Key>
-            <PropertyRef Name="Id_producto" />
-          </Key>
-          <Property Name="Id_producto" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="nombre_producto" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="estado_producto" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="precio" Type="decimal" Precision="18" Scale="0" Nullable="false" />
-          <Property Name="stock" Type="int" Nullable="false" />
-          <Property Name="Id_categoria" Type="int" Nullable="false" />
-        </EntityType>
-        <EntityType Name="venta">
-          <Key>
-            <PropertyRef Name="Id_venta" />
-          </Key>
-          <Property Name="Id_venta" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Id_empleado" Type="int" Nullable="false" />
-          <Property Name="Id_cliente" Type="int" Nullable="false" />
-          <Property Name="fecha" Type="datetime" Nullable="false" />
-          <Property Name="total" Type="decimal" Precision="18" Scale="0" Nullable="false" />
-          <Property Name="Id_detalle_venta" Type="int" Nullable="false" />
-        </EntityType>
-        <Association Name="Fk_detalle_venta_producto">
-          <End Role="producto" Type="Self.producto" Multiplicity="1" />
-          <End Role="detalle_venta" Type="Self.detalle_venta" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="producto">
-              <PropertyRef Name="Id_producto" />
-            </Principal>
-            <Dependent Role="detalle_venta">
-              <PropertyRef Name="Id_producto" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="Fk_empleado_perfil">
-          <End Role="perfil" Type="Self.perfil" Multiplicity="1" />
-          <End Role="empleado" Type="Self.empleado" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="perfil">
-              <PropertyRef Name="Id_perfil" />
-            </Principal>
-            <Dependent Role="empleado">
-              <PropertyRef Name="Id_perfil" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="Fk_producto_categoria">
-          <End Role="categoria" Type="Self.categoria" Multiplicity="1" />
-          <End Role="producto" Type="Self.producto" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="categoria">
-              <PropertyRef Name="Id_categoria" />
-            </Principal>
-            <Dependent Role="producto">
-              <PropertyRef Name="Id_categoria" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="Fk_venta_cliente">
-          <End Role="cliente" Type="Self.cliente" Multiplicity="1" />
-          <End Role="venta" Type="Self.venta" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="cliente">
-              <PropertyRef Name="Id_cliente" />
-            </Principal>
-            <Dependent Role="venta">
-              <PropertyRef Name="Id_cliente" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="Fk_venta_detalle_venta">
-          <End Role="detalle_venta" Type="Self.detalle_venta" Multiplicity="1" />
-          <End Role="venta" Type="Self.venta" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="detalle_venta">
-              <PropertyRef Name="Id_detalle_venta" />
-            </Principal>
-            <Dependent Role="venta">
-              <PropertyRef Name="Id_detalle_venta" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="Fk_venta_empleado">
-          <End Role="empleado" Type="Self.empleado" Multiplicity="1" />
-          <End Role="venta" Type="Self.venta" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="empleado">
-              <PropertyRef Name="Id_empleado" />
-            </Principal>
-            <Dependent Role="venta">
-              <PropertyRef Name="Id_empleado" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <EntityContainer Name="PROYECTO2ModelStoreContainer">
-          <EntitySet Name="categoria" EntityType="Self.categoria" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="cliente" EntityType="Self.cliente" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="detalle_venta" EntityType="Self.detalle_venta" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="empleado" EntityType="Self.empleado" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="perfil" EntityType="Self.perfil" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="producto" EntityType="Self.producto" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="venta" EntityType="Self.venta" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="Fk_detalle_venta_producto" Association="Self.Fk_detalle_venta_producto">
-            <End Role="producto" EntitySet="producto" />
-            <End Role="detalle_venta" EntitySet="detalle_venta" />
-          </AssociationSet>
-          <AssociationSet Name="Fk_empleado_perfil" Association="Self.Fk_empleado_perfil">
-            <End Role="perfil" EntitySet="perfil" />
-            <End Role="empleado" EntitySet="empleado" />
-          </AssociationSet>
-          <AssociationSet Name="Fk_producto_categoria" Association="Self.Fk_producto_categoria">
-            <End Role="categoria" EntitySet="categoria" />
-            <End Role="producto" EntitySet="producto" />
-          </AssociationSet>
-          <AssociationSet Name="Fk_venta_cliente" Association="Self.Fk_venta_cliente">
-            <End Role="cliente" EntitySet="cliente" />
-            <End Role="venta" EntitySet="venta" />
-          </AssociationSet>
-          <AssociationSet Name="Fk_venta_detalle_venta" Association="Self.Fk_venta_detalle_venta">
-            <End Role="detalle_venta" EntitySet="detalle_venta" />
-            <End Role="venta" EntitySet="venta" />
-          </AssociationSet>
-          <AssociationSet Name="Fk_venta_empleado" Association="Self.Fk_venta_empleado">
-            <End Role="empleado" EntitySet="empleado" />
-            <End Role="venta" EntitySet="venta" />
-          </AssociationSet>
-        </EntityContainer>
-      </Schema></edmx:StorageModels>
+    <Schema Namespace="PROYECTO2Model.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="PROYECTO2ModelStoreContainer">
+    <EntitySet Name="categoria" EntityType="PROYECTO2Model.Store.categoria" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="cliente" EntityType="PROYECTO2Model.Store.cliente" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="detalle_venta" EntityType="PROYECTO2Model.Store.detalle_venta" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="empleado" EntityType="PROYECTO2Model.Store.empleado" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="perfil" EntityType="PROYECTO2Model.Store.perfil" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="producto" EntityType="PROYECTO2Model.Store.producto" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="venta" EntityType="PROYECTO2Model.Store.venta" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="Fk_producto_categoria" Association="PROYECTO2Model.Store.Fk_producto_categoria">
+      <End Role="categoria" EntitySet="categoria" />
+      <End Role="producto" EntitySet="producto" />
+    </AssociationSet>
+    <AssociationSet Name="Fk_venta_cliente" Association="PROYECTO2Model.Store.Fk_venta_cliente">
+      <End Role="cliente" EntitySet="cliente" />
+      <End Role="venta" EntitySet="venta" />
+    </AssociationSet>
+    <AssociationSet Name="Fk_detalle_venta_producto" Association="PROYECTO2Model.Store.Fk_detalle_venta_producto">
+      <End Role="producto" EntitySet="producto" />
+      <End Role="detalle_venta" EntitySet="detalle_venta" />
+    </AssociationSet>
+    <AssociationSet Name="Fk_venta_detalle_venta" Association="PROYECTO2Model.Store.Fk_venta_detalle_venta">
+      <End Role="detalle_venta" EntitySet="detalle_venta" />
+      <End Role="venta" EntitySet="venta" />
+    </AssociationSet>
+    <AssociationSet Name="Fk_empleado_perfil" Association="PROYECTO2Model.Store.Fk_empleado_perfil">
+      <End Role="perfil" EntitySet="perfil" />
+      <End Role="empleado" EntitySet="empleado" />
+    </AssociationSet>
+    <AssociationSet Name="Fk_venta_empleado" Association="PROYECTO2Model.Store.Fk_venta_empleado">
+      <End Role="empleado" EntitySet="empleado" />
+      <End Role="venta" EntitySet="venta" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="categoria">
+    <Key>
+      <PropertyRef Name="Id_categoria" />
+    </Key>
+    <Property Name="Id_categoria" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="descripcion_cat" Type="nvarchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="cliente">
+    <Key>
+      <PropertyRef Name="Id_cliente" />
+    </Key>
+    <Property Name="Id_cliente" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombre_cliente" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="apellido_cliente" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="dni_cliente" Type="int" Nullable="false" />
+    <Property Name="correo_cliente" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="telefono_cliente" Type="int" Nullable="false" />
+    <Property Name="direccion_cliente" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="fecha_cliente" Type="datetime" Nullable="false" />
+    <Property Name="estado_cliente" Type="nvarchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="detalle_venta">
+    <Key>
+      <PropertyRef Name="Id_detalle_venta" />
+    </Key>
+    <Property Name="Id_detalle_venta" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Id_producto" Type="int" Nullable="false" />
+    <Property Name="precio_unitario" Type="decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="cantidad" Type="int" Nullable="false" />
+    <Property Name="subtotal" Type="decimal" Nullable="false" Precision="18" Scale="0" />
+  </EntityType>
+  <EntityType Name="empleado">
+    <Key>
+      <PropertyRef Name="Id_empleado" />
+    </Key>
+    <Property Name="Id_empleado" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombre_empleado" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="apellido_empleado" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="dni_empleado" Type="int" Nullable="false" />
+    <Property Name="correo_empleado" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="telefono_empleado" Type="int" Nullable="false" />
+    <Property Name="direccion_empleado" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="usuario" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="contraseña" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Id_perfil" Type="int" Nullable="false" />
+    <Property Name="fecha_empleado" Type="datetime" Nullable="false" />
+    <Property Name="estado_empleado" Type="nvarchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="perfil">
+    <Key>
+      <PropertyRef Name="Id_perfil" />
+    </Key>
+    <Property Name="Id_perfil" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="descripcion_perfil" Type="nvarchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="producto">
+    <Key>
+      <PropertyRef Name="Id_producto" />
+    </Key>
+    <Property Name="Id_producto" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombre_producto" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="estado_producto" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="precio" Type="decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="stock" Type="int" Nullable="false" />
+    <Property Name="Id_categoria" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="venta">
+    <Key>
+      <PropertyRef Name="Id_venta" />
+    </Key>
+    <Property Name="Id_venta" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Id_empleado" Type="int" Nullable="false" />
+    <Property Name="Id_cliente" Type="int" Nullable="false" />
+    <Property Name="fecha" Type="datetime" Nullable="false" />
+    <Property Name="total" Type="decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="Id_detalle_venta" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="Fk_producto_categoria">
+    <End Role="categoria" Type="PROYECTO2Model.Store.categoria" Multiplicity="1" />
+    <End Role="producto" Type="PROYECTO2Model.Store.producto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="categoria">
+        <PropertyRef Name="Id_categoria" />
+      </Principal>
+      <Dependent Role="producto">
+        <PropertyRef Name="Id_categoria" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Fk_venta_cliente">
+    <End Role="cliente" Type="PROYECTO2Model.Store.cliente" Multiplicity="1" />
+    <End Role="venta" Type="PROYECTO2Model.Store.venta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="cliente">
+        <PropertyRef Name="Id_cliente" />
+      </Principal>
+      <Dependent Role="venta">
+        <PropertyRef Name="Id_cliente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Fk_detalle_venta_producto">
+    <End Role="producto" Type="PROYECTO2Model.Store.producto" Multiplicity="1" />
+    <End Role="detalle_venta" Type="PROYECTO2Model.Store.detalle_venta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="producto">
+        <PropertyRef Name="Id_producto" />
+      </Principal>
+      <Dependent Role="detalle_venta">
+        <PropertyRef Name="Id_producto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Fk_venta_detalle_venta">
+    <End Role="detalle_venta" Type="PROYECTO2Model.Store.detalle_venta" Multiplicity="1" />
+    <End Role="venta" Type="PROYECTO2Model.Store.venta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="detalle_venta">
+        <PropertyRef Name="Id_detalle_venta" />
+      </Principal>
+      <Dependent Role="venta">
+        <PropertyRef Name="Id_detalle_venta" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Fk_empleado_perfil">
+    <End Role="perfil" Type="PROYECTO2Model.Store.perfil" Multiplicity="1" />
+    <End Role="empleado" Type="PROYECTO2Model.Store.empleado" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="perfil">
+        <PropertyRef Name="Id_perfil" />
+      </Principal>
+      <Dependent Role="empleado">
+        <PropertyRef Name="Id_perfil" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Fk_venta_empleado">
+    <End Role="empleado" Type="PROYECTO2Model.Store.empleado" Multiplicity="1" />
+    <End Role="venta" Type="PROYECTO2Model.Store.venta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="empleado">
+        <PropertyRef Name="Id_empleado" />
+      </Principal>
+      <Dependent Role="venta">
+        <PropertyRef Name="Id_empleado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="PROYECTO2Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -211,7 +211,7 @@
           <Property Name="telefono_cliente" Type="Int32" Nullable="false" />
           <Property Name="direccion_cliente" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="venta" Relationship="Self.Fk_venta_cliente" FromRole="cliente" ToRole="venta" />
-          <Property Name="fecha_cliente" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="fecha_cliente" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="estado_cliente" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="detalle_venta">
@@ -242,7 +242,7 @@
           <Property Name="Id_perfil" Type="Int32" Nullable="false" />
           <NavigationProperty Name="perfil" Relationship="Self.Fk_empleado_perfil" FromRole="empleado" ToRole="perfil" />
           <NavigationProperty Name="venta" Relationship="Self.Fk_venta_empleado" FromRole="empleado" ToRole="venta" />
-          <Property Name="fecha_empleado" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="fecha_empleado" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="estado_empleado" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="perfil">
