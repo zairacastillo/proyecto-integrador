@@ -11,7 +11,7 @@ Public Class MDIAdmin
         Dim ChildForm As New SoloListarVentas
         ' Conviértalo en un elemento secundario de este formulario MDI antes de mostrarlo.
         ChildForm.MdiParent = Me
-
+        'cantidad formularios abiertos 
         m_ChildFormNumber += 1
         ChildForm.Text = "Listar Ventas"
 

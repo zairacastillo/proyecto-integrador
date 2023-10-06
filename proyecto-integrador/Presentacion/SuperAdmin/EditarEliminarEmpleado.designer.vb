@@ -45,7 +45,6 @@ Partial Class EditarEliminarEmpleado
         Me.LCorreo = New System.Windows.Forms.Label()
         Me.TBDni = New System.Windows.Forms.TextBox()
         Me.LDni = New System.Windows.Forms.Label()
-        Me.BAgregar = New System.Windows.Forms.Button()
         Me.TBApellido = New System.Windows.Forms.TextBox()
         Me.TBNombre = New System.Windows.Forms.TextBox()
         Me.LApellido = New System.Windows.Forms.Label()
@@ -137,7 +136,6 @@ Partial Class EditarEliminarEmpleado
         Me.PanelPrincipal.Controls.Add(Me.LCorreo)
         Me.PanelPrincipal.Controls.Add(Me.TBDni)
         Me.PanelPrincipal.Controls.Add(Me.LDni)
-        Me.PanelPrincipal.Controls.Add(Me.BAgregar)
         Me.PanelPrincipal.Controls.Add(Me.TBApellido)
         Me.PanelPrincipal.Controls.Add(Me.TBNombre)
         Me.PanelPrincipal.Controls.Add(Me.LApellido)
@@ -150,7 +148,7 @@ Partial Class EditarEliminarEmpleado
         '
         'TBPerfil
         '
-        Me.TBPerfil.Location = New System.Drawing.Point(140, 280)
+        Me.TBPerfil.Location = New System.Drawing.Point(140, 304)
         Me.TBPerfil.Name = "TBPerfil"
         Me.TBPerfil.Size = New System.Drawing.Size(238, 20)
         Me.TBPerfil.TabIndex = 18
@@ -161,7 +159,7 @@ Partial Class EditarEliminarEmpleado
         Me.Label2.BackColor = System.Drawing.Color.Transparent
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.Location = New System.Drawing.Point(19, 275)
+        Me.Label2.Location = New System.Drawing.Point(19, 299)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(67, 25)
         Me.Label2.TabIndex = 17
@@ -169,7 +167,7 @@ Partial Class EditarEliminarEmpleado
         '
         'TBUsuario
         '
-        Me.TBUsuario.Location = New System.Drawing.Point(140, 243)
+        Me.TBUsuario.Location = New System.Drawing.Point(140, 267)
         Me.TBUsuario.Name = "TBUsuario"
         Me.TBUsuario.Size = New System.Drawing.Size(238, 20)
         Me.TBUsuario.TabIndex = 20
@@ -180,7 +178,7 @@ Partial Class EditarEliminarEmpleado
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(19, 238)
+        Me.Label1.Location = New System.Drawing.Point(19, 262)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(92, 25)
         Me.Label1.TabIndex = 19
@@ -188,7 +186,7 @@ Partial Class EditarEliminarEmpleado
         '
         'TBTel
         '
-        Me.TBTel.Location = New System.Drawing.Point(140, 124)
+        Me.TBTel.Location = New System.Drawing.Point(140, 148)
         Me.TBTel.Name = "TBTel"
         Me.TBTel.Size = New System.Drawing.Size(238, 20)
         Me.TBTel.TabIndex = 18
@@ -199,7 +197,7 @@ Partial Class EditarEliminarEmpleado
         Me.LTel.BackColor = System.Drawing.Color.Transparent
         Me.LTel.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LTel.ForeColor = System.Drawing.Color.White
-        Me.LTel.Location = New System.Drawing.Point(19, 119)
+        Me.LTel.Location = New System.Drawing.Point(19, 143)
         Me.LTel.Name = "LTel"
         Me.LTel.Size = New System.Drawing.Size(102, 25)
         Me.LTel.TabIndex = 17
@@ -207,7 +205,7 @@ Partial Class EditarEliminarEmpleado
         '
         'TBCont
         '
-        Me.TBCont.Location = New System.Drawing.Point(140, 205)
+        Me.TBCont.Location = New System.Drawing.Point(140, 229)
         Me.TBCont.Name = "TBCont"
         Me.TBCont.Size = New System.Drawing.Size(238, 20)
         Me.TBCont.TabIndex = 16
@@ -218,7 +216,7 @@ Partial Class EditarEliminarEmpleado
         Me.LCont.BackColor = System.Drawing.Color.Transparent
         Me.LCont.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LCont.ForeColor = System.Drawing.Color.White
-        Me.LCont.Location = New System.Drawing.Point(19, 200)
+        Me.LCont.Location = New System.Drawing.Point(19, 224)
         Me.LCont.Name = "LCont"
         Me.LCont.Size = New System.Drawing.Size(129, 25)
         Me.LCont.TabIndex = 15
@@ -226,7 +224,7 @@ Partial Class EditarEliminarEmpleado
         '
         'TBCorreo
         '
-        Me.TBCorreo.Location = New System.Drawing.Point(140, 164)
+        Me.TBCorreo.Location = New System.Drawing.Point(140, 188)
         Me.TBCorreo.Name = "TBCorreo"
         Me.TBCorreo.Size = New System.Drawing.Size(238, 20)
         Me.TBCorreo.TabIndex = 14
@@ -237,7 +235,7 @@ Partial Class EditarEliminarEmpleado
         Me.LCorreo.BackColor = System.Drawing.Color.Transparent
         Me.LCorreo.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LCorreo.ForeColor = System.Drawing.Color.White
-        Me.LCorreo.Location = New System.Drawing.Point(19, 158)
+        Me.LCorreo.Location = New System.Drawing.Point(19, 182)
         Me.LCorreo.Name = "LCorreo"
         Me.LCorreo.Size = New System.Drawing.Size(83, 25)
         Me.LCorreo.TabIndex = 13
@@ -245,7 +243,7 @@ Partial Class EditarEliminarEmpleado
         '
         'TBDni
         '
-        Me.TBDni.Location = New System.Drawing.Point(140, 91)
+        Me.TBDni.Location = New System.Drawing.Point(140, 115)
         Me.TBDni.Name = "TBDni"
         Me.TBDni.Size = New System.Drawing.Size(238, 20)
         Me.TBDni.TabIndex = 12
@@ -256,35 +254,22 @@ Partial Class EditarEliminarEmpleado
         Me.LDni.BackColor = System.Drawing.Color.Transparent
         Me.LDni.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LDni.ForeColor = System.Drawing.Color.White
-        Me.LDni.Location = New System.Drawing.Point(19, 85)
+        Me.LDni.Location = New System.Drawing.Point(19, 109)
         Me.LDni.Name = "LDni"
         Me.LDni.Size = New System.Drawing.Size(53, 25)
         Me.LDni.TabIndex = 11
         Me.LDni.Text = "DNI:"
         '
-        'BAgregar
-        '
-        Me.BAgregar.Image = Global.proyecto_integrador.My.Resources.Resources.diskette
-        Me.BAgregar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BAgregar.Location = New System.Drawing.Point(156, 306)
-        Me.BAgregar.Name = "BAgregar"
-        Me.BAgregar.Padding = New System.Windows.Forms.Padding(5, 0, 5, 0)
-        Me.BAgregar.Size = New System.Drawing.Size(110, 47)
-        Me.BAgregar.TabIndex = 10
-        Me.BAgregar.Text = "Agregar"
-        Me.BAgregar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.BAgregar.UseVisualStyleBackColor = True
-        '
         'TBApellido
         '
-        Me.TBApellido.Location = New System.Drawing.Point(140, 55)
+        Me.TBApellido.Location = New System.Drawing.Point(140, 79)
         Me.TBApellido.Name = "TBApellido"
         Me.TBApellido.Size = New System.Drawing.Size(238, 20)
         Me.TBApellido.TabIndex = 5
         '
         'TBNombre
         '
-        Me.TBNombre.Location = New System.Drawing.Point(140, 17)
+        Me.TBNombre.Location = New System.Drawing.Point(140, 41)
         Me.TBNombre.Name = "TBNombre"
         Me.TBNombre.Size = New System.Drawing.Size(238, 20)
         Me.TBNombre.TabIndex = 4
@@ -295,7 +280,7 @@ Partial Class EditarEliminarEmpleado
         Me.LApellido.BackColor = System.Drawing.Color.Transparent
         Me.LApellido.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LApellido.ForeColor = System.Drawing.Color.White
-        Me.LApellido.Location = New System.Drawing.Point(19, 47)
+        Me.LApellido.Location = New System.Drawing.Point(19, 71)
         Me.LApellido.Name = "LApellido"
         Me.LApellido.Size = New System.Drawing.Size(95, 25)
         Me.LApellido.TabIndex = 1
@@ -307,7 +292,7 @@ Partial Class EditarEliminarEmpleado
         Me.LNombre.BackColor = System.Drawing.Color.Transparent
         Me.LNombre.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LNombre.ForeColor = System.Drawing.Color.White
-        Me.LNombre.Location = New System.Drawing.Point(19, 12)
+        Me.LNombre.Location = New System.Drawing.Point(19, 36)
         Me.LNombre.Name = "LNombre"
         Me.LNombre.Size = New System.Drawing.Size(93, 25)
         Me.LNombre.TabIndex = 0
@@ -436,7 +421,6 @@ Partial Class EditarEliminarEmpleado
     Friend WithEvents LCorreo As Label
     Friend WithEvents TBDni As TextBox
     Friend WithEvents LDni As Label
-    Friend WithEvents BAgregar As Button
     Friend WithEvents TBApellido As TextBox
     Friend WithEvents TBNombre As TextBox
     Friend WithEvents LApellido As Label

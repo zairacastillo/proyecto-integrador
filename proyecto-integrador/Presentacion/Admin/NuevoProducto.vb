@@ -26,7 +26,7 @@ Public Class NuevoProducto
         Dim msjTxt As String = "Debe Completar todos los campos correctamente: "
 
         ' lista de TB a verificar si estan vacios
-        Dim listaTB = {TBID, TBPrecio, TBEstado, TBStock, TBNombre, TBCategoria, TBDescripcion}
+        Dim listaTB = {TBPrecio, TBEstado, TBStock, TBNombre, TBCategoria, TBDescripcion}
 
         TBVacios(listaTB) ' devuelve true si algun TB esta vacio
 
@@ -53,7 +53,7 @@ Public Class NuevoProducto
                 'creamos una fila y obtenemos numero de fila
                 Dim numRow As Integer = DGV1.Rows.Add()
                 'completamos los campos
-                DGV1.Rows(numRow).Cells(0).Value = TBID.Text.Trim 'Nombre
+                'DGV1.Rows(numRow).Cells(0).Value = TBID.Text.Trim 'Nombre
                 DGV1.Rows(numRow).Cells(1).Value = TBNombre.Text.Trim 'Apellido
                 DGV1.Rows(numRow).Cells(2).Value = TBPrecio.Text.Trim 'Apellido
                 DGV1.Rows(numRow).Cells(3).Value = TBStock.Text.Trim 'Apellido
@@ -65,7 +65,7 @@ Public Class NuevoProducto
 
 
                 'Reseteamos Form
-                TBID.Clear()
+                'TBID.Clear()
                 TBNombre.Clear()
                 TBPrecio.Clear()
                 TBStock.Clear()
@@ -116,7 +116,7 @@ Public Class NuevoProducto
 
     End Sub
 
-    Private Sub TBID_TextChanged(sender As Object, e As KeyPressEventArgs) Handles TBID.KeyPress
+    Private Sub TBID_TextChanged(sender As Object, e As KeyPressEventArgs)
         If Validar_numeros(e) Then
             MessageBox.Show("Solo se admiten numeros", "Validacion de numeros", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
         End If
@@ -156,4 +156,6 @@ Public Class NuevoProducto
             MessageBox.Show("Solo se admiten letras", "Validación de letras", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
         End If
     End Sub
+
+
 End Class

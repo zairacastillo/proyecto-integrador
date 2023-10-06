@@ -33,11 +33,9 @@ Partial Class NuevoProducto
         Me.BAgregar = New System.Windows.Forms.Button()
         Me.TBPrecio = New System.Windows.Forms.TextBox()
         Me.TBNombre = New System.Windows.Forms.TextBox()
-        Me.TBID = New System.Windows.Forms.TextBox()
         Me.LPrecio = New System.Windows.Forms.Label()
         Me.LDescripcion = New System.Windows.Forms.Label()
         Me.LNombre = New System.Windows.Forms.Label()
-        Me.LID = New System.Windows.Forms.Label()
         Me.DGV1 = New System.Windows.Forms.DataGridView()
         Me.ID = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -64,11 +62,9 @@ Partial Class NuevoProducto
         Me.PanelPrincipal.Controls.Add(Me.BAgregar)
         Me.PanelPrincipal.Controls.Add(Me.TBPrecio)
         Me.PanelPrincipal.Controls.Add(Me.TBNombre)
-        Me.PanelPrincipal.Controls.Add(Me.TBID)
         Me.PanelPrincipal.Controls.Add(Me.LPrecio)
         Me.PanelPrincipal.Controls.Add(Me.LDescripcion)
         Me.PanelPrincipal.Controls.Add(Me.LNombre)
-        Me.PanelPrincipal.Controls.Add(Me.LID)
         Me.PanelPrincipal.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.PanelPrincipal.Location = New System.Drawing.Point(213, 23)
         Me.PanelPrincipal.Name = "PanelPrincipal"
@@ -97,7 +93,7 @@ Partial Class NuevoProducto
         '
         'TBEstado
         '
-        Me.TBEstado.Location = New System.Drawing.Point(115, 60)
+        Me.TBEstado.Location = New System.Drawing.Point(115, 89)
         Me.TBEstado.Name = "TBEstado"
         Me.TBEstado.Size = New System.Drawing.Size(130, 20)
         Me.TBEstado.TabIndex = 20
@@ -108,7 +104,7 @@ Partial Class NuevoProducto
         Me.LEstado.BackColor = System.Drawing.Color.Transparent
         Me.LEstado.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LEstado.ForeColor = System.Drawing.Color.White
-        Me.LEstado.Location = New System.Drawing.Point(16, 55)
+        Me.LEstado.Location = New System.Drawing.Point(16, 84)
         Me.LEstado.Name = "LEstado"
         Me.LEstado.Size = New System.Drawing.Size(85, 25)
         Me.LEstado.TabIndex = 19
@@ -163,18 +159,11 @@ Partial Class NuevoProducto
         '
         'TBNombre
         '
-        Me.TBNombre.Location = New System.Drawing.Point(115, 103)
+        Me.TBNombre.Location = New System.Drawing.Point(115, 15)
         Me.TBNombre.Multiline = True
         Me.TBNombre.Name = "TBNombre"
         Me.TBNombre.Size = New System.Drawing.Size(130, 39)
         Me.TBNombre.TabIndex = 5
-        '
-        'TBID
-        '
-        Me.TBID.Location = New System.Drawing.Point(115, 15)
-        Me.TBID.Name = "TBID"
-        Me.TBID.Size = New System.Drawing.Size(130, 20)
-        Me.TBID.TabIndex = 4
         '
         'LPrecio
         '
@@ -206,23 +195,11 @@ Partial Class NuevoProducto
         Me.LNombre.BackColor = System.Drawing.Color.Transparent
         Me.LNombre.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LNombre.ForeColor = System.Drawing.Color.White
-        Me.LNombre.Location = New System.Drawing.Point(16, 99)
+        Me.LNombre.Location = New System.Drawing.Point(16, 16)
         Me.LNombre.Name = "LNombre"
         Me.LNombre.Size = New System.Drawing.Size(93, 25)
         Me.LNombre.TabIndex = 1
         Me.LNombre.Text = "Nombre:"
-        '
-        'LID
-        '
-        Me.LID.AutoSize = True
-        Me.LID.BackColor = System.Drawing.Color.Transparent
-        Me.LID.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LID.ForeColor = System.Drawing.Color.White
-        Me.LID.Location = New System.Drawing.Point(16, 10)
-        Me.LID.Name = "LID"
-        Me.LID.Size = New System.Drawing.Size(38, 25)
-        Me.LID.TabIndex = 0
-        Me.LID.Text = "ID:"
         '
         'DGV1
         '
@@ -302,11 +279,9 @@ Partial Class NuevoProducto
     Friend WithEvents PanelPrincipal As Panel
     Friend WithEvents TBPrecio As TextBox
     Friend WithEvents TBNombre As TextBox
-    Friend WithEvents TBID As TextBox
     Friend WithEvents LPrecio As Label
     Friend WithEvents LDescripcion As Label
     Friend WithEvents LNombre As Label
-    Friend WithEvents LID As Label
     Friend WithEvents BAgregar As Button
     Friend WithEvents TBCategoria As TextBox
     Friend WithEvents LCategoria As Label

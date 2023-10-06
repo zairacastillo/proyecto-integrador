@@ -3,15 +3,6 @@ Imports System.IO
 
 Module Validaciones
 
-    Public Function Validar_digitos(ByVal e As TextBox, ByVal n As Integer) As Boolean
-        Dim a As String = CStr(e.Text)
-        If a.Length <= n Then
-            Return True
-        Else
-            Return False
-        End If
-    End Function
-
 
 
     Public Function Validar_numeros(ByVal e As KeyPressEventArgs) As Boolean
@@ -49,9 +40,9 @@ Module Validaciones
     Public Function TBVacios(ByVal listTB) As Boolean
         '^\S+$
         For Each tb In listTB
-            Return IsNull_textbox(tb)
-
-
+            If IsNull_textbox(tb) Then
+                Return True
+            End If
         Next
         Return False
     End Function

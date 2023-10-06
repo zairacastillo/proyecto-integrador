@@ -115,10 +115,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ModelProyecto.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="ModelPROYECTO2.Designer.vb">
+    <Compile Include="ModelProyecto.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ModelPROYECTO2.edmx</DependentUpon>
+      <DependentUpon>ModelProyecto.edmx</DependentUpon>
     </Compile>
     <Compile Include="ModelProyecto.vb">
       <AutoGen>True</AutoGen>
@@ -178,6 +178,12 @@
       <DependentUpon>SoloListarVentas.vb</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\Admin\SoloListarVentas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Login.Designer.vb">
+      <DependentUpon>Login.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Login.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Presentacion\SuperAdmin\SoloListarProductos.Designer.vb">
@@ -285,6 +291,9 @@
     <EmbeddedResource Include="Presentacion\Admin\SoloListarVentas.resx">
       <DependentUpon>SoloListarVentas.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Login.resx">
+      <DependentUpon>Login.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\SuperAdmin\SoloListarProductos.resx">
       <DependentUpon>SoloListarProductos.vb</DependentUpon>
     </EmbeddedResource>
@@ -323,12 +332,12 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EntityDeploy Include="ModelPROYECTO2.edmx">
+    <EntityDeploy Include="ModelProyecto.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>ModelPROYECTO2.Designer.vb</LastGenOutput>
+      <LastGenOutput>ModelProyecto.Designer.vb</LastGenOutput>
     </EntityDeploy>
-    <None Include="ModelPROYECTO2.edmx.diagram">
-      <DependentUpon>ModelPROYECTO2.edmx</DependentUpon>
+    <None Include="ModelProyecto.edmx.diagram">
+      <DependentUpon>ModelProyecto.edmx</DependentUpon>
     </None>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
@@ -432,12 +441,12 @@
     <Content Include="ModelProyecto.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>ModelProyecto.Context.vb</LastGenOutput>
-      <DependentUpon>ModelPROYECTO2.edmx</DependentUpon>
+      <DependentUpon>ModelProyecto.edmx</DependentUpon>
     </Content>
-    <Content Include="ModelPROYECTO2.edmx.sql" />
+    <Content Include="ModelProyecto.edmx.sql" />
     <Content Include="ModelProyecto.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ModelPROYECTO2.edmx</DependentUpon>
+      <DependentUpon>ModelProyecto.edmx</DependentUpon>
       <LastGenOutput>ModelProyecto.vb</LastGenOutput>
     </Content>
     <None Include="Resources\copia-de-respaldo.png" />

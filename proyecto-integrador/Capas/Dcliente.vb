@@ -1,8 +1,9 @@
 ﻿Public Class Dcliente
 
+
     Dim ctx As PROYECTO2Entities = New PROYECTO2Entities
 
-    Function getAllCliente(ByVal dg As DataGridView)
+    Function getAllCliente(ByVal dg As DataGridView) As Boolean
         dg.DataSource = Me.getAll()
         dg.Columns(0).Visible = False
         dg.Columns(9).Visible = False

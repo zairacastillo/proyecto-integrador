@@ -23,13 +23,6 @@ Partial Class EditarCliente
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.DGV1 = New System.Windows.Forms.DataGridView()
-        Me.Nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Apellido = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Dni = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Correo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Telefono = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Direccion = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Seleccionar = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.PanelPrincipal = New System.Windows.Forms.Panel()
         Me.TBTel = New System.Windows.Forms.TextBox()
         Me.LTel = New System.Windows.Forms.Label()
@@ -63,47 +56,11 @@ Partial Class EditarCliente
         Me.DGV1.AllowUserToOrderColumns = True
         Me.DGV1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DGV1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DGV1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Nombre, Me.Apellido, Me.Dni, Me.Correo, Me.Telefono, Me.Direccion, Me.Seleccionar})
         Me.DGV1.Location = New System.Drawing.Point(-6, 53)
         Me.DGV1.Name = "DGV1"
         Me.DGV1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders
         Me.DGV1.Size = New System.Drawing.Size(971, 164)
         Me.DGV1.TabIndex = 5
-        '
-        'Nombre
-        '
-        Me.Nombre.HeaderText = "Nombre"
-        Me.Nombre.Name = "Nombre"
-        '
-        'Apellido
-        '
-        Me.Apellido.HeaderText = "Apellido"
-        Me.Apellido.Name = "Apellido"
-        '
-        'Dni
-        '
-        Me.Dni.HeaderText = "DNI"
-        Me.Dni.Name = "Dni"
-        '
-        'Correo
-        '
-        Me.Correo.HeaderText = "Correo"
-        Me.Correo.Name = "Correo"
-        '
-        'Telefono
-        '
-        Me.Telefono.HeaderText = "Telefono"
-        Me.Telefono.Name = "Telefono"
-        '
-        'Direccion
-        '
-        Me.Direccion.HeaderText = "Direccion"
-        Me.Direccion.Name = "Direccion"
-        '
-        'Seleccionar
-        '
-        Me.Seleccionar.HeaderText = "Seleccionar"
-        Me.Seleccionar.Name = "Seleccionar"
         '
         'PanelPrincipal
         '
@@ -373,12 +330,6 @@ Partial Class EditarCliente
     Friend WithEvents LCorreo As Label
     Friend WithEvents TBDni As TextBox
     Friend WithEvents LDni As Label
-    Friend WithEvents Nombre As DataGridViewTextBoxColumn
-    Friend WithEvents Apellido As DataGridViewTextBoxColumn
-    Friend WithEvents Dni As DataGridViewTextBoxColumn
-    Friend WithEvents Correo As DataGridViewTextBoxColumn
-    Friend WithEvents Telefono As DataGridViewTextBoxColumn
-    Friend WithEvents Direccion As DataGridViewTextBoxColumn
     Friend WithEvents TBTel As TextBox
     Friend WithEvents LTel As Label
     Friend WithEvents TBBuscar As TextBox
@@ -388,7 +339,6 @@ Partial Class EditarCliente
     Friend WithEvents BActUalizar As Button
     Friend WithEvents Label2 As Label
     Friend WithEvents TBBuscarAp As TextBox
-    Friend WithEvents Seleccionar As DataGridViewButtonColumn
     Friend WithEvents BBuscarDni As Button
     Friend WithEvents BBuscarAp As Button
 End Class

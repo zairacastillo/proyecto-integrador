@@ -30,7 +30,6 @@ Partial Class EditarEliminarProducto
         Me.TBStock = New System.Windows.Forms.TextBox()
         Me.LStock = New System.Windows.Forms.Label()
         Me.TBDescripcion = New System.Windows.Forms.TextBox()
-        Me.BAgregar = New System.Windows.Forms.Button()
         Me.TBPrecio = New System.Windows.Forms.TextBox()
         Me.TBNombre = New System.Windows.Forms.TextBox()
         Me.TBID = New System.Windows.Forms.TextBox()
@@ -72,7 +71,6 @@ Partial Class EditarEliminarProducto
         Me.PanelPrincipal.Controls.Add(Me.TBStock)
         Me.PanelPrincipal.Controls.Add(Me.LStock)
         Me.PanelPrincipal.Controls.Add(Me.TBDescripcion)
-        Me.PanelPrincipal.Controls.Add(Me.BAgregar)
         Me.PanelPrincipal.Controls.Add(Me.TBPrecio)
         Me.PanelPrincipal.Controls.Add(Me.TBNombre)
         Me.PanelPrincipal.Controls.Add(Me.TBID)
@@ -88,7 +86,7 @@ Partial Class EditarEliminarProducto
         '
         'TBCategoria
         '
-        Me.TBCategoria.Location = New System.Drawing.Point(389, 103)
+        Me.TBCategoria.Location = New System.Drawing.Point(393, 148)
         Me.TBCategoria.Multiline = True
         Me.TBCategoria.Name = "TBCategoria"
         Me.TBCategoria.Size = New System.Drawing.Size(122, 39)
@@ -100,7 +98,7 @@ Partial Class EditarEliminarProducto
         Me.LCategoria.BackColor = System.Drawing.Color.Transparent
         Me.LCategoria.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LCategoria.ForeColor = System.Drawing.Color.White
-        Me.LCategoria.Location = New System.Drawing.Point(272, 99)
+        Me.LCategoria.Location = New System.Drawing.Point(276, 144)
         Me.LCategoria.Name = "LCategoria"
         Me.LCategoria.Size = New System.Drawing.Size(111, 25)
         Me.LCategoria.TabIndex = 21
@@ -108,7 +106,7 @@ Partial Class EditarEliminarProducto
         '
         'TBEstado
         '
-        Me.TBEstado.Location = New System.Drawing.Point(115, 60)
+        Me.TBEstado.Location = New System.Drawing.Point(119, 105)
         Me.TBEstado.Name = "TBEstado"
         Me.TBEstado.Size = New System.Drawing.Size(130, 20)
         Me.TBEstado.TabIndex = 20
@@ -119,7 +117,7 @@ Partial Class EditarEliminarProducto
         Me.LEstado.BackColor = System.Drawing.Color.Transparent
         Me.LEstado.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LEstado.ForeColor = System.Drawing.Color.White
-        Me.LEstado.Location = New System.Drawing.Point(16, 55)
+        Me.LEstado.Location = New System.Drawing.Point(20, 100)
         Me.LEstado.Name = "LEstado"
         Me.LEstado.Size = New System.Drawing.Size(85, 25)
         Me.LEstado.TabIndex = 19
@@ -127,7 +125,7 @@ Partial Class EditarEliminarProducto
         '
         'TBStock
         '
-        Me.TBStock.Location = New System.Drawing.Point(389, 60)
+        Me.TBStock.Location = New System.Drawing.Point(393, 105)
         Me.TBStock.Name = "TBStock"
         Me.TBStock.Size = New System.Drawing.Size(122, 20)
         Me.TBStock.TabIndex = 18
@@ -138,7 +136,7 @@ Partial Class EditarEliminarProducto
         Me.LStock.BackColor = System.Drawing.Color.Transparent
         Me.LStock.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LStock.ForeColor = System.Drawing.Color.White
-        Me.LStock.Location = New System.Drawing.Point(272, 55)
+        Me.LStock.Location = New System.Drawing.Point(276, 100)
         Me.LStock.Name = "LStock"
         Me.LStock.Size = New System.Drawing.Size(72, 25)
         Me.LStock.TabIndex = 17
@@ -146,35 +144,22 @@ Partial Class EditarEliminarProducto
         '
         'TBDescripcion
         '
-        Me.TBDescripcion.Location = New System.Drawing.Point(157, 167)
+        Me.TBDescripcion.Location = New System.Drawing.Point(161, 212)
         Me.TBDescripcion.Multiline = True
         Me.TBDescripcion.Name = "TBDescripcion"
         Me.TBDescripcion.Size = New System.Drawing.Size(354, 68)
         Me.TBDescripcion.TabIndex = 16
         '
-        'BAgregar
-        '
-        Me.BAgregar.Image = Global.proyecto_integrador.My.Resources.Resources.diskette
-        Me.BAgregar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BAgregar.Location = New System.Drawing.Point(234, 271)
-        Me.BAgregar.Name = "BAgregar"
-        Me.BAgregar.Padding = New System.Windows.Forms.Padding(5, 0, 5, 0)
-        Me.BAgregar.Size = New System.Drawing.Size(117, 44)
-        Me.BAgregar.TabIndex = 10
-        Me.BAgregar.Text = "Guardar"
-        Me.BAgregar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.BAgregar.UseVisualStyleBackColor = True
-        '
         'TBPrecio
         '
-        Me.TBPrecio.Location = New System.Drawing.Point(389, 16)
+        Me.TBPrecio.Location = New System.Drawing.Point(393, 61)
         Me.TBPrecio.Name = "TBPrecio"
         Me.TBPrecio.Size = New System.Drawing.Size(122, 20)
         Me.TBPrecio.TabIndex = 7
         '
         'TBNombre
         '
-        Me.TBNombre.Location = New System.Drawing.Point(115, 103)
+        Me.TBNombre.Location = New System.Drawing.Point(119, 148)
         Me.TBNombre.Multiline = True
         Me.TBNombre.Name = "TBNombre"
         Me.TBNombre.Size = New System.Drawing.Size(130, 39)
@@ -182,7 +167,7 @@ Partial Class EditarEliminarProducto
         '
         'TBID
         '
-        Me.TBID.Location = New System.Drawing.Point(115, 15)
+        Me.TBID.Location = New System.Drawing.Point(119, 60)
         Me.TBID.Name = "TBID"
         Me.TBID.Size = New System.Drawing.Size(130, 20)
         Me.TBID.TabIndex = 4
@@ -193,7 +178,7 @@ Partial Class EditarEliminarProducto
         Me.LPrecio.BackColor = System.Drawing.Color.Transparent
         Me.LPrecio.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LPrecio.ForeColor = System.Drawing.Color.White
-        Me.LPrecio.Location = New System.Drawing.Point(272, 9)
+        Me.LPrecio.Location = New System.Drawing.Point(276, 54)
         Me.LPrecio.Name = "LPrecio"
         Me.LPrecio.Size = New System.Drawing.Size(79, 25)
         Me.LPrecio.TabIndex = 3
@@ -205,7 +190,7 @@ Partial Class EditarEliminarProducto
         Me.LDescripcion.BackColor = System.Drawing.Color.Transparent
         Me.LDescripcion.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LDescripcion.ForeColor = System.Drawing.Color.White
-        Me.LDescripcion.Location = New System.Drawing.Point(16, 161)
+        Me.LDescripcion.Location = New System.Drawing.Point(20, 206)
         Me.LDescripcion.Name = "LDescripcion"
         Me.LDescripcion.Size = New System.Drawing.Size(131, 25)
         Me.LDescripcion.TabIndex = 2
@@ -217,7 +202,7 @@ Partial Class EditarEliminarProducto
         Me.LNombre.BackColor = System.Drawing.Color.Transparent
         Me.LNombre.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LNombre.ForeColor = System.Drawing.Color.White
-        Me.LNombre.Location = New System.Drawing.Point(16, 99)
+        Me.LNombre.Location = New System.Drawing.Point(20, 144)
         Me.LNombre.Name = "LNombre"
         Me.LNombre.Size = New System.Drawing.Size(93, 25)
         Me.LNombre.TabIndex = 1
@@ -229,7 +214,7 @@ Partial Class EditarEliminarProducto
         Me.LID.BackColor = System.Drawing.Color.Transparent
         Me.LID.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LID.ForeColor = System.Drawing.Color.White
-        Me.LID.Location = New System.Drawing.Point(16, 10)
+        Me.LID.Location = New System.Drawing.Point(20, 55)
         Me.LID.Name = "LID"
         Me.LID.Size = New System.Drawing.Size(38, 25)
         Me.LID.TabIndex = 0
@@ -439,7 +424,6 @@ Partial Class EditarEliminarProducto
     Friend WithEvents LDescripcion As Label
     Friend WithEvents LNombre As Label
     Friend WithEvents LID As Label
-    Friend WithEvents BAgregar As Button
     Friend WithEvents TBCategoria As TextBox
     Friend WithEvents LCategoria As Label
     Friend WithEvents TBEstado As TextBox

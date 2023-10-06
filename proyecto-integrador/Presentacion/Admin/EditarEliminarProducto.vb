@@ -22,7 +22,7 @@ Public Class EditarEliminarProducto
 
 
     'agregamos cliente
-    Private Sub BAgregar_Click(sender As Object, e As EventArgs) Handles BAgregar.Click
+    Private Sub BAgregar_Click(sender As Object, e As EventArgs) 
 
         'variable de mensaje de error
         Dim msjTxt As String = "Debe Completar todos los campos correctamente: "
@@ -129,4 +129,7 @@ Public Class EditarEliminarProducto
         End If
     End Sub
 
+    Private Sub PanelPrincipal_Paint(sender As Object, e As PaintEventArgs) Handles PanelPrincipal.Paint
+
+    End Sub
 End Class

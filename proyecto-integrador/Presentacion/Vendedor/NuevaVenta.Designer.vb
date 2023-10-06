@@ -23,7 +23,7 @@ Partial Class NuevaVenta
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.BCliente = New System.Windows.Forms.Button()
-        Me.TBCliente = New System.Windows.Forms.TextBox()
+        Me.TBClienteA = New System.Windows.Forms.TextBox()
         Me.BProducto = New System.Windows.Forms.Button()
         Me.TBProducto = New System.Windows.Forms.TextBox()
         Me.DGV1 = New System.Windows.Forms.DataGridView()
@@ -35,19 +35,19 @@ Partial Class NuevaVenta
         Me.Eliminar = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.BCompra = New System.Windows.Forms.Button()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.TBClienteN = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.DTPFecnac = New System.Windows.Forms.DateTimePicker()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
+        Me.TBID = New System.Windows.Forms.TextBox()
+        Me.TBVendedor = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
-        Me.TextBox5 = New System.Windows.Forms.TextBox()
-        Me.TextBox6 = New System.Windows.Forms.TextBox()
-        Me.TextBox7 = New System.Windows.Forms.TextBox()
+        Me.TBTotal = New System.Windows.Forms.TextBox()
+        Me.TBStock = New System.Windows.Forms.TextBox()
+        Me.TBCantidad = New System.Windows.Forms.TextBox()
+        Me.TBUnitario = New System.Windows.Forms.TextBox()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
@@ -72,12 +72,13 @@ Partial Class NuevaVenta
         Me.BCliente.Text = "Buscar Cliente"
         Me.BCliente.UseVisualStyleBackColor = True
         '
-        'TBCliente
+        'TBClienteA
         '
-        Me.TBCliente.Location = New System.Drawing.Point(506, 93)
-        Me.TBCliente.Name = "TBCliente"
-        Me.TBCliente.Size = New System.Drawing.Size(169, 20)
-        Me.TBCliente.TabIndex = 21
+        Me.TBClienteA.Location = New System.Drawing.Point(506, 93)
+        Me.TBClienteA.Name = "TBClienteA"
+        Me.TBClienteA.ReadOnly = True
+        Me.TBClienteA.Size = New System.Drawing.Size(169, 20)
+        Me.TBClienteA.TabIndex = 21
         '
         'BProducto
         '
@@ -92,6 +93,7 @@ Partial Class NuevaVenta
         '
         Me.TBProducto.Location = New System.Drawing.Point(122, 49)
         Me.TBProducto.Name = "TBProducto"
+        Me.TBProducto.ReadOnly = True
         Me.TBProducto.Size = New System.Drawing.Size(169, 20)
         Me.TBProducto.TabIndex = 27
         '
@@ -160,12 +162,13 @@ Partial Class NuevaVenta
         Me.BCompra.Text = "Confirmar"
         Me.BCompra.UseVisualStyleBackColor = True
         '
-        'TextBox1
+        'TBClienteN
         '
-        Me.TextBox1.Location = New System.Drawing.Point(695, 93)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(169, 20)
-        Me.TextBox1.TabIndex = 35
+        Me.TBClienteN.Location = New System.Drawing.Point(695, 93)
+        Me.TBClienteN.Name = "TBClienteN"
+        Me.TBClienteN.ReadOnly = True
+        Me.TBClienteN.Size = New System.Drawing.Size(169, 20)
+        Me.TBClienteN.TabIndex = 35
         '
         'Label2
         '
@@ -211,19 +214,23 @@ Partial Class NuevaVenta
         Me.Label4.TabIndex = 39
         Me.Label4.Text = "ID Venta:"
         '
-        'TextBox2
+        'TBID
         '
-        Me.TextBox2.Location = New System.Drawing.Point(129, 47)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(169, 20)
-        Me.TextBox2.TabIndex = 40
+        Me.TBID.BackColor = System.Drawing.SystemColors.Control
+        Me.TBID.Enabled = False
+        Me.TBID.Location = New System.Drawing.Point(129, 47)
+        Me.TBID.Name = "TBID"
+        Me.TBID.ReadOnly = True
+        Me.TBID.Size = New System.Drawing.Size(169, 20)
+        Me.TBID.TabIndex = 40
         '
-        'TextBox3
+        'TBVendedor
         '
-        Me.TextBox3.Location = New System.Drawing.Point(129, 105)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(169, 20)
-        Me.TextBox3.TabIndex = 42
+        Me.TBVendedor.Location = New System.Drawing.Point(129, 105)
+        Me.TBVendedor.Name = "TBVendedor"
+        Me.TBVendedor.ReadOnly = True
+        Me.TBVendedor.Size = New System.Drawing.Size(169, 20)
+        Me.TBVendedor.TabIndex = 42
         '
         'Label5
         '
@@ -249,33 +256,36 @@ Partial Class NuevaVenta
         Me.Label6.TabIndex = 44
         Me.Label6.Text = "Total:"
         '
-        'TextBox4
+        'TBTotal
         '
-        Me.TextBox4.Location = New System.Drawing.Point(506, 140)
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(169, 20)
-        Me.TextBox4.TabIndex = 43
+        Me.TBTotal.Location = New System.Drawing.Point(506, 140)
+        Me.TBTotal.Name = "TBTotal"
+        Me.TBTotal.ReadOnly = True
+        Me.TBTotal.Size = New System.Drawing.Size(169, 20)
+        Me.TBTotal.TabIndex = 43
         '
-        'TextBox5
+        'TBStock
         '
-        Me.TextBox5.Location = New System.Drawing.Point(128, 97)
-        Me.TextBox5.Name = "TextBox5"
-        Me.TextBox5.Size = New System.Drawing.Size(169, 20)
-        Me.TextBox5.TabIndex = 45
+        Me.TBStock.Location = New System.Drawing.Point(128, 97)
+        Me.TBStock.Name = "TBStock"
+        Me.TBStock.ReadOnly = True
+        Me.TBStock.Size = New System.Drawing.Size(169, 20)
+        Me.TBStock.TabIndex = 45
         '
-        'TextBox6
+        'TBCantidad
         '
-        Me.TextBox6.Location = New System.Drawing.Point(565, 48)
-        Me.TextBox6.Name = "TextBox6"
-        Me.TextBox6.Size = New System.Drawing.Size(169, 20)
-        Me.TextBox6.TabIndex = 47
+        Me.TBCantidad.Location = New System.Drawing.Point(565, 48)
+        Me.TBCantidad.Name = "TBCantidad"
+        Me.TBCantidad.Size = New System.Drawing.Size(169, 20)
+        Me.TBCantidad.TabIndex = 47
         '
-        'TextBox7
+        'TBUnitario
         '
-        Me.TextBox7.Location = New System.Drawing.Point(565, 102)
-        Me.TextBox7.Name = "TextBox7"
-        Me.TextBox7.Size = New System.Drawing.Size(169, 20)
-        Me.TextBox7.TabIndex = 49
+        Me.TBUnitario.Location = New System.Drawing.Point(565, 102)
+        Me.TBUnitario.Name = "TBUnitario"
+        Me.TBUnitario.ReadOnly = True
+        Me.TBUnitario.Size = New System.Drawing.Size(169, 20)
+        Me.TBUnitario.TabIndex = 49
         '
         'Button1
         '
@@ -303,13 +313,13 @@ Partial Class NuevaVenta
         Me.Panel1.Controls.Add(Me.Button2)
         Me.Panel1.Controls.Add(Me.Button1)
         Me.Panel1.Controls.Add(Me.Label7)
-        Me.Panel1.Controls.Add(Me.TextBox6)
+        Me.Panel1.Controls.Add(Me.TBCantidad)
         Me.Panel1.Controls.Add(Me.BProducto)
-        Me.Panel1.Controls.Add(Me.TextBox7)
+        Me.Panel1.Controls.Add(Me.TBUnitario)
         Me.Panel1.Controls.Add(Me.TBProducto)
         Me.Panel1.Controls.Add(Me.Label8)
         Me.Panel1.Controls.Add(Me.Label10)
-        Me.Panel1.Controls.Add(Me.TextBox5)
+        Me.Panel1.Controls.Add(Me.TBStock)
         Me.Panel1.Location = New System.Drawing.Point(12, 247)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(936, 196)
@@ -367,16 +377,16 @@ Partial Class NuevaVenta
         '
         Me.Panel2.BackgroundImage = Global.proyecto_integrador.My.Resources.Resources.bg
         Me.Panel2.Controls.Add(Me.Label3)
-        Me.Panel2.Controls.Add(Me.TBCliente)
+        Me.Panel2.Controls.Add(Me.TBClienteA)
         Me.Panel2.Controls.Add(Me.BCliente)
-        Me.Panel2.Controls.Add(Me.TextBox1)
+        Me.Panel2.Controls.Add(Me.TBClienteN)
         Me.Panel2.Controls.Add(Me.Label2)
         Me.Panel2.Controls.Add(Me.DTPFecnac)
         Me.Panel2.Controls.Add(Me.Label6)
         Me.Panel2.Controls.Add(Me.Label4)
-        Me.Panel2.Controls.Add(Me.TextBox4)
-        Me.Panel2.Controls.Add(Me.TextBox2)
-        Me.Panel2.Controls.Add(Me.TextBox3)
+        Me.Panel2.Controls.Add(Me.TBTotal)
+        Me.Panel2.Controls.Add(Me.TBID)
+        Me.Panel2.Controls.Add(Me.TBVendedor)
         Me.Panel2.Controls.Add(Me.Label5)
         Me.Panel2.Location = New System.Drawing.Point(12, 23)
         Me.Panel2.Name = "Panel2"
@@ -412,7 +422,7 @@ Partial Class NuevaVenta
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.proyecto_integrador.My.Resources.Resources.cuadros_negros_734708
-        Me.ClientSize = New System.Drawing.Size(973, 635)
+        Me.ClientSize = New System.Drawing.Size(976, 635)
         Me.Controls.Add(Me.Label13)
         Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.Panel2)
@@ -433,7 +443,7 @@ Partial Class NuevaVenta
     End Sub
 
     Friend WithEvents BCliente As Button
-    Friend WithEvents TBCliente As TextBox
+    Friend WithEvents TBClienteA As TextBox
     Friend WithEvents BProducto As Button
     Friend WithEvents TBProducto As TextBox
     Friend WithEvents DGV1 As DataGridView
@@ -445,19 +455,19 @@ Partial Class NuevaVenta
     Friend WithEvents Cantidad As DataGridViewTextBoxColumn
     Friend WithEvents Subtotal As DataGridViewTextBoxColumn
     Friend WithEvents Eliminar As DataGridViewTextBoxColumn
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents TBClienteN As TextBox
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents DTPFecnac As DateTimePicker
     Friend WithEvents Label4 As Label
-    Friend WithEvents TextBox2 As TextBox
-    Friend WithEvents TextBox3 As TextBox
+    Friend WithEvents TBID As TextBox
+    Friend WithEvents TBVendedor As TextBox
     Friend WithEvents Label5 As Label
     Friend WithEvents Label6 As Label
-    Friend WithEvents TextBox4 As TextBox
-    Friend WithEvents TextBox5 As TextBox
-    Friend WithEvents TextBox6 As TextBox
-    Friend WithEvents TextBox7 As TextBox
+    Friend WithEvents TBTotal As TextBox
+    Friend WithEvents TBStock As TextBox
+    Friend WithEvents TBCantidad As TextBox
+    Friend WithEvents TBUnitario As TextBox
     Friend WithEvents Button1 As Button
     Friend WithEvents Button2 As Button
     Friend WithEvents Panel1 As Panel

@@ -41,7 +41,7 @@
         End If
     End Sub
 
-    Private Sub BAgregar_Click(sender As Object, e As EventArgs) Handles BAgregar.Click
+    Private Sub BAgregar_Click(sender As Object, e As EventArgs) 
         If (IsNull_textbox(TBNombre) = True Or IsNull_textbox(TBApellido) = True Or IsNull_textbox(TBDni) = True Or IsNull_textbox(TBCorreo) = True Or IsNull_textbox(TBTel) = True Or IsNull_textbox(TBPerfil) = True Or IsNull_textbox(TBCont) = True Or Not validar_email(TBCorreo)) Then
             MessageBox.Show("Debe completar todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
 

@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class EliminarCliente
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,20 +20,15 @@ Partial Class EliminarCliente
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.TBBuscarAp = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TBBuscar = New System.Windows.Forms.TextBox()
         Me.DGV1 = New System.Windows.Forms.DataGridView()
-        Me.Nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Apellido = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Dni = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Correo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Telefono = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Direccion = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Eliminar = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.BBuscarD = New System.Windows.Forms.Button()
+        Me.BBuscarA = New System.Windows.Forms.Button()
         CType(Me.DGV1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -43,7 +38,7 @@ Partial Class EliminarCliente
         Me.Label2.BackColor = System.Drawing.Color.Transparent
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.Location = New System.Drawing.Point(532, 19)
+        Me.Label2.Location = New System.Drawing.Point(466, 20)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(195, 20)
         Me.Label2.TabIndex = 24
@@ -51,7 +46,7 @@ Partial Class EliminarCliente
         '
         'TBBuscarAp
         '
-        Me.TBBuscarAp.Location = New System.Drawing.Point(733, 21)
+        Me.TBBuscarAp.Location = New System.Drawing.Point(667, 22)
         Me.TBBuscarAp.Name = "TBBuscarAp"
         Me.TBBuscarAp.Size = New System.Drawing.Size(182, 20)
         Me.TBBuscarAp.TabIndex = 23
@@ -62,7 +57,7 @@ Partial Class EliminarCliente
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(36, 19)
+        Me.Label1.Location = New System.Drawing.Point(12, 19)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(162, 20)
         Me.Label1.TabIndex = 18
@@ -70,7 +65,7 @@ Partial Class EliminarCliente
         '
         'TBBuscar
         '
-        Me.TBBuscar.Location = New System.Drawing.Point(204, 21)
+        Me.TBBuscar.Location = New System.Drawing.Point(180, 21)
         Me.TBBuscar.Name = "TBBuscar"
         Me.TBBuscar.Size = New System.Drawing.Size(182, 20)
         Me.TBBuscar.TabIndex = 17
@@ -82,47 +77,29 @@ Partial Class EliminarCliente
         Me.DGV1.AllowUserToOrderColumns = True
         Me.DGV1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DGV1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DGV1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Nombre, Me.Apellido, Me.Dni, Me.Correo, Me.Telefono, Me.Direccion, Me.Eliminar})
         Me.DGV1.Location = New System.Drawing.Point(0, 62)
         Me.DGV1.Name = "DGV1"
         Me.DGV1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders
         Me.DGV1.Size = New System.Drawing.Size(971, 230)
         Me.DGV1.TabIndex = 16
         '
-        'Nombre
+        'BBuscarD
         '
-        Me.Nombre.HeaderText = "Nombre"
-        Me.Nombre.Name = "Nombre"
+        Me.BBuscarD.Location = New System.Drawing.Point(368, 19)
+        Me.BBuscarD.Name = "BBuscarD"
+        Me.BBuscarD.Size = New System.Drawing.Size(75, 23)
+        Me.BBuscarD.TabIndex = 25
+        Me.BBuscarD.Text = "Buscar"
+        Me.BBuscarD.UseVisualStyleBackColor = True
         '
-        'Apellido
+        'BBuscarA
         '
-        Me.Apellido.HeaderText = "Apellido"
-        Me.Apellido.Name = "Apellido"
-        '
-        'Dni
-        '
-        Me.Dni.HeaderText = "DNI"
-        Me.Dni.Name = "Dni"
-        '
-        'Correo
-        '
-        Me.Correo.HeaderText = "Correo"
-        Me.Correo.Name = "Correo"
-        '
-        'Telefono
-        '
-        Me.Telefono.HeaderText = "Telefono"
-        Me.Telefono.Name = "Telefono"
-        '
-        'Direccion
-        '
-        Me.Direccion.HeaderText = "Direccion"
-        Me.Direccion.Name = "Direccion"
-        '
-        'Eliminar
-        '
-        Me.Eliminar.HeaderText = "Eliminar"
-        Me.Eliminar.Name = "Eliminar"
+        Me.BBuscarA.Location = New System.Drawing.Point(855, 21)
+        Me.BBuscarA.Name = "BBuscarA"
+        Me.BBuscarA.Size = New System.Drawing.Size(75, 23)
+        Me.BBuscarA.TabIndex = 26
+        Me.BBuscarA.Text = "Buscar"
+        Me.BBuscarA.UseVisualStyleBackColor = True
         '
         'EliminarCliente
         '
@@ -130,6 +107,8 @@ Partial Class EliminarCliente
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.proyecto_integrador.My.Resources.Resources.cuadros_negros_734708
         Me.ClientSize = New System.Drawing.Size(956, 304)
+        Me.Controls.Add(Me.BBuscarA)
+        Me.Controls.Add(Me.BBuscarD)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.TBBuscarAp)
         Me.Controls.Add(Me.Label1)
@@ -148,11 +127,6 @@ Partial Class EliminarCliente
     Friend WithEvents Label1 As Label
     Friend WithEvents TBBuscar As TextBox
     Friend WithEvents DGV1 As DataGridView
-    Friend WithEvents Nombre As DataGridViewTextBoxColumn
-    Friend WithEvents Apellido As DataGridViewTextBoxColumn
-    Friend WithEvents Dni As DataGridViewTextBoxColumn
-    Friend WithEvents Correo As DataGridViewTextBoxColumn
-    Friend WithEvents Telefono As DataGridViewTextBoxColumn
-    Friend WithEvents Direccion As DataGridViewTextBoxColumn
-    Friend WithEvents Eliminar As DataGridViewTextBoxColumn
+    Friend WithEvents BBuscarD As Button
+    Friend WithEvents BBuscarA As Button
 End Class
