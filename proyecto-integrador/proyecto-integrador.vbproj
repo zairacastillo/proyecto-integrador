@@ -443,7 +443,6 @@
       <LastGenOutput>ModelProyecto.Context.vb</LastGenOutput>
       <DependentUpon>ModelProyecto.edmx</DependentUpon>
     </Content>
-    <Content Include="ModelProyecto.edmx.sql" />
     <Content Include="ModelProyecto.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>ModelProyecto.edmx</DependentUpon>

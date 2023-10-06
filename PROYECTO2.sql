@@ -4,6 +4,12 @@ GO
 /****** Object:  Database [PROYECTO2]    Script Date: 1/10/2023 21:28:02 ******/
 CREATE DATABASE [PROYECTO2]
 
+IF (1 = FULLTEXTSERVICEPROPERTY('IsFullTextInstalled'))
+begin
+EXEC [PROYECTO2].[dbo].[sp_fulltext_database] @action = 'enable'
+end
+GO
+
 ALTER DATABASE [PROYECTO2] SET ANSI_NULL_DEFAULT OFF 
 GO
 
@@ -104,7 +110,7 @@ GO
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 10/06/2023 08:02:52
+-- Date Created: 10/06/2023 08:17:32
 -- Generated from EDMX file: E:\Users\Usuario\source\repos_proyecto\proyecto-integrador-zaira\proyecto-integrador\ModelProyecto.edmx
 -- --------------------------------------------------
 
