@@ -35,13 +35,13 @@
         End If
     End Sub
 
-    Private Sub TextBox1_TextChanged(sender As Object, e As KeyPressEventArgs) Handles TBTel.KeyPress
+    Private Sub TextBox1_TextChanged(sender As Object, e As KeyPressEventArgs) Handles TBTel.KeyPress, TBBuscarApellido.TextChanged
         If Validar_numeros(e) Then
             MessageBox.Show("Solo se admiten numeros", "Validación de numeros", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
         End If
     End Sub
 
-    Private Sub BAgregar_Click(sender As Object, e As EventArgs) Handles BAgregar.Click
+    Private Sub BAgregar_Click(sender As Object, e As EventArgs) 
         If (IsNull_textbox(TBNombre) = True Or IsNull_textbox(TBApellido) = True Or IsNull_textbox(TBDni) = True Or IsNull_textbox(TBCorreo) = True Or IsNull_textbox(TBTel) = True Or IsNull_textbox(TBPerfil) = True Or IsNull_textbox(TBCont) = True Or Not validar_email(TBCorreo)) Then
             MessageBox.Show("Debe completar todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
 
@@ -82,5 +82,19 @@
 
     End Sub
 
+    Private Sub TBBuscarApellido_TextChanged(sender As Object, e As KeyPressEventArgs) Handles TBBuscarApellido.KeyPress
+        If Validar_letras(e) Then
+            MessageBox.Show("Solo se admiten letras", "Validación de letras", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+        End If
+    End Sub
 
+    Private Sub TBBuscarDni_TextChanged(sender As Object, e As KeyPressEventArgs) Handles TBBuscarDni.KeyPress
+        If Validar_numeros(e) Then
+            MessageBox.Show("Solo se admiten numeros", "Validación de numeros", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+        End If
+    End Sub
+
+    Private Sub DGV1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGV1.CellContentClick
+
+    End Sub
 End Class

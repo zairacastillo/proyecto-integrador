@@ -96,7 +96,7 @@ Partial Class MDIVendedor
         Me.EditarToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.EditarToolStripMenuItem.Name = "EditarToolStripMenuItem"
         Me.EditarToolStripMenuItem.Size = New System.Drawing.Size(196, 38)
-        Me.EditarToolStripMenuItem.Text = "&Editar/Baja"
+        Me.EditarToolStripMenuItem.Text = "&Editar"
         '
         'ViewMenu
         '

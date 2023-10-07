@@ -19,43 +19,6 @@ Public Class NuevoProducto
     End Sub
 
 
-    'Agregamo Foto
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles BFoto.Click
-
-        'generamos un opendialog file
-        Dim AbrirArchivo As OpenFileDialog = New OpenFileDialog()
-        AbrirArchivo.Filter = "JPeg Image|*.jpg|Png Image|*.png"
-        AbrirArchivo.Title = "Seleccione imagen"
-        'Timestamp Unixstamp
-        Dim uTime As Integer
-        uTime = (DateTime.UtcNow - New DateTime(1970, 1, 1, 0, 0, 0)).TotalSeconds
-        'si el open dialog da OK procedemos
-        If (AbrirArchivo.ShowDialog() = System.Windows.Forms.DialogResult.OK) Then
-
-            'comprobamos existencia de carpeta
-            Dim folder As String = My.Computer.FileSystem.CurrentDirectory.ToString() + "\Fotos"
-
-            'establecemos destino del archivo
-            destinationPathFile = folder + "\" + uTime.ToString + AbrirArchivo.SafeFileName
-
-            'si el directorio no existe lo creamos
-            If (Not System.IO.Directory.Exists(folder)) Then
-                System.IO.Directory.CreateDirectory(folder)
-            End If
-
-            'copias el archivo a la carpeta generada con sobreescritura
-            My.Computer.FileSystem.CopyFile(AbrirArchivo.FileName, destinationPathFile, True)
-
-            'mostrar path original imagen el textbox
-            TBFoto.Text = AbrirArchivo.FileName
-
-            'cambiar imagen del PictureBox principal
-            PBAvatar.BackgroundImage = Image.FromFile(destinationPathFile)
-
-        End If
-
-    End Sub
-
     'agregamos cliente
     Private Sub BAgregar_Click(sender As Object, e As EventArgs) Handles BAgregar.Click
 
@@ -63,7 +26,7 @@ Public Class NuevoProducto
         Dim msjTxt As String = "Debe Completar todos los campos correctamente: "
 
         ' lista de TB a verificar si estan vacios
-        Dim listaTB = {TBID, TBPrecio, TBEstado, TBStock, TBNombre, TBCategoria, TBDescripcion}
+        Dim listaTB = {TBPrecio, TBEstado, TBStock, TBNombre, TBCategoria, TBDescripcion}
 
         TBVacios(listaTB) ' devuelve true si algun TB esta vacio
 
@@ -73,7 +36,7 @@ Public Class NuevoProducto
             MsgBox(msjTxt, MsgBoxStyle.Critical, Title:="Error")
         Else
             'mensaje y almacenamiento de resultado en variable
-            Dim ask As Integer = MsgBox("¿Seguro que desea Guardar el Cliente?", MsgBoxStyle.YesNo + MsgBoxStyle.DefaultButton1, Title:="Confirmar Inserción")
+            Dim ask As Integer = MsgBox("¿Seguro que desea Guardar el Producto?", MsgBoxStyle.YesNo + MsgBoxStyle.DefaultButton1, Title:="Confirmar Inserción")
 
             'si acepta guardamos / mensaje
             If ask = DialogResult.Yes Then
@@ -90,35 +53,25 @@ Public Class NuevoProducto
                 'creamos una fila y obtenemos numero de fila
                 Dim numRow As Integer = DGV1.Rows.Add()
                 'completamos los campos
-                DGV1.Rows(numRow).Cells(0).Value = TBID.Text.Trim 'Nombre
+                'DGV1.Rows(numRow).Cells(0).Value = TBID.Text.Trim 'Nombre
                 DGV1.Rows(numRow).Cells(1).Value = TBNombre.Text.Trim 'Apellido
                 DGV1.Rows(numRow).Cells(2).Value = TBPrecio.Text.Trim 'Apellido
                 DGV1.Rows(numRow).Cells(3).Value = TBStock.Text.Trim 'Apellido
                 DGV1.Rows(numRow).Cells(4).Value = TBCategoria.Text.Trim 'Apellido
                 DGV1.Rows(numRow).Cells(5).Value = TBDescripcion.Text.Trim 'Apellido
-                DGV1.Rows(numRow).Cells(6).Value = TBFoto.Text.Trim 'Apellido
-                DGV1.Rows(numRow).Cells(7).Value = TBEstado.Text.Trim 'Apellido
-                DGV1.Rows(numRow).Cells(8).Value = "Editar" 'Titulo boton Eliminar
-                DGV1.Rows(numRow).Cells(9).Value = "Eliminar" 'Titulo boton Eliminar
+                DGV1.Rows(numRow).Cells(6).Value = TBEstado.Text.Trim 'Apellido
 
-                'Si existe imagen, cargamos en celda
-                If (System.IO.File.Exists(destinationPathFile)) Then
-                    DGV1.Rows(numRow).Cells(6).Value = Image.FromFile(destinationPathFile)
-                Else
-                    'sino, tomamos avatar por defecto
-                    DGV1.Rows(numRow).Cells(6).Value = My.Resources.avatar
-                End If
-                DGV1.Rows(numRow).Cells(7).Value = destinationPathFile 'Ruta del archivo destino
+
 
 
                 'Reseteamos Form
+                'TBID.Clear()
                 TBNombre.Clear()
-                TBID.Clear()
                 TBPrecio.Clear()
-                TBFoto.Clear()
-                PBAvatar.BackgroundImage = My.Resources.avatar
-                destinationPathFile = ""
-
+                TBStock.Clear()
+                TBCategoria.Clear()
+                TBDescripcion.Clear()
+                TBEstado.Clear()
 
             End If
         End If
@@ -163,7 +116,7 @@ Public Class NuevoProducto
 
     End Sub
 
-    Private Sub TBID_TextChanged(sender As Object, e As KeyPressEventArgs) Handles TBID.KeyPress
+    Private Sub TBID_TextChanged(sender As Object, e As KeyPressEventArgs)
         If Validar_numeros(e) Then
             MessageBox.Show("Solo se admiten numeros", "Validacion de numeros", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
         End If
@@ -203,4 +156,6 @@ Public Class NuevoProducto
             MessageBox.Show("Solo se admiten letras", "Validación de letras", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
         End If
     End Sub
+
+
 End Class

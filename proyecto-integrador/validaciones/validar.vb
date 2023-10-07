@@ -3,15 +3,6 @@ Imports System.IO
 
 Module Validaciones
 
-    Public Function Validar_digitos(ByVal e As TextBox, ByVal n As Integer) As Boolean
-        Dim a As String = CStr(e.Text)
-        If a.Length <= n Then
-            Return True
-        Else
-            Return False
-        End If
-    End Function
-
 
 
     Public Function Validar_numeros(ByVal e As KeyPressEventArgs) As Boolean
@@ -44,50 +35,12 @@ Module Validaciones
         End If
     End Function
 
-    ' Valida si un textbox contiene un email
-    '
-
-    'Public Function IsEmail(ByVal p_textbox As TextBox) As Boolean
-    '    Dim t As String = CStr(p_textbox.Text)
-    '    If t = String.Empty Then
-    '        Return False ' Campo vacio
-    '    Else
-    '        ' Compruebo si el formato de la dirección es correcto
-    '        Dim re As Regex = New Regex("^[\w._%-]+@[\w.-]+\.[a-zA-Z]{2,4}$")
-    '        Dim m As Match = re.Match(t)
-    '        If m.Captures.Count <> 0 Then
-    '            Return True 'Si es un email valido
-
-    '        Else
-    '            Return False 'No es un email valido
-
-    '        End If
-    '    End If
-    'End Function
-
-
-
-
-    Public Function IsEmail(ByRef txt As TextBox) As Boolean
-        If txt.Text <> "" Then
-            Dim texto As New Regex("^[0-9a-zA-Z-_@.]*$", RegexOptions.IgnoreCase)
-            Dim arobase As New Regex("[@]", RegexOptions.IgnoreCase)
-            Dim punto As New Regex("[.]", RegexOptions.IgnoreCase)
-            If (Not arobase.IsMatch(txt.Text)) Or (Not punto.IsMatch(txt.Text)) Or (Not texto.IsMatch(txt.Text)) Then
-                Return False
-            End If
-            Return True
-        Else
-            Return False
-        End If
-
-    End Function
 
 
     Public Function TBVacios(ByVal listTB) As Boolean
         '^\S+$
         For Each tb In listTB
-            If Not Regex.IsMatch(tb.Text.Trim, "^\S+$") Then
+            If IsNull_textbox(tb) Then
                 Return True
             End If
         Next
@@ -116,28 +69,7 @@ Module Validaciones
 
     End Function
 
-    'Valida un datetimepicker, retorna True si se selecciono un año que es mayor a 2000
 
-    Public Function Validar_fechaCum(DateT As DateTimePicker) As Boolean
-        Dim vMes As Integer = DateT.Value.Year
-
-
-        If vMes > 2000 Then
-            Return True ' Es mayor
-        Else
-            Return False ' No es mayor
-        End If
-    End Function
-
-
-    Public Sub Validar_RadioN(ByVal gr As GroupBox, ByVal nom As String)
-        For Each b As RadioButton In gr.Controls.OfType(Of RadioButton)()
-            If b.Text = nom Then
-                b.Checked = True
-            End If
-        Next
-
-    End Sub
 
     Public Function validar_email(ByRef txt As TextBox) As Boolean
         If txt.Text <> "" Then

@@ -1,8 +1,14 @@
 ﻿
+Imports System.Data.SqlClient
+
+Imports System.ComponentModel
 
 Public Class NuevoCliente
 
-
+    'define entidad cliente
+    Dim OCliente As New cliente
+    'subclase que maneja la entidad cliente, intermediario entre entity y la tabla
+    Dim ObjCliente As Dcliente = New Dcliente
 
     Private Sub BAgregar_Click(sender As Object, e As EventArgs) Handles BAgregar.Click
         'variable de control
@@ -20,33 +26,55 @@ Public Class NuevoCliente
         If TBVacios(listaTB) Or Not validar_email(TBCorreo) Then
             'Mensaje
             MsgBox(msjTxt, MsgBoxStyle.Critical, Title:="Error")
+
+        ElseIf objCliente.ExisteCliente(TBDni.Text) = False Then
+            MessageBox.Show("El dni ya ha sido registrado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+
+        ElseIf objCliente.ExisteMail(TBCorreo.Text) = False Then
+            MessageBox.Show("El mail ya ha sido registrado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+
+        ElseIf ObjCliente.ExisteTelefono(TBTel.Text) = False Then
+            MessageBox.Show("El Telefono ya ha sido registrado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+
+
         Else
 
             'mensaje y almacenamiento de resultado en variable
-            Dim ask = MsgBox("¿Seguro que desea Guardar el Cliente?", MsgBoxStyle.YesNo + MsgBoxStyle.DefaultButton1, Title:="Confirmar Inserción")
+            Dim ask = MsgBox("¿Seguro que desea Guardar el Cliente?", MsgBoxStyle.YesNo, Title:="Confirmar Inserción")
             If ask = vbYes Then
-                'creamos una fila y obtenemos numero de fila
-                Dim numRow As Integer = DGV1.Rows.Add()
-                'completamos los campos
-                DGV1.Rows(numRow).Cells(0).Value = TBNombre.Text.Trim 'Nombre
-                DGV1.Rows(numRow).Cells(1).Value = TBApellido.Text.Trim 'Apellido
-                DGV1.Rows(numRow).Cells(2).Value = TBDni.Text.Trim 'DNI
-                DGV1.Rows(numRow).Cells(3).Value = TBCorreo.Text.Trim 'Correo
-                DGV1.Rows(numRow).Cells(4).Value = TBTel.Text.Trim 'Telefono
-                DGV1.Rows(numRow).Cells(5).Value = TBDirec.Text.Trim '
 
 
-                'Reseteamos Form
-                TBNombre.Clear()
-                TBApellido.Clear()
-                TBDni.Clear()
-                TBCorreo.Clear()
-                TBTel.Clear()
-                TBDirec.Clear()
+                OCliente.apellido_cliente = TBApellido.Text.Trim
+                OCliente.correo_cliente = TBCorreo.Text.Trim
+                OCliente.direccion_cliente = TBDirec.Text.Trim
+                OCliente.dni_cliente = TBDni.Text.Trim
+                OCliente.nombre_cliente = TBNombre.Text.Trim
+                OCliente.telefono_cliente = TBTel.Text.Trim
+                OCliente.estado_cliente = "Activo"
+                OCliente.fecha_cliente = System.DateTime.Now
+
+                If ObjCliente.agregrar_cliente(OCliente) Then
+
+                    MsgBox("Los datos se guardaron correctamente", Title:="Confirmar Inserción")
+                    'Reseteamos Form
+                    TBNombre.Clear()
+                    TBApellido.Clear()
+                    TBDni.Clear()
+                    TBCorreo.Clear()
+                    TBTel.Clear()
+                    TBDirec.Clear()
+
+                Else
+
+                    MsgBox("Los datos NO se guardaron correctamente", Title:="ERROR Inserción")
+                End If
+
+
 
             End If
         End If
 
+        ObjCliente.getAllCliente(DGV1)
 
     End Sub
 
@@ -74,5 +102,8 @@ Public Class NuevoCliente
         End If
     End Sub
 
+    Private Sub NuevoCliente_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+        ObjCliente.getAllCliente(DGV1)
+    End Sub
 End Class

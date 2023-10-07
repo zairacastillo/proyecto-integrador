@@ -23,16 +23,13 @@ Partial Class EditarEliminarProducto
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.PanelPrincipal = New System.Windows.Forms.Panel()
-        Me.TBCategoria = New System.Windows.Forms.TextBox()
+        Me.CBCateg = New System.Windows.Forms.ComboBox()
         Me.LCategoria = New System.Windows.Forms.Label()
         Me.TBEstado = New System.Windows.Forms.TextBox()
         Me.LEstado = New System.Windows.Forms.Label()
         Me.TBStock = New System.Windows.Forms.TextBox()
         Me.LStock = New System.Windows.Forms.Label()
         Me.TBDescripcion = New System.Windows.Forms.TextBox()
-        Me.BAgregar = New System.Windows.Forms.Button()
-        Me.TBFoto = New System.Windows.Forms.TextBox()
-        Me.BFoto = New System.Windows.Forms.Button()
         Me.TBPrecio = New System.Windows.Forms.TextBox()
         Me.TBNombre = New System.Windows.Forms.TextBox()
         Me.TBID = New System.Windows.Forms.TextBox()
@@ -40,7 +37,6 @@ Partial Class EditarEliminarProducto
         Me.LDescripcion = New System.Windows.Forms.Label()
         Me.LNombre = New System.Windows.Forms.Label()
         Me.LID = New System.Windows.Forms.Label()
-        Me.PBAvatar = New System.Windows.Forms.PictureBox()
         Me.DGV1 = New System.Windows.Forms.DataGridView()
         Me.ID = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -48,12 +44,18 @@ Partial Class EditarEliminarProducto
         Me.Stock = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Categoria = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Descripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Foto = New System.Windows.Forms.DataGridViewImageColumn()
         Me.Estado = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Editar = New System.Windows.Forms.DataGridViewButtonColumn()
-        Me.Eliminar = New System.Windows.Forms.DataGridViewButtonColumn()
+        Me.Seleccionar = New System.Windows.Forms.DataGridViewButtonColumn()
+        Me.BCancelar = New System.Windows.Forms.Button()
+        Me.BEditar = New System.Windows.Forms.Button()
+        Me.BActivarElim = New System.Windows.Forms.Button()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.TBBuscar = New System.Windows.Forms.TextBox()
+        Me.CBCategoria = New System.Windows.Forms.ComboBox()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.BBuscarCat = New System.Windows.Forms.Button()
+        Me.BBuscarNombre = New System.Windows.Forms.Button()
         Me.PanelPrincipal.SuspendLayout()
-        CType(Me.PBAvatar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DGV1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -61,15 +63,13 @@ Partial Class EditarEliminarProducto
         '
         Me.PanelPrincipal.BackgroundImage = Global.proyecto_integrador.My.Resources.Resources.bg
         Me.PanelPrincipal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PanelPrincipal.Controls.Add(Me.TBCategoria)
+        Me.PanelPrincipal.Controls.Add(Me.CBCateg)
         Me.PanelPrincipal.Controls.Add(Me.LCategoria)
         Me.PanelPrincipal.Controls.Add(Me.TBEstado)
         Me.PanelPrincipal.Controls.Add(Me.LEstado)
         Me.PanelPrincipal.Controls.Add(Me.TBStock)
         Me.PanelPrincipal.Controls.Add(Me.LStock)
         Me.PanelPrincipal.Controls.Add(Me.TBDescripcion)
-        Me.PanelPrincipal.Controls.Add(Me.BAgregar)
-        Me.PanelPrincipal.Controls.Add(Me.BFoto)
         Me.PanelPrincipal.Controls.Add(Me.TBPrecio)
         Me.PanelPrincipal.Controls.Add(Me.TBNombre)
         Me.PanelPrincipal.Controls.Add(Me.TBID)
@@ -77,20 +77,20 @@ Partial Class EditarEliminarProducto
         Me.PanelPrincipal.Controls.Add(Me.LDescripcion)
         Me.PanelPrincipal.Controls.Add(Me.LNombre)
         Me.PanelPrincipal.Controls.Add(Me.LID)
-        Me.PanelPrincipal.Controls.Add(Me.TBFoto)
         Me.PanelPrincipal.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.PanelPrincipal.Location = New System.Drawing.Point(45, 24)
+        Me.PanelPrincipal.Location = New System.Drawing.Point(110, 239)
         Me.PanelPrincipal.Name = "PanelPrincipal"
         Me.PanelPrincipal.Size = New System.Drawing.Size(546, 328)
         Me.PanelPrincipal.TabIndex = 0
         '
-        'TBCategoria
+        'CBCateg
         '
-        Me.TBCategoria.Location = New System.Drawing.Point(389, 103)
-        Me.TBCategoria.Multiline = True
-        Me.TBCategoria.Name = "TBCategoria"
-        Me.TBCategoria.Size = New System.Drawing.Size(122, 39)
-        Me.TBCategoria.TabIndex = 22
+        Me.CBCateg.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CBCateg.FormattingEnabled = True
+        Me.CBCateg.Location = New System.Drawing.Point(389, 145)
+        Me.CBCateg.Name = "CBCateg"
+        Me.CBCateg.Size = New System.Drawing.Size(126, 28)
+        Me.CBCateg.TabIndex = 22
         '
         'LCategoria
         '
@@ -98,7 +98,7 @@ Partial Class EditarEliminarProducto
         Me.LCategoria.BackColor = System.Drawing.Color.Transparent
         Me.LCategoria.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LCategoria.ForeColor = System.Drawing.Color.White
-        Me.LCategoria.Location = New System.Drawing.Point(272, 99)
+        Me.LCategoria.Location = New System.Drawing.Point(276, 144)
         Me.LCategoria.Name = "LCategoria"
         Me.LCategoria.Size = New System.Drawing.Size(111, 25)
         Me.LCategoria.TabIndex = 21
@@ -106,8 +106,9 @@ Partial Class EditarEliminarProducto
         '
         'TBEstado
         '
-        Me.TBEstado.Location = New System.Drawing.Point(115, 60)
+        Me.TBEstado.Location = New System.Drawing.Point(119, 105)
         Me.TBEstado.Name = "TBEstado"
+        Me.TBEstado.ReadOnly = True
         Me.TBEstado.Size = New System.Drawing.Size(130, 20)
         Me.TBEstado.TabIndex = 20
         '
@@ -117,7 +118,7 @@ Partial Class EditarEliminarProducto
         Me.LEstado.BackColor = System.Drawing.Color.Transparent
         Me.LEstado.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LEstado.ForeColor = System.Drawing.Color.White
-        Me.LEstado.Location = New System.Drawing.Point(16, 55)
+        Me.LEstado.Location = New System.Drawing.Point(20, 100)
         Me.LEstado.Name = "LEstado"
         Me.LEstado.Size = New System.Drawing.Size(85, 25)
         Me.LEstado.TabIndex = 19
@@ -125,7 +126,7 @@ Partial Class EditarEliminarProducto
         '
         'TBStock
         '
-        Me.TBStock.Location = New System.Drawing.Point(389, 60)
+        Me.TBStock.Location = New System.Drawing.Point(393, 105)
         Me.TBStock.Name = "TBStock"
         Me.TBStock.Size = New System.Drawing.Size(122, 20)
         Me.TBStock.TabIndex = 18
@@ -136,7 +137,7 @@ Partial Class EditarEliminarProducto
         Me.LStock.BackColor = System.Drawing.Color.Transparent
         Me.LStock.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LStock.ForeColor = System.Drawing.Color.White
-        Me.LStock.Location = New System.Drawing.Point(272, 55)
+        Me.LStock.Location = New System.Drawing.Point(276, 100)
         Me.LStock.Name = "LStock"
         Me.LStock.Size = New System.Drawing.Size(72, 25)
         Me.LStock.TabIndex = 17
@@ -144,53 +145,22 @@ Partial Class EditarEliminarProducto
         '
         'TBDescripcion
         '
-        Me.TBDescripcion.Location = New System.Drawing.Point(157, 167)
+        Me.TBDescripcion.Location = New System.Drawing.Point(161, 212)
         Me.TBDescripcion.Multiline = True
         Me.TBDescripcion.Name = "TBDescripcion"
         Me.TBDescripcion.Size = New System.Drawing.Size(354, 68)
         Me.TBDescripcion.TabIndex = 16
         '
-        'BAgregar
-        '
-        Me.BAgregar.Image = Global.proyecto_integrador.My.Resources.Resources.diskette
-        Me.BAgregar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BAgregar.Location = New System.Drawing.Point(21, 225)
-        Me.BAgregar.Name = "BAgregar"
-        Me.BAgregar.Padding = New System.Windows.Forms.Padding(5, 0, 5, 0)
-        Me.BAgregar.Size = New System.Drawing.Size(117, 70)
-        Me.BAgregar.TabIndex = 10
-        Me.BAgregar.Text = "Guardar"
-        Me.BAgregar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.BAgregar.UseVisualStyleBackColor = True
-        '
-        'TBFoto
-        '
-        Me.TBFoto.Location = New System.Drawing.Point(248, 272)
-        Me.TBFoto.Name = "TBFoto"
-        Me.TBFoto.ReadOnly = True
-        Me.TBFoto.Size = New System.Drawing.Size(263, 20)
-        Me.TBFoto.TabIndex = 9
-        Me.TBFoto.Visible = False
-        '
-        'BFoto
-        '
-        Me.BFoto.Location = New System.Drawing.Point(155, 253)
-        Me.BFoto.Name = "BFoto"
-        Me.BFoto.Size = New System.Drawing.Size(75, 42)
-        Me.BFoto.TabIndex = 8
-        Me.BFoto.Text = "Agregar Foto"
-        Me.BFoto.UseVisualStyleBackColor = True
-        '
         'TBPrecio
         '
-        Me.TBPrecio.Location = New System.Drawing.Point(389, 16)
+        Me.TBPrecio.Location = New System.Drawing.Point(393, 61)
         Me.TBPrecio.Name = "TBPrecio"
         Me.TBPrecio.Size = New System.Drawing.Size(122, 20)
         Me.TBPrecio.TabIndex = 7
         '
         'TBNombre
         '
-        Me.TBNombre.Location = New System.Drawing.Point(115, 103)
+        Me.TBNombre.Location = New System.Drawing.Point(119, 148)
         Me.TBNombre.Multiline = True
         Me.TBNombre.Name = "TBNombre"
         Me.TBNombre.Size = New System.Drawing.Size(130, 39)
@@ -198,8 +168,9 @@ Partial Class EditarEliminarProducto
         '
         'TBID
         '
-        Me.TBID.Location = New System.Drawing.Point(115, 15)
+        Me.TBID.Location = New System.Drawing.Point(119, 60)
         Me.TBID.Name = "TBID"
+        Me.TBID.ReadOnly = True
         Me.TBID.Size = New System.Drawing.Size(130, 20)
         Me.TBID.TabIndex = 4
         '
@@ -209,7 +180,7 @@ Partial Class EditarEliminarProducto
         Me.LPrecio.BackColor = System.Drawing.Color.Transparent
         Me.LPrecio.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LPrecio.ForeColor = System.Drawing.Color.White
-        Me.LPrecio.Location = New System.Drawing.Point(272, 9)
+        Me.LPrecio.Location = New System.Drawing.Point(276, 54)
         Me.LPrecio.Name = "LPrecio"
         Me.LPrecio.Size = New System.Drawing.Size(79, 25)
         Me.LPrecio.TabIndex = 3
@@ -221,7 +192,7 @@ Partial Class EditarEliminarProducto
         Me.LDescripcion.BackColor = System.Drawing.Color.Transparent
         Me.LDescripcion.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LDescripcion.ForeColor = System.Drawing.Color.White
-        Me.LDescripcion.Location = New System.Drawing.Point(16, 161)
+        Me.LDescripcion.Location = New System.Drawing.Point(20, 206)
         Me.LDescripcion.Name = "LDescripcion"
         Me.LDescripcion.Size = New System.Drawing.Size(131, 25)
         Me.LDescripcion.TabIndex = 2
@@ -233,7 +204,7 @@ Partial Class EditarEliminarProducto
         Me.LNombre.BackColor = System.Drawing.Color.Transparent
         Me.LNombre.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LNombre.ForeColor = System.Drawing.Color.White
-        Me.LNombre.Location = New System.Drawing.Point(16, 99)
+        Me.LNombre.Location = New System.Drawing.Point(20, 144)
         Me.LNombre.Name = "LNombre"
         Me.LNombre.Size = New System.Drawing.Size(93, 25)
         Me.LNombre.TabIndex = 1
@@ -245,21 +216,11 @@ Partial Class EditarEliminarProducto
         Me.LID.BackColor = System.Drawing.Color.Transparent
         Me.LID.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LID.ForeColor = System.Drawing.Color.White
-        Me.LID.Location = New System.Drawing.Point(16, 10)
+        Me.LID.Location = New System.Drawing.Point(20, 55)
         Me.LID.Name = "LID"
         Me.LID.Size = New System.Drawing.Size(38, 25)
         Me.LID.TabIndex = 0
         Me.LID.Text = "ID:"
-        '
-        'PBAvatar
-        '
-        Me.PBAvatar.BackgroundImage = Global.proyecto_integrador.My.Resources.Resources.avatar
-        Me.PBAvatar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PBAvatar.Location = New System.Drawing.Point(654, 51)
-        Me.PBAvatar.Name = "PBAvatar"
-        Me.PBAvatar.Size = New System.Drawing.Size(254, 275)
-        Me.PBAvatar.TabIndex = 1
-        Me.PBAvatar.TabStop = False
         '
         'DGV1
         '
@@ -268,8 +229,8 @@ Partial Class EditarEliminarProducto
         Me.DGV1.AllowUserToOrderColumns = True
         Me.DGV1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DGV1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DGV1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ID, Me.Nombre, Me.Precio, Me.Stock, Me.Categoria, Me.Descripcion, Me.Foto, Me.Estado, Me.Editar, Me.Eliminar})
-        Me.DGV1.Location = New System.Drawing.Point(23, 389)
+        Me.DGV1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ID, Me.Nombre, Me.Precio, Me.Stock, Me.Categoria, Me.Descripcion, Me.Estado, Me.Seleccionar})
+        Me.DGV1.Location = New System.Drawing.Point(23, 61)
         Me.DGV1.Name = "DGV1"
         Me.DGV1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders
         Me.DGV1.Size = New System.Drawing.Size(942, 164)
@@ -310,28 +271,108 @@ Partial Class EditarEliminarProducto
         Me.Descripcion.Name = "Descripcion"
         Me.Descripcion.ReadOnly = True
         '
-        'Foto
-        '
-        Me.Foto.HeaderText = "Foto"
-        Me.Foto.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch
-        Me.Foto.Name = "Foto"
-        Me.Foto.ReadOnly = True
-        '
         'Estado
         '
         Me.Estado.HeaderText = "Estado"
         Me.Estado.Name = "Estado"
         Me.Estado.ReadOnly = True
         '
-        'Editar
+        'Seleccionar
         '
-        Me.Editar.HeaderText = "Editar"
-        Me.Editar.Name = "Editar"
+        Me.Seleccionar.HeaderText = "Seleccionar"
+        Me.Seleccionar.Name = "Seleccionar"
         '
-        'Eliminar
+        'BCancelar
         '
-        Me.Eliminar.HeaderText = "Eliminar"
-        Me.Eliminar.Name = "Eliminar"
+        Me.BCancelar.Image = Global.proyecto_integrador.My.Resources.Resources.cerrar
+        Me.BCancelar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.BCancelar.Location = New System.Drawing.Point(769, 445)
+        Me.BCancelar.Name = "BCancelar"
+        Me.BCancelar.Size = New System.Drawing.Size(87, 60)
+        Me.BCancelar.TabIndex = 15
+        Me.BCancelar.Text = "Cancelar"
+        Me.BCancelar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.BCancelar.UseVisualStyleBackColor = True
+        '
+        'BEditar
+        '
+        Me.BEditar.Image = Global.proyecto_integrador.My.Resources.Resources.lapiz
+        Me.BEditar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.BEditar.Location = New System.Drawing.Point(774, 348)
+        Me.BEditar.Name = "BEditar"
+        Me.BEditar.Size = New System.Drawing.Size(82, 64)
+        Me.BEditar.TabIndex = 14
+        Me.BEditar.Text = "Guardar Cambios"
+        Me.BEditar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.BEditar.UseVisualStyleBackColor = True
+        '
+        'BActivarElim
+        '
+        Me.BActivarElim.Location = New System.Drawing.Point(765, 258)
+        Me.BActivarElim.Name = "BActivarElim"
+        Me.BActivarElim.Size = New System.Drawing.Size(91, 60)
+        Me.BActivarElim.TabIndex = 13
+        Me.BActivarElim.Text = "Activar/Eliminar"
+        Me.BActivarElim.UseVisualStyleBackColor = True
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.BackColor = System.Drawing.Color.Transparent
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.White
+        Me.Label1.Location = New System.Drawing.Point(12, 18)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(142, 20)
+        Me.Label1.TabIndex = 18
+        Me.Label1.Text = "Buscar Producto"
+        '
+        'TBBuscar
+        '
+        Me.TBBuscar.Location = New System.Drawing.Point(686, 21)
+        Me.TBBuscar.Name = "TBBuscar"
+        Me.TBBuscar.Size = New System.Drawing.Size(182, 20)
+        Me.TBBuscar.TabIndex = 17
+        '
+        'CBCategoria
+        '
+        Me.CBCategoria.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CBCategoria.FormattingEnabled = True
+        Me.CBCategoria.Location = New System.Drawing.Point(160, 18)
+        Me.CBCategoria.Name = "CBCategoria"
+        Me.CBCategoria.Size = New System.Drawing.Size(154, 28)
+        Me.CBCategoria.TabIndex = 19
+        Me.CBCategoria.Text = "Categoria"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.BackColor = System.Drawing.Color.Transparent
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.White
+        Me.Label3.Location = New System.Drawing.Point(450, 19)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(209, 20)
+        Me.Label3.TabIndex = 21
+        Me.Label3.Text = "Buscar Producto Nombre"
+        '
+        'BBuscarCat
+        '
+        Me.BBuscarCat.Location = New System.Drawing.Point(328, 19)
+        Me.BBuscarCat.Name = "BBuscarCat"
+        Me.BBuscarCat.Size = New System.Drawing.Size(91, 24)
+        Me.BBuscarCat.TabIndex = 22
+        Me.BBuscarCat.Text = "Buscar"
+        Me.BBuscarCat.UseVisualStyleBackColor = True
+        '
+        'BBuscarNombre
+        '
+        Me.BBuscarNombre.Location = New System.Drawing.Point(874, 18)
+        Me.BBuscarNombre.Name = "BBuscarNombre"
+        Me.BBuscarNombre.Size = New System.Drawing.Size(91, 24)
+        Me.BBuscarNombre.TabIndex = 23
+        Me.BBuscarNombre.Text = "Buscar"
+        Me.BBuscarNombre.UseVisualStyleBackColor = True
         '
         'EditarEliminarProducto
         '
@@ -340,8 +381,16 @@ Partial Class EditarEliminarProducto
         Me.BackgroundImage = Global.proyecto_integrador.My.Resources.Resources.cuadros_negros_734708
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(977, 579)
+        Me.Controls.Add(Me.BBuscarNombre)
+        Me.Controls.Add(Me.BBuscarCat)
+        Me.Controls.Add(Me.Label3)
+        Me.Controls.Add(Me.CBCategoria)
+        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.TBBuscar)
+        Me.Controls.Add(Me.BCancelar)
+        Me.Controls.Add(Me.BEditar)
+        Me.Controls.Add(Me.BActivarElim)
         Me.Controls.Add(Me.DGV1)
-        Me.Controls.Add(Me.PBAvatar)
         Me.Controls.Add(Me.PanelPrincipal)
         Me.Name = "EditarEliminarProducto"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
@@ -349,14 +398,13 @@ Partial Class EditarEliminarProducto
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.PanelPrincipal.ResumeLayout(False)
         Me.PanelPrincipal.PerformLayout()
-        CType(Me.PBAvatar, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DGV1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
     Friend WithEvents PanelPrincipal As Panel
-    Friend WithEvents PBAvatar As PictureBox
     Friend WithEvents DGV1 As DataGridView
     Friend WithEvents TBPrecio As TextBox
     Friend WithEvents TBNombre As TextBox
@@ -365,24 +413,28 @@ Partial Class EditarEliminarProducto
     Friend WithEvents LDescripcion As Label
     Friend WithEvents LNombre As Label
     Friend WithEvents LID As Label
-    Friend WithEvents BFoto As Button
-    Friend WithEvents BAgregar As Button
-    Friend WithEvents TBFoto As TextBox
-    Friend WithEvents TBCategoria As TextBox
     Friend WithEvents LCategoria As Label
     Friend WithEvents TBEstado As TextBox
     Friend WithEvents LEstado As Label
     Friend WithEvents TBStock As TextBox
     Friend WithEvents LStock As Label
     Friend WithEvents TBDescripcion As TextBox
+    Friend WithEvents BCancelar As Button
+    Friend WithEvents BEditar As Button
+    Friend WithEvents BActivarElim As Button
+    Friend WithEvents Label1 As Label
+    Friend WithEvents TBBuscar As TextBox
+    Friend WithEvents CBCategoria As ComboBox
     Friend WithEvents ID As DataGridViewTextBoxColumn
     Friend WithEvents Nombre As DataGridViewTextBoxColumn
     Friend WithEvents Precio As DataGridViewTextBoxColumn
     Friend WithEvents Stock As DataGridViewTextBoxColumn
     Friend WithEvents Categoria As DataGridViewTextBoxColumn
     Friend WithEvents Descripcion As DataGridViewTextBoxColumn
-    Friend WithEvents Foto As DataGridViewImageColumn
     Friend WithEvents Estado As DataGridViewTextBoxColumn
-    Friend WithEvents Editar As DataGridViewButtonColumn
-    Friend WithEvents Eliminar As DataGridViewButtonColumn
+    Friend WithEvents Seleccionar As DataGridViewButtonColumn
+    Friend WithEvents Label3 As Label
+    Friend WithEvents BBuscarCat As Button
+    Friend WithEvents BBuscarNombre As Button
+    Friend WithEvents CBCateg As ComboBox
 End Class

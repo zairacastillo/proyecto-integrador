@@ -14,6 +14,21 @@
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -48,10 +63,19 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
@@ -73,6 +97,34 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Capas\Dcliente.vb" />
+    <Compile Include="categoria.vb">
+      <DependentUpon>ModelProyecto.tt</DependentUpon>
+    </Compile>
+    <Compile Include="cliente.vb">
+      <DependentUpon>ModelProyecto.tt</DependentUpon>
+    </Compile>
+    <Compile Include="detalle_venta.vb">
+      <DependentUpon>ModelProyecto.tt</DependentUpon>
+    </Compile>
+    <Compile Include="empleado.vb">
+      <DependentUpon>ModelProyecto.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelProyecto.Context.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelProyecto.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelProyecto.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelProyecto.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="ModelProyecto.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelProyecto.tt</DependentUpon>
+    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -89,10 +141,19 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="perfil.vb">
+      <DependentUpon>ModelProyecto.tt</DependentUpon>
+    </Compile>
     <Compile Include="Presentacion\Admin\EditarEliminarProducto.designer.vb">
       <DependentUpon>EditarEliminarProducto.vb</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\Admin\EditarEliminarProducto.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Admin\EliminarCliente.Designer.vb">
+      <DependentUpon>EliminarCliente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Admin\EliminarCliente.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Presentacion\Admin\SoloListarEmpleados.Designer.vb">
@@ -113,10 +174,16 @@
     <Compile Include="Presentacion\Admin\NuevoProducto.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentacion\SuperAdmin\SoloListarVentas.Designer.vb">
+    <Compile Include="Presentacion\Admin\SoloListarVentas.Designer.vb">
       <DependentUpon>SoloListarVentas.vb</DependentUpon>
     </Compile>
-    <Compile Include="Presentacion\SuperAdmin\SoloListarVentas.vb">
+    <Compile Include="Presentacion\Admin\SoloListarVentas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Login.Designer.vb">
+      <DependentUpon>Login.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Login.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Presentacion\SuperAdmin\SoloListarProductos.Designer.vb">
@@ -167,10 +234,10 @@
     <Compile Include="Presentacion\Vendedor\NuevaVenta.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentacion\Vendedor\EditarEliminarCliente.designer.vb">
-      <DependentUpon>EditarEliminarCliente.vb</DependentUpon>
+    <Compile Include="Presentacion\Vendedor\EditarCliente.designer.vb">
+      <DependentUpon>EditarCliente.vb</DependentUpon>
     </Compile>
-    <Compile Include="Presentacion\Vendedor\EditarEliminarCliente.vb">
+    <Compile Include="Presentacion\Vendedor\EditarCliente.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Presentacion\Vendedor\NuevoCliente.designer.vb">
@@ -191,7 +258,13 @@
     <Compile Include="Presentacion\Vendedor\AgregarProductoVenta.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="producto.vb">
+      <DependentUpon>ModelProyecto.tt</DependentUpon>
+    </Compile>
     <Compile Include="validaciones\validar.vb" />
+    <Compile Include="venta.vb">
+      <DependentUpon>ModelProyecto.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="My Project\Resources.resx">
@@ -203,6 +276,9 @@
     <EmbeddedResource Include="Presentacion\Admin\EditarEliminarProducto.resx">
       <DependentUpon>EditarEliminarProducto.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Admin\EliminarCliente.resx">
+      <DependentUpon>EliminarCliente.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Admin\SoloListarEmpleados.resx">
       <DependentUpon>SoloListarEmpleados.vb</DependentUpon>
     </EmbeddedResource>
@@ -212,8 +288,11 @@
     <EmbeddedResource Include="Presentacion\Admin\NuevoProducto.resx">
       <DependentUpon>NuevoProducto.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentacion\SuperAdmin\SoloListarVentas.resx">
+    <EmbeddedResource Include="Presentacion\Admin\SoloListarVentas.resx">
       <DependentUpon>SoloListarVentas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Login.resx">
+      <DependentUpon>Login.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\SuperAdmin\SoloListarProductos.resx">
       <DependentUpon>SoloListarProductos.vb</DependentUpon>
@@ -239,8 +318,8 @@
     <EmbeddedResource Include="Presentacion\Vendedor\NuevaVenta.resx">
       <DependentUpon>NuevaVenta.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentacion\Vendedor\EditarEliminarCliente.resx">
-      <DependentUpon>EditarEliminarCliente.vb</DependentUpon>
+    <EmbeddedResource Include="Presentacion\Vendedor\EditarCliente.resx">
+      <DependentUpon>EditarCliente.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Vendedor\NuevoCliente.resx">
       <DependentUpon>NuevoCliente.vb</DependentUpon>
@@ -253,6 +332,13 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <EntityDeploy Include="ModelProyecto.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ModelProyecto.Designer.vb</LastGenOutput>
+    </EntityDeploy>
+    <None Include="ModelProyecto.edmx.diagram">
+      <DependentUpon>ModelProyecto.edmx</DependentUpon>
+    </None>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
@@ -284,9 +370,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\person-add_icon-icons.com_50077.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\futbol.jpeg" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\person-add.jpg" />
@@ -333,6 +416,47 @@
   <ItemGroup>
     <None Include="Resources\vendedor.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\actualizar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eddit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 y x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ModelProyecto.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ModelProyecto.Context.vb</LastGenOutput>
+      <DependentUpon>ModelProyecto.edmx</DependentUpon>
+    </Content>
+    <Content Include="ModelProyecto.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelProyecto.edmx</DependentUpon>
+      <LastGenOutput>ModelProyecto.vb</LastGenOutput>
+    </Content>
+    <None Include="Resources\copia-de-respaldo.png" />
+    <None Include="Resources\respaldo.png" />
+    <None Include="Resources\portapapeles1.png" />
+    <None Include="Resources\estadisticas1.png" />
+    <None Include="Resources\estadisticas.png" />
+    <None Include="Resources\portapapeles.png" />
+    <None Include="Resources\lapiz.png" />
+    <None Include="Resources\actualizar-flecha.png" />
+    <None Include="Resources\cerrar.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

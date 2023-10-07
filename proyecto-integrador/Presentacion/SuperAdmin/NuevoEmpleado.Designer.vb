@@ -23,6 +23,14 @@ Partial Class NuevoEmpleado
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.DGV1 = New System.Windows.Forms.DataGridView()
+        Me.Nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Apellido = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Dni = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Telefono = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Correo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Contraseña = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Usuario = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Perfil = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.PanelPrincipal = New System.Windows.Forms.Panel()
         Me.TBPerfil = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -41,14 +49,6 @@ Partial Class NuevoEmpleado
         Me.TBNombre = New System.Windows.Forms.TextBox()
         Me.LApellido = New System.Windows.Forms.Label()
         Me.LNombre = New System.Windows.Forms.Label()
-        Me.Nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Apellido = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Dni = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Telefono = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Correo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Contraseña = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Usuario = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Perfil = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.DGV1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelPrincipal.SuspendLayout()
         Me.SuspendLayout()
@@ -66,6 +66,46 @@ Partial Class NuevoEmpleado
         Me.DGV1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders
         Me.DGV1.Size = New System.Drawing.Size(936, 164)
         Me.DGV1.TabIndex = 7
+        '
+        'Nombre
+        '
+        Me.Nombre.HeaderText = "Nombre"
+        Me.Nombre.Name = "Nombre"
+        '
+        'Apellido
+        '
+        Me.Apellido.HeaderText = "Apellido"
+        Me.Apellido.Name = "Apellido"
+        '
+        'Dni
+        '
+        Me.Dni.HeaderText = "DNI"
+        Me.Dni.Name = "Dni"
+        '
+        'Telefono
+        '
+        Me.Telefono.HeaderText = "Telefono"
+        Me.Telefono.Name = "Telefono"
+        '
+        'Correo
+        '
+        Me.Correo.HeaderText = "Correo"
+        Me.Correo.Name = "Correo"
+        '
+        'Contraseña
+        '
+        Me.Contraseña.HeaderText = "Contraseña"
+        Me.Contraseña.Name = "Contraseña"
+        '
+        'Usuario
+        '
+        Me.Usuario.HeaderText = "Usuario"
+        Me.Usuario.Name = "Usuario"
+        '
+        'Perfil
+        '
+        Me.Perfil.HeaderText = "Perfil"
+        Me.Perfil.Name = "Perfil"
         '
         'PanelPrincipal
         '
@@ -258,46 +298,6 @@ Partial Class NuevoEmpleado
         Me.LNombre.Size = New System.Drawing.Size(93, 25)
         Me.LNombre.TabIndex = 0
         Me.LNombre.Text = "Nombre:"
-        '
-        'Nombre
-        '
-        Me.Nombre.HeaderText = "Nombre"
-        Me.Nombre.Name = "Nombre"
-        '
-        'Apellido
-        '
-        Me.Apellido.HeaderText = "Apellido"
-        Me.Apellido.Name = "Apellido"
-        '
-        'Dni
-        '
-        Me.Dni.HeaderText = "DNI"
-        Me.Dni.Name = "Dni"
-        '
-        'Telefono
-        '
-        Me.Telefono.HeaderText = "Telefono"
-        Me.Telefono.Name = "Telefono"
-        '
-        'Correo
-        '
-        Me.Correo.HeaderText = "Correo"
-        Me.Correo.Name = "Correo"
-        '
-        'Contraseña
-        '
-        Me.Contraseña.HeaderText = "Contraseña"
-        Me.Contraseña.Name = "Contraseña"
-        '
-        'Usuario
-        '
-        Me.Usuario.HeaderText = "Usuario"
-        Me.Usuario.Name = "Usuario"
-        '
-        'Perfil
-        '
-        Me.Perfil.HeaderText = "Perfil"
-        Me.Perfil.Name = "Perfil"
         '
         'NuevoEmpleado
         '

@@ -35,7 +35,7 @@ Public Class MDISuperAdmin
         End If
     End Sub
 
-    Private Sub NuevoToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles NuevoToolStripMenuItem1.Click
+    Private Sub NuevoToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles BNuevoUsuario.Click
         For Each ChildForma As Form In Me.MdiChildren
             ChildForma.Close()
         Next
@@ -50,7 +50,7 @@ Public Class MDISuperAdmin
         ChildForm.Show()
     End Sub
 
-    Private Sub StatusBarToolStripMenuItem_Click_1(sender As Object, e As EventArgs) Handles StatusBarToolStripMenuItem.Click
+    Private Sub StatusBarToolStripMenuItem_Click_1(sender As Object, e As EventArgs) Handles BEditarEliminar.Click
         For Each ChildForma As Form In Me.MdiChildren
             ChildForma.Close()
         Next
@@ -60,40 +60,13 @@ Public Class MDISuperAdmin
         ChildForm.MdiParent = Me
 
         m_ChildFormNumber += 1
-        ChildForm.Text = "Listar Empleados"
+        ChildForm.Text = "Editar\Eliminar Usuario"
 
         ChildForm.Show()
     End Sub
 
-    Private Sub ListarToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ListarToolStripMenuItem.Click
-        For Each ChildForma As Form In Me.MdiChildren
-            ChildForma.Close()
-        Next
-        ' Cree una nueva instancia del formulario secundario.
-        Dim ChildForm As New SoloListarProductos
-        ' Conviértalo en un elemento secundario de este formulario MDI antes de mostrarlo.
-        ChildForm.MdiParent = Me
 
-        m_ChildFormNumber += 1
-        ChildForm.Text = "Listar Productos"
 
-        ChildForm.Show()
-    End Sub
-
-    Private Sub ToolStripMenuItem3_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem3.Click
-        For Each ChildForma As Form In Me.MdiChildren
-            ChildForma.Close()
-        Next
-        ' Cree una nueva instancia del formulario secundario.
-        Dim ChildForm As New SoloListarVentas
-        ' Conviértalo en un elemento secundario de este formulario MDI antes de mostrarlo.
-        ChildForm.MdiParent = Me
-
-        m_ChildFormNumber += 1
-        ChildForm.Text = "Listar Ventas"
-
-        ChildForm.Show()
-    End Sub
 
     Private Sub ExitToolsStripMenuItem_Click(ByVal sender As Object, ByVal e As EventArgs)
         Me.Close()
@@ -114,7 +87,7 @@ Public Class MDISuperAdmin
 
 
     Private Sub StatusBarToolStripMenuItem_Click(ByVal sender As Object, ByVal e As EventArgs)
-        Me.StatusStrip.Visible = Me.StatusBarToolStripMenuItem.Checked
+        Me.StatusStrip.Visible = Me.BEditarEliminar.Checked
     End Sub
 
     Private Sub CascadeToolStripMenuItem_Click(ByVal sender As Object, ByVal e As EventArgs)
@@ -142,12 +115,7 @@ Public Class MDISuperAdmin
 
     Private m_ChildFormNumber As Integer
 
-    Private Sub ToolStripMenuItem2_Click(sender As Object, e As EventArgs)
 
-    End Sub
 
-    Private Sub ToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem1.Click
-
-    End Sub
 
 End Class
