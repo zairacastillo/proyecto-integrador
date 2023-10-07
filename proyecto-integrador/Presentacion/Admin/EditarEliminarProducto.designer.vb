@@ -23,7 +23,7 @@ Partial Class EditarEliminarProducto
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.PanelPrincipal = New System.Windows.Forms.Panel()
-        Me.TBCategoria = New System.Windows.Forms.TextBox()
+        Me.CBCateg = New System.Windows.Forms.ComboBox()
         Me.LCategoria = New System.Windows.Forms.Label()
         Me.TBEstado = New System.Windows.Forms.TextBox()
         Me.LEstado = New System.Windows.Forms.Label()
@@ -46,7 +46,6 @@ Partial Class EditarEliminarProducto
         Me.Descripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Estado = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Seleccionar = New System.Windows.Forms.DataGridViewButtonColumn()
-        Me.BActializar = New System.Windows.Forms.Button()
         Me.BCancelar = New System.Windows.Forms.Button()
         Me.BEditar = New System.Windows.Forms.Button()
         Me.BActivarElim = New System.Windows.Forms.Button()
@@ -64,7 +63,7 @@ Partial Class EditarEliminarProducto
         '
         Me.PanelPrincipal.BackgroundImage = Global.proyecto_integrador.My.Resources.Resources.bg
         Me.PanelPrincipal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PanelPrincipal.Controls.Add(Me.TBCategoria)
+        Me.PanelPrincipal.Controls.Add(Me.CBCateg)
         Me.PanelPrincipal.Controls.Add(Me.LCategoria)
         Me.PanelPrincipal.Controls.Add(Me.TBEstado)
         Me.PanelPrincipal.Controls.Add(Me.LEstado)
@@ -84,13 +83,14 @@ Partial Class EditarEliminarProducto
         Me.PanelPrincipal.Size = New System.Drawing.Size(546, 328)
         Me.PanelPrincipal.TabIndex = 0
         '
-        'TBCategoria
+        'CBCateg
         '
-        Me.TBCategoria.Location = New System.Drawing.Point(393, 148)
-        Me.TBCategoria.Multiline = True
-        Me.TBCategoria.Name = "TBCategoria"
-        Me.TBCategoria.Size = New System.Drawing.Size(122, 39)
-        Me.TBCategoria.TabIndex = 22
+        Me.CBCateg.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CBCateg.FormattingEnabled = True
+        Me.CBCateg.Location = New System.Drawing.Point(389, 145)
+        Me.CBCateg.Name = "CBCateg"
+        Me.CBCateg.Size = New System.Drawing.Size(126, 28)
+        Me.CBCateg.TabIndex = 22
         '
         'LCategoria
         '
@@ -108,6 +108,7 @@ Partial Class EditarEliminarProducto
         '
         Me.TBEstado.Location = New System.Drawing.Point(119, 105)
         Me.TBEstado.Name = "TBEstado"
+        Me.TBEstado.ReadOnly = True
         Me.TBEstado.Size = New System.Drawing.Size(130, 20)
         Me.TBEstado.TabIndex = 20
         '
@@ -169,6 +170,7 @@ Partial Class EditarEliminarProducto
         '
         Me.TBID.Location = New System.Drawing.Point(119, 60)
         Me.TBID.Name = "TBID"
+        Me.TBID.ReadOnly = True
         Me.TBID.Size = New System.Drawing.Size(130, 20)
         Me.TBID.TabIndex = 4
         '
@@ -280,23 +282,11 @@ Partial Class EditarEliminarProducto
         Me.Seleccionar.HeaderText = "Seleccionar"
         Me.Seleccionar.Name = "Seleccionar"
         '
-        'BActializar
-        '
-        Me.BActializar.Image = Global.proyecto_integrador.My.Resources.Resources.actualizar_flecha
-        Me.BActializar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.BActializar.Location = New System.Drawing.Point(841, 279)
-        Me.BActializar.Name = "BActializar"
-        Me.BActializar.Size = New System.Drawing.Size(87, 60)
-        Me.BActializar.TabIndex = 16
-        Me.BActializar.Text = "Actualizar"
-        Me.BActializar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.BActializar.UseVisualStyleBackColor = True
-        '
         'BCancelar
         '
         Me.BCancelar.Image = Global.proyecto_integrador.My.Resources.Resources.cerrar
         Me.BCancelar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.BCancelar.Location = New System.Drawing.Point(841, 431)
+        Me.BCancelar.Location = New System.Drawing.Point(769, 445)
         Me.BCancelar.Name = "BCancelar"
         Me.BCancelar.Size = New System.Drawing.Size(87, 60)
         Me.BCancelar.TabIndex = 15
@@ -308,17 +298,17 @@ Partial Class EditarEliminarProducto
         '
         Me.BEditar.Image = Global.proyecto_integrador.My.Resources.Resources.lapiz
         Me.BEditar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.BEditar.Location = New System.Drawing.Point(688, 431)
+        Me.BEditar.Location = New System.Drawing.Point(774, 348)
         Me.BEditar.Name = "BEditar"
-        Me.BEditar.Size = New System.Drawing.Size(82, 60)
+        Me.BEditar.Size = New System.Drawing.Size(82, 64)
         Me.BEditar.TabIndex = 14
-        Me.BEditar.Text = "Editar"
+        Me.BEditar.Text = "Guardar Cambios"
         Me.BEditar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.BEditar.UseVisualStyleBackColor = True
         '
         'BActivarElim
         '
-        Me.BActivarElim.Location = New System.Drawing.Point(679, 279)
+        Me.BActivarElim.Location = New System.Drawing.Point(765, 258)
         Me.BActivarElim.Name = "BActivarElim"
         Me.BActivarElim.Size = New System.Drawing.Size(91, 60)
         Me.BActivarElim.TabIndex = 13
@@ -397,7 +387,6 @@ Partial Class EditarEliminarProducto
         Me.Controls.Add(Me.CBCategoria)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.TBBuscar)
-        Me.Controls.Add(Me.BActializar)
         Me.Controls.Add(Me.BCancelar)
         Me.Controls.Add(Me.BEditar)
         Me.Controls.Add(Me.BActivarElim)
@@ -424,14 +413,12 @@ Partial Class EditarEliminarProducto
     Friend WithEvents LDescripcion As Label
     Friend WithEvents LNombre As Label
     Friend WithEvents LID As Label
-    Friend WithEvents TBCategoria As TextBox
     Friend WithEvents LCategoria As Label
     Friend WithEvents TBEstado As TextBox
     Friend WithEvents LEstado As Label
     Friend WithEvents TBStock As TextBox
     Friend WithEvents LStock As Label
     Friend WithEvents TBDescripcion As TextBox
-    Friend WithEvents BActializar As Button
     Friend WithEvents BCancelar As Button
     Friend WithEvents BEditar As Button
     Friend WithEvents BActivarElim As Button
@@ -449,4 +436,5 @@ Partial Class EditarEliminarProducto
     Friend WithEvents Label3 As Label
     Friend WithEvents BBuscarCat As Button
     Friend WithEvents BBuscarNombre As Button
+    Friend WithEvents CBCateg As ComboBox
 End Class

@@ -33,7 +33,7 @@ Public Class EditarCliente
         End If
     End Sub
 
-    Private Sub BActUalizar_Click(sender As Object, e As EventArgs) Handles BActUalizar.Click
+    Private Sub BEditar_Click(sender As Object, e As EventArgs) Handles BEditar.Click
         Dim msjTxt As String = "Debe Completar todos los campos: "
 
         ' lista de TB a verificar si estan vacios
@@ -57,4 +57,6 @@ Public Class EditarCliente
     Private Sub EditarCliente_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ObjCliente.getAllCliente(DGV1)
     End Sub
+
+
 End Class

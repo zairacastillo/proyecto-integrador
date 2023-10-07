@@ -48,7 +48,7 @@ Partial Class NuevaVenta
         Me.TBStock = New System.Windows.Forms.TextBox()
         Me.TBCantidad = New System.Windows.Forms.TextBox()
         Me.TBUnitario = New System.Windows.Forms.TextBox()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.BBuscarProd = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label11 = New System.Windows.Forms.Label()
@@ -105,7 +105,7 @@ Partial Class NuevaVenta
         Me.DGV1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DGV1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DGV1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IDD, Me.NombreD, Me.PrecioUnitario, Me.Cantidad, Me.Subtotal, Me.Eliminar})
-        Me.DGV1.Location = New System.Drawing.Point(17, 489)
+        Me.DGV1.Location = New System.Drawing.Point(17, 451)
         Me.DGV1.Name = "DGV1"
         Me.DGV1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders
         Me.DGV1.Size = New System.Drawing.Size(931, 108)
@@ -147,7 +147,7 @@ Partial Class NuevaVenta
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(24, 461)
+        Me.Label1.Location = New System.Drawing.Point(22, 423)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(91, 25)
         Me.Label1.TabIndex = 33
@@ -250,7 +250,7 @@ Partial Class NuevaVenta
         Me.Label6.BackColor = System.Drawing.Color.Transparent
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.ForeColor = System.Drawing.Color.White
-        Me.Label6.Location = New System.Drawing.Point(398, 135)
+        Me.Label6.Location = New System.Drawing.Point(510, 574)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(66, 25)
         Me.Label6.TabIndex = 44
@@ -258,7 +258,7 @@ Partial Class NuevaVenta
         '
         'TBTotal
         '
-        Me.TBTotal.Location = New System.Drawing.Point(506, 140)
+        Me.TBTotal.Location = New System.Drawing.Point(582, 579)
         Me.TBTotal.Name = "TBTotal"
         Me.TBTotal.ReadOnly = True
         Me.TBTotal.Size = New System.Drawing.Size(169, 20)
@@ -287,14 +287,14 @@ Partial Class NuevaVenta
         Me.TBUnitario.Size = New System.Drawing.Size(169, 20)
         Me.TBUnitario.TabIndex = 49
         '
-        'Button1
+        'BBuscarProd
         '
-        Me.Button1.Location = New System.Drawing.Point(290, 145)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(58, 29)
-        Me.Button1.TabIndex = 51
-        Me.Button1.Text = "Agregar"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.BBuscarProd.Location = New System.Drawing.Point(290, 145)
+        Me.BBuscarProd.Name = "BBuscarProd"
+        Me.BBuscarProd.Size = New System.Drawing.Size(58, 29)
+        Me.BBuscarProd.TabIndex = 51
+        Me.BBuscarProd.Text = "Agregar"
+        Me.BBuscarProd.UseVisualStyleBackColor = True
         '
         'Button2
         '
@@ -309,18 +309,18 @@ Partial Class NuevaVenta
         '
         Me.Panel1.BackColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.Panel1.BackgroundImage = Global.proyecto_integrador.My.Resources.Resources.bg
+        Me.Panel1.Controls.Add(Me.Label8)
         Me.Panel1.Controls.Add(Me.Label11)
         Me.Panel1.Controls.Add(Me.Button2)
-        Me.Panel1.Controls.Add(Me.Button1)
+        Me.Panel1.Controls.Add(Me.BBuscarProd)
         Me.Panel1.Controls.Add(Me.Label7)
         Me.Panel1.Controls.Add(Me.TBCantidad)
         Me.Panel1.Controls.Add(Me.BProducto)
         Me.Panel1.Controls.Add(Me.TBUnitario)
         Me.Panel1.Controls.Add(Me.TBProducto)
-        Me.Panel1.Controls.Add(Me.Label8)
         Me.Panel1.Controls.Add(Me.Label10)
         Me.Panel1.Controls.Add(Me.TBStock)
-        Me.Panel1.Location = New System.Drawing.Point(12, 247)
+        Me.Panel1.Location = New System.Drawing.Point(17, 194)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(936, 196)
         Me.Panel1.TabIndex = 53
@@ -355,7 +355,7 @@ Partial Class NuevaVenta
         Me.Label8.BackColor = System.Drawing.Color.Transparent
         Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.ForeColor = System.Drawing.Color.White
-        Me.Label8.Location = New System.Drawing.Point(12, 43)
+        Me.Label8.Location = New System.Drawing.Point(12, 48)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(104, 25)
         Me.Label8.TabIndex = 55
@@ -382,15 +382,13 @@ Partial Class NuevaVenta
         Me.Panel2.Controls.Add(Me.TBClienteN)
         Me.Panel2.Controls.Add(Me.Label2)
         Me.Panel2.Controls.Add(Me.DTPFecnac)
-        Me.Panel2.Controls.Add(Me.Label6)
         Me.Panel2.Controls.Add(Me.Label4)
-        Me.Panel2.Controls.Add(Me.TBTotal)
         Me.Panel2.Controls.Add(Me.TBID)
         Me.Panel2.Controls.Add(Me.TBVendedor)
         Me.Panel2.Controls.Add(Me.Label5)
         Me.Panel2.Location = New System.Drawing.Point(12, 23)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(949, 180)
+        Me.Panel2.Size = New System.Drawing.Size(949, 140)
         Me.Panel2.TabIndex = 54
         '
         'Label9
@@ -411,7 +409,7 @@ Partial Class NuevaVenta
         Me.Label13.BackColor = System.Drawing.Color.Transparent
         Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label13.ForeColor = System.Drawing.Color.White
-        Me.Label13.Location = New System.Drawing.Point(24, 235)
+        Me.Label13.Location = New System.Drawing.Point(35, 181)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(98, 25)
         Me.Label13.TabIndex = 45
@@ -429,7 +427,9 @@ Partial Class NuevaVenta
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.BCompra)
         Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.DGV1)
+        Me.Controls.Add(Me.TBTotal)
         Me.Name = "NuevaVenta"
         Me.Text = "NuevaVenta"
         CType(Me.DGV1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -468,7 +468,7 @@ Partial Class NuevaVenta
     Friend WithEvents TBStock As TextBox
     Friend WithEvents TBCantidad As TextBox
     Friend WithEvents TBUnitario As TextBox
-    Friend WithEvents Button1 As Button
+    Friend WithEvents BBuscarProd As Button
     Friend WithEvents Button2 As Button
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Label8 As Label

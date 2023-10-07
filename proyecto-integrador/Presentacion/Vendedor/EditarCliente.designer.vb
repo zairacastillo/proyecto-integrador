@@ -40,7 +40,6 @@ Partial Class EditarCliente
         Me.Label1 = New System.Windows.Forms.Label()
         Me.BEditar = New System.Windows.Forms.Button()
         Me.BCancelar = New System.Windows.Forms.Button()
-        Me.BActUalizar = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.TBBuscarAp = New System.Windows.Forms.TextBox()
         Me.BBuscarDni = New System.Windows.Forms.Button()
@@ -221,11 +220,11 @@ Partial Class EditarCliente
         '
         Me.BEditar.Image = Global.proyecto_integrador.My.Resources.Resources.lapiz
         Me.BEditar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.BEditar.Location = New System.Drawing.Point(684, 301)
+        Me.BEditar.Location = New System.Drawing.Point(662, 287)
         Me.BEditar.Name = "BEditar"
         Me.BEditar.Size = New System.Drawing.Size(87, 68)
         Me.BEditar.TabIndex = 10
-        Me.BEditar.Text = "Editar"
+        Me.BEditar.Text = "Guardar Cambios"
         Me.BEditar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.BEditar.UseVisualStyleBackColor = True
         '
@@ -234,25 +233,13 @@ Partial Class EditarCliente
         Me.BCancelar.BackgroundImage = Global.proyecto_integrador.My.Resources.Resources.cerrar
         Me.BCancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.BCancelar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.BCancelar.Location = New System.Drawing.Point(761, 403)
+        Me.BCancelar.Location = New System.Drawing.Point(662, 404)
         Me.BCancelar.Name = "BCancelar"
         Me.BCancelar.Size = New System.Drawing.Size(87, 67)
         Me.BCancelar.TabIndex = 11
         Me.BCancelar.Text = "Cancelar"
         Me.BCancelar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.BCancelar.UseVisualStyleBackColor = True
-        '
-        'BActUalizar
-        '
-        Me.BActUalizar.Image = Global.proyecto_integrador.My.Resources.Resources.actualizar_flecha
-        Me.BActUalizar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.BActUalizar.Location = New System.Drawing.Point(599, 403)
-        Me.BActUalizar.Name = "BActUalizar"
-        Me.BActUalizar.Size = New System.Drawing.Size(87, 67)
-        Me.BActUalizar.TabIndex = 12
-        Me.BActUalizar.Text = "Actualizar"
-        Me.BActUalizar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.BActUalizar.UseVisualStyleBackColor = True
         '
         'Label2
         '
@@ -301,7 +288,6 @@ Partial Class EditarCliente
         Me.Controls.Add(Me.BBuscarDni)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.TBBuscarAp)
-        Me.Controls.Add(Me.BActUalizar)
         Me.Controls.Add(Me.BCancelar)
         Me.Controls.Add(Me.BEditar)
         Me.Controls.Add(Me.Label1)
@@ -336,7 +322,6 @@ Partial Class EditarCliente
     Friend WithEvents Label1 As Label
     Friend WithEvents BEditar As Button
     Friend WithEvents BCancelar As Button
-    Friend WithEvents BActUalizar As Button
     Friend WithEvents Label2 As Label
     Friend WithEvents TBBuscarAp As TextBox
     Friend WithEvents BBuscarDni As Button

@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="PROYECTO2ModelStoreContainer" CdmEntityContainer="PROYECTO2Entities">
+    <EntitySetMapping Name="categoria">
+      <EntityTypeMapping TypeName="PROYECTO2Model.categoria">
+        <MappingFragment StoreEntitySet="categoria">
+          <ScalarProperty Name="Id_categoria" ColumnName="Id_categoria" />
+          <ScalarProperty Name="descripcion_cat" ColumnName="descripcion_cat" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="cliente">
+      <EntityTypeMapping TypeName="PROYECTO2Model.cliente">
+        <MappingFragment StoreEntitySet="cliente">
+          <ScalarProperty Name="estado_cliente" ColumnName="estado_cliente" />
+          <ScalarProperty Name="fecha_cliente" ColumnName="fecha_cliente" />
+          <ScalarProperty Name="Id_cliente" ColumnName="Id_cliente" />
+          <ScalarProperty Name="nombre_cliente" ColumnName="nombre_cliente" />
+          <ScalarProperty Name="apellido_cliente" ColumnName="apellido_cliente" />
+          <ScalarProperty Name="dni_cliente" ColumnName="dni_cliente" />
+          <ScalarProperty Name="correo_cliente" ColumnName="correo_cliente" />
+          <ScalarProperty Name="telefono_cliente" ColumnName="telefono_cliente" />
+          <ScalarProperty Name="direccion_cliente" ColumnName="direccion_cliente" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="detalle_venta">
+      <EntityTypeMapping TypeName="PROYECTO2Model.detalle_venta">
+        <MappingFragment StoreEntitySet="detalle_venta">
+          <ScalarProperty Name="Id_detalle_venta" ColumnName="Id_detalle_venta" />
+          <ScalarProperty Name="Id_producto" ColumnName="Id_producto" />
+          <ScalarProperty Name="precio_unitario" ColumnName="precio_unitario" />
+          <ScalarProperty Name="cantidad" ColumnName="cantidad" />
+          <ScalarProperty Name="subtotal" ColumnName="subtotal" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="empleado">
+      <EntityTypeMapping TypeName="PROYECTO2Model.empleado">
+        <MappingFragment StoreEntitySet="empleado">
+          <ScalarProperty Name="estado_empleado" ColumnName="estado_empleado" />
+          <ScalarProperty Name="fecha_empleado" ColumnName="fecha_empleado" />
+          <ScalarProperty Name="Id_empleado" ColumnName="Id_empleado" />
+          <ScalarProperty Name="nombre_empleado" ColumnName="nombre_empleado" />
+          <ScalarProperty Name="apellido_empleado" ColumnName="apellido_empleado" />
+          <ScalarProperty Name="dni_empleado" ColumnName="dni_empleado" />
+          <ScalarProperty Name="correo_empleado" ColumnName="correo_empleado" />
+          <ScalarProperty Name="telefono_empleado" ColumnName="telefono_empleado" />
+          <ScalarProperty Name="direccion_empleado" ColumnName="direccion_empleado" />
+          <ScalarProperty Name="usuario" ColumnName="usuario" />
+          <ScalarProperty Name="contraseña" ColumnName="contraseña" />
+          <ScalarProperty Name="Id_perfil" ColumnName="Id_perfil" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="perfil">
+      <EntityTypeMapping TypeName="PROYECTO2Model.perfil">
+        <MappingFragment StoreEntitySet="perfil">
+          <ScalarProperty Name="Id_perfil" ColumnName="Id_perfil" />
+          <ScalarProperty Name="descripcion_perfil" ColumnName="descripcion_perfil" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="producto">
+      <EntityTypeMapping TypeName="PROYECTO2Model.producto">
+        <MappingFragment StoreEntitySet="producto">
+          <ScalarProperty Name="Id_producto" ColumnName="Id_producto" />
+          <ScalarProperty Name="nombre_producto" ColumnName="nombre_producto" />
+          <ScalarProperty Name="estado_producto" ColumnName="estado_producto" />
+          <ScalarProperty Name="precio" ColumnName="precio" />
+          <ScalarProperty Name="stock" ColumnName="stock" />
+          <ScalarProperty Name="Id_categoria" ColumnName="Id_categoria" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="venta">
+      <EntityTypeMapping TypeName="PROYECTO2Model.venta">
+        <MappingFragment StoreEntitySet="venta">
+          <ScalarProperty Name="Id_venta" ColumnName="Id_venta" />
+          <ScalarProperty Name="Id_empleado" ColumnName="Id_empleado" />
+          <ScalarProperty Name="Id_cliente" ColumnName="Id_cliente" />
+          <ScalarProperty Name="fecha" ColumnName="fecha" />
+          <ScalarProperty Name="total" ColumnName="total" />
+          <ScalarProperty Name="Id_detalle_venta" ColumnName="Id_detalle_venta" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

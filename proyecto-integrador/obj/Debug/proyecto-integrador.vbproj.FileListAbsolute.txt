@@ -1,0 +1,98 @@
+C:\Users\zaira\OneDrive\Documentos\proyecto-integrador-zaira\proyecto-integrador\bin\Debug\proyecto-integrador.exe.config
+C:\Users\zaira\OneDrive\Documentos\proyecto-integrador-zaira\proyecto-integrador\bin\Debug\proyecto-integrador.exe
+C:\Users\zaira\OneDrive\Documentos\proyecto-integrador-zaira\proyecto-integrador\bin\Debug\proyecto-integrador.pdb
+C:\Users\zaira\OneDrive\Documentos\proyecto-integrador-zaira\proyecto-integrador\bin\Debug\proyecto-integrador.xml
+C:\Users\zaira\OneDrive\Documentos\proyecto-integrador-zaira\proyecto-integrador\obj\Debug\proyecto-integrador.vbproj.AssemblyReference.cache
+C:\Users\zaira\OneDrive\Documentos\proyecto-integrador-zaira\proyecto-integrador\obj\Debug\proyecto_integrador.Resources.resources
+C:\Users\zaira\OneDrive\Documentos\proyecto-integrador-zaira\proyecto-integrador\obj\Debug\proyecto_integrador.EditarEliminarProducto.resources
+C:\Users\zaira\OneDrive\Documentos\proyecto-integrador-zaira\proyecto-integrador\obj\Debug\proyecto_integrador.SoloListarEmpleados.resources
+C:\Users\zaira\OneDrive\Documentos\proyecto-integrador-zaira\proyecto-integrador\obj\Debug\proyecto_integrador.MDIAdmin.resources
+C:\Users\zaira\OneDrive\Documentos\proyecto-integrador-zaira\proyecto-integrador\obj\Debug\proyecto_integrador.NuevoProducto.resources
+C:\Users\zaira\OneDrive\Documentos\proyecto-integrador-zaira\proyecto-integrador\obj\Debug\proyecto_integrador.SoloListarVentas.resources
+C:\Users\zaira\OneDrive\Documentos\proyecto-integrador-zaira\proyecto-integrador\obj\Debug\proyecto_integrador.SoloListarProductos.resources
+C:\Users\zaira\OneDrive\Documentos\proyecto-integrador-zaira\proyecto-integrador\obj\Debug\proyecto_integrador.MDISuperAdmin.resources
+C:\Users\zaira\OneDrive\Documentos\proyecto-integrador-zaira\proyecto-integrador\obj\Debug\proyecto_integrador.EditarEliminarEmpleado.resources
+C:\Users\zaira\OneDrive\Documentos\proyecto-integrador-zaira\proyecto-integrador\obj\Debug\proyecto_integrador.NuevoEmpleado.resources
+C:\Users\zaira\OneDrive\Documentos\proyecto-integrador-zaira\proyecto-integrador\obj\Debug\proyecto_integrador.SoloListarClientes.resources
+C:\Users\zaira\OneDrive\Documentos\proyecto-integrador-zaira\proyecto-integrador\obj\Debug\proyecto_integrador.ListarMisVentas.resources
+C:\Users\zaira\OneDrive\Documentos\proyecto-integrador-zaira\proyecto-integrador\obj\Debug\proyecto_integrador.MDIVendedor.resources
+C:\Users\zaira\OneDrive\Documentos\proyecto-integrador-zaira\proyecto-integrador\obj\Debug\proyecto_integrador.NuevaVenta.resources
+C:\Users\zaira\OneDrive\Documentos\proyecto-integrador-zaira\proyecto-integrador\obj\Debug\proyecto_integrador.EditarEliminarCliente.resources
+C:\Users\zaira\OneDrive\Documentos\proyecto-integrador-zaira\proyecto-integrador\obj\Debug\proyecto_integrador.NuevoCliente.resources
+C:\Users\zaira\OneDrive\Documentos\proyecto-integrador-zaira\proyecto-integrador\obj\Debug\proyecto_integrador.AgregarClienteVenta.resources
+C:\Users\zaira\OneDrive\Documentos\proyecto-integrador-zaira\proyecto-integrador\obj\Debug\proyecto_integrador.AgregarProductoVenta.resources
+C:\Users\zaira\OneDrive\Documentos\proyecto-integrador-zaira\proyecto-integrador\obj\Debug\proyecto-integrador.vbproj.GenerateResource.cache
+C:\Users\zaira\OneDrive\Documentos\proyecto-integrador-zaira\proyecto-integrador\obj\Debug\proyecto-integrador.vbproj.CoreCompileInputs.cache
+C:\Users\zaira\OneDrive\Documentos\proyecto-integrador-zaira\proyecto-integrador\obj\Debug\proyecto-integrador.exe
+C:\Users\zaira\OneDrive\Documentos\proyecto-integrador-zaira\proyecto-integrador\obj\Debug\proyecto-integrador.xml
+C:\Users\zaira\OneDrive\Documentos\proyecto-integrador-zaira\proyecto-integrador\obj\Debug\proyecto-integrador.pdb
+C:\taller2\proyecto-integrador\proyecto-integrador\obj\Debug\proyecto-integrador.vbproj.AssemblyReference.cache
+C:\taller2\proyecto-integrador\proyecto-integrador\obj\Debug\proyecto_integrador.Resources.resources
+C:\taller2\proyecto-integrador\proyecto-integrador\obj\Debug\proyecto_integrador.EditarEliminarProducto.resources
+C:\taller2\proyecto-integrador\proyecto-integrador\obj\Debug\proyecto_integrador.SoloListarEmpleados.resources
+C:\taller2\proyecto-integrador\proyecto-integrador\obj\Debug\proyecto_integrador.MDIAdmin.resources
+C:\taller2\proyecto-integrador\proyecto-integrador\obj\Debug\proyecto_integrador.NuevoProducto.resources
+C:\taller2\proyecto-integrador\proyecto-integrador\obj\Debug\proyecto_integrador.SoloListarVentas.resources
+C:\taller2\proyecto-integrador\proyecto-integrador\obj\Debug\proyecto_integrador.SoloListarProductos.resources
+C:\taller2\proyecto-integrador\proyecto-integrador\obj\Debug\proyecto_integrador.MDISuperAdmin.resources
+C:\taller2\proyecto-integrador\proyecto-integrador\obj\Debug\proyecto_integrador.EditarEliminarEmpleado.resources
+C:\taller2\proyecto-integrador\proyecto-integrador\obj\Debug\proyecto_integrador.NuevoEmpleado.resources
+C:\taller2\proyecto-integrador\proyecto-integrador\obj\Debug\proyecto_integrador.SoloListarClientes.resources
+C:\taller2\proyecto-integrador\proyecto-integrador\obj\Debug\proyecto_integrador.ListarMisVentas.resources
+C:\taller2\proyecto-integrador\proyecto-integrador\obj\Debug\proyecto_integrador.MDIVendedor.resources
+C:\taller2\proyecto-integrador\proyecto-integrador\obj\Debug\proyecto_integrador.NuevaVenta.resources
+C:\taller2\proyecto-integrador\proyecto-integrador\obj\Debug\proyecto_integrador.NuevoCliente.resources
+C:\taller2\proyecto-integrador\proyecto-integrador\obj\Debug\proyecto_integrador.AgregarClienteVenta.resources
+C:\taller2\proyecto-integrador\proyecto-integrador\obj\Debug\proyecto_integrador.AgregarProductoVenta.resources
+C:\taller2\proyecto-integrador\proyecto-integrador\obj\Debug\proyecto-integrador.vbproj.GenerateResource.cache
+C:\taller2\proyecto-integrador\proyecto-integrador\obj\Debug\proyecto-integrador.vbproj.CoreCompileInputs.cache
+C:\taller2\proyecto-integrador\proyecto-integrador\obj\Debug\proyecto-integrador.exe
+C:\taller2\proyecto-integrador\proyecto-integrador\obj\Debug\proyecto-integrador.xml
+C:\taller2\proyecto-integrador\proyecto-integrador\obj\Debug\proyecto-integrador.pdb
+C:\taller2\proyecto-integrador\proyecto-integrador\bin\Debug\EntityFramework.dll
+C:\taller2\proyecto-integrador\proyecto-integrador\bin\Debug\EntityFramework.SqlServer.dll
+C:\taller2\proyecto-integrador\proyecto-integrador\bin\Debug\EntityFramework.xml
+C:\taller2\proyecto-integrador\proyecto-integrador\bin\Debug\EntityFramework.SqlServer.xml
+C:\taller2\proyecto-integrador\proyecto-integrador\obj\Debug\proyecto-integrador.vbproj.CopyComplete
+C:\taller2\proyecto-integrador\proyecto-integrador\bin\Debug\proyecto-integrador.exe.config
+C:\taller2\proyecto-integrador\proyecto-integrador\bin\Debug\proyecto-integrador.exe
+C:\taller2\proyecto-integrador\proyecto-integrador\bin\Debug\proyecto-integrador.pdb
+C:\taller2\proyecto-integrador\proyecto-integrador\bin\Debug\proyecto-integrador.xml
+C:\taller2\proyecto-integrador\proyecto-integrador\obj\Debug\proyecto_integrador.EliminarCliente.resources
+C:\taller2\proyecto-integrador\proyecto-integrador\obj\Debug\proyecto_integrador.EditarCliente.resources
+C:\taller2\proyecto-integrador\proyecto-integrador\obj\Debug\proyecto_integrador.Login.resources
+C:\Users\Usuario\Desktop\taller 2\proyecto-integrador\proyecto-integrador\bin\Debug\proyecto-integrador.exe.config
+C:\Users\Usuario\Desktop\taller 2\proyecto-integrador\proyecto-integrador\bin\Debug\proyecto-integrador.exe
+C:\Users\Usuario\Desktop\taller 2\proyecto-integrador\proyecto-integrador\bin\Debug\proyecto-integrador.pdb
+C:\Users\Usuario\Desktop\taller 2\proyecto-integrador\proyecto-integrador\bin\Debug\proyecto-integrador.xml
+C:\Users\Usuario\Desktop\taller 2\proyecto-integrador\proyecto-integrador\bin\Debug\EntityFramework.dll
+C:\Users\Usuario\Desktop\taller 2\proyecto-integrador\proyecto-integrador\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Usuario\Desktop\taller 2\proyecto-integrador\proyecto-integrador\bin\Debug\EntityFramework.xml
+C:\Users\Usuario\Desktop\taller 2\proyecto-integrador\proyecto-integrador\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Usuario\Desktop\taller 2\proyecto-integrador\proyecto-integrador\obj\Debug\proyecto-integrador.vbproj.AssemblyReference.cache
+C:\Users\Usuario\Desktop\taller 2\proyecto-integrador\proyecto-integrador\obj\Debug\proyecto_integrador.Resources.resources
+C:\Users\Usuario\Desktop\taller 2\proyecto-integrador\proyecto-integrador\obj\Debug\proyecto_integrador.EditarEliminarProducto.resources
+C:\Users\Usuario\Desktop\taller 2\proyecto-integrador\proyecto-integrador\obj\Debug\proyecto_integrador.EliminarCliente.resources
+C:\Users\Usuario\Desktop\taller 2\proyecto-integrador\proyecto-integrador\obj\Debug\proyecto_integrador.SoloListarEmpleados.resources
+C:\Users\Usuario\Desktop\taller 2\proyecto-integrador\proyecto-integrador\obj\Debug\proyecto_integrador.MDIAdmin.resources
+C:\Users\Usuario\Desktop\taller 2\proyecto-integrador\proyecto-integrador\obj\Debug\proyecto_integrador.NuevoProducto.resources
+C:\Users\Usuario\Desktop\taller 2\proyecto-integrador\proyecto-integrador\obj\Debug\proyecto_integrador.SoloListarVentas.resources
+C:\Users\Usuario\Desktop\taller 2\proyecto-integrador\proyecto-integrador\obj\Debug\proyecto_integrador.Login.resources
+C:\Users\Usuario\Desktop\taller 2\proyecto-integrador\proyecto-integrador\obj\Debug\proyecto_integrador.SoloListarProductos.resources
+C:\Users\Usuario\Desktop\taller 2\proyecto-integrador\proyecto-integrador\obj\Debug\proyecto_integrador.MDISuperAdmin.resources
+C:\Users\Usuario\Desktop\taller 2\proyecto-integrador\proyecto-integrador\obj\Debug\proyecto_integrador.EditarEliminarEmpleado.resources
+C:\Users\Usuario\Desktop\taller 2\proyecto-integrador\proyecto-integrador\obj\Debug\proyecto_integrador.NuevoEmpleado.resources
+C:\Users\Usuario\Desktop\taller 2\proyecto-integrador\proyecto-integrador\obj\Debug\proyecto_integrador.SoloListarClientes.resources
+C:\Users\Usuario\Desktop\taller 2\proyecto-integrador\proyecto-integrador\obj\Debug\proyecto_integrador.ListarMisVentas.resources
+C:\Users\Usuario\Desktop\taller 2\proyecto-integrador\proyecto-integrador\obj\Debug\proyecto_integrador.MDIVendedor.resources
+C:\Users\Usuario\Desktop\taller 2\proyecto-integrador\proyecto-integrador\obj\Debug\proyecto_integrador.NuevaVenta.resources
+C:\Users\Usuario\Desktop\taller 2\proyecto-integrador\proyecto-integrador\obj\Debug\proyecto_integrador.EditarCliente.resources
+C:\Users\Usuario\Desktop\taller 2\proyecto-integrador\proyecto-integrador\obj\Debug\proyecto_integrador.NuevoCliente.resources
+C:\Users\Usuario\Desktop\taller 2\proyecto-integrador\proyecto-integrador\obj\Debug\proyecto_integrador.AgregarClienteVenta.resources
+C:\Users\Usuario\Desktop\taller 2\proyecto-integrador\proyecto-integrador\obj\Debug\proyecto_integrador.AgregarProductoVenta.resources
+C:\Users\Usuario\Desktop\taller 2\proyecto-integrador\proyecto-integrador\obj\Debug\proyecto-integrador.vbproj.GenerateResource.cache
+C:\Users\Usuario\Desktop\taller 2\proyecto-integrador\proyecto-integrador\obj\Debug\proyecto-integrador.vbproj.CoreCompileInputs.cache
+C:\Users\Usuario\Desktop\taller 2\proyecto-integrador\proyecto-integrador\obj\Debug\proyecto-integrador.vbproj.CopyComplete
+C:\Users\Usuario\Desktop\taller 2\proyecto-integrador\proyecto-integrador\obj\Debug\proyecto-integrador.exe
+C:\Users\Usuario\Desktop\taller 2\proyecto-integrador\proyecto-integrador\obj\Debug\proyecto-integrador.xml
+C:\Users\Usuario\Desktop\taller 2\proyecto-integrador\proyecto-integrador\obj\Debug\proyecto-integrador.pdb
