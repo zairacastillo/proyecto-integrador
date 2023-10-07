@@ -144,6 +144,12 @@
     <Compile Include="perfil.vb">
       <DependentUpon>ModelProyecto.tt</DependentUpon>
     </Compile>
+    <Compile Include="Presentacion\Admin\EditarClienteAdmin.designer.vb">
+      <DependentUpon>EditarClienteAdmin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Admin\EditarClienteAdmin.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Presentacion\Admin\EditarEliminarProducto.designer.vb">
       <DependentUpon>EditarEliminarProducto.vb</DependentUpon>
     </Compile>
@@ -234,12 +240,6 @@
     <Compile Include="Presentacion\Vendedor\NuevaVenta.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentacion\Vendedor\EditarCliente.designer.vb">
-      <DependentUpon>EditarCliente.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Presentacion\Vendedor\EditarCliente.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Presentacion\Vendedor\NuevoCliente.designer.vb">
       <DependentUpon>NuevoCliente.vb</DependentUpon>
     </Compile>
@@ -272,6 +272,9 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Admin\EditarClienteAdmin.resx">
+      <DependentUpon>EditarClienteAdmin.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Admin\EditarEliminarProducto.resx">
       <DependentUpon>EditarEliminarProducto.vb</DependentUpon>
@@ -317,9 +320,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Vendedor\NuevaVenta.resx">
       <DependentUpon>NuevaVenta.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Presentacion\Vendedor\EditarCliente.resx">
-      <DependentUpon>EditarCliente.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Vendedor\NuevoCliente.resx">
       <DependentUpon>NuevoCliente.vb</DependentUpon>
