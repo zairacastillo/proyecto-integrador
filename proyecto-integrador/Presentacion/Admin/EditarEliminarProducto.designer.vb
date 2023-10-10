@@ -23,9 +23,9 @@ Partial Class EditarEliminarProducto
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.PanelPrincipal = New System.Windows.Forms.Panel()
+        Me.CBEstado = New System.Windows.Forms.ComboBox()
         Me.CBCateg = New System.Windows.Forms.ComboBox()
         Me.LCategoria = New System.Windows.Forms.Label()
-        Me.TBEstado = New System.Windows.Forms.TextBox()
         Me.LEstado = New System.Windows.Forms.Label()
         Me.TBStock = New System.Windows.Forms.TextBox()
         Me.LStock = New System.Windows.Forms.Label()
@@ -38,14 +38,6 @@ Partial Class EditarEliminarProducto
         Me.LNombre = New System.Windows.Forms.Label()
         Me.LID = New System.Windows.Forms.Label()
         Me.DGV1 = New System.Windows.Forms.DataGridView()
-        Me.ID = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Precio = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Stock = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Categoria = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Descripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Estado = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Seleccionar = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.BCancelar = New System.Windows.Forms.Button()
         Me.BEditar = New System.Windows.Forms.Button()
         Me.BActivarElim = New System.Windows.Forms.Button()
@@ -63,9 +55,9 @@ Partial Class EditarEliminarProducto
         '
         Me.PanelPrincipal.BackgroundImage = Global.proyecto_integrador.My.Resources.Resources.bg
         Me.PanelPrincipal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PanelPrincipal.Controls.Add(Me.CBEstado)
         Me.PanelPrincipal.Controls.Add(Me.CBCateg)
         Me.PanelPrincipal.Controls.Add(Me.LCategoria)
-        Me.PanelPrincipal.Controls.Add(Me.TBEstado)
         Me.PanelPrincipal.Controls.Add(Me.LEstado)
         Me.PanelPrincipal.Controls.Add(Me.TBStock)
         Me.PanelPrincipal.Controls.Add(Me.LStock)
@@ -82,6 +74,17 @@ Partial Class EditarEliminarProducto
         Me.PanelPrincipal.Name = "PanelPrincipal"
         Me.PanelPrincipal.Size = New System.Drawing.Size(546, 328)
         Me.PanelPrincipal.TabIndex = 0
+        '
+        'CBEstado
+        '
+        Me.CBEstado.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CBEstado.ForeColor = System.Drawing.SystemColors.WindowText
+        Me.CBEstado.FormattingEnabled = True
+        Me.CBEstado.Items.AddRange(New Object() {"Activo", "Inactivo"})
+        Me.CBEstado.Location = New System.Drawing.Point(119, 101)
+        Me.CBEstado.Name = "CBEstado"
+        Me.CBEstado.Size = New System.Drawing.Size(130, 28)
+        Me.CBEstado.TabIndex = 23
         '
         'CBCateg
         '
@@ -103,14 +106,6 @@ Partial Class EditarEliminarProducto
         Me.LCategoria.Size = New System.Drawing.Size(111, 25)
         Me.LCategoria.TabIndex = 21
         Me.LCategoria.Text = "Categoria:"
-        '
-        'TBEstado
-        '
-        Me.TBEstado.Location = New System.Drawing.Point(119, 105)
-        Me.TBEstado.Name = "TBEstado"
-        Me.TBEstado.ReadOnly = True
-        Me.TBEstado.Size = New System.Drawing.Size(130, 20)
-        Me.TBEstado.TabIndex = 20
         '
         'LEstado
         '
@@ -168,6 +163,7 @@ Partial Class EditarEliminarProducto
         '
         'TBID
         '
+        Me.TBID.Enabled = False
         Me.TBID.Location = New System.Drawing.Point(119, 60)
         Me.TBID.Name = "TBID"
         Me.TBID.ReadOnly = True
@@ -226,61 +222,14 @@ Partial Class EditarEliminarProducto
         '
         Me.DGV1.AllowUserToAddRows = False
         Me.DGV1.AllowUserToDeleteRows = False
-        Me.DGV1.AllowUserToOrderColumns = True
         Me.DGV1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DGV1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DGV1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ID, Me.Nombre, Me.Precio, Me.Stock, Me.Categoria, Me.Descripcion, Me.Estado, Me.Seleccionar})
         Me.DGV1.Location = New System.Drawing.Point(23, 61)
         Me.DGV1.Name = "DGV1"
+        Me.DGV1.ReadOnly = True
         Me.DGV1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders
         Me.DGV1.Size = New System.Drawing.Size(942, 164)
         Me.DGV1.TabIndex = 2
-        '
-        'ID
-        '
-        Me.ID.HeaderText = "ID"
-        Me.ID.Name = "ID"
-        Me.ID.ReadOnly = True
-        '
-        'Nombre
-        '
-        Me.Nombre.HeaderText = "Nombre"
-        Me.Nombre.Name = "Nombre"
-        Me.Nombre.ReadOnly = True
-        '
-        'Precio
-        '
-        Me.Precio.HeaderText = "Precio"
-        Me.Precio.Name = "Precio"
-        Me.Precio.ReadOnly = True
-        '
-        'Stock
-        '
-        Me.Stock.HeaderText = "Stock"
-        Me.Stock.Name = "Stock"
-        Me.Stock.ReadOnly = True
-        '
-        'Categoria
-        '
-        Me.Categoria.HeaderText = "Categoria"
-        Me.Categoria.Name = "Categoria"
-        '
-        'Descripcion
-        '
-        Me.Descripcion.HeaderText = "Descripcion"
-        Me.Descripcion.Name = "Descripcion"
-        Me.Descripcion.ReadOnly = True
-        '
-        'Estado
-        '
-        Me.Estado.HeaderText = "Estado"
-        Me.Estado.Name = "Estado"
-        Me.Estado.ReadOnly = True
-        '
-        'Seleccionar
-        '
-        Me.Seleccionar.HeaderText = "Seleccionar"
-        Me.Seleccionar.Name = "Seleccionar"
         '
         'BCancelar
         '
@@ -312,7 +261,7 @@ Partial Class EditarEliminarProducto
         Me.BActivarElim.Name = "BActivarElim"
         Me.BActivarElim.Size = New System.Drawing.Size(91, 60)
         Me.BActivarElim.TabIndex = 13
-        Me.BActivarElim.Text = "Activar/Eliminar"
+        Me.BActivarElim.Text = "Alternar Estado"
         Me.BActivarElim.UseVisualStyleBackColor = True
         '
         'Label1
@@ -414,7 +363,6 @@ Partial Class EditarEliminarProducto
     Friend WithEvents LNombre As Label
     Friend WithEvents LID As Label
     Friend WithEvents LCategoria As Label
-    Friend WithEvents TBEstado As TextBox
     Friend WithEvents LEstado As Label
     Friend WithEvents TBStock As TextBox
     Friend WithEvents LStock As Label
@@ -425,16 +373,9 @@ Partial Class EditarEliminarProducto
     Friend WithEvents Label1 As Label
     Friend WithEvents TBBuscar As TextBox
     Friend WithEvents CBCategoria As ComboBox
-    Friend WithEvents ID As DataGridViewTextBoxColumn
-    Friend WithEvents Nombre As DataGridViewTextBoxColumn
-    Friend WithEvents Precio As DataGridViewTextBoxColumn
-    Friend WithEvents Stock As DataGridViewTextBoxColumn
-    Friend WithEvents Categoria As DataGridViewTextBoxColumn
-    Friend WithEvents Descripcion As DataGridViewTextBoxColumn
-    Friend WithEvents Estado As DataGridViewTextBoxColumn
-    Friend WithEvents Seleccionar As DataGridViewButtonColumn
     Friend WithEvents Label3 As Label
     Friend WithEvents BBuscarCat As Button
     Friend WithEvents BBuscarNombre As Button
     Friend WithEvents CBCateg As ComboBox
+    Friend WithEvents CBEstado As ComboBox
 End Class

@@ -263,7 +263,7 @@
           <Property Name="precio" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
           <Property Name="stock" Type="Int32" Nullable="false" />
           <Property Name="Id_categoria" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="categoria" Relationship="Self.Fk_producto_categoria" FromRole="producto" ToRole="categoria" />
+          <NavigationProperty Name="categoria" ToRole="categoria" FromRole="producto" Relationship="Self.Fk_producto_categoria" />
           <NavigationProperty Name="detalle_venta" Relationship="Self.Fk_detalle_venta_producto" FromRole="producto" ToRole="detalle_venta" />
         </EntityType>
         <EntityType Name="venta">

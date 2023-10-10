@@ -30,12 +30,12 @@ Partial Class AgregarProductoVenta
         Me.Stock = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Precio = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Estado = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Agregar = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.Button4 = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.LNombre = New System.Windows.Forms.Label()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.Agregar = New System.Windows.Forms.DataGridViewButtonColumn()
         CType(Me.DGV1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -88,6 +88,11 @@ Partial Class AgregarProductoVenta
         Me.Estado.HeaderText = "Estado"
         Me.Estado.Name = "Estado"
         '
+        'Agregar
+        '
+        Me.Agregar.HeaderText = "Agregar"
+        Me.Agregar.Name = "Agregar"
+        '
         'Button4
         '
         Me.Button4.Location = New System.Drawing.Point(381, 145)
@@ -134,11 +139,6 @@ Partial Class AgregarProductoVenta
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(169, 20)
         Me.TextBox1.TabIndex = 22
-        '
-        'Agregar
-        '
-        Me.Agregar.HeaderText = "Agregar"
-        Me.Agregar.Name = "Agregar"
         '
         'AgregarProductoVenta
         '

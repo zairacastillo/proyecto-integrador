@@ -2,8 +2,6 @@
 
 Public Class EditarClienteAdmin
 
-    'define entidad cliente
-    Dim OCliente As New cliente
     'subclase que maneja la entidad cliente, intermediario entre entity y la tabla
     Dim ObjCliente As Dcliente = New Dcliente
     'variable global estado de cliente
@@ -49,8 +47,10 @@ Public Class EditarClienteAdmin
             If ask = vbYes Then
                 'guardar
 
+                'define entidad cliente
+                Dim OCliente As New cliente
                 'cargamos de datos un registro cliente
-                OCliente.Id_cliente = TBID.Text
+                OCliente.Id_cliente = Integer.Parse(TBID.Text)
                 OCliente.apellido_cliente = TBApellido.Text.Trim
                 OCliente.correo_cliente = TBCorreo.Text.Trim
                 OCliente.direccion_cliente = TBDirec.Text.Trim
@@ -77,6 +77,13 @@ Public Class EditarClienteAdmin
 
 
     Private Sub EditarCliente_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+        If TBID.Text = "" Then
+            BEditar.Enabled = False
+        Else
+            BEditar.Enabled = True
+        End If
+
         Dim p_dni As Integer = 0
         If Not (TBBuscar.Text.Trim = "") Then
             p_dni = Convert.ToInt32(TBBuscar.Text.Trim)
@@ -95,6 +102,7 @@ Public Class EditarClienteAdmin
         DGV1.Columns(10).Visible = False
     End Sub
 
+
     Private Sub BCancelar_Click(sender As Object, e As EventArgs) Handles BCancelar.Click
         TBID.Clear()
         TBNombre.Clear()
@@ -104,6 +112,7 @@ Public Class EditarClienteAdmin
         TBTel.Clear()
         TBDirec.Clear()
         CBEstado.Text = ""
+        BEditar.Enabled = False
     End Sub
 
     Private Sub DGV1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGV1.CellContentClick
@@ -130,7 +139,7 @@ Public Class EditarClienteAdmin
                         TBTel.Text = DGV1.Rows(cell.RowIndex).Cells(6).Value
                         TBDirec.Text = DGV1.Rows(cell.RowIndex).Cells(7).Value
                         CBEstado.Text = DGV1.Rows(cell.RowIndex).Cells(9).Value
-
+                        BEditar.Enabled = True
                         Exit Select
                 End Select
 

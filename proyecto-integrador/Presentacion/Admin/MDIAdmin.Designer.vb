@@ -28,6 +28,7 @@ Partial Class MDIAdmin
         Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.BListarClientes = New System.Windows.Forms.ToolStripMenuItem()
         Me.BEliminarClientes = New System.Windows.Forms.ToolStripMenuItem()
+        Me.EditarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem1ToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
         Me.BListarVentas = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem3 = New System.Windows.Forms.ToolStripMenuItem()
@@ -39,7 +40,7 @@ Partial Class MDIAdmin
         Me.StatusStrip = New System.Windows.Forms.StatusStrip()
         Me.ToolStripStatusLabel = New System.Windows.Forms.ToolStripStatusLabel()
         Me.ToolTip = New System.Windows.Forms.ToolTip(Me.components)
-        Me.EditarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.GestionCategoriaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip.SuspendLayout()
         Me.StatusStrip.SuspendLayout()
         Me.SuspendLayout()
@@ -88,6 +89,12 @@ Partial Class MDIAdmin
         Me.BEliminarClientes.Size = New System.Drawing.Size(196, 38)
         Me.BEliminarClientes.Text = "&Eliminar"
         '
+        'EditarToolStripMenuItem
+        '
+        Me.EditarToolStripMenuItem.Name = "EditarToolStripMenuItem"
+        Me.EditarToolStripMenuItem.Size = New System.Drawing.Size(196, 38)
+        Me.EditarToolStripMenuItem.Text = "Editar"
+        '
         'ToolStripMenuItem1ToolStripMenuItem2
         '
         Me.ToolStripMenuItem1ToolStripMenuItem2.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BListarVentas})
@@ -116,7 +123,7 @@ Partial Class MDIAdmin
         '
         'ToolStripMenuItem3
         '
-        Me.ToolStripMenuItem3.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BNuevoProducto, Me.BListarProducto})
+        Me.ToolStripMenuItem3.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BNuevoProducto, Me.BListarProducto, Me.GestionCategoriaToolStripMenuItem})
         Me.ToolStripMenuItem3.Image = Global.proyecto_integrador.My.Resources.Resources.productos
         Me.ToolStripMenuItem3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.ToolStripMenuItem3.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
@@ -131,7 +138,7 @@ Partial Class MDIAdmin
         Me.BNuevoProducto.Image = Global.proyecto_integrador.My.Resources.Resources.agregar_prod1
         Me.BNuevoProducto.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.BNuevoProducto.Name = "BNuevoProducto"
-        Me.BNuevoProducto.Size = New System.Drawing.Size(147, 38)
+        Me.BNuevoProducto.Size = New System.Drawing.Size(196, 38)
         Me.BNuevoProducto.Text = "&Nuevo"
         '
         'BListarProducto
@@ -139,7 +146,7 @@ Partial Class MDIAdmin
         Me.BListarProducto.Image = Global.proyecto_integrador.My.Resources.Resources.lapiz
         Me.BListarProducto.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.BListarProducto.Name = "BListarProducto"
-        Me.BListarProducto.Size = New System.Drawing.Size(147, 38)
+        Me.BListarProducto.Size = New System.Drawing.Size(196, 38)
         Me.BListarProducto.Text = "&Editar/Baja"
         '
         'ToolStripMenuItem4
@@ -193,11 +200,11 @@ Partial Class MDIAdmin
         Me.ToolStripStatusLabel.Size = New System.Drawing.Size(42, 17)
         Me.ToolStripStatusLabel.Text = "Estado"
         '
-        'EditarToolStripMenuItem
+        'GestionCategoriaToolStripMenuItem
         '
-        Me.EditarToolStripMenuItem.Name = "EditarToolStripMenuItem"
-        Me.EditarToolStripMenuItem.Size = New System.Drawing.Size(196, 38)
-        Me.EditarToolStripMenuItem.Text = "Editar"
+        Me.GestionCategoriaToolStripMenuItem.Name = "GestionCategoriaToolStripMenuItem"
+        Me.GestionCategoriaToolStripMenuItem.Size = New System.Drawing.Size(196, 38)
+        Me.GestionCategoriaToolStripMenuItem.Text = "Gestion Categoria"
         '
         'MDIAdmin
         '
@@ -239,4 +246,5 @@ Partial Class MDIAdmin
     Friend WithEvents BEliminarClientes As ToolStripMenuItem
     Friend WithEvents ToolStripMenuItem5 As ToolStripMenuItem
     Friend WithEvents EditarToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents GestionCategoriaToolStripMenuItem As ToolStripMenuItem
 End Class

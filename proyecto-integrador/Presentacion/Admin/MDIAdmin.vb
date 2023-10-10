@@ -206,4 +206,20 @@ Public Class MDIAdmin
 
         ChildForm.Show()
     End Sub
+
+
+    Private Sub GestionCategoriaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles GestionCategoriaToolStripMenuItem.Click
+        For Each ChildForma As Form In Me.MdiChildren
+            ChildForma.Close()
+        Next
+        ' Cree una nueva instancia del formulario secundario.
+        Dim ChildForm As New GestionCategoria
+        ' Conviértalo en un elemento secundario de este formulario MDI antes de mostrarlo.
+        ChildForm.MdiParent = Me
+
+        m_ChildFormNumber += 1
+        ChildForm.Text = "Editar Cliente"
+
+        ChildForm.Show()
+    End Sub
 End Class

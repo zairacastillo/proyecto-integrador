@@ -51,9 +51,9 @@ Partial Class NuevaVenta
         Me.BBuscarProd = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label8 = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
-        Me.Label8 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Label9 = New System.Windows.Forms.Label()
@@ -325,6 +325,18 @@ Partial Class NuevaVenta
         Me.Panel1.Size = New System.Drawing.Size(936, 196)
         Me.Panel1.TabIndex = 53
         '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.BackColor = System.Drawing.Color.Transparent
+        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.ForeColor = System.Drawing.Color.White
+        Me.Label8.Location = New System.Drawing.Point(12, 48)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(104, 25)
+        Me.Label8.TabIndex = 55
+        Me.Label8.Text = "Producto:"
+        '
         'Label11
         '
         Me.Label11.AutoSize = True
@@ -348,18 +360,6 @@ Partial Class NuevaVenta
         Me.Label7.Size = New System.Drawing.Size(72, 25)
         Me.Label7.TabIndex = 54
         Me.Label7.Text = "Stock:"
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.BackColor = System.Drawing.Color.Transparent
-        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.ForeColor = System.Drawing.Color.White
-        Me.Label8.Location = New System.Drawing.Point(12, 48)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(104, 25)
-        Me.Label8.TabIndex = 55
-        Me.Label8.Text = "Producto:"
         '
         'Label10
         '

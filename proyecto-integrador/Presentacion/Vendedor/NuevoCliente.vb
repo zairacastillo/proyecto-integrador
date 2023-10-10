@@ -5,8 +5,6 @@ Imports System.ComponentModel
 
 Public Class NuevoCliente
 
-    'define entidad cliente
-    Dim OCliente As New cliente
     'subclase que maneja la entidad cliente, intermediario entre entity y la tabla
     Dim ObjCliente As Dcliente = New Dcliente
 
@@ -43,6 +41,8 @@ Public Class NuevoCliente
             Dim ask = MsgBox("¿Seguro que desea Guardar el Cliente?", MsgBoxStyle.YesNo, Title:="Confirmar Inserción")
             If ask = vbYes Then
 
+                'define entidad cliente
+                Dim OCliente As New cliente
 
                 OCliente.apellido_cliente = TBApellido.Text.Trim
                 OCliente.correo_cliente = TBCorreo.Text.Trim

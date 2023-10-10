@@ -3,7 +3,21 @@ Imports System.IO
 
 Module Validaciones
 
-
+    Public Function Validar_precio(ByVal e As KeyPressEventArgs) As Boolean
+        If Char.IsDigit(e.KeyChar) Then
+            e.Handled = False
+            Return False
+        ElseIf Char.IsControl(e.KeyChar) Then
+            e.Handled = False
+            Return False
+        ElseIf Char.IsPunctuation(e.KeyChar) Then
+            e.Handled = False
+            Return False
+        Else
+            e.Handled = True
+            Return True
+        End If
+    End Function
 
     Public Function Validar_numeros(ByVal e As KeyPressEventArgs) As Boolean
         If Char.IsDigit(e.KeyChar) Then

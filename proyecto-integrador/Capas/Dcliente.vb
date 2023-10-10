@@ -7,6 +7,7 @@
         dg.DataSource = Me.getAll()
         dg.Columns(0).Visible = False
         dg.Columns(9).Visible = False
+        Return False
     End Function
     Function agregrar_cliente(ByVal ocliente As cliente) As Boolean
         Try

@@ -120,7 +120,7 @@ Public Class MDIVendedor
             ChildForma.Close()
         Next
         ' Cree una nueva instancia del formulario secundario.
-        Dim ChildForm As New EditarClienteAdmin
+        Dim ChildForm As New EditarCliente
         ' Conviértalo en un elemento secundario de este formulario MDI antes de mostrarlo.
         ChildForm.MdiParent = Me
 

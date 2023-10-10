@@ -23,10 +23,8 @@ Partial Class NuevoProducto
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.PanelPrincipal = New System.Windows.Forms.Panel()
-        Me.TBCategoria = New System.Windows.Forms.TextBox()
+        Me.CBCategoria = New System.Windows.Forms.ComboBox()
         Me.LCategoria = New System.Windows.Forms.Label()
-        Me.TBEstado = New System.Windows.Forms.TextBox()
-        Me.LEstado = New System.Windows.Forms.Label()
         Me.TBStock = New System.Windows.Forms.TextBox()
         Me.LStock = New System.Windows.Forms.Label()
         Me.TBDescripcion = New System.Windows.Forms.TextBox()
@@ -37,13 +35,6 @@ Partial Class NuevoProducto
         Me.LDescripcion = New System.Windows.Forms.Label()
         Me.LNombre = New System.Windows.Forms.Label()
         Me.DGV1 = New System.Windows.Forms.DataGridView()
-        Me.ID = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Precio = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Stock = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Categoria = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Descripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Estado = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.PanelPrincipal.SuspendLayout()
         CType(Me.DGV1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -52,10 +43,8 @@ Partial Class NuevoProducto
         '
         Me.PanelPrincipal.BackgroundImage = Global.proyecto_integrador.My.Resources.Resources.bg
         Me.PanelPrincipal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PanelPrincipal.Controls.Add(Me.TBCategoria)
+        Me.PanelPrincipal.Controls.Add(Me.CBCategoria)
         Me.PanelPrincipal.Controls.Add(Me.LCategoria)
-        Me.PanelPrincipal.Controls.Add(Me.TBEstado)
-        Me.PanelPrincipal.Controls.Add(Me.LEstado)
         Me.PanelPrincipal.Controls.Add(Me.TBStock)
         Me.PanelPrincipal.Controls.Add(Me.LStock)
         Me.PanelPrincipal.Controls.Add(Me.TBDescripcion)
@@ -71,13 +60,13 @@ Partial Class NuevoProducto
         Me.PanelPrincipal.Size = New System.Drawing.Size(546, 328)
         Me.PanelPrincipal.TabIndex = 0
         '
-        'TBCategoria
+        'CBCategoria
         '
-        Me.TBCategoria.Location = New System.Drawing.Point(389, 103)
-        Me.TBCategoria.Multiline = True
-        Me.TBCategoria.Name = "TBCategoria"
-        Me.TBCategoria.Size = New System.Drawing.Size(122, 39)
-        Me.TBCategoria.TabIndex = 22
+        Me.CBCategoria.FormattingEnabled = True
+        Me.CBCategoria.Location = New System.Drawing.Point(389, 105)
+        Me.CBCategoria.Name = "CBCategoria"
+        Me.CBCategoria.Size = New System.Drawing.Size(122, 21)
+        Me.CBCategoria.TabIndex = 3
         '
         'LCategoria
         '
@@ -90,25 +79,6 @@ Partial Class NuevoProducto
         Me.LCategoria.Size = New System.Drawing.Size(111, 25)
         Me.LCategoria.TabIndex = 21
         Me.LCategoria.Text = "Categoria:"
-        '
-        'TBEstado
-        '
-        Me.TBEstado.Location = New System.Drawing.Point(115, 89)
-        Me.TBEstado.Name = "TBEstado"
-        Me.TBEstado.Size = New System.Drawing.Size(130, 20)
-        Me.TBEstado.TabIndex = 20
-        '
-        'LEstado
-        '
-        Me.LEstado.AutoSize = True
-        Me.LEstado.BackColor = System.Drawing.Color.Transparent
-        Me.LEstado.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LEstado.ForeColor = System.Drawing.Color.White
-        Me.LEstado.Location = New System.Drawing.Point(16, 84)
-        Me.LEstado.Name = "LEstado"
-        Me.LEstado.Size = New System.Drawing.Size(85, 25)
-        Me.LEstado.TabIndex = 19
-        Me.LEstado.Text = "Estado:"
         '
         'TBStock
         '
@@ -205,56 +175,14 @@ Partial Class NuevoProducto
         '
         Me.DGV1.AllowUserToAddRows = False
         Me.DGV1.AllowUserToDeleteRows = False
-        Me.DGV1.AllowUserToOrderColumns = True
         Me.DGV1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DGV1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DGV1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ID, Me.Nombre, Me.Precio, Me.Stock, Me.Categoria, Me.Descripcion, Me.Estado})
-        Me.DGV1.Location = New System.Drawing.Point(23, 389)
+        Me.DGV1.Location = New System.Drawing.Point(3, 389)
         Me.DGV1.Name = "DGV1"
+        Me.DGV1.ReadOnly = True
         Me.DGV1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders
-        Me.DGV1.Size = New System.Drawing.Size(942, 164)
+        Me.DGV1.Size = New System.Drawing.Size(973, 164)
         Me.DGV1.TabIndex = 2
-        '
-        'ID
-        '
-        Me.ID.HeaderText = "ID"
-        Me.ID.Name = "ID"
-        Me.ID.ReadOnly = True
-        '
-        'Nombre
-        '
-        Me.Nombre.HeaderText = "Nombre"
-        Me.Nombre.Name = "Nombre"
-        Me.Nombre.ReadOnly = True
-        '
-        'Precio
-        '
-        Me.Precio.HeaderText = "Precio"
-        Me.Precio.Name = "Precio"
-        Me.Precio.ReadOnly = True
-        '
-        'Stock
-        '
-        Me.Stock.HeaderText = "Stock"
-        Me.Stock.Name = "Stock"
-        Me.Stock.ReadOnly = True
-        '
-        'Categoria
-        '
-        Me.Categoria.HeaderText = "Categoria"
-        Me.Categoria.Name = "Categoria"
-        '
-        'Descripcion
-        '
-        Me.Descripcion.HeaderText = "Descripcion"
-        Me.Descripcion.Name = "Descripcion"
-        Me.Descripcion.ReadOnly = True
-        '
-        'Estado
-        '
-        Me.Estado.HeaderText = "Estado"
-        Me.Estado.Name = "Estado"
-        Me.Estado.ReadOnly = True
         '
         'NuevoProducto
         '
@@ -283,19 +211,10 @@ Partial Class NuevoProducto
     Friend WithEvents LDescripcion As Label
     Friend WithEvents LNombre As Label
     Friend WithEvents BAgregar As Button
-    Friend WithEvents TBCategoria As TextBox
     Friend WithEvents LCategoria As Label
-    Friend WithEvents TBEstado As TextBox
-    Friend WithEvents LEstado As Label
     Friend WithEvents TBStock As TextBox
     Friend WithEvents LStock As Label
     Friend WithEvents TBDescripcion As TextBox
     Friend WithEvents DGV1 As DataGridView
-    Friend WithEvents ID As DataGridViewTextBoxColumn
-    Friend WithEvents Nombre As DataGridViewTextBoxColumn
-    Friend WithEvents Precio As DataGridViewTextBoxColumn
-    Friend WithEvents Stock As DataGridViewTextBoxColumn
-    Friend WithEvents Categoria As DataGridViewTextBoxColumn
-    Friend WithEvents Descripcion As DataGridViewTextBoxColumn
-    Friend WithEvents Estado As DataGridViewTextBoxColumn
+    Friend WithEvents CBCategoria As ComboBox
 End Class

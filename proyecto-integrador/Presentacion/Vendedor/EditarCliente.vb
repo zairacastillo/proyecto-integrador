@@ -2,8 +2,7 @@
 
 Public Class EditarCliente
 
-    'define entidad cliente
-    Dim OCliente As New cliente
+
     'subclase que maneja la entidad cliente, intermediario entre entity y la tabla
     Dim ObjCliente As Dcliente = New Dcliente
     'variable global estado de cliente
@@ -48,13 +47,14 @@ Public Class EditarCliente
             Dim ask = MsgBox("¿Seguro que desea Guardar el Cliente?", MsgBoxStyle.YesNo, Title:="Confirmar Inserción")
             If ask = vbYes Then
                 'guardar
-
+                'define entidad cliente
+                Dim OCliente As New cliente
                 'cargamos de datos un registro cliente
-                OCliente.Id_cliente = TBID.Text
+                OCliente.Id_cliente = Integer.Parse(TBID.Text)
                 OCliente.apellido_cliente = TBApellido.Text.Trim
                 OCliente.correo_cliente = TBCorreo.Text.Trim
                 OCliente.direccion_cliente = TBDirec.Text.Trim
-                OCliente.dni_cliente = TBDni.Text.Trim
+                OCliente.dni_cliente = Integer.Parse(TBDni.Text.Trim)
                 OCliente.nombre_cliente = TBNombre.Text.Trim
                 OCliente.telefono_cliente = TBTel.Text.Trim
                 OCliente.estado_cliente = TBEstado.Text.Trim
@@ -77,6 +77,12 @@ Public Class EditarCliente
 
 
     Private Sub EditarCliente_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        If TBID.Text = "" Then
+            BEditar.Enabled = False
+        Else
+            BEditar.Enabled = True
+        End If
+
         Dim p_dni As Integer = 0
         If Not (TBBuscar.Text.Trim = "") Then
             p_dni = Convert.ToInt32(TBBuscar.Text.Trim)
@@ -104,6 +110,7 @@ Public Class EditarCliente
         TBTel.Clear()
         TBDirec.Clear()
         TBEstado.Clear()
+        BEditar.Enabled = False
     End Sub
 
     Private Sub DGV1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGV1.CellContentClick
@@ -130,6 +137,7 @@ Public Class EditarCliente
                         TBTel.Text = DGV1.Rows(cell.RowIndex).Cells(6).Value
                         TBDirec.Text = DGV1.Rows(cell.RowIndex).Cells(7).Value
                         TBEstado.Text = DGV1.Rows(cell.RowIndex).Cells(9).Value
+                        BEditar.Enabled = True
 
                         Exit Select
                 End Select
@@ -163,7 +171,7 @@ Public Class EditarCliente
         End If
     End Sub
 
-    Private Sub TBBuscar_TextChanged(sender As Object, e As KeyPressEventArgs) Handles TBBuscar.KeyPress
+    Private Sub TBBuscar_TextChanged(sender As Object, e As KeyPressEventArgs)
         If Validar_numeros(e) Then
             MessageBox.Show("Solo se admiten numeros", "Validación de numeros", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
         End If
