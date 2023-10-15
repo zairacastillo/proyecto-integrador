@@ -54,7 +54,7 @@ Public Class MDIVendedor
             ChildForma.Close()
         Next
         ' Cree una nueva instancia del formulario secundario.
-        Dim ChildForm As New SoloListarProductos
+        Dim ChildForm As New ListarProductos(New NuevaVenta, False)
         ' Conviértalo en un elemento secundario de este formulario MDI antes de mostrarlo.
         ChildForm.MdiParent = Me
 
@@ -120,7 +120,7 @@ Public Class MDIVendedor
             ChildForma.Close()
         Next
         ' Cree una nueva instancia del formulario secundario.
-        Dim ChildForm As New EditarCliente
+        Dim ChildForm As New EditarCliente()
         ' Conviértalo en un elemento secundario de este formulario MDI antes de mostrarlo.
         ChildForm.MdiParent = Me
 
@@ -161,12 +161,12 @@ Public Class MDIVendedor
         ChildForm.Show()
     End Sub
 
-    Public Sub AgregarProductoVenta(sender As Object, e As EventArgs)
+    Public Sub ListarProductos(sender As Object, e As EventArgs)
         For Each ChildForma As Form In Me.MdiChildren
             ChildForma.Close()
         Next
         ' Cree una nueva instancia del formulario secundario.
-        Dim ChildForm As New AgregarProductoVenta
+        Dim ChildForm As New ListarProductos(New NuevaVenta, False)
         ' Conviértalo en un elemento secundario de este formulario MDI antes de mostrarlo.
         ChildForm.MdiParent = Me
 

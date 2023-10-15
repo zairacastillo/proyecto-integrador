@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class EditarCliente
+Partial Class ListarClientes
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
@@ -42,13 +42,11 @@ Partial Class EditarCliente
         Me.LNombre = New System.Windows.Forms.Label()
         Me.TBBuscar = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.BEditar = New System.Windows.Forms.Button()
-        Me.BCancelar = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.TBBuscarAp = New System.Windows.Forms.TextBox()
         Me.BBuscarDni = New System.Windows.Forms.Button()
         Me.BBuscarAp = New System.Windows.Forms.Button()
-        Me.BAEstado = New System.Windows.Forms.Button()
+        Me.BAgregarVenta = New System.Windows.Forms.Button()
         CType(Me.DGV1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelPrincipal.SuspendLayout()
         Me.SuspendLayout()
@@ -267,31 +265,6 @@ Partial Class EditarCliente
         Me.Label1.TabIndex = 8
         Me.Label1.Text = "Buscar Cliente DNI"
         '
-        'BEditar
-        '
-        Me.BEditar.Image = Global.proyecto_integrador.My.Resources.Resources.lapiz
-        Me.BEditar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.BEditar.Location = New System.Drawing.Point(662, 287)
-        Me.BEditar.Name = "BEditar"
-        Me.BEditar.Size = New System.Drawing.Size(87, 68)
-        Me.BEditar.TabIndex = 10
-        Me.BEditar.Text = "Guardar Cambios"
-        Me.BEditar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.BEditar.UseVisualStyleBackColor = True
-        '
-        'BCancelar
-        '
-        Me.BCancelar.BackgroundImage = Global.proyecto_integrador.My.Resources.Resources.cerrar
-        Me.BCancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.BCancelar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.BCancelar.Location = New System.Drawing.Point(662, 404)
-        Me.BCancelar.Name = "BCancelar"
-        Me.BCancelar.Size = New System.Drawing.Size(87, 67)
-        Me.BCancelar.TabIndex = 11
-        Me.BCancelar.Text = "Cancelar"
-        Me.BCancelar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.BCancelar.UseVisualStyleBackColor = True
-        '
         'Label2
         '
         Me.Label2.AutoSize = True
@@ -329,33 +302,31 @@ Partial Class EditarCliente
         Me.BBuscarAp.Text = "Buscar"
         Me.BBuscarAp.UseVisualStyleBackColor = True
         '
-        'BAEstado
+        'BAgregarVenta
         '
-        Me.BAEstado.Location = New System.Drawing.Point(827, 287)
-        Me.BAEstado.Name = "BAEstado"
-        Me.BAEstado.Size = New System.Drawing.Size(75, 68)
-        Me.BAEstado.TabIndex = 17
-        Me.BAEstado.Text = "Mostrar Inactivos"
-        Me.BAEstado.UseVisualStyleBackColor = True
+        Me.BAgregarVenta.Location = New System.Drawing.Point(776, 328)
+        Me.BAgregarVenta.Name = "BAgregarVenta"
+        Me.BAgregarVenta.Size = New System.Drawing.Size(75, 67)
+        Me.BAgregarVenta.TabIndex = 25
+        Me.BAgregarVenta.Text = "Agregar a Venta"
+        Me.BAgregarVenta.UseVisualStyleBackColor = True
         '
-        'EditarCliente
+        'ListarClientes
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.proyecto_integrador.My.Resources.Resources.cuadros_negros_734708
         Me.ClientSize = New System.Drawing.Size(959, 579)
-        Me.Controls.Add(Me.BAEstado)
+        Me.Controls.Add(Me.BAgregarVenta)
         Me.Controls.Add(Me.BBuscarAp)
         Me.Controls.Add(Me.BBuscarDni)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.TBBuscarAp)
-        Me.Controls.Add(Me.BCancelar)
-        Me.Controls.Add(Me.BEditar)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.TBBuscar)
         Me.Controls.Add(Me.DGV1)
         Me.Controls.Add(Me.PanelPrincipal)
-        Me.Name = "EditarCliente"
+        Me.Name = "ListarClientes"
         Me.Text = "EditarCliente"
         CType(Me.DGV1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelPrincipal.ResumeLayout(False)
@@ -381,8 +352,6 @@ Partial Class EditarCliente
     Friend WithEvents LTel As Label
     Friend WithEvents TBBuscar As TextBox
     Friend WithEvents Label1 As Label
-    Friend WithEvents BEditar As Button
-    Friend WithEvents BCancelar As Button
     Friend WithEvents Label2 As Label
     Friend WithEvents TBBuscarAp As TextBox
     Friend WithEvents BBuscarDni As Button
@@ -391,5 +360,5 @@ Partial Class EditarCliente
     Friend WithEvents LID As Label
     Friend WithEvents TBEstado As TextBox
     Friend WithEvents LEstado As Label
-    Friend WithEvents BAEstado As Button
+    Friend WithEvents BAgregarVenta As Button
 End Class

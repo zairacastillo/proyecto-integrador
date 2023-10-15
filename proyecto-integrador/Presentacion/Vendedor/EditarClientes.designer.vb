@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class EditarCliente
+Partial Class ListarCliente
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
@@ -338,7 +338,7 @@ Partial Class EditarCliente
         Me.BAEstado.Text = "Mostrar Inactivos"
         Me.BAEstado.UseVisualStyleBackColor = True
         '
-        'EditarCliente
+        'ListarCliente
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -355,7 +355,7 @@ Partial Class EditarCliente
         Me.Controls.Add(Me.TBBuscar)
         Me.Controls.Add(Me.DGV1)
         Me.Controls.Add(Me.PanelPrincipal)
-        Me.Name = "EditarCliente"
+        Me.Name = "ListarCliente"
         Me.Text = "EditarCliente"
         CType(Me.DGV1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelPrincipal.ResumeLayout(False)

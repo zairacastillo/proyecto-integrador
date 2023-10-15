@@ -160,8 +160,10 @@ Public Class EditarClienteAdmin
         'intercambia la variable estado entre activo/inactivo
         If estado = "Activo" Then
             estado = "Inactivo"
+            BAEstado.Text = "Mostrar Activos"
         Else
             estado = "Activo"
+            BAEstado.Text = "Mostrar Inactivos"
         End If
         EditarCliente_Load(sender, e)
     End Sub
@@ -181,6 +183,4 @@ Public Class EditarClienteAdmin
     Private Sub CBEstado_SelectedIndexChanged(sender As Object, e As KeyPressEventArgs) Handles CBEstado.KeyPress
         e.Handled = True
     End Sub
-
-
 End Class

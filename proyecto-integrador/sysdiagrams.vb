@@ -10,16 +10,11 @@
 Imports System
 Imports System.Collections.Generic
 
-Partial Public Class producto
-    Public Property Id_producto As Integer
-    Public Property nombre_producto As String
-    Public Property estado_producto As String
-    Public Property precio As Decimal
-    Public Property stock As Integer
-    Public Property Id_categoria As Integer
-    Public Property descripcion_producto As String
-
-    Public Overridable Property categoria As categoria
-    Public Overridable Property detalle_venta As ICollection(Of detalle_venta) = New HashSet(Of detalle_venta)
+Partial Public Class sysdiagrams
+    Public Property name As String
+    Public Property principal_id As Integer
+    Public Property diagram_id As Integer
+    Public Property version As Nullable(Of Integer)
+    Public Property definition As Byte()
 
 End Class

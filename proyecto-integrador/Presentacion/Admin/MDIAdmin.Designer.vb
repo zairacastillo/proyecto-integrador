@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class MDIAdmin
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -21,26 +21,24 @@ Partial Class MDIAdmin
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.MenuStrip = New System.Windows.Forms.MenuStrip()
         Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.BListarClientes = New System.Windows.Forms.ToolStripMenuItem()
-        Me.BEliminarClientes = New System.Windows.Forms.ToolStripMenuItem()
         Me.EditarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem1ToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
         Me.BListarVentas = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem3 = New System.Windows.Forms.ToolStripMenuItem()
         Me.BNuevoProducto = New System.Windows.Forms.ToolStripMenuItem()
         Me.BListarProducto = New System.Windows.Forms.ToolStripMenuItem()
+        Me.GestionCategoriaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem4 = New System.Windows.Forms.ToolStripMenuItem()
         Me.BListarVendedores = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem5 = New System.Windows.Forms.ToolStripMenuItem()
         Me.StatusStrip = New System.Windows.Forms.StatusStrip()
         Me.ToolStripStatusLabel = New System.Windows.Forms.ToolStripStatusLabel()
         Me.ToolTip = New System.Windows.Forms.ToolTip(Me.components)
-        Me.GestionCategoriaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip.SuspendLayout()
         Me.StatusStrip.SuspendLayout()
         Me.SuspendLayout()
@@ -58,7 +56,7 @@ Partial Class MDIAdmin
         '
         'ToolStripMenuItem1
         '
-        Me.ToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BListarClientes, Me.BEliminarClientes, Me.EditarToolStripMenuItem})
+        Me.ToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EditarToolStripMenuItem})
         Me.ToolStripMenuItem1.Image = Global.proyecto_integrador.My.Resources.Resources.cliente
         Me.ToolStripMenuItem1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.ToolStripMenuItem1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
@@ -71,29 +69,13 @@ Partial Class MDIAdmin
         Me.ToolStripMenuItem1.Text = "  &Clientes"
         Me.ToolStripMenuItem1.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
-        'BListarClientes
-        '
-        Me.BListarClientes.Image = Global.proyecto_integrador.My.Resources.Resources.listar
-        Me.BListarClientes.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
-        Me.BListarClientes.ImageTransparentColor = System.Drawing.Color.Black
-        Me.BListarClientes.Name = "BListarClientes"
-        Me.BListarClientes.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.O), System.Windows.Forms.Keys)
-        Me.BListarClientes.ShowShortcutKeys = False
-        Me.BListarClientes.Size = New System.Drawing.Size(196, 38)
-        Me.BListarClientes.Text = "&Listar"
-        '
-        'BEliminarClientes
-        '
-        Me.BEliminarClientes.Image = Global.proyecto_integrador.My.Resources.Resources.cerrar
-        Me.BEliminarClientes.Name = "BEliminarClientes"
-        Me.BEliminarClientes.Size = New System.Drawing.Size(196, 38)
-        Me.BEliminarClientes.Text = "&Eliminar"
-        '
         'EditarToolStripMenuItem
         '
+        Me.EditarToolStripMenuItem.Image = Global.proyecto_integrador.My.Resources.Resources.lapiz
+        Me.EditarToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.EditarToolStripMenuItem.Name = "EditarToolStripMenuItem"
         Me.EditarToolStripMenuItem.Size = New System.Drawing.Size(196, 38)
-        Me.EditarToolStripMenuItem.Text = "Editar"
+        Me.EditarToolStripMenuItem.Text = "Gestionar Clientes"
         '
         'ToolStripMenuItem1ToolStripMenuItem2
         '
@@ -118,7 +100,7 @@ Partial Class MDIAdmin
         Me.BListarVentas.Name = "BListarVentas"
         Me.BListarVentas.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.O), System.Windows.Forms.Keys)
         Me.BListarVentas.ShowShortcutKeys = False
-        Me.BListarVentas.Size = New System.Drawing.Size(111, 38)
+        Me.BListarVentas.Size = New System.Drawing.Size(196, 38)
         Me.BListarVentas.Text = "&Listar"
         '
         'ToolStripMenuItem3
@@ -148,6 +130,12 @@ Partial Class MDIAdmin
         Me.BListarProducto.Name = "BListarProducto"
         Me.BListarProducto.Size = New System.Drawing.Size(196, 38)
         Me.BListarProducto.Text = "&Editar/Baja"
+        '
+        'GestionCategoriaToolStripMenuItem
+        '
+        Me.GestionCategoriaToolStripMenuItem.Name = "GestionCategoriaToolStripMenuItem"
+        Me.GestionCategoriaToolStripMenuItem.Size = New System.Drawing.Size(196, 38)
+        Me.GestionCategoriaToolStripMenuItem.Text = "Gestion Categoria"
         '
         'ToolStripMenuItem4
         '
@@ -200,12 +188,6 @@ Partial Class MDIAdmin
         Me.ToolStripStatusLabel.Size = New System.Drawing.Size(42, 17)
         Me.ToolStripStatusLabel.Text = "Estado"
         '
-        'GestionCategoriaToolStripMenuItem
-        '
-        Me.GestionCategoriaToolStripMenuItem.Name = "GestionCategoriaToolStripMenuItem"
-        Me.GestionCategoriaToolStripMenuItem.Size = New System.Drawing.Size(196, 38)
-        Me.GestionCategoriaToolStripMenuItem.Text = "Gestion Categoria"
-        '
         'MDIAdmin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -242,8 +224,6 @@ Partial Class MDIAdmin
     Friend WithEvents BNuevoProducto As ToolStripMenuItem
     Friend WithEvents BListarProducto As ToolStripMenuItem
     Friend WithEvents ToolStripMenuItem1 As ToolStripMenuItem
-    Friend WithEvents BListarClientes As ToolStripMenuItem
-    Friend WithEvents BEliminarClientes As ToolStripMenuItem
     Friend WithEvents ToolStripMenuItem5 As ToolStripMenuItem
     Friend WithEvents EditarToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents GestionCategoriaToolStripMenuItem As ToolStripMenuItem

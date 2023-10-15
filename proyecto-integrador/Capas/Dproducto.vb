@@ -1,21 +1,35 @@
 ﻿Public Class Dproducto
 
 
-    Dim ctx As PROYECTO2Entities = New PROYECTO2Entities
+    Dim ctx As PROYECTO2Entities2 = New PROYECTO2Entities2
+
+
+    Function llenarCategorias(ByRef dg As DataGridView) As Boolean
+
+        Dim cat As categoria
+        For Each fila In dg.Rows
+            cat = fila.Cells("categoria").Value
+            fila.Cells("Categorias").Value = cat.descripcion_cat
+        Next
+
+        dg.Columns(8).Visible = False
+        dg.Columns(9).Visible = False
+        Return False
+    End Function
 
     Function getAllproducto(ByRef dg As DataGridView) As Boolean
 
         dg.DataSource = Me.getAll()
 
-        Dim i = 0
 
-        For Each producto In dg.DataSource
-            dg.Rows(i).Cells(0).Value = producto.categoria.descripcion_cat
-            i = i + 1
+        Dim cat As categoria
+        For Each fila In dg.Rows
+            cat = fila.Cells("categoria").Value
+            fila.Cells("Categorias").Value = cat.descripcion_cat
         Next
 
-        'dg.Columns(0).Visible = False
-        'dg.Columns(9).Visible = False
+        dg.Columns(8).Visible = False
+        dg.Columns(9).Visible = False
         Return False
     End Function
     Function agregrar_producto(ByVal oproducto As producto) As Boolean
@@ -48,6 +62,7 @@
             item.stock = valor.stock
             item.Id_categoria = valor.Id_categoria
             item.categoria = valor.categoria
+            item.descripcion_producto = valor.descripcion_producto
 
             listaproducto.Add(item)
 
@@ -106,16 +121,16 @@
             If (buscarProd.First.Id_producto = pid) Then
                 Return False 'producto existe pero es el mismo cliente
             End If
-            MsgBox("ERROR: El Correo ya ha sido registrado", Title:="ERROR")
+            MsgBox("ERROR: El producto ya ha sido registrado", Title:="ERROR")
             Return True 'producto ya existe
         End If
     End Function
 
 
-    Function buscarProducto(ByVal pidCategoria As Integer, ByVal pnombre As String, Optional ByVal pestado As String = "Activo") As List(Of producto)
+    Function buscarProducto(Optional ByVal pidCategoria As Integer = 0, Optional ByVal pnombre As String = "", Optional ByVal pestado As String = "Activo") As List(Of producto)
         Dim lista
 
-        If (pidCategoria >= 0) Then
+        If (pidCategoria > 0) Then
             lista = (From p In ctx.producto
                      Where p.Id_categoria = pidCategoria And p.nombre_producto.Contains(pnombre) And p.estado_producto = pestado
                      Select p).ToList
@@ -137,7 +152,8 @@
             item.precio = valor.precio
             item.stock = valor.stock
             item.Id_categoria = valor.Id_categoria
-
+            item.descripcion_producto = valor.descripcion_producto
+            item.categoria = valor.categoria
             listaproducto.Add(item)
 
         Next
@@ -154,7 +170,7 @@
         modif.precio = oproducto.precio
         modif.stock = oproducto.stock
         modif.Id_categoria = oproducto.Id_categoria
-
+        modif.descripcion_producto = oproducto.descripcion_producto
 
 
         Try

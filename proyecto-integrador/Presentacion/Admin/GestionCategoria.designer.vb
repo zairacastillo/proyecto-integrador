@@ -42,11 +42,11 @@ Partial Class GestionCategoria
         '
         Me.DGV1.AllowUserToAddRows = False
         Me.DGV1.AllowUserToDeleteRows = False
-        Me.DGV1.AllowUserToOrderColumns = True
         Me.DGV1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DGV1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DGV1.Location = New System.Drawing.Point(-7, 80)
         Me.DGV1.Name = "DGV1"
+        Me.DGV1.ReadOnly = True
         Me.DGV1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders
         Me.DGV1.Size = New System.Drawing.Size(971, 164)
         Me.DGV1.TabIndex = 5

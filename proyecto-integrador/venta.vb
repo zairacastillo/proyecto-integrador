@@ -16,10 +16,9 @@ Partial Public Class venta
     Public Property Id_cliente As Integer
     Public Property fecha As Date
     Public Property total As Decimal
-    Public Property Id_detalle_venta As Integer
 
     Public Overridable Property cliente As cliente
-    Public Overridable Property detalle_venta As detalle_venta
+    Public Overridable Property detalle_venta As ICollection(Of detalle_venta) = New HashSet(Of detalle_venta)
     Public Overridable Property empleado As empleado
 
 End Class

@@ -73,7 +73,7 @@ Public Class GestionCategoria
 
         'buscamos categorias y llenamos la tabla
         DGV1.DataSource = Objcategoria.buscarCategoria(TBBuscarDesc.Text.Trim)
-        'DGV1.Columns(1).Visible = False
+        DGV1.Columns(3).Visible = False
         'DGV1.Columns(10).Visible = False
     End Sub
 

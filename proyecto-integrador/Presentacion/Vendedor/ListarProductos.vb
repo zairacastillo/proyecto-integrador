@@ -3,54 +3,53 @@
 '^[A-Za-z ]+$                            validar alfabetico
 '^[0-9 ]+$                               validar numerico
 
-Public Class EditarEliminarProducto
+Public Class ListarProductos
     Dim ObjCategoria As Dcategoria = New Dcategoria
 
     'subclase que maneja la entidad producto, intermediario entre entity y la tabla
     Dim ObjProducto As Dproducto = New Dproducto
 
-    Dim estado As String = "Activo"
-    Private Sub EditarProducto_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        If TBID.Text = "" Then
-            BEditar.Enabled = False
-        Else
-            BEditar.Enabled = True
-        End If
+    Dim NVenta As NuevaVenta
 
-        Dim categorias = ObjCategoria.getAll()
+    Dim mostrarBAgregarVenta As Boolean = False
+
+    Dim estado As String = "Activo"
+
+
+    Public Sub New(ByVal pNVenta As NuevaVenta, Optional ByVal pBAgregarVenta As Boolean = False)
+        InitializeComponent()
+        mostrarBAgregarVenta = pBAgregarVenta
+        NVenta = pNVenta
+    End Sub
+
+
+    Private Sub EditarProducto_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        BAgregarVenta.Enabled = False
+        BAgregarVenta.Visible = mostrarBAgregarVenta
+
+        'Dim categorias = ObjCategoria.getAll()
         'se cargan las categorias
-        CBCategoria.DataSource = categorias
+        CBCategoria.DataSource = ObjCategoria.getAll()
         CBCategoria.DisplayMember = "descripcion_cat"
         CBCategoria.ValueMember = "Id_categoria"
         CBCategoria.SelectedValue = 0
 
         'se cargan las categorias
-        categorias = ObjCategoria.getAll()
-        CBCateg.DataSource = categorias
+        'categorias = ObjCategoria.getAll()
+        CBCateg.DataSource = ObjCategoria.getAll()
         CBCateg.DisplayMember = "descripcion_cat"
         CBCateg.ValueMember = "Id_categoria"
         CBCateg.SelectedValue = 0
 
-        If (DGV1.Columns.Count < 1) Then     ' agrega la columna "seleccionar al inicio
+        If (DGV1.Columns.Count < 1) Then
             Dim colBoton As New System.Windows.Forms.DataGridViewButtonColumn
             colBoton.HeaderText = "Seleccionar"
             colBoton.Text = "Seleccionar"
             DGV1.Columns.Add(colBoton)
         End If
 
-
-        'buscamos productos y llenamos la tabla
+        'buscamos clientes y llenamos la tabla
         DGV1.DataSource = ObjProducto.buscarProducto(CBCategoria.SelectedValue, TBBuscar.Text.Trim, estado)
-
-        ' If Not DGV1.Columns.Contains("Categorias") Then
-        '     Dim colCat As New System.Windows.Forms.DataGridViewTextBoxColumn
-        '     colCat.HeaderText = "Categorias"
-        '     colCat.Name = "Categorias"
-        '     DGV1.Columns.Add(colCat)
-        ' End If
-        '
-        '
-        ' ObjProducto.llenarCategorias(DGV1)
         DGV1.Columns(8).Visible = False
         DGV1.Columns(9).Visible = False
     End Sub
@@ -71,8 +70,6 @@ Public Class EditarEliminarProducto
     End Sub
 
 
-
-
     Private Sub TBStock_TextChanged(sender As Object, e As KeyPressEventArgs) Handles TBStock.KeyPress
 
         If Validar_numeros(e) Then
@@ -87,16 +84,6 @@ Public Class EditarEliminarProducto
 
     End Sub
 
-    Private Sub BCancelar_Click(sender As Object, e As EventArgs) Handles BCancelar.Click
-        TBID.Clear()
-        TBNombre.Clear()
-        TBPrecio.Clear()
-        CBEstado.Text = ""
-        TBStock.Clear()
-        TBDescripcion.Clear()
-        BEditar.Enabled = False
-        EditarProducto_Load(sender, e)
-    End Sub
 
     Private Sub DGV1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGV1.CellContentClick
 
@@ -119,10 +106,11 @@ Public Class EditarEliminarProducto
                         CBEstado.Text = DGV1.Rows(cell.RowIndex).Cells(3).Value
                         TBPrecio.Text = DGV1.Rows(cell.RowIndex).Cells(4).Value
                         TBStock.Text = DGV1.Rows(cell.RowIndex).Cells(5).Value
-                        TBDescripcion.Text = DGV1.Rows(cell.RowIndex).Cells(7).Value
-                        CBCateg.SelectedValue = DGV1.Rows(cell.RowIndex).Cells(6).Value
+                        TBDescripcion.Text = DGV1.Rows(cell.RowIndex).Cells(6).Value
+                        CBCateg.SelectedValue = DGV1.Rows(cell.RowIndex).Cells("Id_categoria").Value
 
-                        BEditar.Enabled = True
+                        BAgregarVenta.Enabled = mostrarBAgregarVenta
+                        BAgregarVenta.Visible = mostrarBAgregarVenta
 
                         Exit Select
                 End Select
@@ -139,29 +127,16 @@ Public Class EditarEliminarProducto
         e.Handled = True
     End Sub
 
-    Private Sub BActivarElim_Click(sender As Object, e As EventArgs) Handles BAEstado.Click
-        'intercambia la variable estado entre activo/inactivo
-
-        If estado = "Activo" Then
-            estado = "Inactivo"
-            BAEstado.Text = "Mostrar Activos"
-        Else
-            estado = "Activo"
-            BAEstado.Text = "Mostrar Inactivos"
-        End If
-        BBuscarNombre_Click(sender, e)
-    End Sub
 
     Private Sub BBuscarNombre_Click(sender As Object, e As EventArgs) Handles BBuscarNombre.Click
         DGV1.DataSource = ObjProducto.buscarProducto(CBCategoria.SelectedValue, TBBuscar.Text.Trim, estado)
     End Sub
 
-    Private Sub BEditar_Click(sender As Object, e As EventArgs) Handles BEditar.Click
-        'variable de mensaje de error
-        Dim msjTxt As String = "Debe Completar todos los campos correctamente: "
+    Public Sub BAgregarVenta_Click(sender As Object, e As EventArgs) Handles BAgregarVenta.Click
+        Dim msjTxt As String = "Debe Completar todos los campos: "
 
         ' lista de TB a verificar si estan vacios
-        Dim listaTB = {TBPrecio, TBStock, TBNombre, TBDescripcion}
+        Dim listaTB = {TBID, TBNombre, TBPrecio, TBStock, TBDescripcion}
 
         TBVacios(listaTB) ' devuelve true si algun TB esta vacio
 
@@ -170,31 +145,22 @@ Public Class EditarEliminarProducto
             'Mensaje
             MsgBox(msjTxt, MsgBoxStyle.Critical, Title:="Error")
         Else
-            Dim ask = MsgBox("¿Seguro que desea Guardar el producto?", MsgBoxStyle.YesNo, Title:="Confirmar Inserción")
+            Dim ask = MsgBox("¿Seguro que desea cargar el producto " + TBNombre.Text.Trim + "?", MsgBoxStyle.YesNo, Title:="Confirmar Inserción")
             If ask = vbYes Then
                 'guardar
-                'define entidad cliente
+
+                'define entidad producto
                 Dim OProducto As New producto
-                'cargamos de datos un registro cliente
+                'cargamos de datos un registro producto
                 OProducto.Id_producto = Integer.Parse(TBID.Text)
+                OProducto.estado_producto = CBEstado.SelectedValue
                 OProducto.nombre_producto = TBNombre.Text.Trim
-                OProducto.estado_producto = CBEstado.Text.Trim
                 OProducto.precio = TBPrecio.Text.Trim
                 OProducto.stock = TBStock.Text.Trim
-                OProducto.Id_categoria = Integer.Parse(CBCateg.SelectedValue)
+                OProducto.Id_categoria = CBCateg.SelectedValue
                 OProducto.descripcion_producto = TBDescripcion.Text.Trim
 
-
-                If ObjProducto.Modificar(OProducto) Then
-
-                    MsgBox("Los datos se guardaron correctamente", Title:="Confirmar Inserción")
-                    'Reseteamos Form
-                    'BCancelar_Click(sender, e)
-                    DGV1.DataSource = ObjProducto.getAll()
-
-                Else
-                    MsgBox("ERROR: Los datos NO se guardaron correctamente", Title:="ERROR Inserción")
-                End If
+                NVenta.CargaProducto(OProducto)
 
             End If
         End If

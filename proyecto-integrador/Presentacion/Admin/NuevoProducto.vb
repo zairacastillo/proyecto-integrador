@@ -15,10 +15,12 @@ Public Class NuevoProducto
         CBCategoria.DataSource = ObjCategoria.getAll()
         CBCategoria.DisplayMember = "descripcion_cat"
         CBCategoria.ValueMember = "Id_categoria"
+        CBCategoria.SelectedValue = 0
 
-        If DGV1.Columns.Count < 8 Then
+        If Not DGV1.Columns.Contains("Categorias") Then
             Dim colCat As New System.Windows.Forms.DataGridViewTextBoxColumn
-            colCat.HeaderText = "Categoria"
+            colCat.HeaderText = "Categorias"
+            colCat.Name = "Categorias"
             DGV1.Columns.Add(colCat)
         End If
 
@@ -45,11 +47,11 @@ Public Class NuevoProducto
         TBVacios(listaTB) ' devuelve true si algun TB esta vacio
 
         'si campos estan vacios o empiezan con espacio
-        If TBVacios(listaTB) Then
+        If TBVacios(listaTB) Or CBCategoria.SelectedValue < 1 Then
             'Mensaje
             MsgBox(msjTxt, MsgBoxStyle.Critical, Title:="Error")
 
-        ElseIf ObjProducto.ExisteProducto(TBNombre.Text) = False Then
+        ElseIf ObjProducto.ExisteProducto(TBNombre.Text) Then
             MessageBox.Show("El nombre de producto ya ha sido registrado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
 
         Else
@@ -66,7 +68,7 @@ Public Class NuevoProducto
                 OProducto.precio = TBPrecio.Text.Trim
                 OProducto.stock = TBStock.Text.Trim
                 OProducto.Id_categoria = Integer.Parse(CBCategoria.SelectedValue)
-
+                OProducto.descripcion_producto = TBDescripcion.Text.Trim
 
                 If ObjProducto.agregrar_producto(OProducto) Then
 
@@ -110,11 +112,6 @@ Public Class NuevoProducto
         End If
     End Sub
 
-    Private Sub TBDescripcion_TextChanged(sender As Object, e As KeyPressEventArgs) Handles TBDescripcion.KeyPress
-        If Validar_letras(e) Then
-            MessageBox.Show("Solo se admiten letras", "Validación de letras", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
-        End If
-    End Sub
 
     Private Sub CBCategoria_SelectedIndexChanged(sender As Object, e As KeyPressEventArgs) Handles CBCategoria.KeyPress
         e.Handled = True

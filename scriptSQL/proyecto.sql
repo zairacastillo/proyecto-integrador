@@ -4,6 +4,118 @@ GO
 /****** Object:  Database [PROYECTO2]    Script Date: 1/10/2023 21:28:02 ******/
 CREATE DATABASE [PROYECTO2]
 
+IF (1 = FULLTEXTSERVICEPROPERTY('IsFullTextInstalled'))
+begin
+EXEC [PROYECTO2].[dbo].[sp_fulltext_database] @action = 'enable'
+end
+GO
+
+ALTER DATABASE [PROYECTO2] SET ANSI_NULL_DEFAULT OFF 
+GO
+
+ALTER DATABASE [PROYECTO2] SET ANSI_NULLS OFF 
+GO
+
+ALTER DATABASE [PROYECTO2] SET ANSI_PADDING OFF 
+GO
+
+ALTER DATABASE [PROYECTO2] SET ANSI_WARNINGS OFF 
+GO
+
+ALTER DATABASE [PROYECTO2] SET ARITHABORT OFF 
+GO
+
+ALTER DATABASE [PROYECTO2] SET AUTO_CLOSE OFF 
+GO
+
+ALTER DATABASE [PROYECTO2] SET AUTO_SHRINK OFF 
+GO
+
+ALTER DATABASE [PROYECTO2] SET AUTO_UPDATE_STATISTICS ON 
+GO
+
+ALTER DATABASE [PROYECTO2] SET CURSOR_CLOSE_ON_COMMIT OFF 
+GO
+
+ALTER DATABASE [PROYECTO2] SET CURSOR_DEFAULT  GLOBAL 
+GO
+
+ALTER DATABASE [PROYECTO2] SET CONCAT_NULL_YIELDS_NULL OFF 
+GO
+
+ALTER DATABASE [PROYECTO2] SET NUMERIC_ROUNDABORT OFF 
+GO
+
+ALTER DATABASE [PROYECTO2] SET QUOTED_IDENTIFIER OFF 
+GO
+
+ALTER DATABASE [PROYECTO2] SET RECURSIVE_TRIGGERS OFF 
+GO
+
+ALTER DATABASE [PROYECTO2] SET  DISABLE_BROKER 
+GO
+
+ALTER DATABASE [PROYECTO2] SET AUTO_UPDATE_STATISTICS_ASYNC OFF 
+GO
+
+ALTER DATABASE [PROYECTO2] SET DATE_CORRELATION_OPTIMIZATION OFF 
+GO
+
+ALTER DATABASE [PROYECTO2] SET TRUSTWORTHY OFF 
+GO
+
+ALTER DATABASE [PROYECTO2] SET ALLOW_SNAPSHOT_ISOLATION OFF 
+GO
+
+ALTER DATABASE [PROYECTO2] SET PARAMETERIZATION SIMPLE 
+GO
+
+ALTER DATABASE [PROYECTO2] SET READ_COMMITTED_SNAPSHOT OFF 
+GO
+
+ALTER DATABASE [PROYECTO2] SET HONOR_BROKER_PRIORITY OFF 
+GO
+
+ALTER DATABASE [PROYECTO2] SET RECOVERY SIMPLE 
+GO
+
+ALTER DATABASE [PROYECTO2] SET  MULTI_USER 
+GO
+
+ALTER DATABASE [PROYECTO2] SET PAGE_VERIFY CHECKSUM  
+GO
+
+ALTER DATABASE [PROYECTO2] SET DB_CHAINING OFF 
+GO
+
+ALTER DATABASE [PROYECTO2] SET FILESTREAM( NON_TRANSACTED_ACCESS = OFF ) 
+GO
+
+ALTER DATABASE [PROYECTO2] SET TARGET_RECOVERY_TIME = 60 SECONDS 
+GO
+
+ALTER DATABASE [PROYECTO2] SET DELAYED_DURABILITY = DISABLED 
+GO
+
+ALTER DATABASE [PROYECTO2] SET ACCELERATED_DATABASE_RECOVERY = OFF  
+GO
+
+ALTER DATABASE [PROYECTO2] SET QUERY_STORE = OFF
+GO
+
+ALTER DATABASE [PROYECTO2] SET  READ_WRITE 
+GO
+
+
+-- --------------------------------------------------
+-- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
+-- --------------------------------------------------
+-- Date Created: 10/06/2023 22:35:34
+-- Generated from EDMX file: C:\Users\Usuario\Desktop\taller 2\proyecto-integrador\proyecto-integrador\ModelProyecto.edmx
+-- --------------------------------------------------
+
+SET QUOTED_IDENTIFIER OFF;
+GO
 USE [PROYECTO2];
 GO
 IF SCHEMA_ID(N'dbo') IS NULL EXECUTE(N'CREATE SCHEMA [dbo]');
@@ -26,7 +138,7 @@ IF OBJECT_ID(N'[dbo].[Fk_venta_cliente]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[venta] DROP CONSTRAINT [Fk_venta_cliente];
 GO
 IF OBJECT_ID(N'[dbo].[Fk_venta_detalle_venta]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[detalle_venta] DROP CONSTRAINT [Fk_venta_detalle_venta];
+    ALTER TABLE [dbo].[venta] DROP CONSTRAINT [Fk_venta_detalle_venta];
 GO
 IF OBJECT_ID(N'[dbo].[Fk_venta_empleado]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[venta] DROP CONSTRAINT [Fk_venta_empleado];
@@ -76,7 +188,7 @@ CREATE TABLE [dbo].[cliente] (
     [apellido_cliente] nvarchar(50)  NOT NULL,
     [dni_cliente] int  NOT NULL,
     [correo_cliente] nvarchar(50)  NOT NULL,
-    [telefono_cliente] int  NOT NULL,
+    [telefono_cliente] numeric (12)  NOT NULL,
     [direccion_cliente] nvarchar(50)  NOT NULL,
     [fecha_cliente] datetime  NOT NULL,
     [estado_cliente] nvarchar(50)  NOT NULL
@@ -87,10 +199,9 @@ GO
 CREATE TABLE [dbo].[detalle_venta] (
     [Id_detalle_venta] int IDENTITY(1,1) NOT NULL,
     [Id_producto] int  NOT NULL,
-    [precio_unitario] decimal(18,0)  NOT NULL,
+    [precio_unitario] decimal (18,2)  NOT NULL,
     [cantidad] int  NOT NULL,
-    [subtotal] decimal(18,0)  NOT NULL,
-	[Id_venta] int NOT NULL,
+    [subtotal] decimal(18,2)  NOT NULL
 );
 GO
 
@@ -101,7 +212,7 @@ CREATE TABLE [dbo].[empleado] (
     [apellido_empleado] nvarchar(50)  NOT NULL,
     [dni_empleado] int  NOT NULL,
     [correo_empleado] nvarchar(50)  NOT NULL,
-    [telefono_empleado] int  NOT NULL,
+    [telefono_empleado] numeric(12)  NOT NULL,
     [direccion_empleado] nvarchar(50)  NOT NULL,
     [usuario] nvarchar(50)  NOT NULL,
     [contraseña] nvarchar(50)  NOT NULL,
@@ -123,10 +234,10 @@ CREATE TABLE [dbo].[producto] (
     [Id_producto] int IDENTITY(1,1) NOT NULL,
     [nombre_producto] nvarchar(50)  NOT NULL,
     [estado_producto] nvarchar(50)  NOT NULL,
-    [precio] decimal(18,0)  NOT NULL,
+    [precio] float(18)  NOT NULL,
     [stock] int  NOT NULL,
-    [Id_categoria] int  NOT NULL, 
-	[descripcion_producto] nvarchar(100) NOT NULL,
+	[descripcion_producto] nvarchar(200)  NOT NULL,
+    [Id_categoria] int  NOT NULL
 );
 GO
 
@@ -136,7 +247,8 @@ CREATE TABLE [dbo].[venta] (
     [Id_empleado] int  NOT NULL,
     [Id_cliente] int  NOT NULL,
     [fecha] datetime  NOT NULL,
-    [total] decimal(18,0)  NOT NULL
+    [total] decimal(18,0)  NOT NULL,
+    [Id_detalle_venta] int  NOT NULL
 );
 GO
 
@@ -236,18 +348,18 @@ ON [dbo].[detalle_venta]
 GO
 
 -- Creating foreign key on [Id_detalle_venta] in table 'venta'
-ALTER TABLE [dbo].[detalle_venta]
+ALTER TABLE [dbo].[venta]
 ADD CONSTRAINT [Fk_venta_detalle_venta]
-    FOREIGN KEY ([Id_venta])
-    REFERENCES [dbo].[venta]
-        ([Id_venta])
+    FOREIGN KEY ([Id_detalle_venta])
+    REFERENCES [dbo].[detalle_venta]
+        ([Id_detalle_venta])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
 GO
 
 -- Creating non-clustered index for FOREIGN KEY 'Fk_venta_detalle_venta'
 CREATE INDEX [IX_Fk_venta_detalle_venta]
-ON [dbo].[detalle_venta]
-    ([Id_venta]);
+ON [dbo].[venta]
+    ([Id_detalle_venta]);
 GO
 
 -- Creating foreign key on [Id_perfil] in table 'empleado'
@@ -280,11 +392,6 @@ ON [dbo].[venta]
     ([Id_empleado]);
 GO
 
-insert into perfil values ('Vendedor')
-insert into perfil values ('Admin')
-insert into perfil values ('Super Admin')
-
 -- --------------------------------------------------
 -- Script has ended
 -- --------------------------------------------------
-

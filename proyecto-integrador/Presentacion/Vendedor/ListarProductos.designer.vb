@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class EditarEliminarProducto
+Partial Class ListarProductos
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
@@ -38,14 +38,12 @@ Partial Class EditarEliminarProducto
         Me.LNombre = New System.Windows.Forms.Label()
         Me.LID = New System.Windows.Forms.Label()
         Me.DGV1 = New System.Windows.Forms.DataGridView()
-        Me.BCancelar = New System.Windows.Forms.Button()
-        Me.BEditar = New System.Windows.Forms.Button()
-        Me.BAEstado = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TBBuscar = New System.Windows.Forms.TextBox()
         Me.CBCategoria = New System.Windows.Forms.ComboBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.BBuscarNombre = New System.Windows.Forms.Button()
+        Me.BAgregarVenta = New System.Windows.Forms.Button()
         Me.PanelPrincipal.SuspendLayout()
         CType(Me.DGV1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -76,6 +74,7 @@ Partial Class EditarEliminarProducto
         '
         'CBEstado
         '
+        Me.CBEstado.Enabled = False
         Me.CBEstado.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CBEstado.ForeColor = System.Drawing.SystemColors.WindowText
         Me.CBEstado.FormattingEnabled = True
@@ -87,6 +86,7 @@ Partial Class EditarEliminarProducto
         '
         'CBCateg
         '
+        Me.CBCateg.Enabled = False
         Me.CBCateg.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CBCateg.FormattingEnabled = True
         Me.CBCateg.Location = New System.Drawing.Point(389, 145)
@@ -120,8 +120,10 @@ Partial Class EditarEliminarProducto
         '
         'TBStock
         '
+        Me.TBStock.Enabled = False
         Me.TBStock.Location = New System.Drawing.Point(393, 105)
         Me.TBStock.Name = "TBStock"
+        Me.TBStock.ReadOnly = True
         Me.TBStock.Size = New System.Drawing.Size(122, 20)
         Me.TBStock.TabIndex = 18
         '
@@ -139,24 +141,30 @@ Partial Class EditarEliminarProducto
         '
         'TBDescripcion
         '
+        Me.TBDescripcion.Enabled = False
         Me.TBDescripcion.Location = New System.Drawing.Point(161, 212)
         Me.TBDescripcion.Multiline = True
         Me.TBDescripcion.Name = "TBDescripcion"
+        Me.TBDescripcion.ReadOnly = True
         Me.TBDescripcion.Size = New System.Drawing.Size(354, 68)
         Me.TBDescripcion.TabIndex = 16
         '
         'TBPrecio
         '
+        Me.TBPrecio.Enabled = False
         Me.TBPrecio.Location = New System.Drawing.Point(393, 61)
         Me.TBPrecio.Name = "TBPrecio"
+        Me.TBPrecio.ReadOnly = True
         Me.TBPrecio.Size = New System.Drawing.Size(122, 20)
         Me.TBPrecio.TabIndex = 7
         '
         'TBNombre
         '
+        Me.TBNombre.Enabled = False
         Me.TBNombre.Location = New System.Drawing.Point(119, 148)
         Me.TBNombre.Multiline = True
         Me.TBNombre.Name = "TBNombre"
+        Me.TBNombre.ReadOnly = True
         Me.TBNombre.Size = New System.Drawing.Size(130, 39)
         Me.TBNombre.TabIndex = 5
         '
@@ -230,39 +238,6 @@ Partial Class EditarEliminarProducto
         Me.DGV1.Size = New System.Drawing.Size(942, 164)
         Me.DGV1.TabIndex = 2
         '
-        'BCancelar
-        '
-        Me.BCancelar.Image = Global.proyecto_integrador.My.Resources.Resources.cerrar
-        Me.BCancelar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.BCancelar.Location = New System.Drawing.Point(769, 445)
-        Me.BCancelar.Name = "BCancelar"
-        Me.BCancelar.Size = New System.Drawing.Size(87, 60)
-        Me.BCancelar.TabIndex = 15
-        Me.BCancelar.Text = "Cancelar"
-        Me.BCancelar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.BCancelar.UseVisualStyleBackColor = True
-        '
-        'BEditar
-        '
-        Me.BEditar.Image = Global.proyecto_integrador.My.Resources.Resources.lapiz
-        Me.BEditar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.BEditar.Location = New System.Drawing.Point(774, 348)
-        Me.BEditar.Name = "BEditar"
-        Me.BEditar.Size = New System.Drawing.Size(82, 64)
-        Me.BEditar.TabIndex = 14
-        Me.BEditar.Text = "Guardar Cambios"
-        Me.BEditar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.BEditar.UseVisualStyleBackColor = True
-        '
-        'BAEstado
-        '
-        Me.BAEstado.Location = New System.Drawing.Point(765, 258)
-        Me.BAEstado.Name = "BAEstado"
-        Me.BAEstado.Size = New System.Drawing.Size(91, 60)
-        Me.BAEstado.TabIndex = 13
-        Me.BAEstado.Text = "Mostrar Inactivos"
-        Me.BAEstado.UseVisualStyleBackColor = True
-        '
         'Label1
         '
         Me.Label1.AutoSize = True
@@ -313,24 +288,31 @@ Partial Class EditarEliminarProducto
         Me.BBuscarNombre.Text = "Buscar"
         Me.BBuscarNombre.UseVisualStyleBackColor = True
         '
-        'EditarEliminarProducto
+        'BAgregarVenta
+        '
+        Me.BAgregarVenta.Location = New System.Drawing.Point(793, 310)
+        Me.BAgregarVenta.Name = "BAgregarVenta"
+        Me.BAgregarVenta.Size = New System.Drawing.Size(75, 67)
+        Me.BAgregarVenta.TabIndex = 24
+        Me.BAgregarVenta.Text = "Agregar a Venta"
+        Me.BAgregarVenta.UseVisualStyleBackColor = True
+        '
+        'ListarProductos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.proyecto_integrador.My.Resources.Resources.cuadros_negros_734708
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(977, 579)
+        Me.Controls.Add(Me.BAgregarVenta)
         Me.Controls.Add(Me.BBuscarNombre)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.CBCategoria)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.TBBuscar)
-        Me.Controls.Add(Me.BCancelar)
-        Me.Controls.Add(Me.BEditar)
-        Me.Controls.Add(Me.BAEstado)
         Me.Controls.Add(Me.DGV1)
         Me.Controls.Add(Me.PanelPrincipal)
-        Me.Name = "EditarEliminarProducto"
+        Me.Name = "ListarProductos"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Editar/eliminar Producto"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
@@ -356,9 +338,6 @@ Partial Class EditarEliminarProducto
     Friend WithEvents TBStock As TextBox
     Friend WithEvents LStock As Label
     Friend WithEvents TBDescripcion As TextBox
-    Friend WithEvents BCancelar As Button
-    Friend WithEvents BEditar As Button
-    Friend WithEvents BAEstado As Button
     Friend WithEvents Label1 As Label
     Friend WithEvents TBBuscar As TextBox
     Friend WithEvents CBCategoria As ComboBox
@@ -366,4 +345,5 @@ Partial Class EditarEliminarProducto
     Friend WithEvents BBuscarNombre As Button
     Friend WithEvents CBCateg As ComboBox
     Friend WithEvents CBEstado As ComboBox
+    Friend WithEvents BAgregarVenta As Button
 End Class

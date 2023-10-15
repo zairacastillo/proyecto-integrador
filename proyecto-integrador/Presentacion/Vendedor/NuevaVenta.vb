@@ -1,19 +1,49 @@
 ﻿Public Class NuevaVenta
+    Dim OBJproducto As Dproducto = New Dproducto
+    Dim OBJcliente As Dcliente = New Dcliente
+    Dim OBJventa As Dventa = New Dventa
+    Dim OBJdetalle_venta As Ddetalle_Venta = New Ddetalle_Venta
+
+    Dim OProducto As producto = New producto
+    Dim OCliente As cliente = New cliente
 
 
     Private Sub BProducto_Click(sender As Object, e As EventArgs) Handles BProducto.Click
-        MDIVendedor.AgregarProductoVenta(sender, e)
+
+        Dim listProductos As New ListarProductos(Me, True)
+        listProductos.MdiParent = MDIVendedor
+        listProductos.Show()
+
+    End Sub
+
+    Public Sub CargaProducto(ByVal POProducto As producto)
+        OProducto = POProducto
+
+        TBProducto.Text = OProducto.nombre_producto
+        TBStock.Text = OProducto.stock
+        TBUnitario.Text = OProducto.precio
+    End Sub
+
+    Public Sub CargaCliente(ByVal POCliente As cliente)
+        OCliente = POCliente
+
+        TBClienteA.Text = OCliente.nombre_cliente
+        TBClienteN.Text = OCliente.apellido_cliente
     End Sub
 
     Private Sub BCliente_Click(sender As Object, e As EventArgs) Handles BCliente.Click
-        MDIVendedor.AgregarClienteVenta(sender, e)
+
+        Dim listClientes As New ListarClientes(Me, True)
+        listClientes.MdiParent = MDIVendedor
+        listClientes.Show()
+
     End Sub
 
     Private Sub BCompra_Click(sender As Object, e As EventArgs) Handles BCompra.Click
         Dim msjTxt As String = "Debe Completar todos los campos: "
 
         ' lista de TB a verificar si estan vacios
-        Dim listaTB = {TBVendedor, TBClienteA, TBClienteN, TBTotal}
+        Dim listaTB = {TBVendedorA, TBClienteA, TBClienteN, TBTotal}
 
         TBVacios(listaTB) ' devuelve true si algun TB esta vacio
 
@@ -22,7 +52,10 @@
             'Mensaje
             MsgBox(msjTxt, MsgBoxStyle.Critical, Title:="Error")
         Else
-            'guardar venta
+            Dim id_ultima_venta = guardarVenta()
+            If guardarDetalleVenta(id_ultima_venta, DGV1) Then
+                MsgBox("se guardo con exito")
+            End If
         End If
     End Sub
 
@@ -33,7 +66,7 @@
         End If
     End Sub
 
-    Private Sub BBuscarProd_Click(sender As Object, e As EventArgs) Handles BBuscarProd.Click
+    Private Sub BAgregarProd_Click(sender As Object, e As EventArgs) Handles BAgregarProd.Click
         Dim msjTxt As String = "Debe Completar todos los campos: "
 
         ' lista de TB a verificar si estan vacios
@@ -45,10 +78,119 @@
         If TBVacios(listaTB) Then
             'Mensaje
             MsgBox(msjTxt, MsgBoxStyle.Critical, Title:="Error")
+
+        ElseIf Integer.Parse(TBCantidad.Text) > Integer.parse(TBStock.Text) Then
+            MsgBox("No hay suficiente stock de ese producto", MsgBoxStyle.Critical, Title:="Error")
+
         Else
-            'guardar venta
+            Dim ask As Integer = MsgBox("¿Seguro que desea Guardar la venta?", MsgBoxStyle.YesNo + MsgBoxStyle.DefaultButton1, Title:="Confirmar Inserción")
+
+            'si acepta guardamos / mensaje
+            If ask = DialogResult.Yes Then
+                AgregarFilaProd()
+                TBTotal.Text = actualizarTotalPrecio()
+            End If
         End If
     End Sub
+
+    Private Sub CrearFilaProd()
+        Dim numRow As Integer = DGV1.Rows.Add()
+        DGV1.Rows(numRow).Cells(0).Value = OProducto.Id_producto
+        DGV1.Rows(numRow).Cells(1).Value = OProducto.nombre_producto
+        DGV1.Rows(numRow).Cells(2).Value = OProducto.precio
+        DGV1.Rows(numRow).Cells(3).Value = TBCantidad.Text.Trim
+        DGV1.Rows(numRow).Cells(4).Value = Decimal.Parse(OProducto.precio) * Decimal.Parse(TBCantidad.Text.Trim)
+        DGV1.Rows(numRow).Cells(5).Value = "Cancelar" 'boton cancelar
+
+    End Sub
+
+    Private Sub AgregarFilaProd()
+
+        Dim indexfilaProd = existeProdDataGrid()
+
+        If indexfilaProd > -1 Then ' si devuelve valor valido
+            Dim antCant = DGV1.Rows(indexfilaProd).Cells(3).Value
+            Dim CantAgregada = Decimal.Parse(TBCantidad.Text.Trim)
+
+            If (antCant + CantAgregada) <= OProducto.stock Then 'si la cantidad en el datagrid + el agregado es menor que el stock
+
+                DGV1.Rows(indexfilaProd).Cells(3).Value = antCant + CantAgregada
+
+                Dim antPrecio = DGV1.Rows(indexfilaProd).Cells(4).Value
+                Dim PrecioAgregado = Decimal.Parse(OProducto.precio) * Decimal.Parse(TBCantidad.Text.Trim)
+
+                DGV1.Rows(indexfilaProd).Cells(4).Value = antPrecio + PrecioAgregado 'total precio
+            Else
+
+                MsgBox("No hay suficiente stock de ese producto", MsgBoxStyle.Critical, Title:="Error")
+
+            End If
+
+
+        Else
+
+            CrearFilaProd()
+
+        End If
+
+    End Sub
+    Private Sub eliminarFilaProd()
+
+    End Sub
+
+    Private Function existeProdDataGrid() As Integer
+        For Each fila In DGV1.Rows
+            If fila.Cells(0).Value = OProducto.Id_producto Then 'si existe el producto en el datagrid
+
+                Return fila.Cells(0).RowIndex 'devuelve el indice donde se encuentra
+
+            End If
+        Next
+        Return -1
+    End Function
+
+    Private Function actualizarTotalPrecio() As Integer
+        Dim precio = 0
+        For Each fila In DGV1.Rows
+            precio = precio + fila.Cells(4).Value
+        Next
+        Return precio
+    End Function
+
+
+    Private Function guardarVenta() As Integer
+        Dim Oventa = New venta
+        Oventa.Id_empleado = 3 'cambiar, hacerlo dinamico
+        Oventa.Id_cliente = OCliente.Id_cliente
+        Oventa.fecha = System.DateTime.Now
+        Oventa.total = Decimal.Parse(TBTotal.Text.Trim)
+
+        If OBJventa.agregrar_venta(Oventa) Then
+            Return OBJventa.getLastIdVenta()
+        Else
+            Return -1
+        End If
+
+    End Function
+
+    Private Function guardarDetalleVenta(id_ultima_venta, dg) As Boolean
+
+        For Each fila In dg.rows
+            Dim Odetalle_venta = New detalle_venta
+            Odetalle_venta.Id_producto = fila.cells("ID").value
+            Odetalle_venta.precio_unitario = fila.cells("PrecioUnitario").value
+            Odetalle_venta.cantidad = fila.cells("Cantidad").value
+            Odetalle_venta.subtotal = fila.cells("Subtotal").value
+            Odetalle_venta.Id_venta = id_ultima_venta
+
+            If Not OBJdetalle_venta.agregrar_detalle_Venta(Odetalle_venta) Then
+                Return False
+            End If
+        Next
+
+        Return True
+
+    End Function
 
 
 End Class

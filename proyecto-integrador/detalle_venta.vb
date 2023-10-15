@@ -16,8 +16,9 @@ Partial Public Class detalle_venta
     Public Property precio_unitario As Decimal
     Public Property cantidad As Integer
     Public Property subtotal As Decimal
+    Public Property Id_venta As Integer
 
     Public Overridable Property producto As producto
-    Public Overridable Property venta As ICollection(Of venta) = New HashSet(Of venta)
+    Public Overridable Property venta As venta
 
 End Class
