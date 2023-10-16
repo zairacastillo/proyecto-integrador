@@ -22,6 +22,28 @@
 
     End Function
 
+    Public Function mostrarDetalle(ByVal idFac As Integer, ByVal grid As DataGridView)
+        Try
+            Dim datos = (From df In ctx.detalle_venta
+                         Join j In ctx.producto On df.Id_producto Equals j.Id_producto
+                         Join cat In ctx.categoria On j.Id_categoria Equals cat.Id_categoria
+                         Join f In ctx.venta On f.Id_venta Equals df.Id_venta
+                         Where df.Id_venta = idFac
+                         Select id = df.Id_detalle_venta, idPro = df.Id_producto, producto = j.nombre_producto, Cantidad_Comprada = df.cantidad, PrecioUnitario = j.precio, PrecioTotal = f.total).ToList
+
+            grid.DataSource = datos
+
+            'grid.Columns(0).Visible = False
+            'grid.Columns(1).Visible = False
+            Return True
+
+        Catch ex As Exception
+            Return False
+            MsgBox("ERROR agregar detalle")
+
+        End Try
+    End Function
+
     '  Function getAll() As List(Of detalle_venta)
     '      Dim lista = (From p In ctx.detalle_venta
     '                   Order By p.Id_detalle_venta

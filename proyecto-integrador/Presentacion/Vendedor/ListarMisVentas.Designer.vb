@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class ListarMisVentas
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -35,17 +35,7 @@ Partial Class ListarMisVentas
         Me.Button2 = New System.Windows.Forms.Button()
         Me.DVGDetalleFac = New System.Windows.Forms.DataGridView()
         Me.DVentas = New System.Windows.Forms.DataGridView()
-        Me.ID_Factura = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DNI_Vendedor = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DNI_Cliente = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Fecha = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Total = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Ver_mas = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Codigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Precio_Unitario = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Cantidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Subtotal = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.BDetalle = New System.Windows.Forms.Button()
         CType(Me.DVGDetalleFac, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DVentas, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -177,96 +167,35 @@ Partial Class ListarMisVentas
         Me.DVGDetalleFac.AllowUserToAddRows = False
         Me.DVGDetalleFac.AllowUserToDeleteRows = False
         Me.DVGDetalleFac.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DVGDetalleFac.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Codigo, Me.Nombre, Me.Precio_Unitario, Me.Cantidad, Me.Subtotal})
         Me.DVGDetalleFac.Location = New System.Drawing.Point(633, 255)
         Me.DVGDetalleFac.Margin = New System.Windows.Forms.Padding(2)
         Me.DVGDetalleFac.Name = "DVGDetalleFac"
         Me.DVGDetalleFac.ReadOnly = True
         Me.DVGDetalleFac.RowHeadersWidth = 51
         Me.DVGDetalleFac.RowTemplate.Height = 24
-        Me.DVGDetalleFac.Size = New System.Drawing.Size(554, 209)
+        Me.DVGDetalleFac.Size = New System.Drawing.Size(493, 209)
         Me.DVGDetalleFac.TabIndex = 102
         '
         'DVentas
         '
-        Me.DVentas.AllowUserToAddRows = False
-        Me.DVentas.AllowUserToDeleteRows = False
+        Me.DVentas.AllowUserToOrderColumns = True
         Me.DVentas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DVentas.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ID_Factura, Me.DNI_Vendedor, Me.DNI_Cliente, Me.Fecha, Me.Total, Me.Ver_mas})
-        Me.DVentas.Location = New System.Drawing.Point(-50, 255)
+        Me.DVentas.Location = New System.Drawing.Point(29, 255)
         Me.DVentas.Margin = New System.Windows.Forms.Padding(2)
         Me.DVentas.Name = "DVentas"
-        Me.DVentas.ReadOnly = True
         Me.DVentas.RowHeadersWidth = 51
         Me.DVentas.RowTemplate.Height = 24
-        Me.DVentas.Size = New System.Drawing.Size(653, 209)
+        Me.DVentas.Size = New System.Drawing.Size(570, 209)
         Me.DVentas.TabIndex = 100
         '
-        'ID_Factura
+        'BDetalle
         '
-        Me.ID_Factura.HeaderText = "ID_Factura"
-        Me.ID_Factura.Name = "ID_Factura"
-        Me.ID_Factura.ReadOnly = True
-        '
-        'DNI_Vendedor
-        '
-        Me.DNI_Vendedor.HeaderText = "DNI_Vendedor"
-        Me.DNI_Vendedor.Name = "DNI_Vendedor"
-        Me.DNI_Vendedor.ReadOnly = True
-        '
-        'DNI_Cliente
-        '
-        Me.DNI_Cliente.HeaderText = "DNI_Cliente"
-        Me.DNI_Cliente.Name = "DNI_Cliente"
-        Me.DNI_Cliente.ReadOnly = True
-        '
-        'Fecha
-        '
-        Me.Fecha.HeaderText = "Fecha"
-        Me.Fecha.Name = "Fecha"
-        Me.Fecha.ReadOnly = True
-        '
-        'Total
-        '
-        Me.Total.HeaderText = "Total"
-        Me.Total.Name = "Total"
-        Me.Total.ReadOnly = True
-        '
-        'Ver_mas
-        '
-        Me.Ver_mas.HeaderText = "Ver_mas"
-        Me.Ver_mas.Name = "Ver_mas"
-        Me.Ver_mas.ReadOnly = True
-        '
-        'Codigo
-        '
-        Me.Codigo.HeaderText = "Codigo"
-        Me.Codigo.Name = "Codigo"
-        Me.Codigo.ReadOnly = True
-        '
-        'Nombre
-        '
-        Me.Nombre.HeaderText = "Nombre"
-        Me.Nombre.Name = "Nombre"
-        Me.Nombre.ReadOnly = True
-        '
-        'Precio_Unitario
-        '
-        Me.Precio_Unitario.HeaderText = "Precio_Unitario"
-        Me.Precio_Unitario.Name = "Precio_Unitario"
-        Me.Precio_Unitario.ReadOnly = True
-        '
-        'Cantidad
-        '
-        Me.Cantidad.HeaderText = "Cantidad"
-        Me.Cantidad.Name = "Cantidad"
-        Me.Cantidad.ReadOnly = True
-        '
-        'Subtotal
-        '
-        Me.Subtotal.HeaderText = "Subtotal"
-        Me.Subtotal.Name = "Subtotal"
-        Me.Subtotal.ReadOnly = True
+        Me.BDetalle.Location = New System.Drawing.Point(231, 476)
+        Me.BDetalle.Name = "BDetalle"
+        Me.BDetalle.Size = New System.Drawing.Size(92, 39)
+        Me.BDetalle.TabIndex = 105
+        Me.BDetalle.Text = "Ver detalle"
+        Me.BDetalle.UseVisualStyleBackColor = True
         '
         'ListarMisVentas
         '
@@ -274,6 +203,7 @@ Partial Class ListarMisVentas
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.proyecto_integrador.My.Resources.Resources.cuadros_negros_734708
         Me.ClientSize = New System.Drawing.Size(1157, 529)
+        Me.Controls.Add(Me.BDetalle)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.DVGDetalleFac)
         Me.Controls.Add(Me.DVentas)
@@ -309,15 +239,5 @@ Partial Class ListarMisVentas
     Friend WithEvents Button2 As Button
     Friend WithEvents DVGDetalleFac As DataGridView
     Friend WithEvents DVentas As DataGridView
-    Friend WithEvents ID_Factura As DataGridViewTextBoxColumn
-    Friend WithEvents DNI_Vendedor As DataGridViewTextBoxColumn
-    Friend WithEvents DNI_Cliente As DataGridViewTextBoxColumn
-    Friend WithEvents Fecha As DataGridViewTextBoxColumn
-    Friend WithEvents Total As DataGridViewTextBoxColumn
-    Friend WithEvents Ver_mas As DataGridViewTextBoxColumn
-    Friend WithEvents Codigo As DataGridViewTextBoxColumn
-    Friend WithEvents Nombre As DataGridViewTextBoxColumn
-    Friend WithEvents Precio_Unitario As DataGridViewTextBoxColumn
-    Friend WithEvents Cantidad As DataGridViewTextBoxColumn
-    Friend WithEvents Subtotal As DataGridViewTextBoxColumn
+    Friend WithEvents BDetalle As Button
 End Class
