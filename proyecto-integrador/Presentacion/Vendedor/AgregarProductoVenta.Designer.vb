@@ -47,10 +47,10 @@ Partial Class AgregarProductoVenta
         Me.DGV1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DGV1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DGV1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Codigo, Me.Nombre, Me.Descripcion, Me.Categoria, Me.Stock, Me.Precio, Me.Estado, Me.Agregar})
-        Me.DGV1.Location = New System.Drawing.Point(-8, 260)
+        Me.DGV1.Location = New System.Drawing.Point(12, 324)
         Me.DGV1.Name = "DGV1"
         Me.DGV1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders
-        Me.DGV1.Size = New System.Drawing.Size(903, 189)
+        Me.DGV1.Size = New System.Drawing.Size(936, 275)
         Me.DGV1.TabIndex = 27
         '
         'Codigo
@@ -95,7 +95,7 @@ Partial Class AgregarProductoVenta
         '
         'Button4
         '
-        Me.Button4.Location = New System.Drawing.Point(381, 145)
+        Me.Button4.Location = New System.Drawing.Point(406, 176)
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(135, 29)
         Me.Button4.TabIndex = 26
@@ -108,7 +108,7 @@ Partial Class AgregarProductoVenta
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(474, 65)
+        Me.Label1.Location = New System.Drawing.Point(499, 96)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(203, 25)
         Me.Label1.TabIndex = 25
@@ -116,7 +116,7 @@ Partial Class AgregarProductoVenta
         '
         'TextBox2
         '
-        Me.TextBox2.Location = New System.Drawing.Point(648, 69)
+        Me.TextBox2.Location = New System.Drawing.Point(673, 100)
         Me.TextBox2.Name = "TextBox2"
         Me.TextBox2.Size = New System.Drawing.Size(169, 20)
         Me.TextBox2.TabIndex = 24
@@ -127,7 +127,7 @@ Partial Class AgregarProductoVenta
         Me.LNombre.BackColor = System.Drawing.Color.Transparent
         Me.LNombre.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LNombre.ForeColor = System.Drawing.Color.White
-        Me.LNombre.Location = New System.Drawing.Point(45, 64)
+        Me.LNombre.Location = New System.Drawing.Point(70, 95)
         Me.LNombre.Name = "LNombre"
         Me.LNombre.Size = New System.Drawing.Size(196, 25)
         Me.LNombre.TabIndex = 23
@@ -135,7 +135,7 @@ Partial Class AgregarProductoVenta
         '
         'TextBox1
         '
-        Me.TextBox1.Location = New System.Drawing.Point(254, 69)
+        Me.TextBox1.Location = New System.Drawing.Point(279, 100)
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(169, 20)
         Me.TextBox1.TabIndex = 22
@@ -144,15 +144,17 @@ Partial Class AgregarProductoVenta
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackgroundImage = Global.proyecto_integrador.My.Resources.Resources.cuadros_negros_734708
-        Me.ClientSize = New System.Drawing.Size(897, 450)
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(12, Byte), Integer), CType(CType(12, Byte), Integer), CType(CType(30, Byte), Integer))
+        Me.ClientSize = New System.Drawing.Size(976, 650)
         Me.Controls.Add(Me.DGV1)
         Me.Controls.Add(Me.Button4)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.TextBox2)
         Me.Controls.Add(Me.LNombre)
         Me.Controls.Add(Me.TextBox1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "AgregarProductoVenta"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "ListarProductos"
         CType(Me.DGV1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)

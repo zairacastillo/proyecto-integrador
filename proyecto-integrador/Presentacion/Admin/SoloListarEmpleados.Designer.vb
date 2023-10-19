@@ -47,10 +47,10 @@ Partial Class SoloListarEmpleados
         Me.DGV1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DGV1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DGV1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Nombre, Me.Apellido, Me.DNI, Me.Telefono, Me.Correo, Me.Usuario, Me.Perfil})
-        Me.DGV1.Location = New System.Drawing.Point(-27, 255)
+        Me.DGV1.Location = New System.Drawing.Point(16, 278)
         Me.DGV1.Name = "DGV1"
         Me.DGV1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders
-        Me.DGV1.Size = New System.Drawing.Size(932, 189)
+        Me.DGV1.Size = New System.Drawing.Size(932, 306)
         Me.DGV1.TabIndex = 33
         '
         'Nombre
@@ -90,7 +90,7 @@ Partial Class SoloListarEmpleados
         '
         'BBuscarA
         '
-        Me.BBuscarA.Location = New System.Drawing.Point(380, 57)
+        Me.BBuscarA.Location = New System.Drawing.Point(403, 123)
         Me.BBuscarA.Name = "BBuscarA"
         Me.BBuscarA.Size = New System.Drawing.Size(65, 30)
         Me.BBuscarA.TabIndex = 32
@@ -103,7 +103,7 @@ Partial Class SoloListarEmpleados
         Me.LCorreo.BackColor = System.Drawing.Color.Transparent
         Me.LCorreo.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LCorreo.ForeColor = System.Drawing.Color.White
-        Me.LCorreo.Location = New System.Drawing.Point(451, 57)
+        Me.LCorreo.Location = New System.Drawing.Point(499, 123)
         Me.LCorreo.Name = "LCorreo"
         Me.LCorreo.Size = New System.Drawing.Size(202, 25)
         Me.LCorreo.TabIndex = 31
@@ -115,7 +115,7 @@ Partial Class SoloListarEmpleados
         Me.LCliente.BackColor = System.Drawing.Color.Transparent
         Me.LCliente.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LCliente.ForeColor = System.Drawing.Color.White
-        Me.LCliente.Location = New System.Drawing.Point(-2, 56)
+        Me.LCliente.Location = New System.Drawing.Point(21, 122)
         Me.LCliente.Name = "LCliente"
         Me.LCliente.Size = New System.Drawing.Size(205, 25)
         Me.LCliente.TabIndex = 30
@@ -123,21 +123,21 @@ Partial Class SoloListarEmpleados
         '
         'TBApellido
         '
-        Me.TBApellido.Location = New System.Drawing.Point(207, 61)
+        Me.TBApellido.Location = New System.Drawing.Point(230, 127)
         Me.TBApellido.Name = "TBApellido"
         Me.TBApellido.Size = New System.Drawing.Size(169, 20)
         Me.TBApellido.TabIndex = 29
         '
         'TBUsuario
         '
-        Me.TBUsuario.Location = New System.Drawing.Point(645, 62)
+        Me.TBUsuario.Location = New System.Drawing.Point(693, 128)
         Me.TBUsuario.Name = "TBUsuario"
         Me.TBUsuario.Size = New System.Drawing.Size(169, 20)
         Me.TBUsuario.TabIndex = 34
         '
         'BBuscarU
         '
-        Me.BBuscarU.Location = New System.Drawing.Point(820, 57)
+        Me.BBuscarU.Location = New System.Drawing.Point(868, 123)
         Me.BBuscarU.Name = "BBuscarU"
         Me.BBuscarU.Size = New System.Drawing.Size(65, 30)
         Me.BBuscarU.TabIndex = 35
@@ -148,8 +148,8 @@ Partial Class SoloListarEmpleados
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackgroundImage = Global.proyecto_integrador.My.Resources.Resources.cuadros_negros_734708
-        Me.ClientSize = New System.Drawing.Size(897, 457)
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(12, Byte), Integer), CType(CType(12, Byte), Integer), CType(CType(30, Byte), Integer))
+        Me.ClientSize = New System.Drawing.Size(976, 650)
         Me.Controls.Add(Me.BBuscarU)
         Me.Controls.Add(Me.TBUsuario)
         Me.Controls.Add(Me.DGV1)
@@ -157,7 +157,9 @@ Partial Class SoloListarEmpleados
         Me.Controls.Add(Me.LCorreo)
         Me.Controls.Add(Me.LCliente)
         Me.Controls.Add(Me.TBApellido)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "SoloListarEmpleados"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "ListarEmpleados"
         CType(Me.DGV1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)

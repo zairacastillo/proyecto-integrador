@@ -54,6 +54,7 @@ Partial Class MDISuperAdmin
         '
         'MenuStrip
         '
+        Me.MenuStrip.BackColor = System.Drawing.SystemColors.Control
         Me.MenuStrip.Dock = System.Windows.Forms.DockStyle.Left
         Me.MenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ViewMenu, Me.ToolStripMenuItem1, Me.ToolStripMenuItem2})
         Me.MenuStrip.Location = New System.Drawing.Point(0, 0)
@@ -80,7 +81,7 @@ Partial Class MDISuperAdmin
         Me.BNuevoUsuario.Image = Global.proyecto_integrador.My.Resources.Resources.anadir_amigo1
         Me.BNuevoUsuario.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.BNuevoUsuario.Name = "BNuevoUsuario"
-        Me.BNuevoUsuario.Size = New System.Drawing.Size(196, 38)
+        Me.BNuevoUsuario.Size = New System.Drawing.Size(161, 38)
         Me.BNuevoUsuario.Text = "&Nuevo"
         '
         'BEditarEliminar
@@ -90,7 +91,7 @@ Partial Class MDISuperAdmin
         Me.BEditarEliminar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.BEditarEliminar.Name = "BEditarEliminar"
         Me.BEditarEliminar.ShowShortcutKeys = False
-        Me.BEditarEliminar.Size = New System.Drawing.Size(196, 38)
+        Me.BEditarEliminar.Size = New System.Drawing.Size(161, 38)
         Me.BEditarEliminar.Text = "&Editar/Eliminar"
         '
         'ToolStripMenuItem1
@@ -119,13 +120,14 @@ Partial Class MDISuperAdmin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackgroundImage = Global.proyecto_integrador.My.Resources.Resources.cuadros_negros_734708
+        Me.BackgroundImage = Global.proyecto_integrador.My.Resources.Resources.logo11
         Me.ClientSize = New System.Drawing.Size(632, 453)
         Me.Controls.Add(Me.MenuStrip)
         Me.Controls.Add(Me.StatusStrip)
         Me.IsMdiContainer = True
         Me.Name = "MDISuperAdmin"
         Me.Text = "MDISuperAdmin"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.StatusStrip.ResumeLayout(False)
         Me.StatusStrip.PerformLayout()
         Me.MenuStrip.ResumeLayout(False)

@@ -54,8 +54,10 @@ Partial Class EditarEliminarEmpleado
         Me.Label5 = New System.Windows.Forms.Label()
         Me.BBuscar = New System.Windows.Forms.Button()
         Me.CBBuscaPerfil = New System.Windows.Forms.ComboBox()
+        Me.Panel1 = New System.Windows.Forms.Panel()
         CType(Me.DGV1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelPrincipal.SuspendLayout()
+        Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'DGV1
@@ -64,7 +66,7 @@ Partial Class EditarEliminarEmpleado
         Me.DGV1.AllowUserToDeleteRows = False
         Me.DGV1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DGV1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DGV1.Location = New System.Drawing.Point(3, 38)
+        Me.DGV1.Location = New System.Drawing.Point(28, 78)
         Me.DGV1.Name = "DGV1"
         Me.DGV1.ReadOnly = True
         Me.DGV1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders
@@ -75,9 +77,9 @@ Partial Class EditarEliminarEmpleado
         '
         Me.BCancelar.Image = Global.proyecto_integrador.My.Resources.Resources.cerrar
         Me.BCancelar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.BCancelar.Location = New System.Drawing.Point(594, 448)
+        Me.BCancelar.Location = New System.Drawing.Point(866, 409)
         Me.BCancelar.Name = "BCancelar"
-        Me.BCancelar.Size = New System.Drawing.Size(87, 70)
+        Me.BCancelar.Size = New System.Drawing.Size(84, 70)
         Me.BCancelar.TabIndex = 15
         Me.BCancelar.Text = "Cancelar"
         Me.BCancelar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
@@ -87,7 +89,7 @@ Partial Class EditarEliminarEmpleado
         '
         Me.BEditar.Image = Global.proyecto_integrador.My.Resources.Resources.lapiz
         Me.BEditar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.BEditar.Location = New System.Drawing.Point(461, 448)
+        Me.BEditar.Location = New System.Drawing.Point(866, 322)
         Me.BEditar.Name = "BEditar"
         Me.BEditar.Size = New System.Drawing.Size(82, 70)
         Me.BEditar.TabIndex = 14
@@ -97,9 +99,9 @@ Partial Class EditarEliminarEmpleado
         '
         'BAEstado
         '
-        Me.BAEstado.Location = New System.Drawing.Point(741, 448)
+        Me.BAEstado.Location = New System.Drawing.Point(866, 496)
         Me.BAEstado.Name = "BAEstado"
-        Me.BAEstado.Size = New System.Drawing.Size(91, 70)
+        Me.BAEstado.Size = New System.Drawing.Size(84, 70)
         Me.BAEstado.TabIndex = 13
         Me.BAEstado.Text = "Mostrar Inactivos"
         Me.BAEstado.UseVisualStyleBackColor = True
@@ -110,7 +112,7 @@ Partial Class EditarEliminarEmpleado
         Me.Label3.BackColor = System.Drawing.Color.Transparent
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.White
-        Me.Label3.Location = New System.Drawing.Point(12, 7)
+        Me.Label3.Location = New System.Drawing.Point(28, 26)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(141, 20)
         Me.Label3.TabIndex = 18
@@ -122,7 +124,7 @@ Partial Class EditarEliminarEmpleado
         Me.Label4.BackColor = System.Drawing.Color.Transparent
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.White
-        Me.Label4.Location = New System.Drawing.Point(340, 9)
+        Me.Label4.Location = New System.Drawing.Point(402, 27)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(219, 20)
         Me.Label4.TabIndex = 20
@@ -130,7 +132,7 @@ Partial Class EditarEliminarEmpleado
         '
         'TBBuscarApellido
         '
-        Me.TBBuscarApellido.Location = New System.Drawing.Point(565, 9)
+        Me.TBBuscarApellido.Location = New System.Drawing.Point(627, 27)
         Me.TBBuscarApellido.Name = "TBBuscarApellido"
         Me.TBBuscarApellido.Size = New System.Drawing.Size(182, 20)
         Me.TBBuscarApellido.TabIndex = 19
@@ -138,14 +140,14 @@ Partial Class EditarEliminarEmpleado
         'CBPerfil
         '
         Me.CBPerfil.FormattingEnabled = True
-        Me.CBPerfil.Location = New System.Drawing.Point(585, 334)
+        Me.CBPerfil.Location = New System.Drawing.Point(153, 150)
         Me.CBPerfil.Name = "CBPerfil"
         Me.CBPerfil.Size = New System.Drawing.Size(226, 21)
         Me.CBPerfil.TabIndex = 28
         '
         'PanelPrincipal
         '
-        Me.PanelPrincipal.BackgroundImage = Global.proyecto_integrador.My.Resources.Resources.bg
+        Me.PanelPrincipal.BackColor = System.Drawing.Color.FromArgb(CType(CType(116, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(47, Byte), Integer))
         Me.PanelPrincipal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.PanelPrincipal.Controls.Add(Me.TBID)
         Me.PanelPrincipal.Controls.Add(Me.LID)
@@ -162,7 +164,7 @@ Partial Class EditarEliminarEmpleado
         Me.PanelPrincipal.Controls.Add(Me.LApellido)
         Me.PanelPrincipal.Controls.Add(Me.LNombre)
         Me.PanelPrincipal.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.PanelPrincipal.Location = New System.Drawing.Point(20, 237)
+        Me.PanelPrincipal.Location = New System.Drawing.Point(32, 301)
         Me.PanelPrincipal.Name = "PanelPrincipal"
         Me.PanelPrincipal.Size = New System.Drawing.Size(401, 281)
         Me.PanelPrincipal.TabIndex = 22
@@ -320,7 +322,7 @@ Partial Class EditarEliminarEmpleado
         Me.LCont.BackColor = System.Drawing.Color.Transparent
         Me.LCont.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LCont.ForeColor = System.Drawing.Color.White
-        Me.LCont.Location = New System.Drawing.Point(452, 291)
+        Me.LCont.Location = New System.Drawing.Point(20, 107)
         Me.LCont.Name = "LCont"
         Me.LCont.Size = New System.Drawing.Size(129, 25)
         Me.LCont.TabIndex = 23
@@ -332,7 +334,7 @@ Partial Class EditarEliminarEmpleado
         Me.Label2.BackColor = System.Drawing.Color.Transparent
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.Location = New System.Drawing.Point(452, 327)
+        Me.Label2.Location = New System.Drawing.Point(20, 143)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(67, 25)
         Me.Label2.TabIndex = 25
@@ -341,7 +343,7 @@ Partial Class EditarEliminarEmpleado
         'TBCont
         '
         Me.TBCont.Enabled = False
-        Me.TBCont.Location = New System.Drawing.Point(585, 296)
+        Me.TBCont.Location = New System.Drawing.Point(153, 112)
         Me.TBCont.Name = "TBCont"
         Me.TBCont.ReadOnly = True
         Me.TBCont.Size = New System.Drawing.Size(226, 20)
@@ -353,7 +355,7 @@ Partial Class EditarEliminarEmpleado
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(451, 249)
+        Me.Label1.Location = New System.Drawing.Point(19, 65)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(92, 25)
         Me.Label1.TabIndex = 26
@@ -362,7 +364,7 @@ Partial Class EditarEliminarEmpleado
         'TBUsuario
         '
         Me.TBUsuario.Enabled = False
-        Me.TBUsuario.Location = New System.Drawing.Point(585, 255)
+        Me.TBUsuario.Location = New System.Drawing.Point(153, 71)
         Me.TBUsuario.Name = "TBUsuario"
         Me.TBUsuario.ReadOnly = True
         Me.TBUsuario.Size = New System.Drawing.Size(226, 20)
@@ -372,7 +374,7 @@ Partial Class EditarEliminarEmpleado
         '
         Me.CBEstado.FormattingEnabled = True
         Me.CBEstado.Items.AddRange(New Object() {"Activo", "Inactivo"})
-        Me.CBEstado.Location = New System.Drawing.Point(585, 375)
+        Me.CBEstado.Location = New System.Drawing.Point(153, 191)
         Me.CBEstado.Name = "CBEstado"
         Me.CBEstado.Size = New System.Drawing.Size(226, 21)
         Me.CBEstado.TabIndex = 30
@@ -383,7 +385,7 @@ Partial Class EditarEliminarEmpleado
         Me.Label5.BackColor = System.Drawing.Color.Transparent
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.Color.White
-        Me.Label5.Location = New System.Drawing.Point(452, 368)
+        Me.Label5.Location = New System.Drawing.Point(20, 184)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(85, 25)
         Me.Label5.TabIndex = 29
@@ -391,7 +393,7 @@ Partial Class EditarEliminarEmpleado
         '
         'BBuscar
         '
-        Me.BBuscar.Location = New System.Drawing.Point(799, 9)
+        Me.BBuscar.Location = New System.Drawing.Point(854, 24)
         Me.BBuscar.Name = "BBuscar"
         Me.BBuscar.Size = New System.Drawing.Size(75, 23)
         Me.BBuscar.TabIndex = 32
@@ -402,28 +404,37 @@ Partial Class EditarEliminarEmpleado
         '
         Me.CBBuscaPerfil.Enabled = False
         Me.CBBuscaPerfil.FormattingEnabled = True
-        Me.CBBuscaPerfil.Location = New System.Drawing.Point(172, 7)
+        Me.CBBuscaPerfil.Location = New System.Drawing.Point(188, 26)
         Me.CBBuscaPerfil.Name = "CBBuscaPerfil"
         Me.CBBuscaPerfil.Size = New System.Drawing.Size(152, 21)
         Me.CBBuscaPerfil.TabIndex = 33
+        '
+        'Panel1
+        '
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(116, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(47, Byte), Integer))
+        Me.Panel1.Controls.Add(Me.Label1)
+        Me.Panel1.Controls.Add(Me.TBUsuario)
+        Me.Panel1.Controls.Add(Me.TBCont)
+        Me.Panel1.Controls.Add(Me.CBEstado)
+        Me.Panel1.Controls.Add(Me.Label2)
+        Me.Panel1.Controls.Add(Me.Label5)
+        Me.Panel1.Controls.Add(Me.LCont)
+        Me.Panel1.Controls.Add(Me.CBPerfil)
+        Me.Panel1.Location = New System.Drawing.Point(449, 301)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(398, 281)
+        Me.Panel1.TabIndex = 34
         '
         'EditarEliminarEmpleado
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackgroundImage = Global.proyecto_integrador.My.Resources.Resources.cuadros_negros_734708
-        Me.ClientSize = New System.Drawing.Size(926, 548)
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(12, Byte), Integer), CType(CType(12, Byte), Integer), CType(CType(30, Byte), Integer))
+        Me.ClientSize = New System.Drawing.Size(976, 650)
+        Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.CBBuscaPerfil)
         Me.Controls.Add(Me.BBuscar)
-        Me.Controls.Add(Me.CBEstado)
-        Me.Controls.Add(Me.Label5)
-        Me.Controls.Add(Me.CBPerfil)
         Me.Controls.Add(Me.PanelPrincipal)
-        Me.Controls.Add(Me.LCont)
-        Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.TBCont)
-        Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.TBUsuario)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.TBBuscarApellido)
         Me.Controls.Add(Me.Label3)
@@ -431,11 +442,15 @@ Partial Class EditarEliminarEmpleado
         Me.Controls.Add(Me.BEditar)
         Me.Controls.Add(Me.BAEstado)
         Me.Controls.Add(Me.DGV1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "EditarEliminarEmpleado"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Editar/Eliminar Empleado"
         CType(Me.DGV1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelPrincipal.ResumeLayout(False)
         Me.PanelPrincipal.PerformLayout()
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -473,4 +488,5 @@ Partial Class EditarEliminarEmpleado
     Friend WithEvents LID As Label
     Friend WithEvents BBuscar As Button
     Friend WithEvents CBBuscaPerfil As ComboBox
+    Friend WithEvents Panel1 As Panel
 End Class

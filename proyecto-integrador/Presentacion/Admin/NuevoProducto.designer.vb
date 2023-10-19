@@ -41,7 +41,7 @@ Partial Class NuevoProducto
         '
         'PanelPrincipal
         '
-        Me.PanelPrincipal.BackgroundImage = Global.proyecto_integrador.My.Resources.Resources.bg
+        Me.PanelPrincipal.BackColor = System.Drawing.Color.FromArgb(CType(CType(116, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(47, Byte), Integer))
         Me.PanelPrincipal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.PanelPrincipal.Controls.Add(Me.CBCategoria)
         Me.PanelPrincipal.Controls.Add(Me.LCategoria)
@@ -55,17 +55,17 @@ Partial Class NuevoProducto
         Me.PanelPrincipal.Controls.Add(Me.LDescripcion)
         Me.PanelPrincipal.Controls.Add(Me.LNombre)
         Me.PanelPrincipal.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.PanelPrincipal.Location = New System.Drawing.Point(213, 23)
+        Me.PanelPrincipal.Location = New System.Drawing.Point(153, 30)
         Me.PanelPrincipal.Name = "PanelPrincipal"
-        Me.PanelPrincipal.Size = New System.Drawing.Size(546, 328)
+        Me.PanelPrincipal.Size = New System.Drawing.Size(673, 328)
         Me.PanelPrincipal.TabIndex = 0
         '
         'CBCategoria
         '
         Me.CBCategoria.FormattingEnabled = True
-        Me.CBCategoria.Location = New System.Drawing.Point(389, 105)
+        Me.CBCategoria.Location = New System.Drawing.Point(474, 107)
         Me.CBCategoria.Name = "CBCategoria"
-        Me.CBCategoria.Size = New System.Drawing.Size(122, 21)
+        Me.CBCategoria.Size = New System.Drawing.Size(133, 21)
         Me.CBCategoria.TabIndex = 3
         '
         'LCategoria
@@ -74,7 +74,7 @@ Partial Class NuevoProducto
         Me.LCategoria.BackColor = System.Drawing.Color.Transparent
         Me.LCategoria.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LCategoria.ForeColor = System.Drawing.Color.White
-        Me.LCategoria.Location = New System.Drawing.Point(272, 99)
+        Me.LCategoria.Location = New System.Drawing.Point(357, 101)
         Me.LCategoria.Name = "LCategoria"
         Me.LCategoria.Size = New System.Drawing.Size(111, 25)
         Me.LCategoria.TabIndex = 21
@@ -82,9 +82,9 @@ Partial Class NuevoProducto
         '
         'TBStock
         '
-        Me.TBStock.Location = New System.Drawing.Point(389, 60)
+        Me.TBStock.Location = New System.Drawing.Point(474, 44)
         Me.TBStock.Name = "TBStock"
-        Me.TBStock.Size = New System.Drawing.Size(122, 20)
+        Me.TBStock.Size = New System.Drawing.Size(133, 20)
         Me.TBStock.TabIndex = 18
         '
         'LStock
@@ -93,7 +93,7 @@ Partial Class NuevoProducto
         Me.LStock.BackColor = System.Drawing.Color.Transparent
         Me.LStock.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LStock.ForeColor = System.Drawing.Color.White
-        Me.LStock.Location = New System.Drawing.Point(272, 55)
+        Me.LStock.Location = New System.Drawing.Point(357, 38)
         Me.LStock.Name = "LStock"
         Me.LStock.Size = New System.Drawing.Size(72, 25)
         Me.LStock.TabIndex = 17
@@ -101,17 +101,17 @@ Partial Class NuevoProducto
         '
         'TBDescripcion
         '
-        Me.TBDescripcion.Location = New System.Drawing.Point(157, 167)
+        Me.TBDescripcion.Location = New System.Drawing.Point(189, 183)
         Me.TBDescripcion.Multiline = True
         Me.TBDescripcion.Name = "TBDescripcion"
-        Me.TBDescripcion.Size = New System.Drawing.Size(354, 68)
+        Me.TBDescripcion.Size = New System.Drawing.Size(354, 56)
         Me.TBDescripcion.TabIndex = 16
         '
         'BAgregar
         '
         Me.BAgregar.Image = Global.proyecto_integrador.My.Resources.Resources.diskette
         Me.BAgregar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BAgregar.Location = New System.Drawing.Point(389, 260)
+        Me.BAgregar.Location = New System.Drawing.Point(426, 269)
         Me.BAgregar.Name = "BAgregar"
         Me.BAgregar.Padding = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.BAgregar.Size = New System.Drawing.Size(117, 45)
@@ -122,17 +122,17 @@ Partial Class NuevoProducto
         '
         'TBPrecio
         '
-        Me.TBPrecio.Location = New System.Drawing.Point(389, 16)
+        Me.TBPrecio.Location = New System.Drawing.Point(169, 107)
         Me.TBPrecio.Name = "TBPrecio"
-        Me.TBPrecio.Size = New System.Drawing.Size(122, 20)
+        Me.TBPrecio.Size = New System.Drawing.Size(133, 20)
         Me.TBPrecio.TabIndex = 7
         '
         'TBNombre
         '
-        Me.TBNombre.Location = New System.Drawing.Point(115, 15)
+        Me.TBNombre.Location = New System.Drawing.Point(169, 38)
         Me.TBNombre.Multiline = True
         Me.TBNombre.Name = "TBNombre"
-        Me.TBNombre.Size = New System.Drawing.Size(130, 39)
+        Me.TBNombre.Size = New System.Drawing.Size(130, 20)
         Me.TBNombre.TabIndex = 5
         '
         'LPrecio
@@ -141,7 +141,7 @@ Partial Class NuevoProducto
         Me.LPrecio.BackColor = System.Drawing.Color.Transparent
         Me.LPrecio.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LPrecio.ForeColor = System.Drawing.Color.White
-        Me.LPrecio.Location = New System.Drawing.Point(272, 9)
+        Me.LPrecio.Location = New System.Drawing.Point(52, 102)
         Me.LPrecio.Name = "LPrecio"
         Me.LPrecio.Size = New System.Drawing.Size(79, 25)
         Me.LPrecio.TabIndex = 3
@@ -153,7 +153,7 @@ Partial Class NuevoProducto
         Me.LDescripcion.BackColor = System.Drawing.Color.Transparent
         Me.LDescripcion.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LDescripcion.ForeColor = System.Drawing.Color.White
-        Me.LDescripcion.Location = New System.Drawing.Point(16, 161)
+        Me.LDescripcion.Location = New System.Drawing.Point(52, 177)
         Me.LDescripcion.Name = "LDescripcion"
         Me.LDescripcion.Size = New System.Drawing.Size(131, 25)
         Me.LDescripcion.TabIndex = 2
@@ -165,7 +165,7 @@ Partial Class NuevoProducto
         Me.LNombre.BackColor = System.Drawing.Color.Transparent
         Me.LNombre.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LNombre.ForeColor = System.Drawing.Color.White
-        Me.LNombre.Location = New System.Drawing.Point(16, 16)
+        Me.LNombre.Location = New System.Drawing.Point(52, 32)
         Me.LNombre.Name = "LNombre"
         Me.LNombre.Size = New System.Drawing.Size(93, 25)
         Me.LNombre.TabIndex = 1
@@ -177,22 +177,23 @@ Partial Class NuevoProducto
         Me.DGV1.AllowUserToDeleteRows = False
         Me.DGV1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DGV1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DGV1.Location = New System.Drawing.Point(3, 389)
+        Me.DGV1.Location = New System.Drawing.Point(12, 395)
         Me.DGV1.Name = "DGV1"
         Me.DGV1.ReadOnly = True
         Me.DGV1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders
-        Me.DGV1.Size = New System.Drawing.Size(973, 164)
+        Me.DGV1.Size = New System.Drawing.Size(936, 208)
         Me.DGV1.TabIndex = 2
         '
         'NuevoProducto
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackgroundImage = Global.proyecto_integrador.My.Resources.Resources.cuadros_negros_734708
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(12, Byte), Integer), CType(CType(12, Byte), Integer), CType(CType(30, Byte), Integer))
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(977, 579)
+        Me.ClientSize = New System.Drawing.Size(976, 650)
         Me.Controls.Add(Me.DGV1)
         Me.Controls.Add(Me.PanelPrincipal)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "NuevoProducto"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Nuevo Producto"

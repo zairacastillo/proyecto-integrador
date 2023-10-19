@@ -3,6 +3,23 @@
 Public Class MDIAdmin
 
 
+    Dim vendedor As empleado
+
+    Public Sub New(pvendedor As empleado)
+        ' Esta llamada es exigida por el diseñador.
+        InitializeComponent()
+
+        ' Agregue cualquier inicialización después de la llamada a InitializeComponent().
+        vendedor = pvendedor
+    End Sub
+
+    Public Sub New()
+        ' Esta llamada es exigida por el diseñador.
+        InitializeComponent()
+
+        ' Agregue cualquier inicialización después de la llamada a InitializeComponent().
+    End Sub
+
     Private Sub OpenFile(ByVal sender As Object, ByVal e As EventArgs) Handles BListarVentas.Click
         For Each ChildForma As Form In Me.MdiChildren
             ChildForma.Close()

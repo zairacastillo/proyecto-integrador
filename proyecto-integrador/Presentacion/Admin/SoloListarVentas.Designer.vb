@@ -49,7 +49,7 @@ Partial Class SoloListarVentas
         'Button2
         '
         Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button2.Location = New System.Drawing.Point(925, 416)
+        Me.Button2.Location = New System.Drawing.Point(778, 591)
         Me.Button2.Margin = New System.Windows.Forms.Padding(2)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(96, 32)
@@ -63,13 +63,13 @@ Partial Class SoloListarVentas
         Me.DVGDetalleFac.AllowUserToDeleteRows = False
         Me.DVGDetalleFac.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DVGDetalleFac.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Codigo, Me.Nombre, Me.Precio_Unitario, Me.Cantidad, Me.Subtotal})
-        Me.DVGDetalleFac.Location = New System.Drawing.Point(537, 194)
+        Me.DVGDetalleFac.Location = New System.Drawing.Point(78, 370)
         Me.DVGDetalleFac.Margin = New System.Windows.Forms.Padding(2)
         Me.DVGDetalleFac.Name = "DVGDetalleFac"
         Me.DVGDetalleFac.ReadOnly = True
         Me.DVGDetalleFac.RowHeadersWidth = 51
         Me.DVGDetalleFac.RowTemplate.Height = 24
-        Me.DVGDetalleFac.Size = New System.Drawing.Size(554, 209)
+        Me.DVGDetalleFac.Size = New System.Drawing.Size(796, 209)
         Me.DVGDetalleFac.TabIndex = 112
         '
         'Codigo
@@ -108,13 +108,13 @@ Partial Class SoloListarVentas
         Me.DVentas.AllowUserToDeleteRows = False
         Me.DVentas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DVentas.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ID_Factura, Me.DNI_Vendedor, Me.DNI_Cliente, Me.Fecha, Me.Total, Me.Ver_mas})
-        Me.DVentas.Location = New System.Drawing.Point(-146, 194)
+        Me.DVentas.Location = New System.Drawing.Point(78, 157)
         Me.DVentas.Margin = New System.Windows.Forms.Padding(2)
         Me.DVentas.Name = "DVentas"
         Me.DVentas.ReadOnly = True
         Me.DVentas.RowHeadersWidth = 51
         Me.DVentas.RowTemplate.Height = 24
-        Me.DVentas.Size = New System.Drawing.Size(653, 209)
+        Me.DVentas.Size = New System.Drawing.Size(796, 209)
         Me.DVentas.TabIndex = 111
         '
         'ID_Factura
@@ -155,7 +155,7 @@ Partial Class SoloListarVentas
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(337, 101)
+        Me.Button1.Location = New System.Drawing.Point(521, 78)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(111, 57)
         Me.Button1.TabIndex = 106
@@ -167,7 +167,7 @@ Partial Class SoloListarVentas
         Me.LFechaH.AutoSize = True
         Me.LFechaH.BackColor = System.Drawing.Color.Transparent
         Me.LFechaH.ForeColor = System.Drawing.Color.White
-        Me.LFechaH.Location = New System.Drawing.Point(27, 151)
+        Me.LFechaH.Location = New System.Drawing.Point(211, 128)
         Me.LFechaH.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.LFechaH.Name = "LFechaH"
         Me.LFechaH.Size = New System.Drawing.Size(68, 13)
@@ -179,7 +179,7 @@ Partial Class SoloListarVentas
         Me.LFechaD.AutoSize = True
         Me.LFechaD.BackColor = System.Drawing.Color.Transparent
         Me.LFechaD.ForeColor = System.Drawing.Color.White
-        Me.LFechaD.Location = New System.Drawing.Point(25, 108)
+        Me.LFechaD.Location = New System.Drawing.Point(209, 85)
         Me.LFechaD.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.LFechaD.Name = "LFechaD"
         Me.LFechaD.Size = New System.Drawing.Size(71, 13)
@@ -189,7 +189,7 @@ Partial Class SoloListarVentas
         'DTPHasta
         '
         Me.DTPHasta.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DTPHasta.Location = New System.Drawing.Point(113, 145)
+        Me.DTPHasta.Location = New System.Drawing.Point(297, 122)
         Me.DTPHasta.Margin = New System.Windows.Forms.Padding(2)
         Me.DTPHasta.Name = "DTPHasta"
         Me.DTPHasta.Size = New System.Drawing.Size(83, 20)
@@ -198,7 +198,7 @@ Partial Class SoloListarVentas
         'DTPDesde
         '
         Me.DTPDesde.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DTPDesde.Location = New System.Drawing.Point(113, 108)
+        Me.DTPDesde.Location = New System.Drawing.Point(297, 85)
         Me.DTPDesde.Margin = New System.Windows.Forms.Padding(2)
         Me.DTPDesde.Name = "DTPDesde"
         Me.DTPDesde.Size = New System.Drawing.Size(83, 20)
@@ -210,7 +210,7 @@ Partial Class SoloListarVentas
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(443, 28)
+        Me.Label1.Location = New System.Drawing.Point(402, 21)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(116, 25)
         Me.Label1.TabIndex = 104
@@ -220,8 +220,8 @@ Partial Class SoloListarVentas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackgroundImage = Global.proyecto_integrador.My.Resources.Resources.cuadros_negros_734708
-        Me.ClientSize = New System.Drawing.Size(1088, 473)
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(12, Byte), Integer), CType(CType(12, Byte), Integer), CType(CType(30, Byte), Integer))
+        Me.ClientSize = New System.Drawing.Size(976, 650)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.DVGDetalleFac)
         Me.Controls.Add(Me.DVentas)
@@ -231,7 +231,9 @@ Partial Class SoloListarVentas
         Me.Controls.Add(Me.DTPHasta)
         Me.Controls.Add(Me.DTPDesde)
         Me.Controls.Add(Me.Label1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "SoloListarVentas"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "SoloListarVentas"
         CType(Me.DVGDetalleFac, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DVentas, System.ComponentModel.ISupportInitialize).EndInit()

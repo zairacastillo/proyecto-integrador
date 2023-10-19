@@ -6,12 +6,32 @@
 
     Dim OProducto As producto = New producto
     Dim OCliente As cliente = New cliente
+    Dim OEmpleado As empleado = New empleado
 
+    Public Sub New(pempleado As empleado)
+
+        ' Esta llamada es exigida por el diseñador.
+        InitializeComponent()
+
+        ' Agregue cualquier inicialización después de la llamada a InitializeComponent().
+        OEmpleado = pempleado
+
+        TBVendedorA.Text = OEmpleado.apellido_empleado
+        TBVendedorN.Text = OEmpleado.nombre_empleado
+    End Sub
+
+    Public Sub New()
+
+        ' Esta llamada es exigida por el diseñador.
+        InitializeComponent()
+
+        ' Agregue cualquier inicialización después de la llamada a InitializeComponent().
+    End Sub
 
     Private Sub BProducto_Click(sender As Object, e As EventArgs) Handles BProducto.Click
 
         Dim listProductos As New ListarProductos(Me, True)
-        listProductos.MdiParent = MDIVendedor
+        listProductos.MdiParent = Me.MdiParent
         listProductos.Show()
 
     End Sub
@@ -34,7 +54,7 @@
     Private Sub BCliente_Click(sender As Object, e As EventArgs) Handles BCliente.Click
 
         Dim listClientes As New ListarClientes(Me, True)
-        listClientes.MdiParent = MDIVendedor
+        listClientes.MdiParent = Me.MdiParent
         listClientes.Show()
 
     End Sub
@@ -79,7 +99,7 @@
             'Mensaje
             MsgBox(msjTxt, MsgBoxStyle.Critical, Title:="Error")
 
-        ElseIf Integer.Parse(TBCantidad.Text) > Integer.parse(TBStock.Text) Then
+        ElseIf Integer.Parse(TBCantidad.Text) > Integer.Parse(TBStock.Text) Then
             MsgBox("No hay suficiente stock de ese producto", MsgBoxStyle.Critical, Title:="Error")
 
         Else
@@ -160,7 +180,7 @@
 
     Private Function guardarVenta() As Integer
         Dim Oventa = New venta
-        Oventa.Id_empleado = 3 'cambiar, hacerlo dinamico
+        Oventa.Id_empleado = OEmpleado.Id_empleado 'cambiar, hacerlo dinamico
         Oventa.Id_cliente = OCliente.Id_cliente
         Oventa.fecha = System.DateTime.Now
         Oventa.total = Decimal.Parse(TBTotal.Text.Trim)
@@ -192,5 +212,15 @@
 
     End Function
 
+    Private Sub Label9_Click(sender As Object, e As EventArgs) Handles Label9.Click
 
+    End Sub
+
+    Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
+
+    End Sub
+
+    Private Sub NuevaVenta_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
 End Class

@@ -1,7 +1,7 @@
 ﻿Public Class Dproducto
 
 
-    Dim ctx As PROYECTO2Entities2 = New PROYECTO2Entities2
+    Dim ctx As CLUBMENEntities = New CLUBMENEntities
 
 
     Function llenarCategorias(ByRef dg As DataGridView) As Boolean

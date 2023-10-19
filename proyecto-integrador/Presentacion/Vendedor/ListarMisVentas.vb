@@ -1,8 +1,33 @@
 ﻿Public Class ListarMisVentas
 
     Dim det As New Ddetalle_Venta
-    Private Sub ListarVentas_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Dim OEmpleado As New empleado
+    Public Sub New(pempleado As empleado)
 
+        ' Esta llamada es exigida por el diseñador.
+        InitializeComponent()
+
+        ' Agregue cualquier inicialización después de la llamada a InitializeComponent().
+        OEmpleado = pempleado
+        LDni.Text = OEmpleado.dni_empleado
+        LVendeA.Text = OEmpleado.apellido_empleado
+        LVendeN.Text = OEmpleado.nombre_empleado
+    End Sub
+
+    Public Sub New()
+
+        ' Esta llamada es exigida por el diseñador.
+        InitializeComponent()
+
+        ' Agregue cualquier inicialización después de la llamada a InitializeComponent().
+
+    End Sub
+
+
+    Private Sub ListarVentas_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Dim factura As New Dventa
+        LDni.Text = OEmpleado.dni_empleado
+        factura.MostrarFactura1(LDni.Text, DVentas)
     End Sub
 
     Private Sub DGV1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs)
@@ -15,7 +40,7 @@
         If DTPDesde.Value > DTPHasta.Value Or DTPHasta.Value > fecha Or DTPDesde.Value > fecha Then
             MsgBox("Fecha incorrecta", MsgBoxStyle.DefaultButton2 + MsgBoxStyle.Critical, "error")
         Else
-            factura.porFecha1(DTPDesde.Text, DTPHasta.Text, DVentas, 3) 'cambiar 3
+            factura.porFecha1(DTPDesde.Value, DTPHasta.Value, DVentas, OEmpleado.Id_empleado)
 
         End If
     End Sub

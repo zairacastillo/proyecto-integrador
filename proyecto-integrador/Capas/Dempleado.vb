@@ -1,12 +1,12 @@
 ﻿Public Class Dempleado
 
 
-    Dim ctx As PROYECTO2Entities2 = New PROYECTO2Entities2
+    Dim ctx As CLUBMENEntities = New CLUBMENEntities
 
     Function getAllEmpleado(ByVal dg As DataGridView) As Boolean
         dg.DataSource = Me.getAll()
-        'dg.Columns(0).Visible = False
-        'dg.Columns(9).Visible = False
+        dg.Columns(12).Visible = False
+        dg.Columns(13).Visible = False
         Return False
     End Function
     Function agregrar_empleado(ByVal oempleado As empleado) As Boolean
@@ -223,6 +223,12 @@
         End Try
     End Function
 
-
+    Function verificarUsuario(ByVal nombre As String, ByVal pass As String) As empleado
+        Dim emple = (From u In ctx.empleado
+                     Join emp In ctx.empleado On u.dni_empleado Equals emp.dni_empleado
+                     Where (u.usuario = nombre And u.contraseña = pass)
+                     Select u).SingleOrDefault
+        Return emple
+    End Function
 
 End Class

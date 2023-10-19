@@ -2,6 +2,23 @@
 
 Public Class MDIVendedor
 
+    Dim vendedor As empleado
+
+    Public Sub New(pvendedor As empleado)
+        ' Esta llamada es exigida por el diseñador.
+        InitializeComponent()
+
+        ' Agregue cualquier inicialización después de la llamada a InitializeComponent().
+        vendedor = pvendedor
+    End Sub
+
+    Public Sub New()
+        ' Esta llamada es exigida por el diseñador.
+        InitializeComponent()
+
+        ' Agregue cualquier inicialización después de la llamada a InitializeComponent().
+    End Sub
+
     Private Sub ShowNewForm(ByVal sender As Object, ByVal e As EventArgs)
         ' Cree una nueva instancia del formulario secundario.
         Dim ChildForm As New System.Windows.Forms.Form
@@ -37,7 +54,7 @@ Public Class MDIVendedor
             ChildForma.Close()
         Next
         ' Cree una nueva instancia del formulario secundario.
-        Dim ChildForm As New NuevaVenta
+        Dim ChildForm As New NuevaVenta(vendedor)
         ' Conviértalo en un elemento secundario de este formulario MDI antes de mostrarlo.
         ChildForm.MdiParent = Me
 
@@ -135,7 +152,7 @@ Public Class MDIVendedor
             ChildForma.Close()
         Next
         ' Cree una nueva instancia del formulario secundario.
-        Dim ChildForm As New ListarMisVentas
+        Dim ChildForm As New ListarMisVentas(vendedor)
         ' Conviértalo en un elemento secundario de este formulario MDI antes de mostrarlo.
         ChildForm.MdiParent = Me
 

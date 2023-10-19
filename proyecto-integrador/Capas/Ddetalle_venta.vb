@@ -1,7 +1,7 @@
 ﻿Public Class Ddetalle_Venta
 
 
-    Dim ctx As PROYECTO2Entities2 = New PROYECTO2Entities2
+    Dim ctx As CLUBMENEntities = New CLUBMENEntities
 
     Function getAllDetalle_Venta(ByVal dg As DataGridView) As Boolean
         'dg.DataSource = Me.getAll()

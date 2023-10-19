@@ -84,14 +84,14 @@ Public Class ListarClientes
                 Select Case bc.HeaderText
                     Case "Seleccionar" 'Nombre del boton / celda
 
-                        TBID.Text = DGV1.Rows(cell.RowIndex).Cells(1).Value
-                        TBNombre.Text = DGV1.Rows(cell.RowIndex).Cells(2).Value
-                        TBApellido.Text = DGV1.Rows(cell.RowIndex).Cells(3).Value
-                        TBDni.Text = DGV1.Rows(cell.RowIndex).Cells(4).Value
-                        TBCorreo.Text = DGV1.Rows(cell.RowIndex).Cells(5).Value
-                        TBTel.Text = DGV1.Rows(cell.RowIndex).Cells(6).Value
-                        TBDirec.Text = DGV1.Rows(cell.RowIndex).Cells(7).Value
-                        TBEstado.Text = DGV1.Rows(cell.RowIndex).Cells(9).Value
+                        TBID.Text = DGV1.Rows(cell.RowIndex).Cells("Id_cliente").Value
+                        TBNombre.Text = DGV1.Rows(cell.RowIndex).Cells("nombre_cliente").Value
+                        TBApellido.Text = DGV1.Rows(cell.RowIndex).Cells("apellido_cliente").Value
+                        TBDni.Text = DGV1.Rows(cell.RowIndex).Cells("dni_cliente").Value
+                        TBCorreo.Text = DGV1.Rows(cell.RowIndex).Cells("correo_cliente").Value
+                        TBTel.Text = DGV1.Rows(cell.RowIndex).Cells("telefono_cliente").Value
+                        TBDirec.Text = DGV1.Rows(cell.RowIndex).Cells("direccion_cliente").Value
+                        TBEstado.Text = DGV1.Rows(cell.RowIndex).Cells("estado_cliente").Value
 
                         BAgregarVenta.Enabled = mostrarBAgregarVenta
                         BAgregarVenta.Visible = mostrarBAgregarVenta
@@ -138,7 +138,7 @@ Public Class ListarClientes
             'Mensaje
             MsgBox(msjTxt, MsgBoxStyle.Critical, Title:="Error")
         Else
-            Dim ask = MsgBox("¿Seguro que desea Guardar el Cliente?", MsgBoxStyle.YesNo, Title:="Confirmar Inserción")
+            Dim ask = MsgBox("¿Seguro que desea Cargar el Cliente?", MsgBoxStyle.YesNo, Title:="Confirmar Inserción")
             If ask = vbYes Then
                 'guardar
                 'define entidad cliente
@@ -154,8 +154,9 @@ Public Class ListarClientes
                 OCliente.estado_cliente = TBEstado.Text.Trim
 
                 NVenta.CargaCliente(OCliente)
-
+                Me.Close()
             End If
         End If
     End Sub
+
 End Class

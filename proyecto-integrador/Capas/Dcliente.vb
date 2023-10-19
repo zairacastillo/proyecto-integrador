@@ -1,7 +1,7 @@
 ﻿Public Class Dcliente
 
 
-    Dim ctx As PROYECTO2Entities2 = New PROYECTO2Entities2
+    Dim ctx As CLUBMENEntities = New CLUBMENEntities
 
     Function getAllCliente(ByVal dg As DataGridView) As Boolean
         dg.DataSource = Me.getAll()

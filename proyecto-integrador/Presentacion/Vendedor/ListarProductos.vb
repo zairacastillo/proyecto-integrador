@@ -161,7 +161,7 @@ Public Class ListarProductos
                 OProducto.descripcion_producto = TBDescripcion.Text.Trim
 
                 NVenta.CargaProducto(OProducto)
-
+                Me.Close()
             End If
         End If
     End Sub

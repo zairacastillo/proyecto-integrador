@@ -44,23 +44,23 @@ Partial Class GestionCategoria
         Me.DGV1.AllowUserToDeleteRows = False
         Me.DGV1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DGV1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DGV1.Location = New System.Drawing.Point(-7, 80)
+        Me.DGV1.Location = New System.Drawing.Point(22, 79)
         Me.DGV1.Name = "DGV1"
         Me.DGV1.ReadOnly = True
         Me.DGV1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders
-        Me.DGV1.Size = New System.Drawing.Size(971, 164)
+        Me.DGV1.Size = New System.Drawing.Size(933, 164)
         Me.DGV1.TabIndex = 5
         '
         'PanelPrincipal
         '
-        Me.PanelPrincipal.BackgroundImage = Global.proyecto_integrador.My.Resources.Resources.bg
+        Me.PanelPrincipal.BackColor = System.Drawing.Color.FromArgb(CType(CType(116, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(47, Byte), Integer))
         Me.PanelPrincipal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.PanelPrincipal.Controls.Add(Me.TBID)
         Me.PanelPrincipal.Controls.Add(Me.LID)
         Me.PanelPrincipal.Controls.Add(Me.TBDescripcion)
         Me.PanelPrincipal.Controls.Add(Me.LDescripcion)
         Me.PanelPrincipal.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.PanelPrincipal.Location = New System.Drawing.Point(94, 287)
+        Me.PanelPrincipal.Location = New System.Drawing.Point(159, 353)
         Me.PanelPrincipal.Name = "PanelPrincipal"
         Me.PanelPrincipal.Size = New System.Drawing.Size(462, 142)
         Me.PanelPrincipal.TabIndex = 3
@@ -109,7 +109,7 @@ Partial Class GestionCategoria
         '
         Me.BEditar.Image = Global.proyecto_integrador.My.Resources.Resources.lapiz
         Me.BEditar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.BEditar.Location = New System.Drawing.Point(759, 300)
+        Me.BEditar.Location = New System.Drawing.Point(732, 301)
         Me.BEditar.Name = "BEditar"
         Me.BEditar.Size = New System.Drawing.Size(87, 68)
         Me.BEditar.TabIndex = 10
@@ -122,7 +122,7 @@ Partial Class GestionCategoria
         Me.BCancelar.BackgroundImage = Global.proyecto_integrador.My.Resources.Resources.cerrar
         Me.BCancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.BCancelar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.BCancelar.Location = New System.Drawing.Point(759, 405)
+        Me.BCancelar.Location = New System.Drawing.Point(732, 517)
         Me.BCancelar.Name = "BCancelar"
         Me.BCancelar.Size = New System.Drawing.Size(87, 67)
         Me.BCancelar.TabIndex = 11
@@ -136,7 +136,7 @@ Partial Class GestionCategoria
         Me.LBuscarCategoria.BackColor = System.Drawing.Color.Transparent
         Me.LBuscarCategoria.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LBuscarCategoria.ForeColor = System.Drawing.Color.White
-        Me.LBuscarCategoria.Location = New System.Drawing.Point(12, 23)
+        Me.LBuscarCategoria.Location = New System.Drawing.Point(197, 28)
         Me.LBuscarCategoria.Name = "LBuscarCategoria"
         Me.LBuscarCategoria.Size = New System.Drawing.Size(252, 20)
         Me.LBuscarCategoria.TabIndex = 14
@@ -144,14 +144,14 @@ Partial Class GestionCategoria
         '
         'TBBuscarDesc
         '
-        Me.TBBuscarDesc.Location = New System.Drawing.Point(280, 23)
+        Me.TBBuscarDesc.Location = New System.Drawing.Point(465, 28)
         Me.TBBuscarDesc.Name = "TBBuscarDesc"
         Me.TBBuscarDesc.Size = New System.Drawing.Size(182, 20)
         Me.TBBuscarDesc.TabIndex = 13
         '
         'BBuscarDesc
         '
-        Me.BBuscarDesc.Location = New System.Drawing.Point(468, 21)
+        Me.BBuscarDesc.Location = New System.Drawing.Point(653, 26)
         Me.BBuscarDesc.Name = "BBuscarDesc"
         Me.BBuscarDesc.Size = New System.Drawing.Size(75, 23)
         Me.BBuscarDesc.TabIndex = 16
@@ -160,7 +160,7 @@ Partial Class GestionCategoria
         '
         'BNuevaCategoria
         '
-        Me.BNuevaCategoria.Location = New System.Drawing.Point(636, 405)
+        Me.BNuevaCategoria.Location = New System.Drawing.Point(732, 402)
         Me.BNuevaCategoria.Name = "BNuevaCategoria"
         Me.BNuevaCategoria.Size = New System.Drawing.Size(87, 67)
         Me.BNuevaCategoria.TabIndex = 17
@@ -171,8 +171,8 @@ Partial Class GestionCategoria
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackgroundImage = Global.proyecto_integrador.My.Resources.Resources.cuadros_negros_734708
-        Me.ClientSize = New System.Drawing.Size(959, 579)
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(12, Byte), Integer), CType(CType(12, Byte), Integer), CType(CType(30, Byte), Integer))
+        Me.ClientSize = New System.Drawing.Size(976, 650)
         Me.Controls.Add(Me.BNuevaCategoria)
         Me.Controls.Add(Me.BBuscarDesc)
         Me.Controls.Add(Me.LBuscarCategoria)
@@ -181,7 +181,9 @@ Partial Class GestionCategoria
         Me.Controls.Add(Me.BEditar)
         Me.Controls.Add(Me.DGV1)
         Me.Controls.Add(Me.PanelPrincipal)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "GestionCategoria"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "GestionCategoria"
         CType(Me.DGV1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelPrincipal.ResumeLayout(False)

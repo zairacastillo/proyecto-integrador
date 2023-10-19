@@ -65,7 +65,7 @@ Public Class NuevoProducto
 
                 OProducto.nombre_producto = TBNombre.Text.Trim
                 OProducto.estado_producto = "Activo"
-                OProducto.precio = TBPrecio.Text.Trim
+                OProducto.precio = Decimal.Parse(TBPrecio.Text.Trim)
                 OProducto.stock = TBStock.Text.Trim
                 OProducto.Id_categoria = Integer.Parse(CBCategoria.SelectedValue)
                 OProducto.descripcion_producto = TBDescripcion.Text.Trim
@@ -117,4 +117,7 @@ Public Class NuevoProducto
         e.Handled = True
     End Sub
 
+    Private Sub LDescripcion_Click(sender As Object, e As EventArgs) Handles LDescripcion.Click
+
+    End Sub
 End Class

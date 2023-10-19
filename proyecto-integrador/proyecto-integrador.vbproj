@@ -105,31 +105,31 @@
     <Compile Include="Capas\Dproducto.vb" />
     <Compile Include="Capas\Dventa.vb" />
     <Compile Include="categoria.vb">
-      <DependentUpon>ModelProyecto2.tt</DependentUpon>
+      <DependentUpon>ModelClubMen.tt</DependentUpon>
     </Compile>
     <Compile Include="cliente.vb">
-      <DependentUpon>ModelProyecto2.tt</DependentUpon>
+      <DependentUpon>ModelClubMen.tt</DependentUpon>
     </Compile>
     <Compile Include="detalle_venta.vb">
-      <DependentUpon>ModelProyecto2.tt</DependentUpon>
+      <DependentUpon>ModelClubMen.tt</DependentUpon>
     </Compile>
     <Compile Include="empleado.vb">
-      <DependentUpon>ModelProyecto2.tt</DependentUpon>
+      <DependentUpon>ModelClubMen.tt</DependentUpon>
     </Compile>
-    <Compile Include="ModelProyecto2.Context.vb">
+    <Compile Include="ModelClubMen.Context.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ModelProyecto2.Context.tt</DependentUpon>
+      <DependentUpon>ModelClubMen.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="ModelProyecto2.Designer.vb">
+    <Compile Include="ModelClubMen.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ModelProyecto2.edmx</DependentUpon>
+      <DependentUpon>ModelClubMen.edmx</DependentUpon>
     </Compile>
-    <Compile Include="ModelProyecto2.vb">
+    <Compile Include="ModelClubMen.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ModelProyecto2.tt</DependentUpon>
+      <DependentUpon>ModelClubMen.tt</DependentUpon>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
@@ -148,7 +148,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="perfil.vb">
-      <DependentUpon>ModelProyecto2.tt</DependentUpon>
+      <DependentUpon>ModelClubMen.tt</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\Admin\EditarClienteAdmin.designer.vb">
       <DependentUpon>EditarClienteAdmin.vb</DependentUpon>
@@ -277,20 +277,11 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="producto.vb">
-      <DependentUpon>ModelProyecto2.tt</DependentUpon>
-    </Compile>
-    <Compile Include="sp_helpdiagramdefinition_Result.vb">
-      <DependentUpon>ModelProyecto2.tt</DependentUpon>
-    </Compile>
-    <Compile Include="sp_helpdiagrams_Result.vb">
-      <DependentUpon>ModelProyecto2.tt</DependentUpon>
-    </Compile>
-    <Compile Include="sysdiagrams.vb">
-      <DependentUpon>ModelProyecto2.tt</DependentUpon>
+      <DependentUpon>ModelClubMen.tt</DependentUpon>
     </Compile>
     <Compile Include="validaciones\validar.vb" />
     <Compile Include="venta.vb">
-      <DependentUpon>ModelProyecto2.tt</DependentUpon>
+      <DependentUpon>ModelClubMen.tt</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -365,12 +356,12 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EntityDeploy Include="ModelProyecto2.edmx">
+    <EntityDeploy Include="ModelClubMen.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>ModelProyecto2.Designer.vb</LastGenOutput>
+      <LastGenOutput>ModelClubMen.Designer.vb</LastGenOutput>
     </EntityDeploy>
-    <None Include="ModelProyecto2.edmx.diagram">
-      <DependentUpon>ModelProyecto2.edmx</DependentUpon>
+    <None Include="ModelClubMen.edmx.diagram">
+      <DependentUpon>ModelClubMen.edmx</DependentUpon>
     </None>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
@@ -483,16 +474,23 @@
     <None Include="Resources\cerrar.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="ModelProyecto2.Context.tt">
+    <Content Include="ModelClubMen.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ModelProyecto2.edmx</DependentUpon>
-      <LastGenOutput>ModelProyecto2.Context.vb</LastGenOutput>
+      <DependentUpon>ModelClubMen.edmx</DependentUpon>
+      <LastGenOutput>ModelClubMen.Context.vb</LastGenOutput>
     </Content>
-    <Content Include="ModelProyecto2.tt">
+    <Content Include="ModelClubMen.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ModelProyecto2.edmx</DependentUpon>
-      <LastGenOutput>ModelProyecto2.vb</LastGenOutput>
+      <DependentUpon>ModelClubMen.edmx</DependentUpon>
+      <LastGenOutput>ModelClubMen.vb</LastGenOutput>
     </Content>
+    <None Include="Resources\logo21.png" />
+    <None Include="Resources\logo2.png" />
+    <None Include="Resources\IMG_38911.jpg" />
+    <None Include="Resources\logo11.png" />
+    <None Include="Resources\logo1.png" />
+    <None Include="Resources\IMG_3891.jpg" />
+    <None Include="Resources\logo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

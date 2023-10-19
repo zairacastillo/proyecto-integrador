@@ -23,6 +23,7 @@ Partial Class ListarProductos
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.PanelPrincipal = New System.Windows.Forms.Panel()
+        Me.BAgregarVenta = New System.Windows.Forms.Button()
         Me.CBEstado = New System.Windows.Forms.ComboBox()
         Me.CBCateg = New System.Windows.Forms.ComboBox()
         Me.LCategoria = New System.Windows.Forms.Label()
@@ -43,15 +44,15 @@ Partial Class ListarProductos
         Me.CBCategoria = New System.Windows.Forms.ComboBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.BBuscarNombre = New System.Windows.Forms.Button()
-        Me.BAgregarVenta = New System.Windows.Forms.Button()
         Me.PanelPrincipal.SuspendLayout()
         CType(Me.DGV1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'PanelPrincipal
         '
-        Me.PanelPrincipal.BackgroundImage = Global.proyecto_integrador.My.Resources.Resources.bg
+        Me.PanelPrincipal.BackColor = System.Drawing.Color.FromArgb(CType(CType(116, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(47, Byte), Integer))
         Me.PanelPrincipal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PanelPrincipal.Controls.Add(Me.BAgregarVenta)
         Me.PanelPrincipal.Controls.Add(Me.CBEstado)
         Me.PanelPrincipal.Controls.Add(Me.CBCateg)
         Me.PanelPrincipal.Controls.Add(Me.LCategoria)
@@ -67,10 +68,19 @@ Partial Class ListarProductos
         Me.PanelPrincipal.Controls.Add(Me.LNombre)
         Me.PanelPrincipal.Controls.Add(Me.LID)
         Me.PanelPrincipal.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.PanelPrincipal.Location = New System.Drawing.Point(110, 239)
+        Me.PanelPrincipal.Location = New System.Drawing.Point(76, 252)
         Me.PanelPrincipal.Name = "PanelPrincipal"
-        Me.PanelPrincipal.Size = New System.Drawing.Size(546, 328)
+        Me.PanelPrincipal.Size = New System.Drawing.Size(781, 328)
         Me.PanelPrincipal.TabIndex = 0
+        '
+        'BAgregarVenta
+        '
+        Me.BAgregarVenta.Location = New System.Drawing.Point(601, 213)
+        Me.BAgregarVenta.Name = "BAgregarVenta"
+        Me.BAgregarVenta.Size = New System.Drawing.Size(75, 67)
+        Me.BAgregarVenta.TabIndex = 24
+        Me.BAgregarVenta.Text = "Agregar a Venta"
+        Me.BAgregarVenta.UseVisualStyleBackColor = True
         '
         'CBEstado
         '
@@ -81,7 +91,7 @@ Partial Class ListarProductos
         Me.CBEstado.Items.AddRange(New Object() {"Activo", "Inactivo"})
         Me.CBEstado.Location = New System.Drawing.Point(119, 101)
         Me.CBEstado.Name = "CBEstado"
-        Me.CBEstado.Size = New System.Drawing.Size(130, 28)
+        Me.CBEstado.Size = New System.Drawing.Size(187, 28)
         Me.CBEstado.TabIndex = 23
         '
         'CBCateg
@@ -89,9 +99,9 @@ Partial Class ListarProductos
         Me.CBCateg.Enabled = False
         Me.CBCateg.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CBCateg.FormattingEnabled = True
-        Me.CBCateg.Location = New System.Drawing.Point(389, 145)
+        Me.CBCateg.Location = New System.Drawing.Point(520, 151)
         Me.CBCateg.Name = "CBCateg"
-        Me.CBCateg.Size = New System.Drawing.Size(126, 28)
+        Me.CBCateg.Size = New System.Drawing.Size(191, 28)
         Me.CBCateg.TabIndex = 22
         '
         'LCategoria
@@ -100,7 +110,7 @@ Partial Class ListarProductos
         Me.LCategoria.BackColor = System.Drawing.Color.Transparent
         Me.LCategoria.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LCategoria.ForeColor = System.Drawing.Color.White
-        Me.LCategoria.Location = New System.Drawing.Point(276, 144)
+        Me.LCategoria.Location = New System.Drawing.Point(407, 150)
         Me.LCategoria.Name = "LCategoria"
         Me.LCategoria.Size = New System.Drawing.Size(111, 25)
         Me.LCategoria.TabIndex = 21
@@ -121,10 +131,10 @@ Partial Class ListarProductos
         'TBStock
         '
         Me.TBStock.Enabled = False
-        Me.TBStock.Location = New System.Drawing.Point(393, 105)
+        Me.TBStock.Location = New System.Drawing.Point(524, 111)
         Me.TBStock.Name = "TBStock"
         Me.TBStock.ReadOnly = True
-        Me.TBStock.Size = New System.Drawing.Size(122, 20)
+        Me.TBStock.Size = New System.Drawing.Size(187, 20)
         Me.TBStock.TabIndex = 18
         '
         'LStock
@@ -133,7 +143,7 @@ Partial Class ListarProductos
         Me.LStock.BackColor = System.Drawing.Color.Transparent
         Me.LStock.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LStock.ForeColor = System.Drawing.Color.White
-        Me.LStock.Location = New System.Drawing.Point(276, 100)
+        Me.LStock.Location = New System.Drawing.Point(407, 106)
         Me.LStock.Name = "LStock"
         Me.LStock.Size = New System.Drawing.Size(72, 25)
         Me.LStock.TabIndex = 17
@@ -152,10 +162,10 @@ Partial Class ListarProductos
         'TBPrecio
         '
         Me.TBPrecio.Enabled = False
-        Me.TBPrecio.Location = New System.Drawing.Point(393, 61)
+        Me.TBPrecio.Location = New System.Drawing.Point(524, 67)
         Me.TBPrecio.Name = "TBPrecio"
         Me.TBPrecio.ReadOnly = True
-        Me.TBPrecio.Size = New System.Drawing.Size(122, 20)
+        Me.TBPrecio.Size = New System.Drawing.Size(187, 20)
         Me.TBPrecio.TabIndex = 7
         '
         'TBNombre
@@ -165,16 +175,16 @@ Partial Class ListarProductos
         Me.TBNombre.Multiline = True
         Me.TBNombre.Name = "TBNombre"
         Me.TBNombre.ReadOnly = True
-        Me.TBNombre.Size = New System.Drawing.Size(130, 39)
+        Me.TBNombre.Size = New System.Drawing.Size(187, 31)
         Me.TBNombre.TabIndex = 5
         '
         'TBID
         '
         Me.TBID.Enabled = False
-        Me.TBID.Location = New System.Drawing.Point(119, 60)
+        Me.TBID.Location = New System.Drawing.Point(119, 55)
         Me.TBID.Name = "TBID"
         Me.TBID.ReadOnly = True
-        Me.TBID.Size = New System.Drawing.Size(130, 20)
+        Me.TBID.Size = New System.Drawing.Size(187, 20)
         Me.TBID.TabIndex = 4
         '
         'LPrecio
@@ -183,7 +193,7 @@ Partial Class ListarProductos
         Me.LPrecio.BackColor = System.Drawing.Color.Transparent
         Me.LPrecio.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LPrecio.ForeColor = System.Drawing.Color.White
-        Me.LPrecio.Location = New System.Drawing.Point(276, 54)
+        Me.LPrecio.Location = New System.Drawing.Point(407, 60)
         Me.LPrecio.Name = "LPrecio"
         Me.LPrecio.Size = New System.Drawing.Size(79, 25)
         Me.LPrecio.TabIndex = 3
@@ -231,7 +241,7 @@ Partial Class ListarProductos
         Me.DGV1.AllowUserToDeleteRows = False
         Me.DGV1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DGV1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DGV1.Location = New System.Drawing.Point(23, 61)
+        Me.DGV1.Location = New System.Drawing.Point(12, 52)
         Me.DGV1.Name = "DGV1"
         Me.DGV1.ReadOnly = True
         Me.DGV1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders
@@ -252,7 +262,7 @@ Partial Class ListarProductos
         '
         'TBBuscar
         '
-        Me.TBBuscar.Location = New System.Drawing.Point(686, 21)
+        Me.TBBuscar.Location = New System.Drawing.Point(675, 20)
         Me.TBBuscar.Name = "TBBuscar"
         Me.TBBuscar.Size = New System.Drawing.Size(182, 20)
         Me.TBBuscar.TabIndex = 17
@@ -273,7 +283,7 @@ Partial Class ListarProductos
         Me.Label3.BackColor = System.Drawing.Color.Transparent
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.White
-        Me.Label3.Location = New System.Drawing.Point(450, 19)
+        Me.Label3.Location = New System.Drawing.Point(439, 18)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(209, 20)
         Me.Label3.TabIndex = 21
@@ -281,30 +291,20 @@ Partial Class ListarProductos
         '
         'BBuscarNombre
         '
-        Me.BBuscarNombre.Location = New System.Drawing.Point(874, 18)
+        Me.BBuscarNombre.Location = New System.Drawing.Point(863, 17)
         Me.BBuscarNombre.Name = "BBuscarNombre"
         Me.BBuscarNombre.Size = New System.Drawing.Size(91, 24)
         Me.BBuscarNombre.TabIndex = 23
         Me.BBuscarNombre.Text = "Buscar"
         Me.BBuscarNombre.UseVisualStyleBackColor = True
         '
-        'BAgregarVenta
-        '
-        Me.BAgregarVenta.Location = New System.Drawing.Point(793, 310)
-        Me.BAgregarVenta.Name = "BAgregarVenta"
-        Me.BAgregarVenta.Size = New System.Drawing.Size(75, 67)
-        Me.BAgregarVenta.TabIndex = 24
-        Me.BAgregarVenta.Text = "Agregar a Venta"
-        Me.BAgregarVenta.UseVisualStyleBackColor = True
-        '
         'ListarProductos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackgroundImage = Global.proyecto_integrador.My.Resources.Resources.cuadros_negros_734708
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(12, Byte), Integer), CType(CType(12, Byte), Integer), CType(CType(30, Byte), Integer))
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(977, 579)
-        Me.Controls.Add(Me.BAgregarVenta)
+        Me.ClientSize = New System.Drawing.Size(976, 650)
         Me.Controls.Add(Me.BBuscarNombre)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.CBCategoria)
@@ -312,10 +312,10 @@ Partial Class ListarProductos
         Me.Controls.Add(Me.TBBuscar)
         Me.Controls.Add(Me.DGV1)
         Me.Controls.Add(Me.PanelPrincipal)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "ListarProductos"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Editar/eliminar Producto"
-        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.PanelPrincipal.ResumeLayout(False)
         Me.PanelPrincipal.PerformLayout()
         CType(Me.DGV1, System.ComponentModel.ISupportInitialize).EndInit()

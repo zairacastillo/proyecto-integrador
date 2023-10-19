@@ -129,4 +129,11 @@
         ObjEmpleado.getAllEmpleado(DGV1)
     End Sub
 
+    Private Sub TBCorreo_TextChanged(sender As Object, e As EventArgs) Handles TBCorreo.TextChanged
+
+    End Sub
+
+    Private Sub DGV1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGV1.CellContentClick
+
+    End Sub
 End Class

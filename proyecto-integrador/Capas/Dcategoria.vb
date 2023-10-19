@@ -1,7 +1,7 @@
 ﻿Public Class Dcategoria
 
 
-    Dim ctx As PROYECTO2Entities2 = New PROYECTO2Entities2
+    Dim ctx As CLUBMENEntities = New CLUBMENEntities
 
     Function getAllcategoria(ByVal dg As DataGridView) As Boolean
         dg.DataSource = Me.getAll()

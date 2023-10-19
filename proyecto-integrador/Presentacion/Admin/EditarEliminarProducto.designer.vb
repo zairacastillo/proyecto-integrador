@@ -52,7 +52,7 @@ Partial Class EditarEliminarProducto
         '
         'PanelPrincipal
         '
-        Me.PanelPrincipal.BackgroundImage = Global.proyecto_integrador.My.Resources.Resources.bg
+        Me.PanelPrincipal.BackColor = System.Drawing.Color.FromArgb(CType(CType(116, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(47, Byte), Integer))
         Me.PanelPrincipal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.PanelPrincipal.Controls.Add(Me.CBEstado)
         Me.PanelPrincipal.Controls.Add(Me.CBCateg)
@@ -69,9 +69,9 @@ Partial Class EditarEliminarProducto
         Me.PanelPrincipal.Controls.Add(Me.LNombre)
         Me.PanelPrincipal.Controls.Add(Me.LID)
         Me.PanelPrincipal.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.PanelPrincipal.Location = New System.Drawing.Point(110, 239)
+        Me.PanelPrincipal.Location = New System.Drawing.Point(39, 265)
         Me.PanelPrincipal.Name = "PanelPrincipal"
-        Me.PanelPrincipal.Size = New System.Drawing.Size(546, 328)
+        Me.PanelPrincipal.Size = New System.Drawing.Size(701, 328)
         Me.PanelPrincipal.TabIndex = 0
         '
         'CBEstado
@@ -80,18 +80,18 @@ Partial Class EditarEliminarProducto
         Me.CBEstado.ForeColor = System.Drawing.SystemColors.WindowText
         Me.CBEstado.FormattingEnabled = True
         Me.CBEstado.Items.AddRange(New Object() {"Activo", "Inactivo"})
-        Me.CBEstado.Location = New System.Drawing.Point(119, 101)
+        Me.CBEstado.Location = New System.Drawing.Point(130, 100)
         Me.CBEstado.Name = "CBEstado"
-        Me.CBEstado.Size = New System.Drawing.Size(130, 28)
+        Me.CBEstado.Size = New System.Drawing.Size(161, 28)
         Me.CBEstado.TabIndex = 23
         '
         'CBCateg
         '
         Me.CBCateg.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CBCateg.FormattingEnabled = True
-        Me.CBCateg.Location = New System.Drawing.Point(389, 145)
+        Me.CBCateg.Location = New System.Drawing.Point(450, 145)
         Me.CBCateg.Name = "CBCateg"
-        Me.CBCateg.Size = New System.Drawing.Size(126, 28)
+        Me.CBCateg.Size = New System.Drawing.Size(161, 28)
         Me.CBCateg.TabIndex = 22
         '
         'LCategoria
@@ -100,7 +100,7 @@ Partial Class EditarEliminarProducto
         Me.LCategoria.BackColor = System.Drawing.Color.Transparent
         Me.LCategoria.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LCategoria.ForeColor = System.Drawing.Color.White
-        Me.LCategoria.Location = New System.Drawing.Point(276, 144)
+        Me.LCategoria.Location = New System.Drawing.Point(337, 144)
         Me.LCategoria.Name = "LCategoria"
         Me.LCategoria.Size = New System.Drawing.Size(111, 25)
         Me.LCategoria.TabIndex = 21
@@ -112,7 +112,7 @@ Partial Class EditarEliminarProducto
         Me.LEstado.BackColor = System.Drawing.Color.Transparent
         Me.LEstado.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LEstado.ForeColor = System.Drawing.Color.White
-        Me.LEstado.Location = New System.Drawing.Point(20, 100)
+        Me.LEstado.Location = New System.Drawing.Point(31, 99)
         Me.LEstado.Name = "LEstado"
         Me.LEstado.Size = New System.Drawing.Size(85, 25)
         Me.LEstado.TabIndex = 19
@@ -120,9 +120,9 @@ Partial Class EditarEliminarProducto
         '
         'TBStock
         '
-        Me.TBStock.Location = New System.Drawing.Point(393, 105)
+        Me.TBStock.Location = New System.Drawing.Point(450, 99)
         Me.TBStock.Name = "TBStock"
-        Me.TBStock.Size = New System.Drawing.Size(122, 20)
+        Me.TBStock.Size = New System.Drawing.Size(161, 20)
         Me.TBStock.TabIndex = 18
         '
         'LStock
@@ -131,7 +131,7 @@ Partial Class EditarEliminarProducto
         Me.LStock.BackColor = System.Drawing.Color.Transparent
         Me.LStock.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LStock.ForeColor = System.Drawing.Color.White
-        Me.LStock.Location = New System.Drawing.Point(276, 100)
+        Me.LStock.Location = New System.Drawing.Point(337, 100)
         Me.LStock.Name = "LStock"
         Me.LStock.Size = New System.Drawing.Size(72, 25)
         Me.LStock.TabIndex = 17
@@ -139,7 +139,7 @@ Partial Class EditarEliminarProducto
         '
         'TBDescripcion
         '
-        Me.TBDescripcion.Location = New System.Drawing.Point(161, 212)
+        Me.TBDescripcion.Location = New System.Drawing.Point(172, 211)
         Me.TBDescripcion.Multiline = True
         Me.TBDescripcion.Name = "TBDescripcion"
         Me.TBDescripcion.Size = New System.Drawing.Size(354, 68)
@@ -147,26 +147,26 @@ Partial Class EditarEliminarProducto
         '
         'TBPrecio
         '
-        Me.TBPrecio.Location = New System.Drawing.Point(393, 61)
+        Me.TBPrecio.Location = New System.Drawing.Point(450, 54)
         Me.TBPrecio.Name = "TBPrecio"
-        Me.TBPrecio.Size = New System.Drawing.Size(122, 20)
+        Me.TBPrecio.Size = New System.Drawing.Size(161, 20)
         Me.TBPrecio.TabIndex = 7
         '
         'TBNombre
         '
-        Me.TBNombre.Location = New System.Drawing.Point(119, 148)
+        Me.TBNombre.Location = New System.Drawing.Point(130, 147)
         Me.TBNombre.Multiline = True
         Me.TBNombre.Name = "TBNombre"
-        Me.TBNombre.Size = New System.Drawing.Size(130, 39)
+        Me.TBNombre.Size = New System.Drawing.Size(161, 26)
         Me.TBNombre.TabIndex = 5
         '
         'TBID
         '
         Me.TBID.Enabled = False
-        Me.TBID.Location = New System.Drawing.Point(119, 60)
+        Me.TBID.Location = New System.Drawing.Point(130, 59)
         Me.TBID.Name = "TBID"
         Me.TBID.ReadOnly = True
-        Me.TBID.Size = New System.Drawing.Size(130, 20)
+        Me.TBID.Size = New System.Drawing.Size(161, 20)
         Me.TBID.TabIndex = 4
         '
         'LPrecio
@@ -175,7 +175,7 @@ Partial Class EditarEliminarProducto
         Me.LPrecio.BackColor = System.Drawing.Color.Transparent
         Me.LPrecio.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LPrecio.ForeColor = System.Drawing.Color.White
-        Me.LPrecio.Location = New System.Drawing.Point(276, 54)
+        Me.LPrecio.Location = New System.Drawing.Point(337, 54)
         Me.LPrecio.Name = "LPrecio"
         Me.LPrecio.Size = New System.Drawing.Size(79, 25)
         Me.LPrecio.TabIndex = 3
@@ -187,7 +187,7 @@ Partial Class EditarEliminarProducto
         Me.LDescripcion.BackColor = System.Drawing.Color.Transparent
         Me.LDescripcion.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LDescripcion.ForeColor = System.Drawing.Color.White
-        Me.LDescripcion.Location = New System.Drawing.Point(20, 206)
+        Me.LDescripcion.Location = New System.Drawing.Point(31, 205)
         Me.LDescripcion.Name = "LDescripcion"
         Me.LDescripcion.Size = New System.Drawing.Size(131, 25)
         Me.LDescripcion.TabIndex = 2
@@ -199,7 +199,7 @@ Partial Class EditarEliminarProducto
         Me.LNombre.BackColor = System.Drawing.Color.Transparent
         Me.LNombre.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LNombre.ForeColor = System.Drawing.Color.White
-        Me.LNombre.Location = New System.Drawing.Point(20, 144)
+        Me.LNombre.Location = New System.Drawing.Point(31, 143)
         Me.LNombre.Name = "LNombre"
         Me.LNombre.Size = New System.Drawing.Size(93, 25)
         Me.LNombre.TabIndex = 1
@@ -211,7 +211,7 @@ Partial Class EditarEliminarProducto
         Me.LID.BackColor = System.Drawing.Color.Transparent
         Me.LID.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LID.ForeColor = System.Drawing.Color.White
-        Me.LID.Location = New System.Drawing.Point(20, 55)
+        Me.LID.Location = New System.Drawing.Point(31, 54)
         Me.LID.Name = "LID"
         Me.LID.Size = New System.Drawing.Size(38, 25)
         Me.LID.TabIndex = 0
@@ -223,18 +223,18 @@ Partial Class EditarEliminarProducto
         Me.DGV1.AllowUserToDeleteRows = False
         Me.DGV1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DGV1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DGV1.Location = New System.Drawing.Point(23, 61)
+        Me.DGV1.Location = New System.Drawing.Point(32, 74)
         Me.DGV1.Name = "DGV1"
         Me.DGV1.ReadOnly = True
         Me.DGV1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders
-        Me.DGV1.Size = New System.Drawing.Size(942, 164)
+        Me.DGV1.Size = New System.Drawing.Size(916, 164)
         Me.DGV1.TabIndex = 2
         '
         'BCancelar
         '
         Me.BCancelar.Image = Global.proyecto_integrador.My.Resources.Resources.cerrar
         Me.BCancelar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.BCancelar.Location = New System.Drawing.Point(769, 445)
+        Me.BCancelar.Location = New System.Drawing.Point(817, 484)
         Me.BCancelar.Name = "BCancelar"
         Me.BCancelar.Size = New System.Drawing.Size(87, 60)
         Me.BCancelar.TabIndex = 15
@@ -246,9 +246,9 @@ Partial Class EditarEliminarProducto
         '
         Me.BEditar.Image = Global.proyecto_integrador.My.Resources.Resources.lapiz
         Me.BEditar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.BEditar.Location = New System.Drawing.Point(774, 348)
+        Me.BEditar.Location = New System.Drawing.Point(817, 393)
         Me.BEditar.Name = "BEditar"
-        Me.BEditar.Size = New System.Drawing.Size(82, 64)
+        Me.BEditar.Size = New System.Drawing.Size(91, 64)
         Me.BEditar.TabIndex = 14
         Me.BEditar.Text = "Guardar Cambios"
         Me.BEditar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
@@ -256,7 +256,7 @@ Partial Class EditarEliminarProducto
         '
         'BAEstado
         '
-        Me.BAEstado.Location = New System.Drawing.Point(765, 258)
+        Me.BAEstado.Location = New System.Drawing.Point(817, 303)
         Me.BAEstado.Name = "BAEstado"
         Me.BAEstado.Size = New System.Drawing.Size(91, 60)
         Me.BAEstado.TabIndex = 13
@@ -269,7 +269,7 @@ Partial Class EditarEliminarProducto
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(12, 18)
+        Me.Label1.Location = New System.Drawing.Point(28, 20)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(142, 20)
         Me.Label1.TabIndex = 18
@@ -277,7 +277,7 @@ Partial Class EditarEliminarProducto
         '
         'TBBuscar
         '
-        Me.TBBuscar.Location = New System.Drawing.Point(686, 21)
+        Me.TBBuscar.Location = New System.Drawing.Point(669, 23)
         Me.TBBuscar.Name = "TBBuscar"
         Me.TBBuscar.Size = New System.Drawing.Size(182, 20)
         Me.TBBuscar.TabIndex = 17
@@ -286,7 +286,7 @@ Partial Class EditarEliminarProducto
         '
         Me.CBCategoria.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CBCategoria.FormattingEnabled = True
-        Me.CBCategoria.Location = New System.Drawing.Point(160, 18)
+        Me.CBCategoria.Location = New System.Drawing.Point(176, 20)
         Me.CBCategoria.Name = "CBCategoria"
         Me.CBCategoria.Size = New System.Drawing.Size(154, 28)
         Me.CBCategoria.TabIndex = 19
@@ -298,7 +298,7 @@ Partial Class EditarEliminarProducto
         Me.Label3.BackColor = System.Drawing.Color.Transparent
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.White
-        Me.Label3.Location = New System.Drawing.Point(450, 19)
+        Me.Label3.Location = New System.Drawing.Point(433, 21)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(209, 20)
         Me.Label3.TabIndex = 21
@@ -306,7 +306,7 @@ Partial Class EditarEliminarProducto
         '
         'BBuscarNombre
         '
-        Me.BBuscarNombre.Location = New System.Drawing.Point(874, 18)
+        Me.BBuscarNombre.Location = New System.Drawing.Point(857, 20)
         Me.BBuscarNombre.Name = "BBuscarNombre"
         Me.BBuscarNombre.Size = New System.Drawing.Size(91, 24)
         Me.BBuscarNombre.TabIndex = 23
@@ -317,9 +317,9 @@ Partial Class EditarEliminarProducto
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackgroundImage = Global.proyecto_integrador.My.Resources.Resources.cuadros_negros_734708
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(12, Byte), Integer), CType(CType(12, Byte), Integer), CType(CType(30, Byte), Integer))
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(977, 579)
+        Me.ClientSize = New System.Drawing.Size(976, 650)
         Me.Controls.Add(Me.BBuscarNombre)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.CBCategoria)
@@ -330,7 +330,9 @@ Partial Class EditarEliminarProducto
         Me.Controls.Add(Me.BAEstado)
         Me.Controls.Add(Me.DGV1)
         Me.Controls.Add(Me.PanelPrincipal)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "EditarEliminarProducto"
+        Me.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Editar/eliminar Producto"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized

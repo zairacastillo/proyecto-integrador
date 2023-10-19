@@ -1,4 +1,56 @@
 ﻿Public Class Login
+
+    Dim objEmpleado As Dempleado = New Dempleado
+    Dim objRol As Dperfil = New Dperfil
+    Public user As String
+    Public id As Integer
+
+
+    Private Sub BTIniciar_Click(sender As Object, e As EventArgs) Handles BTIniciar.Click
+        Try
+            Dim usuario As New Dempleado
+
+            If TBUsuario.Text = "" Or TBContraseña.Text = "" Then
+                MsgBox("Debe completar los campos ", MsgBoxStyle.DefaultButton2 + MsgBoxStyle.Critical, "error")
+                Exit Sub
+            End If
+
+
+            Dim Oempleado As empleado = New empleado
+            Oempleado = usuario.verificarUsuario(TBUsuario.Text, TBContraseña.Text)
+
+            If Oempleado.Id_perfil = 3 Then
+                Dim mdi As MDISuperAdmin = New MDISuperAdmin(Oempleado)
+                mdi.Show()
+                TBUsuario.Clear()
+                TBContraseña.Clear()
+
+            ElseIf Oempleado.Id_perfil = 2 Then
+                Dim mdi As MDIAdmin = New MDIAdmin(Oempleado)
+                mdi.Show()
+                TBUsuario.Clear()
+                TBContraseña.Clear()
+
+            ElseIf Oempleado.Id_perfil = 1 Then
+                Dim mdi As MDIVendedor = New MDIVendedor(Oempleado)
+                mdi.Show()
+                TBUsuario.Clear()
+                TBContraseña.Clear()
+            End If
+
+        Catch ex As Exception
+            MsgBox("Usuario incorrecto", MsgBoxStyle.DefaultButton2 + MsgBoxStyle.Critical, "error")
+            TBUsuario.Clear()
+            TBContraseña.Clear()
+        End Try
+
+    End Sub
+
+
+
+
+
+
     Private Sub BIniciarV_Click(sender As Object, e As EventArgs) Handles BIniciarV.Click
         Dim msjTxt As String = "Debe Completar todos los campos: "
 
@@ -52,4 +104,18 @@
 
         End If
     End Sub
+
+    Private Sub Login_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
+
+    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
+
+    End Sub
+
+    Private Sub BCancelar_Click(sender As Object, e As EventArgs) Handles BCancelar.Click
+        Me.Close()
+    End Sub
+
+
 End Class

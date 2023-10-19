@@ -1,7 +1,7 @@
 ﻿Public Class Dperfil
 
 
-    Dim ctx As PROYECTO2Entities2 = New PROYECTO2Entities2
+    Dim ctx As CLUBMENEntities = New CLUBMENEntities
 
 
     Function getAll() As List(Of perfil)

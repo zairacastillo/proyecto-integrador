@@ -62,7 +62,7 @@ Partial Class MDIVendedor
         Me.MenuStrip.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip.Name = "MenuStrip"
         Me.MenuStrip.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional
-        Me.MenuStrip.Size = New System.Drawing.Size(126, 431)
+        Me.MenuStrip.Size = New System.Drawing.Size(117, 431)
         Me.MenuStrip.TabIndex = 11
         Me.MenuStrip.Text = "MenuStrip"
         '
@@ -77,7 +77,7 @@ Partial Class MDIVendedor
         Me.FileMenu.Name = "FileMenu"
         Me.FileMenu.Padding = New System.Windows.Forms.Padding(4, 10, 4, 0)
         Me.FileMenu.ShowShortcutKeys = False
-        Me.FileMenu.Size = New System.Drawing.Size(113, 46)
+        Me.FileMenu.Size = New System.Drawing.Size(104, 46)
         Me.FileMenu.Text = "  &Clientes"
         Me.FileMenu.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
@@ -86,7 +86,7 @@ Partial Class MDIVendedor
         Me.NuevoToolStripMenuItem.Image = Global.proyecto_integrador.My.Resources.Resources.anadir_amigo1
         Me.NuevoToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.NuevoToolStripMenuItem.Name = "NuevoToolStripMenuItem"
-        Me.NuevoToolStripMenuItem.Size = New System.Drawing.Size(196, 38)
+        Me.NuevoToolStripMenuItem.Size = New System.Drawing.Size(125, 38)
         Me.NuevoToolStripMenuItem.Text = "&Nuevo"
         '
         'EditarToolStripMenuItem
@@ -95,7 +95,7 @@ Partial Class MDIVendedor
         Me.EditarToolStripMenuItem.Image = Global.proyecto_integrador.My.Resources.Resources.listar
         Me.EditarToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.EditarToolStripMenuItem.Name = "EditarToolStripMenuItem"
-        Me.EditarToolStripMenuItem.Size = New System.Drawing.Size(196, 38)
+        Me.EditarToolStripMenuItem.Size = New System.Drawing.Size(125, 38)
         Me.EditarToolStripMenuItem.Text = "&Editar"
         '
         'ViewMenu
@@ -107,7 +107,7 @@ Partial Class MDIVendedor
         Me.ViewMenu.Margin = New System.Windows.Forms.Padding(0, 5, 0, 5)
         Me.ViewMenu.Name = "ViewMenu"
         Me.ViewMenu.Padding = New System.Windows.Forms.Padding(4, 10, 4, 0)
-        Me.ViewMenu.Size = New System.Drawing.Size(113, 46)
+        Me.ViewMenu.Size = New System.Drawing.Size(104, 46)
         Me.ViewMenu.Text = "  &Ventas"
         '
         'NuevoToolStripMenuItem1
@@ -137,7 +137,7 @@ Partial Class MDIVendedor
         Me.EditMenu.Margin = New System.Windows.Forms.Padding(0, 5, 0, 5)
         Me.EditMenu.Name = "EditMenu"
         Me.EditMenu.Padding = New System.Windows.Forms.Padding(4, 10, 4, 0)
-        Me.EditMenu.Size = New System.Drawing.Size(113, 46)
+        Me.EditMenu.Size = New System.Drawing.Size(104, 46)
         Me.EditMenu.Text = "  &Productos"
         '
         'ListarToolStripMenuItem
@@ -152,13 +152,14 @@ Partial Class MDIVendedor
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackgroundImage = Global.proyecto_integrador.My.Resources.Resources.cuadros_negros_734708
+        Me.BackgroundImage = Global.proyecto_integrador.My.Resources.Resources.logo11
         Me.ClientSize = New System.Drawing.Size(632, 453)
         Me.Controls.Add(Me.MenuStrip)
         Me.Controls.Add(Me.StatusStrip)
         Me.IsMdiContainer = True
         Me.Name = "MDIVendedor"
         Me.Text = "MDIVendedor"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.StatusStrip.ResumeLayout(False)
         Me.StatusStrip.PerformLayout()
         Me.MenuStrip.ResumeLayout(False)
