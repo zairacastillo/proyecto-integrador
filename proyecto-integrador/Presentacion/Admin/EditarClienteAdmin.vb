@@ -93,6 +93,7 @@ Public Class EditarClienteAdmin
             Dim colBoton As New System.Windows.Forms.DataGridViewButtonColumn
             colBoton.HeaderText = "Seleccionar"
             colBoton.Text = "Seleccionar"
+            colBoton.UseColumnTextForButtonValue = True
             DGV1.Columns.Add(colBoton)
         End If
 

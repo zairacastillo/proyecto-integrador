@@ -39,7 +39,7 @@
             End If
 
         Catch ex As Exception
-            MsgBox("Usuario incorrecto", MsgBoxStyle.DefaultButton2 + MsgBoxStyle.Critical, "error")
+            MsgBox("Usuario o Contraseña incorrecto", MsgBoxStyle.DefaultButton2 + MsgBoxStyle.Critical, "error")
             TBUsuario.Clear()
             TBContraseña.Clear()
         End Try

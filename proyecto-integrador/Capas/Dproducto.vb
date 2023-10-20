@@ -17,6 +17,20 @@
         Return False
     End Function
 
+    Public Sub GetProductoAll(ByVal grid As DataGridView)
+
+        Dim listaproducto = (From p In ctx.producto
+                             Order By p.Id_producto
+                             Select Codigo = p.Id_producto, Nombre = p.nombre_producto, CodCat = p.categoria.Id_categoria,
+                                    Categoria = p.categoria.descripcion_cat, Descrip = p.descripcion_producto, Precio = p.precio, Stock = p.stock, Estado = p.estado_producto).ToList
+
+        grid.DataSource = listaproducto
+
+        'grid.Columns(7).Visible = False
+
+    End Sub
+
+
     Function getAllproducto(ByRef dg As DataGridView) As Boolean
 
         dg.DataSource = Me.getAll()
@@ -127,37 +141,24 @@
     End Function
 
 
-    Function buscarProducto(Optional ByVal pidCategoria As Integer = 0, Optional ByVal pnombre As String = "", Optional ByVal pestado As String = "Activo") As List(Of producto)
+    Function buscarProducto(grid As DataGridView, Optional ByVal pidCategoria As Integer = 0, Optional ByVal pnombre As String = "", Optional ByVal pestado As String = "Activo")
         Dim lista
 
         If (pidCategoria > 0) Then
             lista = (From p In ctx.producto
                      Where p.Id_categoria = pidCategoria And p.nombre_producto.Contains(pnombre) And p.estado_producto = pestado
-                     Select p).ToList
+                     Select Codigo = p.Id_producto, Nombre = p.nombre_producto, CodCat = p.categoria.Id_categoria,
+                                    Categoria = p.categoria.descripcion_cat, Descrip = p.descripcion_producto, Precio = p.precio, Stock = p.stock, Estado = p.estado_producto).ToList
         Else
             lista = (From p In ctx.producto
                      Where p.nombre_producto.Contains(pnombre) And p.estado_producto = pestado
-                     Select p).ToList
+                     Select Codigo = p.Id_producto, Nombre = p.nombre_producto, CodCat = p.categoria.Id_categoria,
+                                    Categoria = p.categoria.descripcion_cat, Descrip = p.descripcion_producto, Precio = p.precio, Stock = p.stock, Estado = p.estado_producto).ToList
         End If
 
-        Dim listaproducto = New List(Of producto)
 
-        For Each valor In lista
-
-            Dim item As producto = New producto
-
-            item.Id_producto = valor.Id_producto
-            item.nombre_producto = valor.nombre_producto
-            item.estado_producto = valor.estado_producto
-            item.precio = valor.precio
-            item.stock = valor.stock
-            item.Id_categoria = valor.Id_categoria
-            item.descripcion_producto = valor.descripcion_producto
-            item.categoria = valor.categoria
-            listaproducto.Add(item)
-
-        Next
-        Return listaproducto
+        grid.DataSource = lista
+        Return False
     End Function
     '
     Public Function Modificar(ByVal oproducto As producto)

@@ -22,6 +22,49 @@
 
     End Function
 
+    Public Sub GetEmpleadoAll(ByVal grid As DataGridView)
+
+        Dim listaEmpleados = (From p In ctx.empleado
+                              Order By p.Id_empleado
+                              Select Dni = p.dni_empleado, Nombre = p.nombre_empleado, Apellido = p.apellido_empleado, Dirección = p.direccion_empleado,
+                                      FechaIngreso = p.fecha_empleado, Email = p.correo_empleado, Telefono = p.telefono_empleado, Estado = p.estado_empleado).ToList
+        grid.DataSource = listaEmpleados
+        'grid.Columns(11).Visible = False
+        ' grid.Columns(14).Visible = False
+
+    End Sub
+
+    Function getAllNombresEmpleados() As List(Of empleado)
+        Dim lista = (From p In ctx.empleado
+                     Order By p.Id_empleado
+                     Select p).ToList
+
+        Dim listaempleado = New List(Of empleado)
+
+        For Each valor In lista
+
+            Dim item As empleado = New empleado
+
+            item.Id_empleado = valor.Id_empleado
+            item.nombre_empleado = valor.nombre_empleado
+            item.apellido_empleado = valor.apellido_empleado + ", " + valor.nombre_empleado
+            item.dni_empleado = valor.dni_empleado
+            item.direccion_empleado = valor.direccion_empleado
+            item.correo_empleado = valor.correo_empleado
+            item.telefono_empleado = valor.telefono_empleado
+            item.direccion_empleado = valor.direccion_empleado
+            item.usuario = valor.usuario
+            item.contraseña = valor.contraseña
+            item.Id_perfil = valor.Id_perfil
+            item.fecha_empleado = valor.fecha_empleado
+            item.estado_empleado = valor.estado_empleado
+
+            listaempleado.Add(item)
+
+        Next
+        Return listaempleado
+    End Function
+
     Function getAll() As List(Of empleado)
         Dim lista = (From p In ctx.empleado
                      Order By p.Id_empleado

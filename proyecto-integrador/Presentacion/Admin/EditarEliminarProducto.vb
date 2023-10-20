@@ -35,12 +35,13 @@ Public Class EditarEliminarProducto
             Dim colBoton As New System.Windows.Forms.DataGridViewButtonColumn
             colBoton.HeaderText = "Seleccionar"
             colBoton.Text = "Seleccionar"
+            colBoton.UseColumnTextForButtonValue = True
             DGV1.Columns.Add(colBoton)
         End If
 
 
         'buscamos productos y llenamos la tabla
-        DGV1.DataSource = ObjProducto.buscarProducto(CBCategoria.SelectedValue, TBBuscar.Text.Trim, estado)
+        ObjProducto.buscarProducto(DGV1, CBCategoria.SelectedValue, TBBuscar.Text.Trim, estado)
 
         ' If Not DGV1.Columns.Contains("Categorias") Then
         '     Dim colCat As New System.Windows.Forms.DataGridViewTextBoxColumn
@@ -51,8 +52,8 @@ Public Class EditarEliminarProducto
         '
         '
         ' ObjProducto.llenarCategorias(DGV1)
-        DGV1.Columns(8).Visible = False
-        DGV1.Columns(9).Visible = False
+        'DGV1.Columns(8).Visible = False
+        'DGV1.Columns(9).Visible = False
     End Sub
 
 
@@ -81,7 +82,7 @@ Public Class EditarEliminarProducto
     End Sub
 
     Private Sub TBPrecio_TextChanged(sender As Object, e As KeyPressEventArgs) Handles TBPrecio.KeyPress
-        If Validar_numeros(e) Then
+        If Validar_precio(e) Then
             MessageBox.Show("Solo se admiten numeros", "Validacion de numeros", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
         End If
 
@@ -114,13 +115,13 @@ Public Class EditarEliminarProducto
                 Select Case bc.HeaderText
                     Case "Seleccionar" 'Nombre del boton / celda
 
-                        TBID.Text = DGV1.Rows(cell.RowIndex).Cells(1).Value
-                        TBNombre.Text = DGV1.Rows(cell.RowIndex).Cells(2).Value
-                        CBEstado.Text = DGV1.Rows(cell.RowIndex).Cells(3).Value
-                        TBPrecio.Text = DGV1.Rows(cell.RowIndex).Cells(4).Value
-                        TBStock.Text = DGV1.Rows(cell.RowIndex).Cells(5).Value
-                        TBDescripcion.Text = DGV1.Rows(cell.RowIndex).Cells(7).Value
-                        CBCateg.SelectedValue = DGV1.Rows(cell.RowIndex).Cells(6).Value
+                        TBID.Text = DGV1.Rows(cell.RowIndex).Cells("Codigo").Value
+                        TBNombre.Text = DGV1.Rows(cell.RowIndex).Cells("Nombre").Value
+                        CBEstado.Text = DGV1.Rows(cell.RowIndex).Cells("Estado").Value
+                        TBPrecio.Text = Decimal.Parse(DGV1.Rows(cell.RowIndex).Cells("Precio").Value)
+                        TBStock.Text = DGV1.Rows(cell.RowIndex).Cells("Stock").Value
+                        TBDescripcion.Text = DGV1.Rows(cell.RowIndex).Cells("Descrip").Value
+                        CBCateg.SelectedValue = DGV1.Rows(cell.RowIndex).Cells("CodCat").Value
 
                         BEditar.Enabled = True
 
@@ -138,6 +139,9 @@ Public Class EditarEliminarProducto
     Private Sub CBCategoria_SelectedIndexChanged(sender As Object, e As KeyPressEventArgs) Handles CBCategoria.KeyPress
         e.Handled = True
     End Sub
+    Private Sub CBCateg_SelectedIndexChanged(sender As Object, e As KeyPressEventArgs) Handles CBCateg.KeyPress
+        e.Handled = True
+    End Sub
 
     Private Sub BActivarElim_Click(sender As Object, e As EventArgs) Handles BAEstado.Click
         'intercambia la variable estado entre activo/inactivo
@@ -153,7 +157,7 @@ Public Class EditarEliminarProducto
     End Sub
 
     Private Sub BBuscarNombre_Click(sender As Object, e As EventArgs) Handles BBuscarNombre.Click
-        DGV1.DataSource = ObjProducto.buscarProducto(CBCategoria.SelectedValue, TBBuscar.Text.Trim, estado)
+        ObjProducto.buscarProducto(DGV1, CBCategoria.SelectedValue, TBBuscar.Text.Trim, estado)
     End Sub
 
     Private Sub BEditar_Click(sender As Object, e As EventArgs) Handles BEditar.Click
@@ -190,7 +194,7 @@ Public Class EditarEliminarProducto
                     MsgBox("Los datos se guardaron correctamente", Title:="Confirmar Inserción")
                     'Reseteamos Form
                     'BCancelar_Click(sender, e)
-                    DGV1.DataSource = ObjProducto.getAll()
+                    ObjProducto.buscarProducto(DGV1, CBCategoria.SelectedValue, TBBuscar.Text.Trim, estado)
 
                 Else
                     MsgBox("ERROR: Los datos NO se guardaron correctamente", Title:="ERROR Inserción")
@@ -199,4 +203,5 @@ Public Class EditarEliminarProducto
             End If
         End If
     End Sub
+
 End Class

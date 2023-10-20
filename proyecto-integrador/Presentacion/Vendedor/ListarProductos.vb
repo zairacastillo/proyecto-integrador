@@ -45,13 +45,15 @@ Public Class ListarProductos
             Dim colBoton As New System.Windows.Forms.DataGridViewButtonColumn
             colBoton.HeaderText = "Seleccionar"
             colBoton.Text = "Seleccionar"
+            colBoton.Name = "Seleccionar"
+            colBoton.UseColumnTextForButtonValue = True
             DGV1.Columns.Add(colBoton)
         End If
 
         'buscamos clientes y llenamos la tabla
-        DGV1.DataSource = ObjProducto.buscarProducto(CBCategoria.SelectedValue, TBBuscar.Text.Trim, estado)
-        DGV1.Columns(8).Visible = False
-        DGV1.Columns(9).Visible = False
+        ObjProducto.buscarProducto(DGV1, CBCategoria.SelectedValue, TBBuscar.Text.Trim, estado)
+        'DGV1.Columns(8).Visible = False
+        'DGV1.Columns(9).Visible = False
     End Sub
 
 
@@ -101,13 +103,13 @@ Public Class ListarProductos
                 Select Case bc.HeaderText
                     Case "Seleccionar" 'Nombre del boton / celda
 
-                        TBID.Text = DGV1.Rows(cell.RowIndex).Cells(1).Value
-                        TBNombre.Text = DGV1.Rows(cell.RowIndex).Cells(2).Value
-                        CBEstado.Text = DGV1.Rows(cell.RowIndex).Cells(3).Value
-                        TBPrecio.Text = DGV1.Rows(cell.RowIndex).Cells(4).Value
-                        TBStock.Text = DGV1.Rows(cell.RowIndex).Cells(5).Value
-                        TBDescripcion.Text = DGV1.Rows(cell.RowIndex).Cells(6).Value
-                        CBCateg.SelectedValue = DGV1.Rows(cell.RowIndex).Cells("Id_categoria").Value
+                        TBID.Text = DGV1.Rows(cell.RowIndex).Cells("Codigo").Value
+                        TBNombre.Text = DGV1.Rows(cell.RowIndex).Cells("Nombre").Value
+                        CBEstado.Text = DGV1.Rows(cell.RowIndex).Cells("Estado").Value
+                        TBPrecio.Text = DGV1.Rows(cell.RowIndex).Cells("Precio").Value
+                        TBStock.Text = DGV1.Rows(cell.RowIndex).Cells("Stock").Value
+                        TBDescripcion.Text = DGV1.Rows(cell.RowIndex).Cells("Descrip").Value
+                        CBCateg.SelectedValue = DGV1.Rows(cell.RowIndex).Cells("CodCat").Value
 
                         BAgregarVenta.Enabled = mostrarBAgregarVenta
                         BAgregarVenta.Visible = mostrarBAgregarVenta
@@ -129,7 +131,7 @@ Public Class ListarProductos
 
 
     Private Sub BBuscarNombre_Click(sender As Object, e As EventArgs) Handles BBuscarNombre.Click
-        DGV1.DataSource = ObjProducto.buscarProducto(CBCategoria.SelectedValue, TBBuscar.Text.Trim, estado)
+        ObjProducto.buscarProducto(DGV1, CBCategoria.SelectedValue, TBBuscar.Text.Trim, estado)
     End Sub
 
     Public Sub BAgregarVenta_Click(sender As Object, e As EventArgs) Handles BAgregarVenta.Click

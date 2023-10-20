@@ -114,13 +114,16 @@
     End Sub
 
     Private Sub CrearFilaProd()
+        Dim btnCancel = New DataGridViewButtonCell
+        btnCancel.Value = "Cancelar"
+
         Dim numRow As Integer = DGV1.Rows.Add()
         DGV1.Rows(numRow).Cells(0).Value = OProducto.Id_producto
         DGV1.Rows(numRow).Cells(1).Value = OProducto.nombre_producto
         DGV1.Rows(numRow).Cells(2).Value = OProducto.precio
         DGV1.Rows(numRow).Cells(3).Value = TBCantidad.Text.Trim
         DGV1.Rows(numRow).Cells(4).Value = Decimal.Parse(OProducto.precio) * Decimal.Parse(TBCantidad.Text.Trim)
-        DGV1.Rows(numRow).Cells(5).Value = "Cancelar" 'boton cancelar
+        DGV1.Rows(numRow).Cells(5) = btnCancel 'boton cancelar
 
     End Sub
 
@@ -169,8 +172,8 @@
         Return -1
     End Function
 
-    Private Function actualizarTotalPrecio() As Integer
-        Dim precio = 0
+    Private Function actualizarTotalPrecio() As Decimal
+        Dim precio = 0.0
         For Each fila In DGV1.Rows
             precio = precio + fila.Cells(4).Value
         Next
@@ -222,5 +225,24 @@
 
     Private Sub NuevaVenta_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+    End Sub
+
+    Private Sub DGV1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGV1.CellContentClick
+        Dim cell As DataGridViewButtonCell = TryCast(DGV1.CurrentCell, DataGridViewButtonCell)
+
+        'si la celda no es vacia
+        If cell IsNot Nothing Then
+
+            DGV1.Rows.RemoveAt(cell.RowIndex)
+            DGV1.Refresh()
+
+        End If
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        TBProducto.Clear()
+        TBStock.Clear()
+        TBCantidad.Clear()
+        TBUnitario.Clear()
     End Sub
 End Class

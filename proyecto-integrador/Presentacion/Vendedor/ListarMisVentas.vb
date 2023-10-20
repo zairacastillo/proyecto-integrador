@@ -55,4 +55,6 @@
 
         det.mostrarDetalle(id, DVGDetalleFac)
     End Sub
+
+
 End Class

@@ -17,16 +17,8 @@ Public Class NuevoProducto
         CBCategoria.ValueMember = "Id_categoria"
         CBCategoria.SelectedValue = 0
 
-        If Not DGV1.Columns.Contains("Categorias") Then
-            Dim colCat As New System.Windows.Forms.DataGridViewTextBoxColumn
-            colCat.HeaderText = "Categorias"
-            colCat.Name = "Categorias"
-            DGV1.Columns.Add(colCat)
-        End If
 
-
-
-        ObjProducto.getAllproducto(DGV1)
+        ObjProducto.GetProductoAll(DGV1)
         '  establecemos altura de las filas
         '  DGV1.RowTemplate.Height = 50
     End Sub
@@ -87,7 +79,7 @@ Public Class NuevoProducto
 
             End If
         End If
-        ObjProducto.getAllproducto(DGV1)
+        ObjProducto.GetProductoAll(DGV1)
 
 
     End Sub
