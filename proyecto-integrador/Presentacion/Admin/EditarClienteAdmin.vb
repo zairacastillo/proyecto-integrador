@@ -43,7 +43,7 @@ Public Class EditarClienteAdmin
             'Mensaje
             MsgBox(msjTxt, MsgBoxStyle.Critical, Title:="Error")
         Else
-            Dim ask = MsgBox("¿Seguro que desea Guardar el Cliente?", MsgBoxStyle.YesNo, Title:="Confirmar Inserción")
+            Dim ask = MsgBox("¿Seguro que desea Guardar los cambios a Cliente?", MsgBoxStyle.YesNo, Title:="Confirmar Inserción")
             If ask = vbYes Then
                 'guardar
 

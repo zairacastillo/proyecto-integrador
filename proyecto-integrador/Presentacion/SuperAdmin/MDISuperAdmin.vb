@@ -3,16 +3,22 @@
 Public Class MDISuperAdmin
 
     Dim vendedor As empleado
+    Dim OEmpleado As empleado = New empleado
 
-    Public Sub New(pvendedor As empleado)
+    Public Sub New(pempleado As empleado)
+
         ' Esta llamada es exigida por el diseñador.
         InitializeComponent()
 
         ' Agregue cualquier inicialización después de la llamada a InitializeComponent().
-        vendedor = pvendedor
+        OEmpleado = pempleado
+
+        LEmpleadoA.Text = OEmpleado.apellido_empleado
+        LEmpleadoN.Text = OEmpleado.nombre_empleado
     End Sub
 
     Public Sub New()
+
         ' Esta llamada es exigida por el diseñador.
         InitializeComponent()
 
@@ -33,13 +39,7 @@ Public Class MDISuperAdmin
     End Sub
 
     Private Sub OpenFile(ByVal sender As Object, ByVal e As EventArgs)
-        Dim OpenFileDialog As New OpenFileDialog
-        OpenFileDialog.InitialDirectory = My.Computer.FileSystem.SpecialDirectories.MyDocuments
-        OpenFileDialog.Filter = "Archivos de texto (*.txt)|*.txt|Todos los archivos (*.*)|*.*"
-        If (OpenFileDialog.ShowDialog(Me) = System.Windows.Forms.DialogResult.OK) Then
-            Dim FileName As String = OpenFileDialog.FileName
-            ' TODO: agregue código aquí para abrir el archivo.
-        End If
+
     End Sub
 
     Private Sub SaveAsToolStripMenuItem_Click(ByVal sender As Object, ByVal e As EventArgs)
@@ -134,6 +134,10 @@ Public Class MDISuperAdmin
     Private m_ChildFormNumber As Integer
 
     Private Sub MDISuperAdmin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
+
+    Private Sub MenuStrip_ItemClicked(sender As Object, e As ToolStripItemClickedEventArgs) Handles MenuStrip.ItemClicked
 
     End Sub
 End Class

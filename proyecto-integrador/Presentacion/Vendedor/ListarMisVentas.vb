@@ -56,5 +56,25 @@
         det.mostrarDetalle(id, DVGDetalleFac)
     End Sub
 
+    Private Sub DVGDetalleFac_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DVGDetalleFac.CellContentClick
 
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        If DVGDetalleFac.Rows.Count > 0 Then
+            Dim idVenta = DVGDetalleFac.Rows(0).Cells(0).Value
+            Dim impVenta As New ImprimirVenta(idVenta)
+            impVenta.MdiParent = Me.MdiParent
+            impVenta.Show()
+            wait(1)
+            impVenta.imprimir()
+        End If
+    End Sub
+
+    Private Sub wait(ByVal seconds As Integer)
+        For i As Integer = 0 To seconds * 100
+            System.Threading.Thread.Sleep(10)
+            Application.DoEvents()
+        Next
+    End Sub
 End Class

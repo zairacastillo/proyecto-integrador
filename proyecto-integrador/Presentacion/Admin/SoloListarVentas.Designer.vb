@@ -24,18 +24,7 @@ Partial Class SoloListarVentas
     Private Sub InitializeComponent()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.DVGDetalleFac = New System.Windows.Forms.DataGridView()
-        Me.Codigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Precio_Unitario = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Cantidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Subtotal = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DVentas = New System.Windows.Forms.DataGridView()
-        Me.ID_Factura = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DNI_Vendedor = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DNI_Cliente = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Fecha = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Total = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Ver_mas = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.LFechaH = New System.Windows.Forms.Label()
         Me.LFechaD = New System.Windows.Forms.Label()
@@ -52,7 +41,7 @@ Partial Class SoloListarVentas
         'Button2
         '
         Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button2.Location = New System.Drawing.Point(778, 591)
+        Me.Button2.Location = New System.Drawing.Point(778, 598)
         Me.Button2.Margin = New System.Windows.Forms.Padding(2)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(96, 32)
@@ -64,8 +53,8 @@ Partial Class SoloListarVentas
         '
         Me.DVGDetalleFac.AllowUserToAddRows = False
         Me.DVGDetalleFac.AllowUserToDeleteRows = False
+        Me.DVGDetalleFac.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DVGDetalleFac.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DVGDetalleFac.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Codigo, Me.Nombre, Me.Precio_Unitario, Me.Cantidad, Me.Subtotal})
         Me.DVGDetalleFac.Location = New System.Drawing.Point(78, 370)
         Me.DVGDetalleFac.Margin = New System.Windows.Forms.Padding(2)
         Me.DVGDetalleFac.Name = "DVGDetalleFac"
@@ -75,42 +64,12 @@ Partial Class SoloListarVentas
         Me.DVGDetalleFac.Size = New System.Drawing.Size(796, 209)
         Me.DVGDetalleFac.TabIndex = 112
         '
-        'Codigo
-        '
-        Me.Codigo.HeaderText = "Codigo"
-        Me.Codigo.Name = "Codigo"
-        Me.Codigo.ReadOnly = True
-        '
-        'Nombre
-        '
-        Me.Nombre.HeaderText = "Nombre"
-        Me.Nombre.Name = "Nombre"
-        Me.Nombre.ReadOnly = True
-        '
-        'Precio_Unitario
-        '
-        Me.Precio_Unitario.HeaderText = "Precio_Unitario"
-        Me.Precio_Unitario.Name = "Precio_Unitario"
-        Me.Precio_Unitario.ReadOnly = True
-        '
-        'Cantidad
-        '
-        Me.Cantidad.HeaderText = "Cantidad"
-        Me.Cantidad.Name = "Cantidad"
-        Me.Cantidad.ReadOnly = True
-        '
-        'Subtotal
-        '
-        Me.Subtotal.HeaderText = "Subtotal"
-        Me.Subtotal.Name = "Subtotal"
-        Me.Subtotal.ReadOnly = True
-        '
         'DVentas
         '
         Me.DVentas.AllowUserToAddRows = False
         Me.DVentas.AllowUserToDeleteRows = False
+        Me.DVentas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DVentas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DVentas.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ID_Factura, Me.DNI_Vendedor, Me.DNI_Cliente, Me.Fecha, Me.Total, Me.Ver_mas})
         Me.DVentas.Location = New System.Drawing.Point(78, 157)
         Me.DVentas.Margin = New System.Windows.Forms.Padding(2)
         Me.DVentas.Name = "DVentas"
@@ -119,42 +78,6 @@ Partial Class SoloListarVentas
         Me.DVentas.RowTemplate.Height = 24
         Me.DVentas.Size = New System.Drawing.Size(796, 209)
         Me.DVentas.TabIndex = 111
-        '
-        'ID_Factura
-        '
-        Me.ID_Factura.HeaderText = "ID_Factura"
-        Me.ID_Factura.Name = "ID_Factura"
-        Me.ID_Factura.ReadOnly = True
-        '
-        'DNI_Vendedor
-        '
-        Me.DNI_Vendedor.HeaderText = "DNI_Vendedor"
-        Me.DNI_Vendedor.Name = "DNI_Vendedor"
-        Me.DNI_Vendedor.ReadOnly = True
-        '
-        'DNI_Cliente
-        '
-        Me.DNI_Cliente.HeaderText = "DNI_Cliente"
-        Me.DNI_Cliente.Name = "DNI_Cliente"
-        Me.DNI_Cliente.ReadOnly = True
-        '
-        'Fecha
-        '
-        Me.Fecha.HeaderText = "Fecha"
-        Me.Fecha.Name = "Fecha"
-        Me.Fecha.ReadOnly = True
-        '
-        'Total
-        '
-        Me.Total.HeaderText = "Total"
-        Me.Total.Name = "Total"
-        Me.Total.ReadOnly = True
-        '
-        'Ver_mas
-        '
-        Me.Ver_mas.HeaderText = "Ver_mas"
-        Me.Ver_mas.Name = "Ver_mas"
-        Me.Ver_mas.ReadOnly = True
         '
         'Button1
         '
@@ -277,18 +200,7 @@ Partial Class SoloListarVentas
 
     Friend WithEvents Button2 As Button
     Friend WithEvents DVGDetalleFac As DataGridView
-    Friend WithEvents Codigo As DataGridViewTextBoxColumn
-    Friend WithEvents Nombre As DataGridViewTextBoxColumn
-    Friend WithEvents Precio_Unitario As DataGridViewTextBoxColumn
-    Friend WithEvents Cantidad As DataGridViewTextBoxColumn
-    Friend WithEvents Subtotal As DataGridViewTextBoxColumn
     Friend WithEvents DVentas As DataGridView
-    Friend WithEvents ID_Factura As DataGridViewTextBoxColumn
-    Friend WithEvents DNI_Vendedor As DataGridViewTextBoxColumn
-    Friend WithEvents DNI_Cliente As DataGridViewTextBoxColumn
-    Friend WithEvents Fecha As DataGridViewTextBoxColumn
-    Friend WithEvents Total As DataGridViewTextBoxColumn
-    Friend WithEvents Ver_mas As DataGridViewTextBoxColumn
     Friend WithEvents Button1 As Button
     Friend WithEvents LFechaH As Label
     Friend WithEvents LFechaD As Label

@@ -23,19 +23,9 @@ Partial Class SoloListarEmpleados
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.DGV1 = New System.Windows.Forms.DataGridView()
-        Me.Nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Apellido = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DNI = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Telefono = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Correo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Usuario = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Perfil = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.BBuscarA = New System.Windows.Forms.Button()
-        Me.LCorreo = New System.Windows.Forms.Label()
-        Me.LCliente = New System.Windows.Forms.Label()
-        Me.TBApellido = New System.Windows.Forms.TextBox()
-        Me.TBUsuario = New System.Windows.Forms.TextBox()
-        Me.BBuscarU = New System.Windows.Forms.Button()
+        Me.BBuscar = New System.Windows.Forms.Button()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.TBBuscarApellido = New System.Windows.Forms.TextBox()
         CType(Me.DGV1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -46,103 +36,39 @@ Partial Class SoloListarEmpleados
         Me.DGV1.AllowUserToOrderColumns = True
         Me.DGV1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DGV1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DGV1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Nombre, Me.Apellido, Me.DNI, Me.Telefono, Me.Correo, Me.Usuario, Me.Perfil})
         Me.DGV1.Location = New System.Drawing.Point(16, 278)
         Me.DGV1.Name = "DGV1"
         Me.DGV1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders
         Me.DGV1.Size = New System.Drawing.Size(932, 306)
         Me.DGV1.TabIndex = 33
         '
-        'Nombre
+        'BBuscar
         '
-        Me.Nombre.HeaderText = "Nombre"
-        Me.Nombre.Name = "Nombre"
+        Me.BBuscar.Location = New System.Drawing.Point(689, 135)
+        Me.BBuscar.Name = "BBuscar"
+        Me.BBuscar.Size = New System.Drawing.Size(75, 23)
+        Me.BBuscar.TabIndex = 39
+        Me.BBuscar.Text = "Buscar"
+        Me.BBuscar.UseVisualStyleBackColor = True
         '
-        'Apellido
+        'Label4
         '
-        Me.Apellido.HeaderText = "Apellido"
-        Me.Apellido.Name = "Apellido"
+        Me.Label4.AutoSize = True
+        Me.Label4.BackColor = System.Drawing.Color.Transparent
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.ForeColor = System.Drawing.Color.White
+        Me.Label4.Location = New System.Drawing.Point(237, 138)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(219, 20)
+        Me.Label4.TabIndex = 38
+        Me.Label4.Text = "Buscar Empleado Apellido"
         '
-        'DNI
+        'TBBuscarApellido
         '
-        Me.DNI.HeaderText = "DNI"
-        Me.DNI.Name = "DNI"
-        '
-        'Telefono
-        '
-        Me.Telefono.HeaderText = "Telefono"
-        Me.Telefono.Name = "Telefono"
-        '
-        'Correo
-        '
-        Me.Correo.HeaderText = "Correo"
-        Me.Correo.Name = "Correo"
-        '
-        'Usuario
-        '
-        Me.Usuario.HeaderText = "Usuario"
-        Me.Usuario.Name = "Usuario"
-        '
-        'Perfil
-        '
-        Me.Perfil.HeaderText = "Perfil"
-        Me.Perfil.Name = "Perfil"
-        '
-        'BBuscarA
-        '
-        Me.BBuscarA.Location = New System.Drawing.Point(403, 123)
-        Me.BBuscarA.Name = "BBuscarA"
-        Me.BBuscarA.Size = New System.Drawing.Size(65, 30)
-        Me.BBuscarA.TabIndex = 32
-        Me.BBuscarA.Text = "Buscar"
-        Me.BBuscarA.UseVisualStyleBackColor = True
-        '
-        'LCorreo
-        '
-        Me.LCorreo.AutoSize = True
-        Me.LCorreo.BackColor = System.Drawing.Color.Transparent
-        Me.LCorreo.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LCorreo.ForeColor = System.Drawing.Color.White
-        Me.LCorreo.Location = New System.Drawing.Point(499, 123)
-        Me.LCorreo.Name = "LCorreo"
-        Me.LCorreo.Size = New System.Drawing.Size(202, 25)
-        Me.LCorreo.TabIndex = 31
-        Me.LCorreo.Text = "Buscar por Usuario:"
-        '
-        'LCliente
-        '
-        Me.LCliente.AutoSize = True
-        Me.LCliente.BackColor = System.Drawing.Color.Transparent
-        Me.LCliente.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LCliente.ForeColor = System.Drawing.Color.White
-        Me.LCliente.Location = New System.Drawing.Point(21, 122)
-        Me.LCliente.Name = "LCliente"
-        Me.LCliente.Size = New System.Drawing.Size(205, 25)
-        Me.LCliente.TabIndex = 30
-        Me.LCliente.Text = "Buscar por Apellido:"
-        '
-        'TBApellido
-        '
-        Me.TBApellido.Location = New System.Drawing.Point(230, 127)
-        Me.TBApellido.Name = "TBApellido"
-        Me.TBApellido.Size = New System.Drawing.Size(169, 20)
-        Me.TBApellido.TabIndex = 29
-        '
-        'TBUsuario
-        '
-        Me.TBUsuario.Location = New System.Drawing.Point(693, 128)
-        Me.TBUsuario.Name = "TBUsuario"
-        Me.TBUsuario.Size = New System.Drawing.Size(169, 20)
-        Me.TBUsuario.TabIndex = 34
-        '
-        'BBuscarU
-        '
-        Me.BBuscarU.Location = New System.Drawing.Point(868, 123)
-        Me.BBuscarU.Name = "BBuscarU"
-        Me.BBuscarU.Size = New System.Drawing.Size(65, 30)
-        Me.BBuscarU.TabIndex = 35
-        Me.BBuscarU.Text = "Buscar"
-        Me.BBuscarU.UseVisualStyleBackColor = True
+        Me.TBBuscarApellido.Location = New System.Drawing.Point(462, 138)
+        Me.TBBuscarApellido.Name = "TBBuscarApellido"
+        Me.TBBuscarApellido.Size = New System.Drawing.Size(182, 20)
+        Me.TBBuscarApellido.TabIndex = 37
         '
         'SoloListarEmpleados
         '
@@ -150,13 +76,10 @@ Partial Class SoloListarEmpleados
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(12, Byte), Integer), CType(CType(12, Byte), Integer), CType(CType(30, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(976, 650)
-        Me.Controls.Add(Me.BBuscarU)
-        Me.Controls.Add(Me.TBUsuario)
+        Me.Controls.Add(Me.BBuscar)
+        Me.Controls.Add(Me.Label4)
+        Me.Controls.Add(Me.TBBuscarApellido)
         Me.Controls.Add(Me.DGV1)
-        Me.Controls.Add(Me.BBuscarA)
-        Me.Controls.Add(Me.LCorreo)
-        Me.Controls.Add(Me.LCliente)
-        Me.Controls.Add(Me.TBApellido)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "SoloListarEmpleados"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
@@ -168,17 +91,7 @@ Partial Class SoloListarEmpleados
     End Sub
 
     Friend WithEvents DGV1 As DataGridView
-    Friend WithEvents BBuscarA As Button
-    Friend WithEvents LCorreo As Label
-    Friend WithEvents LCliente As Label
-    Friend WithEvents TBApellido As TextBox
-    Friend WithEvents TBUsuario As TextBox
-    Friend WithEvents Nombre As DataGridViewTextBoxColumn
-    Friend WithEvents Apellido As DataGridViewTextBoxColumn
-    Friend WithEvents DNI As DataGridViewTextBoxColumn
-    Friend WithEvents Telefono As DataGridViewTextBoxColumn
-    Friend WithEvents Correo As DataGridViewTextBoxColumn
-    Friend WithEvents Usuario As DataGridViewTextBoxColumn
-    Friend WithEvents Perfil As DataGridViewTextBoxColumn
-    Friend WithEvents BBuscarU As Button
+    Friend WithEvents BBuscar As Button
+    Friend WithEvents Label4 As Label
+    Friend WithEvents TBBuscarApellido As TextBox
 End Class

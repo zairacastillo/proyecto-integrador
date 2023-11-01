@@ -182,6 +182,24 @@
             Return False
         End Try
     End Function
+
+    'Actualiza el stock con la cantidad recibida como parametro
+    Public Function ActualizarStock(ByVal id_inst As Integer, ByVal p_cantidad As Integer)
+        Try
+            Using ctx As New CLUBMENEntities
+                Dim producto = (From q In ctx.producto Where q.Id_producto = id_inst Select q).First
+
+                Dim nuevo = producto.stock - p_cantidad
+                producto.stock = nuevo
+                ctx.SaveChanges()
+                Return True
+            End Using
+        Catch Ex As Exception
+            Return False
+        End Try
+    End Function
+
+
     '
     '
     '

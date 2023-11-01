@@ -4,16 +4,22 @@ Public Class MDIAdmin
 
 
     Dim vendedor As empleado
+    Dim OEmpleado As empleado = New empleado
 
-    Public Sub New(pvendedor As empleado)
+    Public Sub New(pempleado As empleado)
+
         ' Esta llamada es exigida por el diseñador.
         InitializeComponent()
 
         ' Agregue cualquier inicialización después de la llamada a InitializeComponent().
-        vendedor = pvendedor
+        OEmpleado = pempleado
+
+        LEmpleadoA.Text = OEmpleado.apellido_empleado
+        LEmpleadoN.Text = OEmpleado.nombre_empleado
     End Sub
 
     Public Sub New()
+
         ' Esta llamada es exigida por el diseñador.
         InitializeComponent()
 
@@ -196,4 +202,6 @@ Public Class MDIAdmin
 
         ChildForm.Show()
     End Sub
+
+
 End Class

@@ -335,7 +335,6 @@ Partial Class EditarEliminarProducto
         Me.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Editar/eliminar Producto"
-        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.PanelPrincipal.ResumeLayout(False)
         Me.PanelPrincipal.PerformLayout()
         CType(Me.DGV1, System.ComponentModel.ISupportInitialize).EndInit()

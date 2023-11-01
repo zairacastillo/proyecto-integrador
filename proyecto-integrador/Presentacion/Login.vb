@@ -36,11 +36,13 @@
                 mdi.Show()
                 TBUsuario.Clear()
                 TBContraseña.Clear()
+            Else
+                MsgBox("Usuario o Contraseña incorrecto", MsgBoxStyle.DefaultButton2 + MsgBoxStyle.Critical, "error")
+                TBContraseña.Clear()
             End If
 
         Catch ex As Exception
             MsgBox("Usuario o Contraseña incorrecto", MsgBoxStyle.DefaultButton2 + MsgBoxStyle.Critical, "error")
-            TBUsuario.Clear()
             TBContraseña.Clear()
         End Try
 

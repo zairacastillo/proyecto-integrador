@@ -46,9 +46,9 @@
                 If objMostrar.Count <> 0 Then
                     grid.DataSource = objMostrar
 
-                    'grid.Columns(1).Visible = False
-                    'grid.Columns(4).Visible = False
-                    'grid.Columns(5).Visible = False
+                    grid.Columns("Idemp").Visible = False
+                    grid.Columns("idCli").Visible = False
+                    grid.Columns("IdVend").Visible = False
                     'grid.Columns(10).Visible = False
                 Else
                     grid.DataSource = Nothing
@@ -72,10 +72,14 @@
                 If objMostrar.Count <> 0 Then
                     grid.DataSource = objMostrar
 
-                    grid.Columns(1).Visible = False
-                    grid.Columns(4).Visible = False
-                    grid.Columns(5).Visible = False
-                    grid.Columns(10).Visible = False
+                    grid.Columns("Idemp").Visible = False
+                    grid.Columns("idCli").Visible = False
+                    grid.Columns("IdVend").Visible = False
+
+                    'grid.Columns(1).Visible = False
+                    'grid.Columns(4).Visible = False
+                    'grid.Columns(5).Visible = False
+                    'grid.Columns(10).Visible = False
                 Else
                     grid.DataSource = Nothing
                 End If
@@ -100,10 +104,14 @@
                 If objMostrar.Count <> 0 Then
                     grid.DataSource = objMostrar
 
-                    grid.Columns(1).Visible = False
-                    grid.Columns(4).Visible = False
-                    grid.Columns(5).Visible = False
-                    grid.Columns(10).Visible = False
+
+                    grid.Columns("Idemp").Visible = False
+                    grid.Columns("idCli").Visible = False
+                    grid.Columns("IdVend").Visible = False
+                    '                    grid.Columns(1).Visible = False
+                    '                   grid.Columns(4).Visible = False
+                    '                  grid.Columns(5).Visible = False
+                    '                 grid.Columns(10).Visible = False
                 Else
                     grid.DataSource = Nothing
                 End If
@@ -113,6 +121,24 @@
             Return False
         End Try
     End Function
+
+    Public Function GetVentaPorId(ByVal p_id As Integer)
+        Try
+            Using ctx
+                Dim venta = (From f In ctx.venta
+                             Join c In ctx.cliente On f.Id_cliente Equals c.Id_cliente
+                             Join e In ctx.empleado On f.empleado.Id_empleado Equals e.Id_empleado
+                             Where f.Id_venta = p_id
+                             Select Nro_factura = f.Id_venta, Idemp = f.empleado.dni_empleado, nombreVendedor = e.nombre_empleado, apellidoVendedor = e.apellido_empleado,
+                                      IdVend = f.empleado.Id_empleado, idCli = f.Id_cliente, nombreCliente = c.nombre_cliente, apellidoCliente = c.apellido_cliente,
+                                      fecha_de_factura = f.fecha, Total = f.total).First
+                Return venta
+            End Using
+        Catch ex As Exception
+            Return False
+        End Try
+    End Function
+
 
     '  Function getAll() As List(Of venta)
     '      Dim lista = (From p In ctx.venta

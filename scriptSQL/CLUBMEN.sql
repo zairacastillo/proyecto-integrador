@@ -72,9 +72,9 @@ CREATE TABLE [dbo].[cliente] (
     [Id_cliente] int IDENTITY(1,1) NOT NULL,
     [nombre_cliente] nvarchar(50)  NOT NULL,
     [apellido_cliente] nvarchar(50)  NOT NULL,
-    [dni_cliente] int  NOT NULL,
-    [correo_cliente] nvarchar(50)  NOT NULL,
-    [telefono_cliente] int  NOT NULL,
+    [dni_cliente] int  UNIQUE NOT NULL,
+    [correo_cliente] nvarchar (50) UNIQUE  NOT NULL,
+    [telefono_cliente] INT UNIQUE  NOT NULL,
     [direccion_cliente] nvarchar(50)  NOT NULL,
     [fecha_cliente] datetime  NOT NULL,
     [estado_cliente] nvarchar(50)  NOT NULL
@@ -85,9 +85,9 @@ GO
 CREATE TABLE [dbo].[detalle_venta] (
     [Id_detalle_venta] int IDENTITY(1,1) NOT NULL,
     [Id_producto] int  NOT NULL,
-    [precio_unitario] decimal(18,0)  NOT NULL,
+    [precio_unitario] decimal(18,2)  NOT NULL,
     [cantidad] int  NOT NULL,
-    [subtotal] decimal(18,0)  NOT NULL,
+    [subtotal] decimal(18,2)  NOT NULL,
 	[Id_venta] int NOT NULL,
 );
 GO
@@ -97,12 +97,12 @@ CREATE TABLE [dbo].[empleado] (
     [Id_empleado] int IDENTITY(1,1) NOT NULL,
     [nombre_empleado] nvarchar(50)  NOT NULL,
     [apellido_empleado] nvarchar(50)  NOT NULL,
-    [dni_empleado] int  NOT NULL,
-    [correo_empleado] nvarchar(50)  NOT NULL,
-    [telefono_empleado] int  NOT NULL,
+    [dni_empleado] int  UNIQUE NOT NULL,
+    [correo_empleado] nvarchar(50)  UNIQUE NOT NULL,
+    [telefono_empleado] INT  UNIQUE NOT NULL,
     [direccion_empleado] nvarchar(50)  NOT NULL,
     [usuario] nvarchar(50)  NOT NULL,
-    [contraseña] nvarchar(50)  NOT NULL,
+    [contraseña] nvarchar(200)  NOT NULL,
     [Id_perfil] int  NOT NULL,
     [fecha_empleado] datetime  NOT NULL,
     [estado_empleado] nvarchar(50)  NOT NULL
@@ -121,7 +121,7 @@ CREATE TABLE [dbo].[producto] (
     [Id_producto] int IDENTITY(1,1) NOT NULL,
     [nombre_producto] nvarchar(50)  NOT NULL,
     [estado_producto] nvarchar(50)  NOT NULL,
-    [precio] decimal(18,0)  NOT NULL,
+    [precio] decimal(18,2)  NOT NULL,
     [stock] int  NOT NULL,
     [Id_categoria] int  NOT NULL, 
 	[descripcion_producto] nvarchar(100) NOT NULL,
@@ -134,7 +134,7 @@ CREATE TABLE [dbo].[venta] (
     [Id_empleado] int  NOT NULL,
     [Id_cliente] int  NOT NULL,
     [fecha] datetime  NOT NULL,
-    [total] decimal(18,0)  NOT NULL
+    [total] decimal(18,2)  NOT NULL
 );
 GO
 
@@ -281,7 +281,8 @@ GO
 insert into perfil values ('Vendedor')
 insert into perfil values ('Admin')
 insert into perfil values ('Super Admin')
-
+select * from empleado
+insert into empleado values('zaira','castillo',36831806,'zaira@gmail.com',432634,'uruguay 1500','zaira','12345678', 3, getdate(),'Activo')
 -- --------------------------------------------------
 -- Script has ended
 -- --------------------------------------------------

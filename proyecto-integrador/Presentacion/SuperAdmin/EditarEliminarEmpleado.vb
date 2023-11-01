@@ -37,17 +37,17 @@
    End Sub
 
 
-   Private Sub TBBuscarApellido_TextChanged(sender As Object, e As KeyPressEventArgs) Handles TBBuscarApellido.KeyPress
-       If Validar_letras(e) Then
-           MessageBox.Show("Solo se admiten letras", "Validación de letras", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
-       End If
-   End Sub
+    Private Sub TBBuscarApellido_TextChanged(sender As Object, e As KeyPressEventArgs) Handles TBBuscarApellido.KeyPress
+        If Validar_letras(e) Then
+            MessageBox.Show("Solo se admiten letras", "Validación de letras", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+        End If
+    End Sub
 
-   Private Sub TBBuscarDni_TextChanged(sender As Object, e As KeyPressEventArgs)
-       If Validar_numeros(e) Then
-           MessageBox.Show("Solo se admiten numeros", "Validación de numeros", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
-       End If
-   End Sub
+    Private Sub TBBuscarDni_TextChanged(sender As Object, e As KeyPressEventArgs)
+        If Validar_numeros(e) Then
+            MessageBox.Show("Solo se admiten numeros", "Validación de numeros", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+        End If
+    End Sub
 
     Private Sub EditarEliminarEmpleado_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         CBBuscaPerfil.DataSource = ObjPerfil.getAll()
@@ -78,28 +78,28 @@
 
         'buscamos empleados y llenamos la tabla
         DGV1.DataSource = ObjEmpleado.buscarEmpleado(CBBuscaPerfil.SelectedValue, TBBuscarApellido.Text.Trim, estado)
-        'DGV1.Columns(1).Visible = False
-        'DGV1.Columns(10).Visible = False
+        DGV1.Columns(13).Visible = False
+        DGV1.Columns(14).Visible = False
     End Sub
 
     Private Sub BEditar_Click(sender As Object, e As EventArgs) Handles BEditar.Click
-       Dim msjTxt As String = "Debe Completar todos los campos: "
+        Dim msjTxt As String = "Debe Completar todos los campos: "
 
-       ' lista de TB a verificar si estan vacios
-       Dim listaTB = {TBNombre, TBApellido, TBDni, TBCorreo, TBTel, TBDirec, TBUsuario, TBCont}
+        ' lista de TB a verificar si estan vacios
+        Dim listaTB = {TBNombre, TBApellido, TBDni, TBCorreo, TBTel, TBDirec, TBUsuario}
 
-       TBVacios(listaTB) ' devuelve true si algun TB esta vacio
+        TBVacios(listaTB) ' devuelve true si algun TB esta vacio
 
-       'si campos estan vacios o empiezan con espacio
-       If TBVacios(listaTB) Or Not validar_email(TBCorreo) Then
-           'Mensaje
-           MsgBox(msjTxt, MsgBoxStyle.Critical, Title:="Error")
-       Else
-           Dim ask = MsgBox("¿Seguro que desea Guardar el Empleado?", MsgBoxStyle.YesNo, Title:="Confirmar Inserción")
-           If ask = vbYes Then
-               'guardar
-               'define entidad empleado
-               Dim OEmpleado As New empleado
+        'si campos estan vacios o empiezan con espacio
+        If TBVacios(listaTB) Or Not validar_email(TBCorreo) Then
+            'Mensaje
+            MsgBox(msjTxt, MsgBoxStyle.Critical, Title:="Error")
+        Else
+            Dim ask = MsgBox("¿Seguro que desea Guardar el Empleado?", MsgBoxStyle.YesNo, Title:="Confirmar Inserción")
+            If ask = vbYes Then
+                'guardar
+                'define entidad empleado
+                Dim OEmpleado As New empleado
                 'cargamos de datos un registro empleado
                 OEmpleado.Id_empleado = TBID.Text.Trim
                 OEmpleado.nombre_empleado = TBNombre.Text.Trim
@@ -109,40 +109,47 @@
                 OEmpleado.telefono_empleado = TBTel.Text.Trim
                 OEmpleado.direccion_empleado = TBDirec.Text.Trim
                 OEmpleado.usuario = TBUsuario.Text.Trim
-                OEmpleado.contraseña = TBCont.Text.Trim
+                OEmpleado.contraseña = TBHash.Text.Trim
                 OEmpleado.Id_perfil = CBPerfil.SelectedValue
                 OEmpleado.estado_empleado = CBEstado.Text
+
+                If (TBNuevCont.Text IsNot "") AndAlso (TBActCont.Text IsNot "") AndAlso ObjEmpleado.verificarUsuario(TBUsuario.Text.Trim, TBActCont.Text.Trim).Id_perfil Then
+                    OEmpleado.contraseña = BCrypt.Net.BCrypt.HashPassword(TBNuevCont.Text.Trim)
+                End If
 
                 If Not ObjEmpleado.ExisteDNI(OEmpleado.dni_empleado, OEmpleado.Id_empleado) And Not ObjEmpleado.ExisteMail(OEmpleado.correo_empleado, OEmpleado.Id_empleado) And Not ObjEmpleado.ExisteUser(OEmpleado.usuario, OEmpleado.Id_empleado) AndAlso ObjEmpleado.Modificar(OEmpleado) Then
 
                     MsgBox("Los datos se guardaron correctamente", Title:="Confirmar Inserción")
                     'Reseteamos Form
                     BCancelar_Click(sender, e)
-                    DGV1.DataSource = ObjEmpleado.getAll()
+                    ObjEmpleado.getAllEmpleado(DGV1)
 
                 Else
                     MsgBox("ERROR: Los datos NO se guardaron correctamente", Title:="ERROR Inserción")
                 End If
 
             End If
-       End If
-   End Sub
+        End If
+    End Sub
 
-   Private Sub BCancelar_Click(sender As Object, e As EventArgs) Handles BCancelar.Click
-       TBID.Clear()
-       TBNombre.Clear()
-       TBApellido.Clear()
-       TBDni.Clear()
-       TBCorreo.Clear()
-       TBTel.Clear()
-       TBDirec.Clear()
-       CBPerfil.SelectedValue = 0
-       BEditar.Enabled = False
-   End Sub
+    Private Sub BCancelar_Click(sender As Object, e As EventArgs) Handles BCancelar.Click
+        TBID.Clear()
+        TBNombre.Clear()
+        TBApellido.Clear()
+        TBDni.Clear()
+        TBCorreo.Clear()
+        TBTel.Clear()
+        TBDirec.Clear()
+        TBUsuario.Clear()
+        TBNuevCont.Clear()
+        CBEstado.SelectedValue = 0
+        CBPerfil.SelectedValue = 0
+        BEditar.Enabled = False
+    End Sub
 
-   Private Sub CBPerfil_SelectedIndexChanged(sender As Object, e As KeyPressEventArgs) Handles CBPerfil.KeyPress
-       e.Handled = True
-   End Sub
+    Private Sub CBPerfil_SelectedIndexChanged(sender As Object, e As KeyPressEventArgs) Handles CBPerfil.KeyPress
+        e.Handled = True
+    End Sub
 
     Private Sub CBEstado_SelectedIndexChanged(sender As Object, e As KeyPressEventArgs) Handles CBEstado.KeyPress
         e.Handled = True
@@ -152,15 +159,15 @@
     End Sub
 
     Private Sub BAEstado_Click(sender As Object, e As EventArgs) Handles BAEstado.Click
-       'intercambia la variable estado entre activo/inactivo
+        'intercambia la variable estado entre activo/inactivo
 
-       If estado = "Activo" Then
-           estado = "Inactivo"
-           BAEstado.Text = "Mostrar Activos"
-       Else
-           estado = "Activo"
-           BAEstado.Text = "Mostrar Inactivos"
-       End If
+        If estado = "Activo" Then
+            estado = "Inactivo"
+            BAEstado.Text = "Mostrar Activos"
+        Else
+            estado = "Activo"
+            BAEstado.Text = "Mostrar Inactivos"
+        End If
         DGV1.DataSource = ObjEmpleado.buscarEmpleado(CBBuscaPerfil.SelectedValue, TBBuscarApellido.Text.Trim, estado)
     End Sub
 
@@ -188,7 +195,7 @@
                         TBTel.Text = DGV1.Rows(cell.RowIndex).Cells(6).Value
                         TBDirec.Text = DGV1.Rows(cell.RowIndex).Cells(7).Value
                         TBUsuario.Text = DGV1.Rows(cell.RowIndex).Cells(8).Value
-                        TBCont.Text = DGV1.Rows(cell.RowIndex).Cells(9).Value
+                        TBHash.Text = DGV1.Rows(cell.RowIndex).Cells(9).Value
                         CBPerfil.SelectedValue = DGV1.Rows(cell.RowIndex).Cells(10).Value
                         CBEstado.Text = DGV1.Rows(cell.RowIndex).Cells(12).Value
                         BEditar.Enabled = True
@@ -204,5 +211,23 @@
         DGV1.DataSource = ObjEmpleado.buscarEmpleado(CBBuscaPerfil.SelectedValue, TBBuscarApellido.Text.Trim, estado)
     End Sub
 
+    Private Sub CBBuscaPerfil_SelectedIndexChanged(sender As Object, e As EventArgs)
 
+    End Sub
+
+    Private Sub Label4_Click(sender As Object, e As EventArgs) Handles Label4.Click
+
+    End Sub
+
+    Private Sub TBBuscarApellido_TextChanged(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub Label3_Click(sender As Object, e As EventArgs) Handles Label3.Click
+
+    End Sub
+
+    Private Sub Label6_Click(sender As Object, e As EventArgs) Handles Label6.Click
+
+    End Sub
 End Class

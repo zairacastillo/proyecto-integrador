@@ -63,6 +63,9 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BCrypt.Net-Core, Version=1.6.0.0, Culture=neutral, PublicKeyToken=4d63bfbfdfd3c6e4, processorArchitecture=MSIL">
+      <HintPath>..\packages\BCrypt.Net-Core.1.6.0\lib\net452\BCrypt.Net-Core.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -228,6 +231,12 @@
     <Compile Include="Presentacion\Vendedor\EditarCliente.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Presentacion\Vendedor\ImprimirVenta.Designer.vb">
+      <DependentUpon>ImprimirVenta.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Vendedor\ImprimirVenta.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Presentacion\Vendedor\ListarClientes.designer.vb">
       <DependentUpon>ListarClientes.vb</DependentUpon>
     </Compile>
@@ -329,6 +338,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Vendedor\EditarCliente.resx">
       <DependentUpon>EditarCliente.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Vendedor\ImprimirVenta.resx">
+      <DependentUpon>ImprimirVenta.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Vendedor\ListarClientes.resx">
       <DependentUpon>ListarClientes.vb</DependentUpon>

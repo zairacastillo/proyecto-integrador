@@ -39,6 +39,9 @@ Partial Class MDIAdmin
         Me.StatusStrip = New System.Windows.Forms.StatusStrip()
         Me.ToolStripStatusLabel = New System.Windows.Forms.ToolStripStatusLabel()
         Me.ToolTip = New System.Windows.Forms.ToolTip(Me.components)
+        Me.LEmpleadoN = New System.Windows.Forms.Label()
+        Me.LEmpleadoA = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.MenuStrip.SuspendLayout()
         Me.StatusStrip.SuspendLayout()
         Me.SuspendLayout()
@@ -52,7 +55,7 @@ Partial Class MDIAdmin
         Me.MenuStrip.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional
         Me.MenuStrip.Size = New System.Drawing.Size(124, 431)
         Me.MenuStrip.TabIndex = 5
-        Me.MenuStrip.Text = "MenuStrip"
+        Me.MenuStrip.Text = "________"
         '
         'ToolStripMenuItem1
         '
@@ -188,6 +191,36 @@ Partial Class MDIAdmin
         Me.ToolStripStatusLabel.Size = New System.Drawing.Size(42, 17)
         Me.ToolStripStatusLabel.Text = "Estado"
         '
+        'LEmpleadoN
+        '
+        Me.LEmpleadoN.AutoSize = True
+        Me.LEmpleadoN.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LEmpleadoN.Location = New System.Drawing.Point(25, 368)
+        Me.LEmpleadoN.Name = "LEmpleadoN"
+        Me.LEmpleadoN.Size = New System.Drawing.Size(81, 20)
+        Me.LEmpleadoN.TabIndex = 11
+        Me.LEmpleadoN.Text = "________"
+        '
+        'LEmpleadoA
+        '
+        Me.LEmpleadoA.AutoSize = True
+        Me.LEmpleadoA.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LEmpleadoA.Location = New System.Drawing.Point(25, 405)
+        Me.LEmpleadoA.Name = "LEmpleadoA"
+        Me.LEmpleadoA.Size = New System.Drawing.Size(81, 20)
+        Me.LEmpleadoA.TabIndex = 12
+        Me.LEmpleadoA.Text = "________"
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(12, 322)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(102, 20)
+        Me.Label1.TabIndex = 13
+        Me.Label1.Text = "Bienvenido:"
+        '
         'MDIAdmin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -195,6 +228,9 @@ Partial Class MDIAdmin
         Me.BackColor = System.Drawing.SystemColors.Window
         Me.BackgroundImage = Global.proyecto_integrador.My.Resources.Resources.logo11
         Me.ClientSize = New System.Drawing.Size(632, 453)
+        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.LEmpleadoA)
+        Me.Controls.Add(Me.LEmpleadoN)
         Me.Controls.Add(Me.MenuStrip)
         Me.Controls.Add(Me.StatusStrip)
         Me.IsMdiContainer = True
@@ -226,4 +262,7 @@ Partial Class MDIAdmin
     Friend WithEvents ToolStripMenuItem5 As ToolStripMenuItem
     Friend WithEvents EditarToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents GestionCategoriaToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents LEmpleadoN As Label
+    Friend WithEvents LEmpleadoA As Label
+    Friend WithEvents Label1 As Label
 End Class

@@ -33,6 +33,9 @@ Partial Class MDISuperAdmin
         Me.BEditarEliminar = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.LEmpleadoN = New System.Windows.Forms.Label()
+        Me.LEmpleadoA = New System.Windows.Forms.Label()
         Me.StatusStrip.SuspendLayout()
         Me.MenuStrip.SuspendLayout()
         Me.SuspendLayout()
@@ -116,12 +119,45 @@ Partial Class MDISuperAdmin
         Me.ToolStripMenuItem2.Size = New System.Drawing.Size(138, 46)
         Me.ToolStripMenuItem2.Text = "  &Restaurar"
         '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(12, 312)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(102, 20)
+        Me.Label1.TabIndex = 14
+        Me.Label1.Text = "Bienvenido:"
+        '
+        'LEmpleadoN
+        '
+        Me.LEmpleadoN.AutoSize = True
+        Me.LEmpleadoN.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LEmpleadoN.Location = New System.Drawing.Point(24, 356)
+        Me.LEmpleadoN.Name = "LEmpleadoN"
+        Me.LEmpleadoN.Size = New System.Drawing.Size(99, 20)
+        Me.LEmpleadoN.TabIndex = 15
+        Me.LEmpleadoN.Text = "__________"
+        '
+        'LEmpleadoA
+        '
+        Me.LEmpleadoA.AutoSize = True
+        Me.LEmpleadoA.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LEmpleadoA.Location = New System.Drawing.Point(24, 398)
+        Me.LEmpleadoA.Name = "LEmpleadoA"
+        Me.LEmpleadoA.Size = New System.Drawing.Size(99, 20)
+        Me.LEmpleadoA.TabIndex = 16
+        Me.LEmpleadoA.Text = "__________"
+        '
         'MDISuperAdmin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.proyecto_integrador.My.Resources.Resources.logo11
         Me.ClientSize = New System.Drawing.Size(632, 453)
+        Me.Controls.Add(Me.LEmpleadoA)
+        Me.Controls.Add(Me.LEmpleadoN)
+        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.MenuStrip)
         Me.Controls.Add(Me.StatusStrip)
         Me.IsMdiContainer = True
@@ -145,4 +181,7 @@ Partial Class MDISuperAdmin
     Friend WithEvents BEditarEliminar As ToolStripMenuItem
     Friend WithEvents ToolStripMenuItem2 As ToolStripMenuItem
     Friend WithEvents ToolStripMenuItem1 As ToolStripMenuItem
+    Friend WithEvents Label1 As Label
+    Friend WithEvents LEmpleadoN As Label
+    Friend WithEvents LEmpleadoA As Label
 End Class

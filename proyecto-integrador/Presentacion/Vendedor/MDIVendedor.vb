@@ -2,17 +2,23 @@
 
 Public Class MDIVendedor
 
-    Dim vendedor As empleado
 
-    Public Sub New(pvendedor As empleado)
+    Dim OEmpleado As empleado = New empleado
+
+    Public Sub New(pempleado As empleado)
+
         ' Esta llamada es exigida por el diseñador.
         InitializeComponent()
 
         ' Agregue cualquier inicialización después de la llamada a InitializeComponent().
-        vendedor = pvendedor
+        Oempleado = pempleado
+
+        LEmpleadoA.Text = Oempleado.apellido_empleado
+        LEmpleadoN.Text = Oempleado.nombre_empleado
     End Sub
 
     Public Sub New()
+
         ' Esta llamada es exigida por el diseñador.
         InitializeComponent()
 
@@ -54,7 +60,7 @@ Public Class MDIVendedor
             ChildForma.Close()
         Next
         ' Cree una nueva instancia del formulario secundario.
-        Dim ChildForm As New NuevaVenta(vendedor)
+        Dim ChildForm As New NuevaVenta(Oempleado)
         ' Conviértalo en un elemento secundario de este formulario MDI antes de mostrarlo.
         ChildForm.MdiParent = Me
 
@@ -152,7 +158,7 @@ Public Class MDIVendedor
             ChildForma.Close()
         Next
         ' Cree una nueva instancia del formulario secundario.
-        Dim ChildForm As New ListarMisVentas(vendedor)
+        Dim ChildForm As New ListarMisVentas(Oempleado)
         ' Conviértalo en un elemento secundario de este formulario MDI antes de mostrarlo.
         ChildForm.MdiParent = Me
 
@@ -193,5 +199,7 @@ Public Class MDIVendedor
         ChildForm.Show()
     End Sub
 
+    Private Sub MenuStrip_ItemClicked(sender As Object, e As ToolStripItemClickedEventArgs) Handles MenuStrip.ItemClicked
 
+    End Sub
 End Class

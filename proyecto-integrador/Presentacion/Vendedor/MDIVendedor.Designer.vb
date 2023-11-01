@@ -36,6 +36,9 @@ Partial Class MDIVendedor
         Me.StatusBarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EditMenu = New System.Windows.Forms.ToolStripMenuItem()
         Me.ListarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.LEmpleadoN = New System.Windows.Forms.Label()
+        Me.LEmpleadoA = New System.Windows.Forms.Label()
         Me.StatusStrip.SuspendLayout()
         Me.MenuStrip.SuspendLayout()
         Me.SuspendLayout()
@@ -148,12 +151,45 @@ Partial Class MDIVendedor
         Me.ListarToolStripMenuItem.Size = New System.Drawing.Size(118, 38)
         Me.ListarToolStripMenuItem.Text = "&Listar"
         '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(12, 298)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(102, 20)
+        Me.Label1.TabIndex = 18
+        Me.Label1.Text = "Bienvenido:"
+        '
+        'LEmpleadoN
+        '
+        Me.LEmpleadoN.AutoSize = True
+        Me.LEmpleadoN.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LEmpleadoN.Location = New System.Drawing.Point(12, 369)
+        Me.LEmpleadoN.Name = "LEmpleadoN"
+        Me.LEmpleadoN.Size = New System.Drawing.Size(81, 20)
+        Me.LEmpleadoN.TabIndex = 19
+        Me.LEmpleadoN.Text = "________"
+        '
+        'LEmpleadoA
+        '
+        Me.LEmpleadoA.AutoSize = True
+        Me.LEmpleadoA.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LEmpleadoA.Location = New System.Drawing.Point(12, 400)
+        Me.LEmpleadoA.Name = "LEmpleadoA"
+        Me.LEmpleadoA.Size = New System.Drawing.Size(81, 20)
+        Me.LEmpleadoA.TabIndex = 20
+        Me.LEmpleadoA.Text = "________"
+        '
         'MDIVendedor
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.proyecto_integrador.My.Resources.Resources.logo11
         Me.ClientSize = New System.Drawing.Size(632, 453)
+        Me.Controls.Add(Me.LEmpleadoA)
+        Me.Controls.Add(Me.LEmpleadoN)
+        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.MenuStrip)
         Me.Controls.Add(Me.StatusStrip)
         Me.IsMdiContainer = True
@@ -180,4 +216,7 @@ Partial Class MDIVendedor
     Friend WithEvents FileMenu As ToolStripMenuItem
     Friend WithEvents NuevoToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents EditarToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents Label1 As Label
+    Friend WithEvents LEmpleadoN As Label
+    Friend WithEvents LEmpleadoA As Label
 End Class

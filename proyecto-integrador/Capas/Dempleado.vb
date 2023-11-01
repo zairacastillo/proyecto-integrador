@@ -36,6 +36,7 @@
 
     Function getAllNombresEmpleados() As List(Of empleado)
         Dim lista = (From p In ctx.empleado
+                     Where p.Id_perfil = 1
                      Order By p.Id_empleado
                      Select p).ToList
 
@@ -267,11 +268,24 @@
     End Function
 
     Function verificarUsuario(ByVal nombre As String, ByVal pass As String) As empleado
-        Dim emple = (From u In ctx.empleado
-                     Join emp In ctx.empleado On u.dni_empleado Equals emp.dni_empleado
-                     Where (u.usuario = nombre And u.contraseña = pass)
-                     Select u).SingleOrDefault
-        Return emple
+        Dim emple = getEmpleadoUsuario(nombre)
+        Dim validacion = BCrypt.Net.BCrypt.Verify(pass, emple.contraseña)
+        If validacion Then
+            Return emple
+        End If
+        Return New empleado
+    End Function
+
+    Function getEmpleadoUsuario(ByVal nombre As String) As empleado
+        Try
+            Dim emple = (From u In ctx.empleado
+                         Join emp In ctx.empleado On u.dni_empleado Equals emp.dni_empleado
+                         Where (u.usuario = nombre)
+                         Select u).First
+            Return emple
+        Catch ex As Exception
+            Return New empleado
+        End Try
     End Function
 
 End Class

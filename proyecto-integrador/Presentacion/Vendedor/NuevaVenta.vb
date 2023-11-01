@@ -29,7 +29,7 @@
     End Sub
 
     Private Sub BProducto_Click(sender As Object, e As EventArgs) Handles BProducto.Click
-
+        TBCantidad.Text = ""
         Dim listProductos As New ListarProductos(Me, True)
         listProductos.MdiParent = Me.MdiParent
         listProductos.Show()
@@ -68,18 +68,34 @@
         TBVacios(listaTB) ' devuelve true si algun TB esta vacio
 
         'si campos estan vacios o empiezan con espacio
-        If TBVacios(listaTB) Then
+        If TBVacios(listaTB) Or DGV1.Rows.Count < 1 Then
             'Mensaje
             MsgBox(msjTxt, MsgBoxStyle.Critical, Title:="Error")
         Else
+            ' Dim fecha As Date = New Date(DTPFechaVenta.Value.Year, DTPFechaVenta.Value.Month, DTPFechaVenta.Value.Day)
             Dim id_ultima_venta = guardarVenta()
             If guardarDetalleVenta(id_ultima_venta, DGV1) Then
-                MsgBox("se guardo con exito")
+                MsgBox("venta exitosa")
+                TBID.Clear()
+                'TBVendedorN.Clear()
+                'TBVendedorA.Clear()
+                TBClienteA.Clear()
+                TBClienteN.Clear()
+                TBProducto.Clear()
+                TBStock.Clear()
+                TBUnitario.Clear()
+                TBCantidad.Clear()
+                TBTotal.Clear()
+                DGV1.Rows.Clear()
+
+                '  OBJproducto.ActualizarStock(Me.Ddetalle_venta.Item(0, i).Value, Me.Ddetalle_venta.Item(2, i).Value)
             End If
         End If
+
+
     End Sub
 
-    Private Sub TBCantidad_TextChanged(sender As Object, e As EventArgs) Handles TBCantidad.KeyPress
+    Private Sub TBCantidad_TextChanged(sender As Object, e As KeyPressEventArgs) Handles TBCantidad.KeyPress
 
         If Validar_numeros(e) Then
             MessageBox.Show("Solo se admiten numeros", "Validacion de numeros", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
@@ -95,7 +111,7 @@
         TBVacios(listaTB) ' devuelve true si algun TB esta vacio
 
         'si campos estan vacios o empiezan con espacio
-        If TBVacios(listaTB) Then
+        If TBVacios(listaTB) OrElse TBCantidad.Text < 1 Then
             'Mensaje
             MsgBox(msjTxt, MsgBoxStyle.Critical, Title:="Error")
 
@@ -103,12 +119,17 @@
             MsgBox("No hay suficiente stock de ese producto", MsgBoxStyle.Critical, Title:="Error")
 
         Else
-            Dim ask As Integer = MsgBox("¿Seguro que desea Guardar la venta?", MsgBoxStyle.YesNo + MsgBoxStyle.DefaultButton1, Title:="Confirmar Inserción")
+            Dim ask As Integer = MsgBox("¿Seguro que desea Guardar el producto a la venta?", MsgBoxStyle.YesNo + MsgBoxStyle.DefaultButton1, Title:="Confirmar Inserción")
 
             'si acepta guardamos / mensaje
             If ask = DialogResult.Yes Then
                 AgregarFilaProd()
                 TBTotal.Text = actualizarTotalPrecio()
+
+                TBProducto.Clear()
+                TBCantidad.Clear()
+                TBStock.Clear()
+                TBUnitario.Clear()
             End If
         End If
     End Sub
@@ -122,7 +143,7 @@
         DGV1.Rows(numRow).Cells(1).Value = OProducto.nombre_producto
         DGV1.Rows(numRow).Cells(2).Value = OProducto.precio
         DGV1.Rows(numRow).Cells(3).Value = TBCantidad.Text.Trim
-        DGV1.Rows(numRow).Cells(4).Value = Decimal.Parse(OProducto.precio) * Decimal.Parse(TBCantidad.Text.Trim)
+        DGV1.Rows(numRow).Cells(4).Value = Decimal.Parse(TBCantidad.Text.Trim) * OProducto.precio
         DGV1.Rows(numRow).Cells(5) = btnCancel 'boton cancelar
 
     End Sub
@@ -172,6 +193,7 @@
         Return -1
     End Function
 
+
     Private Function actualizarTotalPrecio() As Decimal
         Dim precio = 0.0
         For Each fila In DGV1.Rows
@@ -209,23 +231,16 @@
             If Not OBJdetalle_venta.agregrar_detalle_Venta(Odetalle_venta) Then
                 Return False
             End If
+
+            OBJproducto.ActualizarStock(Odetalle_venta.Id_producto, Odetalle_venta.cantidad)
         Next
 
         Return True
 
     End Function
 
-    Private Sub Label9_Click(sender As Object, e As EventArgs) Handles Label9.Click
 
-    End Sub
 
-    Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
-
-    End Sub
-
-    Private Sub NuevaVenta_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-    End Sub
 
     Private Sub DGV1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGV1.CellContentClick
         Dim cell As DataGridViewButtonCell = TryCast(DGV1.CurrentCell, DataGridViewButtonCell)
@@ -234,6 +249,7 @@
         If cell IsNot Nothing Then
 
             DGV1.Rows.RemoveAt(cell.RowIndex)
+            TBTotal.Text = actualizarTotalPrecio()
             DGV1.Refresh()
 
         End If
@@ -245,4 +261,10 @@
         TBCantidad.Clear()
         TBUnitario.Clear()
     End Sub
+
+
+    Private Sub NuevaVenta_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Label12.Text = System.DateTime.Now.Date
+    End Sub
+
 End Class

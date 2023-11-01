@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class NuevaVenta
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class NuevaVenta
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.BCliente = New System.Windows.Forms.Button()
         Me.TBClienteA = New System.Windows.Forms.TextBox()
@@ -38,7 +38,6 @@ Partial Class NuevaVenta
         Me.TBClienteN = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.DTPFecnac = New System.Windows.Forms.DateTimePicker()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.TBID = New System.Windows.Forms.TextBox()
         Me.TBVendedorA = New System.Windows.Forms.TextBox()
@@ -56,6 +55,7 @@ Partial Class NuevaVenta
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Label12 = New System.Windows.Forms.Label()
         Me.TBVendedorN = New System.Windows.Forms.TextBox()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label13 = New System.Windows.Forms.Label()
@@ -83,7 +83,7 @@ Partial Class NuevaVenta
         '
         'BProducto
         '
-        Me.BProducto.Location = New System.Drawing.Point(320, 25)
+        Me.BProducto.Location = New System.Drawing.Point(325, 44)
         Me.BProducto.Name = "BProducto"
         Me.BProducto.Size = New System.Drawing.Size(58, 29)
         Me.BProducto.TabIndex = 29
@@ -92,7 +92,7 @@ Partial Class NuevaVenta
         '
         'TBProducto
         '
-        Me.TBProducto.Location = New System.Drawing.Point(135, 29)
+        Me.TBProducto.Location = New System.Drawing.Point(140, 48)
         Me.TBProducto.Name = "TBProducto"
         Me.TBProducto.ReadOnly = True
         Me.TBProducto.Size = New System.Drawing.Size(169, 20)
@@ -195,14 +195,6 @@ Partial Class NuevaVenta
         Me.Label3.TabIndex = 37
         Me.Label3.Text = "Fecha:"
         '
-        'DTPFecnac
-        '
-        Me.DTPFecnac.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DTPFecnac.Location = New System.Drawing.Point(129, 93)
-        Me.DTPFecnac.Name = "DTPFecnac"
-        Me.DTPFecnac.Size = New System.Drawing.Size(142, 20)
-        Me.DTPFecnac.TabIndex = 38
-        '
         'Label4
         '
         Me.Label4.AutoSize = True
@@ -224,7 +216,6 @@ Partial Class NuevaVenta
         Me.TBID.ReadOnly = True
         Me.TBID.Size = New System.Drawing.Size(169, 20)
         Me.TBID.TabIndex = 40
-        Me.TBID.Text = "1"
         '
         'TBVendedorA
         '
@@ -268,7 +259,7 @@ Partial Class NuevaVenta
         '
         'TBStock
         '
-        Me.TBStock.Location = New System.Drawing.Point(135, 78)
+        Me.TBStock.Location = New System.Drawing.Point(140, 97)
         Me.TBStock.Name = "TBStock"
         Me.TBStock.ReadOnly = True
         Me.TBStock.Size = New System.Drawing.Size(169, 20)
@@ -276,14 +267,14 @@ Partial Class NuevaVenta
         '
         'TBCantidad
         '
-        Me.TBCantidad.Location = New System.Drawing.Point(622, 23)
+        Me.TBCantidad.Location = New System.Drawing.Point(627, 42)
         Me.TBCantidad.Name = "TBCantidad"
         Me.TBCantidad.Size = New System.Drawing.Size(169, 20)
         Me.TBCantidad.TabIndex = 47
         '
         'TBUnitario
         '
-        Me.TBUnitario.Location = New System.Drawing.Point(622, 77)
+        Me.TBUnitario.Location = New System.Drawing.Point(627, 96)
         Me.TBUnitario.Name = "TBUnitario"
         Me.TBUnitario.ReadOnly = True
         Me.TBUnitario.Size = New System.Drawing.Size(169, 20)
@@ -291,7 +282,7 @@ Partial Class NuevaVenta
         '
         'BAgregarProd
         '
-        Me.BAgregarProd.Location = New System.Drawing.Point(320, 120)
+        Me.BAgregarProd.Location = New System.Drawing.Point(354, 128)
         Me.BAgregarProd.Name = "BAgregarProd"
         Me.BAgregarProd.Size = New System.Drawing.Size(58, 29)
         Me.BAgregarProd.TabIndex = 51
@@ -300,7 +291,7 @@ Partial Class NuevaVenta
         '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(433, 120)
+        Me.Button2.Location = New System.Drawing.Point(449, 128)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(58, 29)
         Me.Button2.TabIndex = 52
@@ -332,7 +323,7 @@ Partial Class NuevaVenta
         Me.Label8.BackColor = System.Drawing.Color.Transparent
         Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.ForeColor = System.Drawing.Color.White
-        Me.Label8.Location = New System.Drawing.Point(19, 29)
+        Me.Label8.Location = New System.Drawing.Point(24, 48)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(104, 25)
         Me.Label8.TabIndex = 55
@@ -344,7 +335,7 @@ Partial Class NuevaVenta
         Me.Label11.BackColor = System.Drawing.Color.Transparent
         Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label11.ForeColor = System.Drawing.Color.White
-        Me.Label11.Location = New System.Drawing.Point(457, 72)
+        Me.Label11.Location = New System.Drawing.Point(462, 91)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(159, 25)
         Me.Label11.TabIndex = 56
@@ -356,7 +347,7 @@ Partial Class NuevaVenta
         Me.Label7.BackColor = System.Drawing.Color.Transparent
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.ForeColor = System.Drawing.Color.White
-        Me.Label7.Location = New System.Drawing.Point(25, 72)
+        Me.Label7.Location = New System.Drawing.Point(30, 91)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(72, 25)
         Me.Label7.TabIndex = 54
@@ -368,7 +359,7 @@ Partial Class NuevaVenta
         Me.Label10.BackColor = System.Drawing.Color.Transparent
         Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label10.ForeColor = System.Drawing.Color.White
-        Me.Label10.Location = New System.Drawing.Point(457, 23)
+        Me.Label10.Location = New System.Drawing.Point(462, 42)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(104, 25)
         Me.Label10.TabIndex = 54
@@ -377,13 +368,13 @@ Partial Class NuevaVenta
         'Panel2
         '
         Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(116, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(47, Byte), Integer))
+        Me.Panel2.Controls.Add(Me.Label12)
         Me.Panel2.Controls.Add(Me.TBVendedorN)
         Me.Panel2.Controls.Add(Me.Label3)
         Me.Panel2.Controls.Add(Me.TBClienteA)
         Me.Panel2.Controls.Add(Me.BCliente)
         Me.Panel2.Controls.Add(Me.TBClienteN)
         Me.Panel2.Controls.Add(Me.Label2)
-        Me.Panel2.Controls.Add(Me.DTPFecnac)
         Me.Panel2.Controls.Add(Me.Label4)
         Me.Panel2.Controls.Add(Me.TBID)
         Me.Panel2.Controls.Add(Me.TBVendedorA)
@@ -392,6 +383,16 @@ Partial Class NuevaVenta
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(948, 140)
         Me.Panel2.TabIndex = 54
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.Label12.Location = New System.Drawing.Point(139, 97)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(55, 13)
+        Me.Label12.TabIndex = 44
+        Me.Label12.Text = "________"
         '
         'TBVendedorN
         '
@@ -464,7 +465,6 @@ Partial Class NuevaVenta
     Friend WithEvents TBClienteN As TextBox
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
-    Friend WithEvents DTPFecnac As DateTimePicker
     Friend WithEvents Label4 As Label
     Friend WithEvents TBID As TextBox
     Friend WithEvents TBVendedorA As TextBox
@@ -491,4 +491,5 @@ Partial Class NuevaVenta
     Friend WithEvents Subtotal As DataGridViewTextBoxColumn
     Friend WithEvents Eliminar As DataGridViewTextBoxColumn
     Friend WithEvents Label13 As Label
+    Friend WithEvents Label12 As Label
 End Class

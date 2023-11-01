@@ -60,10 +60,10 @@
             'Mensaje
             MsgBox(msjTxt, MsgBoxStyle.Critical, Title:="Error")
 
-        ElseIf objEmpleado.ExisteEmpleado(TBDni.Text) = False Then
+        ElseIf ObjEmpleado.ExisteEmpleado(TBDni.Text) = False Then
             MessageBox.Show("El dni ya ha sido registrado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
 
-        ElseIf objEmpleado.ExisteMail(TBCorreo.Text) = False Then
+        ElseIf ObjEmpleado.ExisteMail(TBCorreo.Text) = False Then
             MessageBox.Show("El mail ya ha sido registrado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
 
         ElseIf ObjEmpleado.ExisteTelefono(TBTel.Text) = False Then
@@ -85,10 +85,10 @@
                 OEmpleado.apellido_empleado = TBApellido.Text.Trim
                 OEmpleado.dni_empleado = TBDni.Text.Trim
                 OEmpleado.correo_empleado = TBCorreo.Text.Trim
-                OEmpleado.telefono_empleado = TBTel.Text.Trim
+                OEmpleado.telefono_empleado = TBTel.Text
                 OEmpleado.direccion_empleado = TBDirec.Text.Trim
                 OEmpleado.usuario = TBUsuario.Text.Trim
-                OEmpleado.contraseña = TBCont.Text.Trim
+                OEmpleado.contraseña = BCrypt.Net.BCrypt.HashPassword(TBCont.Text.Trim)
                 OEmpleado.Id_perfil = CBPerfil.SelectedValue
                 OEmpleado.fecha_empleado = System.DateTime.Now
                 OEmpleado.estado_empleado = "Activo"
@@ -129,11 +129,5 @@
         ObjEmpleado.getAllEmpleado(DGV1)
     End Sub
 
-    Private Sub TBCorreo_TextChanged(sender As Object, e As EventArgs) Handles TBCorreo.TextChanged
 
-    End Sub
-
-    Private Sub DGV1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGV1.CellContentClick
-
-    End Sub
 End Class

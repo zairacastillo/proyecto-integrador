@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="CLUBMENModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="CLUBMENModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="categoria">
           <Key>
             <PropertyRef Name="Id_categoria" />
@@ -32,9 +32,9 @@
           </Key>
           <Property Name="Id_detalle_venta" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Id_producto" Type="int" Nullable="false" />
-          <Property Name="precio_unitario" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="precio_unitario" Type="decimal" Precision="18" Scale="2" Nullable="false" />
           <Property Name="cantidad" Type="int" Nullable="false" />
-          <Property Name="subtotal" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="subtotal" Type="decimal" Precision="18" Scale="2" Nullable="false" />
           <Property Name="Id_venta" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="empleado">
@@ -49,7 +49,7 @@
           <Property Name="telefono_empleado" Type="int" Nullable="false" />
           <Property Name="direccion_empleado" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="usuario" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="contraseña" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="contraseña" Type="nvarchar" MaxLength="150" />
           <Property Name="Id_perfil" Type="int" Nullable="false" />
           <Property Name="fecha_empleado" Type="datetime" Nullable="false" />
           <Property Name="estado_empleado" Type="nvarchar" MaxLength="50" Nullable="false" />
@@ -68,7 +68,7 @@
           <Property Name="Id_producto" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="nombre_producto" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="estado_producto" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="precio" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="precio" Type="decimal" Precision="18" Scale="2" Nullable="false" />
           <Property Name="stock" Type="int" Nullable="false" />
           <Property Name="Id_categoria" Type="int" Nullable="false" />
           <Property Name="descripcion_producto" Type="nvarchar" MaxLength="100" Nullable="false" />
@@ -81,7 +81,7 @@
           <Property Name="Id_empleado" Type="int" Nullable="false" />
           <Property Name="Id_cliente" Type="int" Nullable="false" />
           <Property Name="fecha" Type="datetime" Nullable="false" />
-          <Property Name="total" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="total" Type="decimal" Precision="18" Scale="2" Nullable="false" />
         </EntityType>
         <Association Name="Fk_detalle_venta_producto">
           <End Role="producto" Type="Self.producto" Multiplicity="1" />
@@ -188,8 +188,7 @@
             <End Role="venta" EntitySet="venta" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="CLUBMENModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -222,9 +221,9 @@
           </Key>
           <Property Name="Id_detalle_venta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Id_producto" Type="Int32" Nullable="false" />
-          <Property Name="precio_unitario" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="precio_unitario" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
           <Property Name="cantidad" Type="Int32" Nullable="false" />
-          <Property Name="subtotal" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="subtotal" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
           <Property Name="Id_venta" Type="Int32" Nullable="false" />
           <NavigationProperty Name="producto" Relationship="Self.Fk_detalle_venta_producto" FromRole="detalle_venta" ToRole="producto" />
           <NavigationProperty Name="venta" Relationship="Self.Fk_venta_detalle_venta" FromRole="detalle_venta" ToRole="venta" />
@@ -241,7 +240,7 @@
           <Property Name="telefono_empleado" Type="Int32" Nullable="false" />
           <Property Name="direccion_empleado" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="usuario" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="contraseña" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="contraseña" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
           <Property Name="Id_perfil" Type="Int32" Nullable="false" />
           <Property Name="fecha_empleado" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="estado_empleado" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
@@ -263,7 +262,7 @@
           <Property Name="Id_producto" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="nombre_producto" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="estado_producto" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="precio" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="precio" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
           <Property Name="stock" Type="Int32" Nullable="false" />
           <Property Name="Id_categoria" Type="Int32" Nullable="false" />
           <Property Name="descripcion_producto" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
@@ -278,7 +277,7 @@
           <Property Name="Id_empleado" Type="Int32" Nullable="false" />
           <Property Name="Id_cliente" Type="Int32" Nullable="false" />
           <Property Name="fecha" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="total" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="total" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
           <NavigationProperty Name="cliente" Relationship="Self.Fk_venta_cliente" FromRole="venta" ToRole="cliente" />
           <NavigationProperty Name="detalle_venta" Relationship="Self.Fk_venta_detalle_venta" FromRole="venta" ToRole="detalle_venta" />
           <NavigationProperty Name="empleado" Relationship="Self.Fk_venta_empleado" FromRole="venta" ToRole="empleado" />
