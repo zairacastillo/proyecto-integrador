@@ -10,17 +10,10 @@
 Imports System
 Imports System.Collections.Generic
 
-Partial Public Class venta
-    Public Property Id_venta As Integer
-    Public Property Id_empleado As Integer
+Partial Public Class pago
     Public Property Id_pago As Integer
-    Public Property Id_cliente As Integer
-    Public Property fecha As Date
-    Public Property total As Decimal
+    Public Property descripcion_pago As String
 
-    Public Overridable Property cliente As cliente
-    Public Overridable Property detalle_venta As ICollection(Of detalle_venta) = New HashSet(Of detalle_venta)
-    Public Overridable Property empleado As empleado
-    Public Overridable Property pago As pago
+    Public Overridable Property venta As ICollection(Of venta) = New HashSet(Of venta)
 
 End Class

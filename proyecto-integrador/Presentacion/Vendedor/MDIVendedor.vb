@@ -199,7 +199,12 @@ Public Class MDIVendedor
         ChildForm.Show()
     End Sub
 
-    Private Sub MenuStrip_ItemClicked(sender As Object, e As ToolStripItemClickedEventArgs) Handles MenuStrip.ItemClicked
-
+    Private Sub BCerrarSesion_Click(sender As Object, e As EventArgs) Handles BCerrarSesion.Click
+        Dim ask As MsgBoxResult
+        ask = MessageBox.Show("¿Desea Cerrar Sesion?", "Cerrar", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation)
+        If ask = MsgBoxResult.Yes Then
+            Close()
+            Login.Show()
+        End If
     End Sub
 End Class

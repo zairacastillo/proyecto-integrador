@@ -26,6 +26,7 @@ Partial Public Class CLUBMENEntities
     Public Overridable Property cliente() As DbSet(Of cliente)
     Public Overridable Property detalle_venta() As DbSet(Of detalle_venta)
     Public Overridable Property empleado() As DbSet(Of empleado)
+    Public Overridable Property pago() As DbSet(Of pago)
     Public Overridable Property perfil() As DbSet(Of perfil)
     Public Overridable Property producto() As DbSet(Of producto)
     Public Overridable Property venta() As DbSet(Of venta)

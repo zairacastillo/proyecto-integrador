@@ -26,9 +26,6 @@ Partial Class Login
         Me.TUsuario = New System.Windows.Forms.Label()
         Me.LContraseña = New System.Windows.Forms.Label()
         Me.TBUsuario = New System.Windows.Forms.TextBox()
-        Me.BIniciarV = New System.Windows.Forms.Button()
-        Me.BIniciarA = New System.Windows.Forms.Button()
-        Me.BIniciarS = New System.Windows.Forms.Button()
         Me.TBContraseña = New System.Windows.Forms.TextBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.BCancelar = New System.Windows.Forms.Button()
@@ -67,33 +64,6 @@ Partial Class Login
         Me.TBUsuario.Size = New System.Drawing.Size(147, 20)
         Me.TBUsuario.TabIndex = 2
         '
-        'BIniciarV
-        '
-        Me.BIniciarV.Location = New System.Drawing.Point(28, 174)
-        Me.BIniciarV.Name = "BIniciarV"
-        Me.BIniciarV.Size = New System.Drawing.Size(117, 23)
-        Me.BIniciarV.TabIndex = 4
-        Me.BIniciarV.Text = "Iniciar Vendedor"
-        Me.BIniciarV.UseVisualStyleBackColor = True
-        '
-        'BIniciarA
-        '
-        Me.BIniciarA.Location = New System.Drawing.Point(183, 174)
-        Me.BIniciarA.Name = "BIniciarA"
-        Me.BIniciarA.Size = New System.Drawing.Size(117, 23)
-        Me.BIniciarA.TabIndex = 5
-        Me.BIniciarA.Text = "Iniciar Admi"
-        Me.BIniciarA.UseVisualStyleBackColor = True
-        '
-        'BIniciarS
-        '
-        Me.BIniciarS.Location = New System.Drawing.Point(322, 174)
-        Me.BIniciarS.Name = "BIniciarS"
-        Me.BIniciarS.Size = New System.Drawing.Size(117, 23)
-        Me.BIniciarS.TabIndex = 6
-        Me.BIniciarS.Text = "Iniciar SuperAdmi"
-        Me.BIniciarS.UseVisualStyleBackColor = True
-        '
         'TBContraseña
         '
         Me.TBContraseña.Location = New System.Drawing.Point(206, 123)
@@ -114,16 +84,16 @@ Partial Class Login
         '
         'BCancelar
         '
-        Me.BCancelar.Location = New System.Drawing.Point(486, 182)
+        Me.BCancelar.Location = New System.Drawing.Point(486, 176)
         Me.BCancelar.Name = "BCancelar"
-        Me.BCancelar.Size = New System.Drawing.Size(75, 23)
+        Me.BCancelar.Size = New System.Drawing.Size(75, 35)
         Me.BCancelar.TabIndex = 23
         Me.BCancelar.Text = "Cancelar"
         Me.BCancelar.UseVisualStyleBackColor = True
         '
         'BTIniciar
         '
-        Me.BTIniciar.Location = New System.Drawing.Point(28, 80)
+        Me.BTIniciar.Location = New System.Drawing.Point(383, 176)
         Me.BTIniciar.Name = "BTIniciar"
         Me.BTIniciar.Size = New System.Drawing.Size(75, 35)
         Me.BTIniciar.TabIndex = 24
@@ -140,9 +110,6 @@ Partial Class Login
         Me.Controls.Add(Me.BCancelar)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.TBContraseña)
-        Me.Controls.Add(Me.BIniciarS)
-        Me.Controls.Add(Me.BIniciarA)
-        Me.Controls.Add(Me.BIniciarV)
         Me.Controls.Add(Me.TBUsuario)
         Me.Controls.Add(Me.LContraseña)
         Me.Controls.Add(Me.TUsuario)
@@ -150,7 +117,7 @@ Partial Class Login
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Login"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Login"
+        Me.Text = " "
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -160,9 +127,6 @@ Partial Class Login
     Friend WithEvents TUsuario As Label
     Friend WithEvents LContraseña As Label
     Friend WithEvents TBUsuario As TextBox
-    Friend WithEvents BIniciarV As Button
-    Friend WithEvents BIniciarA As Button
-    Friend WithEvents BIniciarS As Button
     Friend WithEvents TBContraseña As TextBox
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents BCancelar As Button

@@ -1,6 +1,6 @@
 
 /****** Object:  Database [PROYECTO2]    Script Date: 1/10/2023 21:28:02 ******/
-CREATE DATABASE [CLUBMEN]
+create DATABASE [CLUBMEN]
 
 USE [CLUBMEN];
 GO
@@ -25,6 +25,9 @@ IF OBJECT_ID(N'[dbo].[Fk_venta_cliente]', 'F') IS NOT NULL
 GO
 IF OBJECT_ID(N'[dbo].[Fk_venta_detalle_venta]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[detalle_venta] DROP CONSTRAINT [Fk_venta_detalle_venta];
+GO
+IF OBJECT_ID(N'[dbo].[Fk_venta_pago]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[venta] DROP CONSTRAINT [Fk_venta_pago];
 GO
 IF OBJECT_ID(N'[dbo].[Fk_venta_empleado]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[venta] DROP CONSTRAINT [Fk_venta_empleado];
@@ -52,9 +55,14 @@ GO
 IF OBJECT_ID(N'[dbo].[producto]', 'U') IS NOT NULL
     DROP TABLE [dbo].[producto];
 GO
+IF OBJECT_ID(N'[dbo].[pago]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[pago];
+GO
 IF OBJECT_ID(N'[dbo].[venta]', 'U') IS NOT NULL
     DROP TABLE [dbo].[venta];
 GO
+
+
 
 -- --------------------------------------------------
 -- Creating all tables
@@ -77,7 +85,6 @@ CREATE TABLE [dbo].[cliente] (
     [telefono_cliente] INT UNIQUE  NOT NULL,
     [direccion_cliente] nvarchar(50)  NOT NULL,
     [fecha_cliente] datetime  NOT NULL,
-    [estado_cliente] nvarchar(50)  NOT NULL
 );
 GO
 
@@ -87,7 +94,6 @@ CREATE TABLE [dbo].[detalle_venta] (
     [Id_producto] int  NOT NULL,
     [precio_unitario] decimal(18,2)  NOT NULL,
     [cantidad] int  NOT NULL,
-    [subtotal] decimal(18,2)  NOT NULL,
 	[Id_venta] int NOT NULL,
 );
 GO
@@ -102,7 +108,7 @@ CREATE TABLE [dbo].[empleado] (
     [telefono_empleado] INT  UNIQUE NOT NULL,
     [direccion_empleado] nvarchar(50)  NOT NULL,
     [usuario] nvarchar(50)  NOT NULL,
-    [contraseña] nvarchar(200)  NOT NULL,
+    [contraseña] nvarchar(100)  NOT NULL,
     [Id_perfil] int  NOT NULL,
     [fecha_empleado] datetime  NOT NULL,
     [estado_empleado] nvarchar(50)  NOT NULL
@@ -128,10 +134,18 @@ CREATE TABLE [dbo].[producto] (
 );
 GO
 
+-- Creating table 'pago'
+CREATE TABLE [dbo].[pago] (
+    [Id_pago] int IDENTITY(1,1) NOT NULL,
+   	[descripcion_pago] nvarchar(100) NOT NULL,
+);
+GO
+
 -- Creating table 'venta'
 CREATE TABLE [dbo].[venta] (
     [Id_venta] int IDENTITY(1,1) NOT NULL,
     [Id_empleado] int  NOT NULL,
+	[Id_pago] int  NOT NULL,
     [Id_cliente] int  NOT NULL,
     [fecha] datetime  NOT NULL,
     [total] decimal(18,2)  NOT NULL
@@ -176,6 +190,12 @@ GO
 ALTER TABLE [dbo].[producto]
 ADD CONSTRAINT [PK_producto]
     PRIMARY KEY CLUSTERED ([Id_producto] ASC);
+GO
+
+-- Creating primary key on [Id_pago] in table 'pago'
+ALTER TABLE [dbo].[pago]
+ADD CONSTRAINT [PK_pago]
+    PRIMARY KEY CLUSTERED ([Id_pago] ASC);
 GO
 
 -- Creating primary key on [Id_venta] in table 'venta'
@@ -281,8 +301,15 @@ GO
 insert into perfil values ('Vendedor')
 insert into perfil values ('Admin')
 insert into perfil values ('Super Admin')
-select * from empleado
-insert into empleado values('zaira','castillo',36831806,'zaira@gmail.com',432634,'uruguay 1500','zaira','12345678', 3, getdate(),'Activo')
+
+insert into pago values ('Credito')
+insert into pago values ('Debito')
+insert into pago values ('Efectivo')
+insert into pago values ('Transferencia')
+
+insert into empleado values('Vende', 'dor', 1, 'vendedor@gmail.com', 1234567, 'calle 1234', 'vendedor', '$2b$10$QjF8gCxkmWX3KfQvQ90R5OSWVWsLXLiXcQibcjVTSUMVi1dfa.Iwe', 1, GETDATE(), 'Activo')
+insert into empleado values('admin', 'defecto', 2, 'admin@gmail.com', 1234568, 'calle 1234', 'admin', '$2b$10$QjF8gCxkmWX3KfQvQ90R5OSWVWsLXLiXcQibcjVTSUMVi1dfa.Iwe', 2, GETDATE(), 'Activo')
+insert into empleado values('superAdmin', 'porDefecto', 3, 'superAdmin@gmail.com', 1234569, 'calle 1234', 'superAdmin', '$2b$10$QjF8gCxkmWX3KfQvQ90R5OSWVWsLXLiXcQibcjVTSUMVi1dfa.Iwe', 3, GETDATE(), 'Activo')
 -- --------------------------------------------------
 -- Script has ended
 -- --------------------------------------------------

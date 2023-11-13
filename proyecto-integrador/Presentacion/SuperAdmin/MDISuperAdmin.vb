@@ -1,9 +1,16 @@
 ﻿Imports System.Windows.Forms
+Imports System.IO
+Imports IWshRuntimeLibrary
+Imports System.Data.SqlClient
 
 Public Class MDISuperAdmin
 
     Dim vendedor As empleado
     Dim OEmpleado As empleado = New empleado
+
+    Dim cn As New CLUBMENEntities
+    Dim da As SqlDataAdapter
+    Dim dst As DataSet
 
     Public Sub New(pempleado As empleado)
 
@@ -133,11 +140,36 @@ Public Class MDISuperAdmin
 
     Private m_ChildFormNumber As Integer
 
-    Private Sub MDISuperAdmin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub ToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem1.Click
+        Try
+            Dim nombre As String
+            nombre = "CLUBMEN" & Now.Day & "_" & Now.Month & "_" & Now.Year & "_" & Now.Hour & "_" & Now.Minute & ".bak"
+            Dim destino_backup As String = "C:\Backup\"
 
+            Using cnx As New SqlConnection("Data Source =.\SQLEXPRESS;Initial Catalog=CLUBMEN;Integrated Security=True")
+
+                cnx.Open()
+
+
+                Using cmd As New SqlCommand("BACKUP DATABASE [CLUBMEN] TO DISK='" & destino_backup & " " & nombre & "' ", cnx)
+
+                    cmd.ExecuteNonQuery()
+                    MsgBox("SE CREO EL BACKUP CORRECTAMENTE ")
+
+                End Using
+            End Using
+        Catch ex As Exception
+            MsgBox("OCURRIO UN ERROR DURANTE LA CREACION DEL BACKUP")
+        End Try
     End Sub
 
-    Private Sub MenuStrip_ItemClicked(sender As Object, e As ToolStripItemClickedEventArgs) Handles MenuStrip.ItemClicked
-
+    Private Sub BCerrarSesion_Click(sender As Object, e As EventArgs) Handles BCerrarSesion.Click
+        Dim ask As MsgBoxResult
+        ask = MessageBox.Show("¿Desea Cerrar Sesion?", "Cerrar", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation)
+        If ask = MsgBoxResult.Yes Then
+            Close()
+            Login.Show()
+        End If
     End Sub
+
 End Class

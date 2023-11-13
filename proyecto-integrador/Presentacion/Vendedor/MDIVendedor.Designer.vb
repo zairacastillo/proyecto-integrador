@@ -39,6 +39,7 @@ Partial Class MDIVendedor
         Me.Label1 = New System.Windows.Forms.Label()
         Me.LEmpleadoN = New System.Windows.Forms.Label()
         Me.LEmpleadoA = New System.Windows.Forms.Label()
+        Me.BCerrarSesion = New System.Windows.Forms.Button()
         Me.StatusStrip.SuspendLayout()
         Me.MenuStrip.SuspendLayout()
         Me.SuspendLayout()
@@ -155,7 +156,7 @@ Partial Class MDIVendedor
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(12, 298)
+        Me.Label1.Location = New System.Drawing.Point(12, 229)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(102, 20)
         Me.Label1.TabIndex = 18
@@ -165,7 +166,7 @@ Partial Class MDIVendedor
         '
         Me.LEmpleadoN.AutoSize = True
         Me.LEmpleadoN.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LEmpleadoN.Location = New System.Drawing.Point(12, 369)
+        Me.LEmpleadoN.Location = New System.Drawing.Point(12, 276)
         Me.LEmpleadoN.Name = "LEmpleadoN"
         Me.LEmpleadoN.Size = New System.Drawing.Size(81, 20)
         Me.LEmpleadoN.TabIndex = 19
@@ -175,11 +176,23 @@ Partial Class MDIVendedor
         '
         Me.LEmpleadoA.AutoSize = True
         Me.LEmpleadoA.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LEmpleadoA.Location = New System.Drawing.Point(12, 400)
+        Me.LEmpleadoA.Location = New System.Drawing.Point(12, 320)
         Me.LEmpleadoA.Name = "LEmpleadoA"
         Me.LEmpleadoA.Size = New System.Drawing.Size(81, 20)
         Me.LEmpleadoA.TabIndex = 20
         Me.LEmpleadoA.Text = "________"
+        '
+        'BCerrarSesion
+        '
+        Me.BCerrarSesion.BackgroundImage = Global.proyecto_integrador.My.Resources.Resources.logout1
+        Me.BCerrarSesion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.BCerrarSesion.Location = New System.Drawing.Point(12, 343)
+        Me.BCerrarSesion.Name = "BCerrarSesion"
+        Me.BCerrarSesion.Size = New System.Drawing.Size(81, 73)
+        Me.BCerrarSesion.TabIndex = 22
+        Me.BCerrarSesion.Text = "Cerrar Sesion"
+        Me.BCerrarSesion.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.BCerrarSesion.UseVisualStyleBackColor = True
         '
         'MDIVendedor
         '
@@ -187,11 +200,13 @@ Partial Class MDIVendedor
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.proyecto_integrador.My.Resources.Resources.logo11
         Me.ClientSize = New System.Drawing.Size(632, 453)
+        Me.Controls.Add(Me.BCerrarSesion)
         Me.Controls.Add(Me.LEmpleadoA)
         Me.Controls.Add(Me.LEmpleadoN)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.MenuStrip)
         Me.Controls.Add(Me.StatusStrip)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.IsMdiContainer = True
         Me.Name = "MDIVendedor"
         Me.Text = "MDIVendedor"
@@ -219,4 +234,5 @@ Partial Class MDIVendedor
     Friend WithEvents Label1 As Label
     Friend WithEvents LEmpleadoN As Label
     Friend WithEvents LEmpleadoA As Label
+    Friend WithEvents BCerrarSesion As Button
 End Class

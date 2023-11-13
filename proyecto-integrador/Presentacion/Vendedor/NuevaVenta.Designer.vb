@@ -38,8 +38,6 @@ Partial Class NuevaVenta
         Me.TBClienteN = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.TBID = New System.Windows.Forms.TextBox()
         Me.TBVendedorA = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
@@ -55,13 +53,23 @@ Partial Class NuevaVenta
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.LPago = New System.Windows.Forms.Label()
+        Me.CBPago = New System.Windows.Forms.ComboBox()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.TBVendedorN = New System.Windows.Forms.TextBox()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label13 = New System.Windows.Forms.Label()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.Label20 = New System.Windows.Forms.Label()
+        Me.Label19 = New System.Windows.Forms.Label()
+        Me.Label18 = New System.Windows.Forms.Label()
+        Me.Label17 = New System.Windows.Forms.Label()
+        Me.Label16 = New System.Windows.Forms.Label()
+        Me.Label15 = New System.Windows.Forms.Label()
         CType(Me.DGV1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'BCliente
@@ -102,12 +110,12 @@ Partial Class NuevaVenta
         '
         Me.DGV1.AllowUserToAddRows = False
         Me.DGV1.AllowUserToDeleteRows = False
-        Me.DGV1.AllowUserToOrderColumns = True
         Me.DGV1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DGV1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DGV1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ID, Me.Nombre, Me.PrecioUnitario, Me.Cantidad, Me.Subtotal, Me.Eliminar})
-        Me.DGV1.Location = New System.Drawing.Point(15, 411)
+        Me.DGV1.Location = New System.Drawing.Point(15, 512)
         Me.DGV1.Name = "DGV1"
+        Me.DGV1.ReadOnly = True
         Me.DGV1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders
         Me.DGV1.Size = New System.Drawing.Size(949, 196)
         Me.DGV1.TabIndex = 30
@@ -116,31 +124,37 @@ Partial Class NuevaVenta
         '
         Me.ID.HeaderText = "ID"
         Me.ID.Name = "ID"
+        Me.ID.ReadOnly = True
         '
         'Nombre
         '
         Me.Nombre.HeaderText = "Nombre"
         Me.Nombre.Name = "Nombre"
+        Me.Nombre.ReadOnly = True
         '
         'PrecioUnitario
         '
         Me.PrecioUnitario.HeaderText = "Precio Unitario"
         Me.PrecioUnitario.Name = "PrecioUnitario"
+        Me.PrecioUnitario.ReadOnly = True
         '
         'Cantidad
         '
         Me.Cantidad.HeaderText = "Cantidad"
         Me.Cantidad.Name = "Cantidad"
+        Me.Cantidad.ReadOnly = True
         '
         'Subtotal
         '
-        Me.Subtotal.HeaderText = "SubTotal"
+        Me.Subtotal.HeaderText = "Subtotal"
         Me.Subtotal.Name = "Subtotal"
+        Me.Subtotal.ReadOnly = True
         '
         'Eliminar
         '
         Me.Eliminar.HeaderText = "Eliminar"
         Me.Eliminar.Name = "Eliminar"
+        Me.Eliminar.ReadOnly = True
         '
         'Label1
         '
@@ -148,7 +162,7 @@ Partial Class NuevaVenta
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(21, 383)
+        Me.Label1.Location = New System.Drawing.Point(21, 484)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(91, 25)
         Me.Label1.TabIndex = 33
@@ -156,7 +170,7 @@ Partial Class NuevaVenta
         '
         'BCompra
         '
-        Me.BCompra.Location = New System.Drawing.Point(867, 613)
+        Me.BCompra.Location = New System.Drawing.Point(867, 714)
         Me.BCompra.Name = "BCompra"
         Me.BCompra.Size = New System.Drawing.Size(95, 29)
         Me.BCompra.TabIndex = 34
@@ -189,33 +203,11 @@ Partial Class NuevaVenta
         Me.Label3.BackColor = System.Drawing.Color.Transparent
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.White
-        Me.Label3.Location = New System.Drawing.Point(10, 88)
+        Me.Label3.Location = New System.Drawing.Point(32, 29)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(78, 25)
         Me.Label3.TabIndex = 37
         Me.Label3.Text = "Fecha:"
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.BackColor = System.Drawing.Color.Transparent
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.ForeColor = System.Drawing.Color.White
-        Me.Label4.Location = New System.Drawing.Point(10, 30)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(100, 25)
-        Me.Label4.TabIndex = 39
-        Me.Label4.Text = "ID Venta:"
-        '
-        'TBID
-        '
-        Me.TBID.BackColor = System.Drawing.SystemColors.Control
-        Me.TBID.Enabled = False
-        Me.TBID.Location = New System.Drawing.Point(134, 30)
-        Me.TBID.Name = "TBID"
-        Me.TBID.ReadOnly = True
-        Me.TBID.Size = New System.Drawing.Size(169, 20)
-        Me.TBID.TabIndex = 40
         '
         'TBVendedorA
         '
@@ -243,7 +235,7 @@ Partial Class NuevaVenta
         Me.Label6.BackColor = System.Drawing.Color.Transparent
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.ForeColor = System.Drawing.Color.White
-        Me.Label6.Location = New System.Drawing.Point(577, 613)
+        Me.Label6.Location = New System.Drawing.Point(577, 714)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(66, 25)
         Me.Label6.TabIndex = 44
@@ -251,7 +243,7 @@ Partial Class NuevaVenta
         '
         'TBTotal
         '
-        Me.TBTotal.Location = New System.Drawing.Point(649, 618)
+        Me.TBTotal.Location = New System.Drawing.Point(649, 719)
         Me.TBTotal.Name = "TBTotal"
         Me.TBTotal.ReadOnly = True
         Me.TBTotal.Size = New System.Drawing.Size(169, 20)
@@ -312,7 +304,7 @@ Partial Class NuevaVenta
         Me.Panel1.Controls.Add(Me.TBProducto)
         Me.Panel1.Controls.Add(Me.Label10)
         Me.Panel1.Controls.Add(Me.TBStock)
-        Me.Panel1.Location = New System.Drawing.Point(14, 211)
+        Me.Panel1.Location = New System.Drawing.Point(14, 301)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(949, 169)
         Me.Panel1.TabIndex = 53
@@ -368,6 +360,8 @@ Partial Class NuevaVenta
         'Panel2
         '
         Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(116, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(47, Byte), Integer))
+        Me.Panel2.Controls.Add(Me.LPago)
+        Me.Panel2.Controls.Add(Me.CBPago)
         Me.Panel2.Controls.Add(Me.Label12)
         Me.Panel2.Controls.Add(Me.TBVendedorN)
         Me.Panel2.Controls.Add(Me.Label3)
@@ -375,20 +369,38 @@ Partial Class NuevaVenta
         Me.Panel2.Controls.Add(Me.BCliente)
         Me.Panel2.Controls.Add(Me.TBClienteN)
         Me.Panel2.Controls.Add(Me.Label2)
-        Me.Panel2.Controls.Add(Me.Label4)
-        Me.Panel2.Controls.Add(Me.TBID)
         Me.Panel2.Controls.Add(Me.TBVendedorA)
         Me.Panel2.Controls.Add(Me.Label5)
-        Me.Panel2.Location = New System.Drawing.Point(12, 34)
+        Me.Panel2.Location = New System.Drawing.Point(12, 133)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(948, 140)
         Me.Panel2.TabIndex = 54
+        '
+        'LPago
+        '
+        Me.LPago.AutoSize = True
+        Me.LPago.BackColor = System.Drawing.Color.Transparent
+        Me.LPago.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LPago.ForeColor = System.Drawing.Color.White
+        Me.LPago.Location = New System.Drawing.Point(32, 87)
+        Me.LPago.Name = "LPago"
+        Me.LPago.Size = New System.Drawing.Size(116, 25)
+        Me.LPago.TabIndex = 57
+        Me.LPago.Text = "Tipo Pago:"
+        '
+        'CBPago
+        '
+        Me.CBPago.FormattingEnabled = True
+        Me.CBPago.Location = New System.Drawing.Point(154, 87)
+        Me.CBPago.Name = "CBPago"
+        Me.CBPago.Size = New System.Drawing.Size(133, 21)
+        Me.CBPago.TabIndex = 55
         '
         'Label12
         '
         Me.Label12.AutoSize = True
         Me.Label12.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Label12.Location = New System.Drawing.Point(139, 97)
+        Me.Label12.Location = New System.Drawing.Point(180, 41)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(55, 13)
         Me.Label12.TabIndex = 44
@@ -408,7 +420,7 @@ Partial Class NuevaVenta
         Me.Label9.BackColor = System.Drawing.Color.FromArgb(CType(CType(116, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(47, Byte), Integer))
         Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label9.ForeColor = System.Drawing.Color.White
-        Me.Label9.Location = New System.Drawing.Point(21, 21)
+        Me.Label9.Location = New System.Drawing.Point(21, 120)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(105, 25)
         Me.Label9.TabIndex = 45
@@ -420,18 +432,101 @@ Partial Class NuevaVenta
         Me.Label13.BackColor = System.Drawing.Color.FromArgb(CType(CType(116, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(47, Byte), Integer))
         Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label13.ForeColor = System.Drawing.Color.White
-        Me.Label13.Location = New System.Drawing.Point(21, 199)
+        Me.Label13.Location = New System.Drawing.Point(21, 289)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(98, 25)
         Me.Label13.TabIndex = 45
         Me.Label13.Text = "Producto"
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.ErrorImage = Global.proyecto_integrador.My.Resources.Resources.logo11
+        Me.PictureBox1.Image = Global.proyecto_integrador.My.Resources.Resources.logo11
+        Me.PictureBox1.Location = New System.Drawing.Point(195, 12)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(153, 88)
+        Me.PictureBox1.TabIndex = 119
+        Me.PictureBox1.TabStop = False
+        '
+        'Label20
+        '
+        Me.Label20.AutoSize = True
+        Me.Label20.BackColor = System.Drawing.SystemColors.GradientInactiveCaption
+        Me.Label20.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label20.Location = New System.Drawing.Point(586, 80)
+        Me.Label20.Name = "Label20"
+        Me.Label20.Size = New System.Drawing.Size(43, 13)
+        Me.Label20.TabIndex = 118
+        Me.Label20.Text = "415771"
+        '
+        'Label19
+        '
+        Me.Label19.AutoSize = True
+        Me.Label19.BackColor = System.Drawing.SystemColors.GradientInactiveCaption
+        Me.Label19.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label19.Location = New System.Drawing.Point(528, 80)
+        Me.Label19.Name = "Label19"
+        Me.Label19.Size = New System.Drawing.Size(52, 13)
+        Me.Label19.TabIndex = 115
+        Me.Label19.Text = "Telefono:"
+        '
+        'Label18
+        '
+        Me.Label18.AutoSize = True
+        Me.Label18.BackColor = System.Drawing.SystemColors.GradientInactiveCaption
+        Me.Label18.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label18.Location = New System.Drawing.Point(528, 52)
+        Me.Label18.Name = "Label18"
+        Me.Label18.Size = New System.Drawing.Size(75, 13)
+        Me.Label18.TabIndex = 116
+        Me.Label18.Text = "Codigo Postal:"
+        '
+        'Label17
+        '
+        Me.Label17.AutoSize = True
+        Me.Label17.BackColor = System.Drawing.SystemColors.GradientInactiveCaption
+        Me.Label17.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label17.Location = New System.Drawing.Point(620, 54)
+        Me.Label17.Name = "Label17"
+        Me.Label17.Size = New System.Drawing.Size(31, 13)
+        Me.Label17.TabIndex = 117
+        Me.Label17.Text = "3400"
+        '
+        'Label16
+        '
+        Me.Label16.AutoSize = True
+        Me.Label16.BackColor = System.Drawing.SystemColors.GradientInactiveCaption
+        Me.Label16.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label16.Location = New System.Drawing.Point(609, 26)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(74, 13)
+        Me.Label16.TabIndex = 120
+        Me.Label16.Text = "Cordoba 1200"
+        '
+        'Label15
+        '
+        Me.Label15.AutoSize = True
+        Me.Label15.BackColor = System.Drawing.SystemColors.GradientInactiveCaption
+        Me.Label15.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label15.Location = New System.Drawing.Point(528, 26)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(52, 13)
+        Me.Label15.TabIndex = 121
+        Me.Label15.Text = "Domicilio:"
         '
         'NuevaVenta
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(12, Byte), Integer), CType(CType(12, Byte), Integer), CType(CType(30, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(976, 650)
+        Me.ClientSize = New System.Drawing.Size(976, 748)
+        Me.Controls.Add(Me.Label16)
+        Me.Controls.Add(Me.Label15)
+        Me.Controls.Add(Me.PictureBox1)
+        Me.Controls.Add(Me.Label20)
+        Me.Controls.Add(Me.Label19)
+        Me.Controls.Add(Me.Label18)
+        Me.Controls.Add(Me.Label17)
         Me.Controls.Add(Me.Label13)
         Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.Panel2)
@@ -450,6 +545,7 @@ Partial Class NuevaVenta
         Me.Panel1.PerformLayout()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -465,8 +561,6 @@ Partial Class NuevaVenta
     Friend WithEvents TBClienteN As TextBox
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
-    Friend WithEvents Label4 As Label
-    Friend WithEvents TBID As TextBox
     Friend WithEvents TBVendedorA As TextBox
     Friend WithEvents Label5 As Label
     Friend WithEvents Label6 As Label
@@ -484,12 +578,21 @@ Partial Class NuevaVenta
     Friend WithEvents Panel2 As Panel
     Friend WithEvents Label9 As Label
     Friend WithEvents TBVendedorN As TextBox
+    Friend WithEvents Label13 As Label
+    Friend WithEvents Label12 As Label
+    Friend WithEvents LPago As Label
+    Friend WithEvents CBPago As ComboBox
     Friend WithEvents ID As DataGridViewTextBoxColumn
     Friend WithEvents Nombre As DataGridViewTextBoxColumn
     Friend WithEvents PrecioUnitario As DataGridViewTextBoxColumn
     Friend WithEvents Cantidad As DataGridViewTextBoxColumn
     Friend WithEvents Subtotal As DataGridViewTextBoxColumn
     Friend WithEvents Eliminar As DataGridViewTextBoxColumn
-    Friend WithEvents Label13 As Label
-    Friend WithEvents Label12 As Label
+    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents Label20 As Label
+    Friend WithEvents Label19 As Label
+    Friend WithEvents Label18 As Label
+    Friend WithEvents Label17 As Label
+    Friend WithEvents Label16 As Label
+    Friend WithEvents Label15 As Label
 End Class

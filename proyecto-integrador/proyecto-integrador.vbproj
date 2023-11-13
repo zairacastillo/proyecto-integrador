@@ -80,6 +80,7 @@
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -104,6 +105,7 @@
     <Compile Include="Capas\Dcliente.vb" />
     <Compile Include="Capas\Ddetalle_venta.vb" />
     <Compile Include="Capas\Dempleado.vb" />
+    <Compile Include="Capas\DPago.vb" />
     <Compile Include="Capas\Dperfil.vb" />
     <Compile Include="Capas\Dproducto.vb" />
     <Compile Include="Capas\Dventa.vb" />
@@ -150,14 +152,11 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="perfil.vb">
+    <Compile Include="pago.vb">
       <DependentUpon>ModelClubMen.tt</DependentUpon>
     </Compile>
-    <Compile Include="Presentacion\Admin\EditarClienteAdmin.designer.vb">
-      <DependentUpon>EditarClienteAdmin.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Presentacion\Admin\EditarClienteAdmin.vb">
-      <SubType>Form</SubType>
+    <Compile Include="perfil.vb">
+      <DependentUpon>ModelClubMen.tt</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\Admin\EditarEliminarProducto.designer.vb">
       <DependentUpon>EditarEliminarProducto.vb</DependentUpon>
@@ -171,12 +170,6 @@
     <Compile Include="Presentacion\Admin\GestionCategoria.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentacion\Admin\SoloListarEmpleados.Designer.vb">
-      <DependentUpon>SoloListarEmpleados.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Presentacion\Admin\SoloListarEmpleados.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Presentacion\Admin\MDIAdmin.Designer.vb">
       <DependentUpon>MDIAdmin.vb</DependentUpon>
     </Compile>
@@ -187,6 +180,31 @@
       <DependentUpon>NuevoProducto.vb</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\Admin\NuevoProducto.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Admin\Reportes\consultas.vb" />
+    <Compile Include="Presentacion\Admin\Reportes\RPorCategoria.designer.vb">
+      <DependentUpon>RPorCategoria.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Admin\Reportes\RPorCategoria.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Admin\Reportes\RPorCliente.designer.vb">
+      <DependentUpon>RPorCliente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Admin\Reportes\RPorCliente.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Admin\Reportes\RPorEmpleado.designer.vb">
+      <DependentUpon>RPorEmpleado.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Admin\Reportes\RPorEmpleado.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Admin\Reportes\RPorProducto.designer.vb">
+      <DependentUpon>RPorProducto.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Admin\Reportes\RPorProducto.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Presentacion\Admin\SoloListarVentas.Designer.vb">
@@ -300,23 +318,29 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentacion\Admin\EditarClienteAdmin.resx">
-      <DependentUpon>EditarClienteAdmin.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Admin\EditarEliminarProducto.resx">
       <DependentUpon>EditarEliminarProducto.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Admin\GestionCategoria.resx">
       <DependentUpon>GestionCategoria.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentacion\Admin\SoloListarEmpleados.resx">
-      <DependentUpon>SoloListarEmpleados.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Admin\MDIAdmin.resx">
       <DependentUpon>MDIAdmin.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Admin\NuevoProducto.resx">
       <DependentUpon>NuevoProducto.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Admin\Reportes\RPorCategoria.resx">
+      <DependentUpon>RPorCategoria.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Admin\Reportes\RPorCliente.resx">
+      <DependentUpon>RPorCliente.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Admin\Reportes\RPorEmpleado.resx">
+      <DependentUpon>RPorEmpleado.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Admin\Reportes\RPorProducto.resx">
+      <DependentUpon>RPorProducto.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Admin\SoloListarVentas.resx">
       <DependentUpon>SoloListarVentas.vb</DependentUpon>
@@ -486,6 +510,15 @@
     <None Include="Resources\cerrar.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\logo21.png" />
+    <None Include="Resources\logo2.png" />
+    <None Include="Resources\IMG_38911.jpg" />
+    <None Include="Resources\logo11.png" />
+    <None Include="Resources\logo1.png" />
+    <None Include="Resources\IMG_3891.jpg" />
+    <None Include="Resources\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="ModelClubMen.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>ModelClubMen.edmx</DependentUpon>
@@ -496,13 +529,10 @@
       <DependentUpon>ModelClubMen.edmx</DependentUpon>
       <LastGenOutput>ModelClubMen.vb</LastGenOutput>
     </Content>
-    <None Include="Resources\logo21.png" />
-    <None Include="Resources\logo2.png" />
-    <None Include="Resources\IMG_38911.jpg" />
-    <None Include="Resources\logo11.png" />
-    <None Include="Resources\logo1.png" />
-    <None Include="Resources\IMG_3891.jpg" />
-    <None Include="Resources\logo.png" />
+    <None Include="Resources\logout1.png" />
+    <None Include="Resources\logout.png" />
+    <None Include="Resources\logout_2105636.png" />
+    <None Include="Resources\login_5785442.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

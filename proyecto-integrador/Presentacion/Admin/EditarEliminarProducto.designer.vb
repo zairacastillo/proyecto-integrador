@@ -46,6 +46,7 @@ Partial Class EditarEliminarProducto
         Me.CBCategoria = New System.Windows.Forms.ComboBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.BBuscarNombre = New System.Windows.Forms.Button()
+        Me.Button3 = New System.Windows.Forms.Button()
         Me.PanelPrincipal.SuspendLayout()
         CType(Me.DGV1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -227,14 +228,14 @@ Partial Class EditarEliminarProducto
         Me.DGV1.Name = "DGV1"
         Me.DGV1.ReadOnly = True
         Me.DGV1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders
-        Me.DGV1.Size = New System.Drawing.Size(916, 164)
+        Me.DGV1.Size = New System.Drawing.Size(851, 164)
         Me.DGV1.TabIndex = 2
         '
         'BCancelar
         '
         Me.BCancelar.Image = Global.proyecto_integrador.My.Resources.Resources.cerrar
         Me.BCancelar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.BCancelar.Location = New System.Drawing.Point(817, 484)
+        Me.BCancelar.Location = New System.Drawing.Point(825, 524)
         Me.BCancelar.Name = "BCancelar"
         Me.BCancelar.Size = New System.Drawing.Size(87, 60)
         Me.BCancelar.TabIndex = 15
@@ -246,7 +247,7 @@ Partial Class EditarEliminarProducto
         '
         Me.BEditar.Image = Global.proyecto_integrador.My.Resources.Resources.lapiz
         Me.BEditar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.BEditar.Location = New System.Drawing.Point(817, 393)
+        Me.BEditar.Location = New System.Drawing.Point(825, 433)
         Me.BEditar.Name = "BEditar"
         Me.BEditar.Size = New System.Drawing.Size(91, 64)
         Me.BEditar.TabIndex = 14
@@ -256,7 +257,7 @@ Partial Class EditarEliminarProducto
         '
         'BAEstado
         '
-        Me.BAEstado.Location = New System.Drawing.Point(817, 303)
+        Me.BAEstado.Location = New System.Drawing.Point(825, 343)
         Me.BAEstado.Name = "BAEstado"
         Me.BAEstado.Size = New System.Drawing.Size(91, 60)
         Me.BAEstado.TabIndex = 13
@@ -313,6 +314,15 @@ Partial Class EditarEliminarProducto
         Me.BBuscarNombre.Text = "Buscar"
         Me.BBuscarNombre.UseVisualStyleBackColor = True
         '
+        'Button3
+        '
+        Me.Button3.Location = New System.Drawing.Point(889, 147)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(75, 43)
+        Me.Button3.TabIndex = 118
+        Me.Button3.Text = "Todos"
+        Me.Button3.UseVisualStyleBackColor = True
+        '
         'EditarEliminarProducto
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -320,6 +330,7 @@ Partial Class EditarEliminarProducto
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(12, Byte), Integer), CType(CType(12, Byte), Integer), CType(CType(30, Byte), Integer))
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(976, 650)
+        Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.BBuscarNombre)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.CBCategoria)
@@ -367,4 +378,5 @@ Partial Class EditarEliminarProducto
     Friend WithEvents BBuscarNombre As Button
     Friend WithEvents CBCateg As ComboBox
     Friend WithEvents CBEstado As ComboBox
+    Friend WithEvents Button3 As Button
 End Class

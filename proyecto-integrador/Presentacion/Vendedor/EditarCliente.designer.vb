@@ -24,8 +24,6 @@ Partial Class EditarCliente
     Private Sub InitializeComponent()
         Me.DGV1 = New System.Windows.Forms.DataGridView()
         Me.PanelPrincipal = New System.Windows.Forms.Panel()
-        Me.TBEstado = New System.Windows.Forms.TextBox()
-        Me.LEstado = New System.Windows.Forms.Label()
         Me.TBID = New System.Windows.Forms.TextBox()
         Me.LID = New System.Windows.Forms.Label()
         Me.TBTel = New System.Windows.Forms.TextBox()
@@ -48,7 +46,7 @@ Partial Class EditarCliente
         Me.TBBuscarAp = New System.Windows.Forms.TextBox()
         Me.BBuscarDni = New System.Windows.Forms.Button()
         Me.BBuscarAp = New System.Windows.Forms.Button()
-        Me.BAEstado = New System.Windows.Forms.Button()
+        Me.BTodos = New System.Windows.Forms.Button()
         CType(Me.DGV1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelPrincipal.SuspendLayout()
         Me.SuspendLayout()
@@ -63,15 +61,13 @@ Partial Class EditarCliente
         Me.DGV1.Location = New System.Drawing.Point(12, 95)
         Me.DGV1.Name = "DGV1"
         Me.DGV1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders
-        Me.DGV1.Size = New System.Drawing.Size(940, 164)
+        Me.DGV1.Size = New System.Drawing.Size(871, 164)
         Me.DGV1.TabIndex = 5
         '
         'PanelPrincipal
         '
         Me.PanelPrincipal.BackColor = System.Drawing.Color.FromArgb(CType(CType(116, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(47, Byte), Integer))
         Me.PanelPrincipal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PanelPrincipal.Controls.Add(Me.TBEstado)
-        Me.PanelPrincipal.Controls.Add(Me.LEstado)
         Me.PanelPrincipal.Controls.Add(Me.TBID)
         Me.PanelPrincipal.Controls.Add(Me.LID)
         Me.PanelPrincipal.Controls.Add(Me.TBTel)
@@ -92,31 +88,10 @@ Partial Class EditarCliente
         Me.PanelPrincipal.Size = New System.Drawing.Size(791, 292)
         Me.PanelPrincipal.TabIndex = 3
         '
-        'TBEstado
-        '
-        Me.TBEstado.Enabled = False
-        Me.TBEstado.Location = New System.Drawing.Point(523, 190)
-        Me.TBEstado.Name = "TBEstado"
-        Me.TBEstado.ReadOnly = True
-        Me.TBEstado.Size = New System.Drawing.Size(254, 20)
-        Me.TBEstado.TabIndex = 22
-        '
-        'LEstado
-        '
-        Me.LEstado.AutoSize = True
-        Me.LEstado.BackColor = System.Drawing.Color.Transparent
-        Me.LEstado.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LEstado.ForeColor = System.Drawing.Color.White
-        Me.LEstado.Location = New System.Drawing.Point(415, 185)
-        Me.LEstado.Name = "LEstado"
-        Me.LEstado.Size = New System.Drawing.Size(85, 25)
-        Me.LEstado.TabIndex = 21
-        Me.LEstado.Text = "Estado:"
-        '
         'TBID
         '
         Me.TBID.Enabled = False
-        Me.TBID.Location = New System.Drawing.Point(523, 152)
+        Me.TBID.Location = New System.Drawing.Point(522, 152)
         Me.TBID.Name = "TBID"
         Me.TBID.ReadOnly = True
         Me.TBID.Size = New System.Drawing.Size(254, 20)
@@ -128,7 +103,7 @@ Partial Class EditarCliente
         Me.LID.BackColor = System.Drawing.Color.Transparent
         Me.LID.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LID.ForeColor = System.Drawing.Color.White
-        Me.LID.Location = New System.Drawing.Point(415, 147)
+        Me.LID.Location = New System.Drawing.Point(414, 147)
         Me.LID.Name = "LID"
         Me.LID.Size = New System.Drawing.Size(38, 25)
         Me.LID.TabIndex = 19
@@ -136,7 +111,7 @@ Partial Class EditarCliente
         '
         'TBTel
         '
-        Me.TBTel.Location = New System.Drawing.Point(523, 81)
+        Me.TBTel.Location = New System.Drawing.Point(522, 81)
         Me.TBTel.Name = "TBTel"
         Me.TBTel.Size = New System.Drawing.Size(254, 20)
         Me.TBTel.TabIndex = 18
@@ -147,7 +122,7 @@ Partial Class EditarCliente
         Me.LTel.BackColor = System.Drawing.Color.Transparent
         Me.LTel.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LTel.ForeColor = System.Drawing.Color.White
-        Me.LTel.Location = New System.Drawing.Point(415, 76)
+        Me.LTel.Location = New System.Drawing.Point(414, 76)
         Me.LTel.Name = "LTel"
         Me.LTel.Size = New System.Drawing.Size(102, 25)
         Me.LTel.TabIndex = 17
@@ -155,7 +130,7 @@ Partial Class EditarCliente
         '
         'TBDirec
         '
-        Me.TBDirec.Location = New System.Drawing.Point(523, 116)
+        Me.TBDirec.Location = New System.Drawing.Point(522, 116)
         Me.TBDirec.Name = "TBDirec"
         Me.TBDirec.Size = New System.Drawing.Size(254, 20)
         Me.TBDirec.TabIndex = 16
@@ -166,7 +141,7 @@ Partial Class EditarCliente
         Me.LDireccion.BackColor = System.Drawing.Color.Transparent
         Me.LDireccion.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LDireccion.ForeColor = System.Drawing.Color.White
-        Me.LDireccion.Location = New System.Drawing.Point(415, 111)
+        Me.LDireccion.Location = New System.Drawing.Point(414, 111)
         Me.LDireccion.Name = "LDireccion"
         Me.LDireccion.Size = New System.Drawing.Size(108, 25)
         Me.LDireccion.TabIndex = 15
@@ -271,7 +246,7 @@ Partial Class EditarCliente
         '
         Me.BEditar.Image = Global.proyecto_integrador.My.Resources.Resources.lapiz
         Me.BEditar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.BEditar.Location = New System.Drawing.Point(865, 317)
+        Me.BEditar.Location = New System.Drawing.Point(853, 367)
         Me.BEditar.Name = "BEditar"
         Me.BEditar.Size = New System.Drawing.Size(87, 68)
         Me.BEditar.TabIndex = 10
@@ -284,7 +259,7 @@ Partial Class EditarCliente
         Me.BCancelar.BackgroundImage = Global.proyecto_integrador.My.Resources.Resources.cerrar
         Me.BCancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.BCancelar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.BCancelar.Location = New System.Drawing.Point(865, 436)
+        Me.BCancelar.Location = New System.Drawing.Point(853, 486)
         Me.BCancelar.Name = "BCancelar"
         Me.BCancelar.Size = New System.Drawing.Size(87, 67)
         Me.BCancelar.TabIndex = 11
@@ -329,14 +304,14 @@ Partial Class EditarCliente
         Me.BBuscarAp.Text = "Buscar"
         Me.BBuscarAp.UseVisualStyleBackColor = True
         '
-        'BAEstado
+        'BTodos
         '
-        Me.BAEstado.Location = New System.Drawing.Point(865, 541)
-        Me.BAEstado.Name = "BAEstado"
-        Me.BAEstado.Size = New System.Drawing.Size(75, 68)
-        Me.BAEstado.TabIndex = 17
-        Me.BAEstado.Text = "Mostrar Inactivos"
-        Me.BAEstado.UseVisualStyleBackColor = True
+        Me.BTodos.Location = New System.Drawing.Point(889, 150)
+        Me.BTodos.Name = "BTodos"
+        Me.BTodos.Size = New System.Drawing.Size(75, 40)
+        Me.BTodos.TabIndex = 18
+        Me.BTodos.Text = "Todos"
+        Me.BTodos.UseVisualStyleBackColor = True
         '
         'EditarCliente
         '
@@ -344,7 +319,7 @@ Partial Class EditarCliente
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(12, Byte), Integer), CType(CType(12, Byte), Integer), CType(CType(30, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(976, 650)
-        Me.Controls.Add(Me.BAEstado)
+        Me.Controls.Add(Me.BTodos)
         Me.Controls.Add(Me.BBuscarAp)
         Me.Controls.Add(Me.BBuscarDni)
         Me.Controls.Add(Me.Label2)
@@ -391,7 +366,5 @@ Partial Class EditarCliente
     Friend WithEvents BBuscarAp As Button
     Friend WithEvents TBID As TextBox
     Friend WithEvents LID As Label
-    Friend WithEvents TBEstado As TextBox
-    Friend WithEvents LEstado As Label
-    Friend WithEvents BAEstado As Button
+    Friend WithEvents BTodos As Button
 End Class

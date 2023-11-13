@@ -5,36 +5,36 @@
 
     Dim estado As String = "Activo"
 
-   Private Sub TBNombre_TextChanged(sender As Object, e As KeyPressEventArgs) Handles TBNombre.KeyPress
-       If Validar_letras(e) Then
-           MessageBox.Show("Solo se admiten letras", "Validación de letras", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
-       End If
-   End Sub
+    Private Sub TBNombre_TextChanged(sender As Object, e As KeyPressEventArgs) Handles TBNombre.KeyPress
+        If Validar_letras(e) Then
+            MessageBox.Show("Solo se admiten letras", "Validación de letras", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+        End If
+    End Sub
 
-   Private Sub TBApellido_TextChanged(sender As Object, e As KeyPressEventArgs) Handles TBApellido.KeyPress
-       If Validar_letras(e) Then
-           MessageBox.Show("Solo se admiten letras", "Validación de letras", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
-       End If
-   End Sub
+    Private Sub TBApellido_TextChanged(sender As Object, e As KeyPressEventArgs) Handles TBApellido.KeyPress
+        If Validar_letras(e) Then
+            MessageBox.Show("Solo se admiten letras", "Validación de letras", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+        End If
+    End Sub
 
 
-   Private Sub TBUsuario_TextChanged(sender As Object, e As KeyPressEventArgs) Handles TBUsuario.KeyPress
-       If Validar_letras(e) Then
-           MessageBox.Show("Solo se admiten letras", "Validación de letras", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
-       End If
-   End Sub
+    Private Sub TBUsuario_TextChanged(sender As Object, e As KeyPressEventArgs) Handles TBUsuario.KeyPress
+        If Validar_letras(e) Then
+            MessageBox.Show("Solo se admiten letras", "Validación de letras", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+        End If
+    End Sub
 
-   Private Sub TBDni_TextChanged(sender As Object, e As KeyPressEventArgs) Handles TBDni.KeyPress
-       If Validar_numeros(e) Then
-           MessageBox.Show("Solo se admiten numeros", "Validación de numeros", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
-       End If
-   End Sub
+    Private Sub TBDni_TextChanged(sender As Object, e As KeyPressEventArgs) Handles TBDni.KeyPress
+        If Validar_numeros(e) Then
+            MessageBox.Show("Solo se admiten numeros", "Validación de numeros", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+        End If
+    End Sub
 
-   Private Sub TextBox1_TextChanged(sender As Object, e As KeyPressEventArgs) Handles TBTel.KeyPress
-       If Validar_numeros(e) Then
-           MessageBox.Show("Solo se admiten numeros", "Validación de numeros", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
-       End If
-   End Sub
+    Private Sub TextBox1_TextChanged(sender As Object, e As KeyPressEventArgs) Handles TBTel.KeyPress
+        If Validar_numeros(e) Then
+            MessageBox.Show("Solo se admiten numeros", "Validación de numeros", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+        End If
+    End Sub
 
 
     Private Sub TBBuscarApellido_TextChanged(sender As Object, e As KeyPressEventArgs) Handles TBBuscarApellido.KeyPress
@@ -78,11 +78,24 @@
 
         'buscamos empleados y llenamos la tabla
         DGV1.DataSource = ObjEmpleado.buscarEmpleado(CBBuscaPerfil.SelectedValue, TBBuscarApellido.Text.Trim, estado)
-        DGV1.Columns(13).Visible = False
-        DGV1.Columns(14).Visible = False
+
+        DGV1.Columns(5).Visible = False
+        DGV1.Columns(9).Visible = False
+        DGV1.Columns(0).HeaderText = "Seleccionar"
+        DGV1.Columns("id_empleado").Visible = False
+        DGV1.Columns("nombre_empleado").HeaderText = "Nombre"
+        DGV1.Columns("apellido_empleado").HeaderText = "Apellido"
+        DGV1.Columns("dni_empleado").HeaderText = "DNI"
+        DGV1.Columns("telefono_empleado").HeaderText = "Telefono"
+        DGV1.Columns("direccion_empleado").Visible = False
+        DGV1.Columns("Id_perfil").Visible = False
+        DGV1.Columns("perfil").Visible = False
+        DGV1.Columns("venta").Visible = False
+        DGV1.Columns("fecha_empleado").Visible = False
     End Sub
 
     Private Sub BEditar_Click(sender As Object, e As EventArgs) Handles BEditar.Click
+        Dim OEmpleado As New empleado
         Dim msjTxt As String = "Debe Completar todos los campos: "
 
         ' lista de TB a verificar si estan vacios
@@ -91,7 +104,7 @@
         TBVacios(listaTB) ' devuelve true si algun TB esta vacio
 
         'si campos estan vacios o empiezan con espacio
-        If TBVacios(listaTB) Or Not validar_email(TBCorreo) Then
+        If TBVacios(listaTB) Or Not validar_email(TBCorreo) Or TBActCont.Text.Length < 8 And TBActCont.Text.Length > 0 Then
             'Mensaje
             MsgBox(msjTxt, MsgBoxStyle.Critical, Title:="Error")
         Else
@@ -99,7 +112,13 @@
             If ask = vbYes Then
                 'guardar
                 'define entidad empleado
-                Dim OEmpleado As New empleado
+
+                Dim contrasenia
+                If TBActCont.Text = "" Then
+                    contrasenia = TBHash.Text
+                Else
+                    contrasenia = BCrypt.Net.BCrypt.HashPassword(TBActCont.Text.Trim)
+                End If
                 'cargamos de datos un registro empleado
                 OEmpleado.Id_empleado = TBID.Text.Trim
                 OEmpleado.nombre_empleado = TBNombre.Text.Trim
@@ -109,20 +128,21 @@
                 OEmpleado.telefono_empleado = TBTel.Text.Trim
                 OEmpleado.direccion_empleado = TBDirec.Text.Trim
                 OEmpleado.usuario = TBUsuario.Text.Trim
-                OEmpleado.contraseña = TBHash.Text.Trim
+                OEmpleado.contraseña = contrasenia
                 OEmpleado.Id_perfil = CBPerfil.SelectedValue
                 OEmpleado.estado_empleado = CBEstado.Text
 
-                If (TBNuevCont.Text IsNot "") AndAlso (TBActCont.Text IsNot "") AndAlso ObjEmpleado.verificarUsuario(TBUsuario.Text.Trim, TBActCont.Text.Trim).Id_perfil Then
-                    OEmpleado.contraseña = BCrypt.Net.BCrypt.HashPassword(TBNuevCont.Text.Trim)
-                End If
+                Dim usuario As New Dempleado
+
 
                 If Not ObjEmpleado.ExisteDNI(OEmpleado.dni_empleado, OEmpleado.Id_empleado) And Not ObjEmpleado.ExisteMail(OEmpleado.correo_empleado, OEmpleado.Id_empleado) And Not ObjEmpleado.ExisteUser(OEmpleado.usuario, OEmpleado.Id_empleado) AndAlso ObjEmpleado.Modificar(OEmpleado) Then
 
                     MsgBox("Los datos se guardaron correctamente", Title:="Confirmar Inserción")
                     'Reseteamos Form
                     BCancelar_Click(sender, e)
-                    ObjEmpleado.getAllEmpleado(DGV1)
+                    DGV1.DataSource = ObjEmpleado.buscarEmpleado(CBBuscaPerfil.SelectedValue, TBBuscarApellido.Text.Trim, estado)
+
+
 
                 Else
                     MsgBox("ERROR: Los datos NO se guardaron correctamente", Title:="ERROR Inserción")
@@ -141,7 +161,8 @@
         TBTel.Clear()
         TBDirec.Clear()
         TBUsuario.Clear()
-        TBNuevCont.Clear()
+        TBActCont.Clear()
+        'TBNuevCont.Clear()
         CBEstado.SelectedValue = 0
         CBPerfil.SelectedValue = 0
         BEditar.Enabled = False
@@ -211,23 +232,4 @@
         DGV1.DataSource = ObjEmpleado.buscarEmpleado(CBBuscaPerfil.SelectedValue, TBBuscarApellido.Text.Trim, estado)
     End Sub
 
-    Private Sub CBBuscaPerfil_SelectedIndexChanged(sender As Object, e As EventArgs)
-
-    End Sub
-
-    Private Sub Label4_Click(sender As Object, e As EventArgs) Handles Label4.Click
-
-    End Sub
-
-    Private Sub TBBuscarApellido_TextChanged(sender As Object, e As EventArgs)
-
-    End Sub
-
-    Private Sub Label3_Click(sender As Object, e As EventArgs) Handles Label3.Click
-
-    End Sub
-
-    Private Sub Label6_Click(sender As Object, e As EventArgs) Handles Label6.Click
-
-    End Sub
 End Class

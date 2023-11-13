@@ -5,20 +5,21 @@
 
     Function getAllEmpleado(ByVal dg As DataGridView) As Boolean
         dg.DataSource = Me.getAll()
-        dg.Columns(12).Visible = False
-        dg.Columns(13).Visible = False
+        'dg.Columns(12).Visible = False
+        'dg.Columns(13).Visible = False
         Return False
     End Function
     Function agregrar_empleado(ByVal oempleado As empleado) As Boolean
-        Try
-            ctx.empleado.Add(oempleado)
-            ctx.SaveChanges()
-            Return True
-        Catch ex As Exception
-            'MsgBox(ex.Message)
-            Return False
+        'Try
+        ctx.empleado.Add(oempleado)
+        ctx.SaveChanges()
+        Return True
+        'Catch ex As Exception
+        'MsgBox(ex.Message)
+        Return False
 
-        End Try
+        'End Try
+
 
     End Function
 
@@ -26,7 +27,7 @@
 
         Dim listaEmpleados = (From p In ctx.empleado
                               Order By p.Id_empleado
-                              Select Dni = p.dni_empleado, Nombre = p.nombre_empleado, Apellido = p.apellido_empleado, Dirección = p.direccion_empleado,
+                              Select ID = p.Id_empleado, Dni = p.dni_empleado, Nombre = p.nombre_empleado, Apellido = p.apellido_empleado, Dirección = p.direccion_empleado,
                                       FechaIngreso = p.fecha_empleado, Email = p.correo_empleado, Telefono = p.telefono_empleado, Estado = p.estado_empleado).ToList
         grid.DataSource = listaEmpleados
         'grid.Columns(11).Visible = False
@@ -34,67 +35,24 @@
 
     End Sub
 
-    Function getAllNombresEmpleados() As List(Of empleado)
+    Function getAllNombresEmpleados()
         Dim lista = (From p In ctx.empleado
                      Where p.Id_perfil = 1
                      Order By p.Id_empleado
-                     Select p).ToList
+                     Select ID = p.Id_empleado, Dni = p.dni_empleado, Nombre = p.nombre_empleado, Apellido = p.apellido_empleado, Dirección = p.direccion_empleado,
+                      FechaIngreso = p.fecha_empleado, Correo = p.correo_empleado, Telefono = p.telefono_empleado, Estado = p.estado_empleado, ApeNom = p.apellido_empleado & ", " & p.nombre_empleado).ToList
 
-        Dim listaempleado = New List(Of empleado)
 
-        For Each valor In lista
-
-            Dim item As empleado = New empleado
-
-            item.Id_empleado = valor.Id_empleado
-            item.nombre_empleado = valor.nombre_empleado
-            item.apellido_empleado = valor.apellido_empleado + ", " + valor.nombre_empleado
-            item.dni_empleado = valor.dni_empleado
-            item.direccion_empleado = valor.direccion_empleado
-            item.correo_empleado = valor.correo_empleado
-            item.telefono_empleado = valor.telefono_empleado
-            item.direccion_empleado = valor.direccion_empleado
-            item.usuario = valor.usuario
-            item.contraseña = valor.contraseña
-            item.Id_perfil = valor.Id_perfil
-            item.fecha_empleado = valor.fecha_empleado
-            item.estado_empleado = valor.estado_empleado
-
-            listaempleado.Add(item)
-
-        Next
-        Return listaempleado
+        Return lista
     End Function
 
-    Function getAll() As List(Of empleado)
+    Function getAll()
         Dim lista = (From p In ctx.empleado
                      Order By p.Id_empleado
-                     Select p).ToList
+                     Select ID = p.Id_empleado, Dni = p.dni_empleado, Nombre = p.nombre_empleado, Apellido = p.apellido_empleado, Dirección = p.direccion_empleado,
+                     FechaIngreso = p.fecha_empleado, Correo = p.correo_empleado, Telefono = p.telefono_empleado, Estado = p.estado_empleado).ToList
 
-        Dim listaempleado = New List(Of empleado)
-
-        For Each valor In lista
-
-            Dim item As empleado = New empleado
-
-            item.Id_empleado = valor.Id_empleado
-            item.nombre_empleado = valor.nombre_empleado
-            item.apellido_empleado = valor.apellido_empleado
-            item.dni_empleado = valor.dni_empleado
-            item.direccion_empleado = valor.direccion_empleado
-            item.correo_empleado = valor.correo_empleado
-            item.telefono_empleado = valor.telefono_empleado
-            item.direccion_empleado = valor.direccion_empleado
-            item.usuario = valor.usuario
-            item.contraseña = valor.contraseña
-            item.Id_perfil = valor.Id_perfil
-            item.fecha_empleado = valor.fecha_empleado
-            item.estado_empleado = valor.estado_empleado
-
-            listaempleado.Add(item)
-
-        Next
-        Return listaempleado
+        Return lista
     End Function
 
     Function ExisteMail(ByVal pmail As String, Optional pid As Integer = -1) As Boolean
@@ -206,13 +164,14 @@
         Dim lista
 
         If (pIdPerfil > 0) Then
-            lista = (From p In ctx.empleado
+            lista = (From p In ctx.empleado.Include("perfil")
                      Where p.Id_perfil = pIdPerfil And p.apellido_empleado.Contains(pApellido) And p.estado_empleado = pestado
                      Select p).ToList
         Else
-            lista = (From p In ctx.empleado
+            lista = (From p In ctx.empleado.Include("perfil")
                      Where p.apellido_empleado.Contains(pApellido) And p.estado_empleado = pestado
                      Select p).ToList
+
         End If
 
         Dim listaempleado = New List(Of empleado)
@@ -232,6 +191,7 @@
             item.usuario = valor.usuario
             item.contraseña = valor.contraseña
             item.Id_perfil = valor.Id_perfil
+            'item.descripcion_perfil = valor.descripcion_perfil
             item.fecha_empleado = valor.fecha_empleado
             item.estado_empleado = valor.estado_empleado
 
@@ -286,6 +246,20 @@
         Catch ex As Exception
             Return New empleado
         End Try
+    End Function
+
+    Function ObtenerEmpleados()
+
+        Dim listaempleados
+        Dim todos = New With {Key .Nombre = "Todos Los Vendededores", Key .ID = 0}
+        listaempleados = (From p In ctx.empleado
+                          Where p.Id_perfil = 1
+                          Order By p.Id_empleado
+                          Select Nombre = p.apellido_empleado & ", " & p.nombre_empleado, ID = p.Id_empleado).ToList
+
+        listaempleados.Insert(0, todos)
+        Return listaempleados
+
     End Function
 
 End Class

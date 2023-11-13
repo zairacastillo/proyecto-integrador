@@ -36,10 +36,6 @@ Public Class ListarProductos
 
         'se cargan las categorias
         'categorias = ObjCategoria.getAll()
-        CBCateg.DataSource = ObjCategoria.getAll()
-        CBCateg.DisplayMember = "descripcion_cat"
-        CBCateg.ValueMember = "Id_categoria"
-        CBCateg.SelectedValue = 0
 
         If (DGV1.Columns.Count < 1) Then
             Dim colBoton As New System.Windows.Forms.DataGridViewButtonColumn
@@ -56,7 +52,17 @@ Public Class ListarProductos
         'DGV1.Columns(9).Visible = False
     End Sub
 
+    Private Sub DGV1_CellFormatting(sender As Object, e As DataGridViewCellFormattingEventArgs) Handles DGV1.CellFormatting
+        If e.RowIndex >= 0 AndAlso DGV1.Rows(e.RowIndex).Cells("Stock").Value IsNot Nothing Then
+            Dim stock As Integer = Convert.ToInt32(DGV1.Rows(e.RowIndex).Cells("Stock").Value)
+            If stock = 0 Then
+                DGV1.Rows(e.RowIndex).DefaultCellStyle.BackColor = Color.Red ' Cambia el color de fondo a rojo
+            ElseIf stock < 10 Then
+                DGV1.Rows(e.RowIndex).DefaultCellStyle.BackColor = Color.Yellow
+            End If
 
+        End If
+    End Sub
 
     Private Sub TBBuscar_TextChanged(sender As Object, e As KeyPressEventArgs) Handles TBBuscar.KeyPress
         If Validar_letras(e) Then
@@ -108,8 +114,8 @@ Public Class ListarProductos
                         CBEstado.Text = DGV1.Rows(cell.RowIndex).Cells("Estado").Value
                         TBPrecio.Text = DGV1.Rows(cell.RowIndex).Cells("Precio").Value
                         TBStock.Text = DGV1.Rows(cell.RowIndex).Cells("Stock").Value
-                        TBDescripcion.Text = DGV1.Rows(cell.RowIndex).Cells("Descrip").Value
-                        CBCateg.SelectedValue = DGV1.Rows(cell.RowIndex).Cells("CodCat").Value
+                        TBDescripcion.Text = DGV1.Rows(cell.RowIndex).Cells("Descripcion").Value
+                        TBCat.Text = DGV1.Rows(cell.RowIndex).Cells("Categoria").Value
 
                         BAgregarVenta.Enabled = mostrarBAgregarVenta
                         BAgregarVenta.Visible = mostrarBAgregarVenta
@@ -119,6 +125,7 @@ Public Class ListarProductos
 
             End If
         End If
+
 
     End Sub
 
@@ -159,7 +166,6 @@ Public Class ListarProductos
                 OProducto.nombre_producto = TBNombre.Text.Trim
                 OProducto.precio = TBPrecio.Text.Trim
                 OProducto.stock = TBStock.Text.Trim
-                OProducto.Id_categoria = CBCateg.SelectedValue
                 OProducto.descripcion_producto = TBDescripcion.Text.Trim
 
                 NVenta.CargaProducto(OProducto)
@@ -167,4 +173,11 @@ Public Class ListarProductos
             End If
         End If
     End Sub
+
+    Private Sub BTodos_Click(sender As Object, e As EventArgs) Handles BTodos.Click
+        ObjProducto.buscarProducto(DGV1)
+
+    End Sub
+
+
 End Class

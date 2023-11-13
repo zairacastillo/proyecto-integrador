@@ -65,9 +65,9 @@ Public Class ListarClientes
         End If
 
         'buscamos clientes y llenamos la tabla
-        DGV1.DataSource = ObjCliente.buscarCliente(p_dni, TBBuscarAp.Text.Trim, estado)
+        DGV1.DataSource = ObjCliente.buscarCliente(p_dni, TBBuscarAp.Text.Trim)
         DGV1.Columns(1).Visible = False
-        DGV1.Columns(10).Visible = False
+        'DGV1.Columns(10).Visible = False
     End Sub
 
     Private Sub DGV1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGV1.CellContentClick
@@ -86,14 +86,14 @@ Public Class ListarClientes
                 Select Case bc.HeaderText
                     Case "Seleccionar" 'Nombre del boton / celda
 
-                        TBID.Text = DGV1.Rows(cell.RowIndex).Cells("Id_cliente").Value
-                        TBNombre.Text = DGV1.Rows(cell.RowIndex).Cells("nombre_cliente").Value
-                        TBApellido.Text = DGV1.Rows(cell.RowIndex).Cells("apellido_cliente").Value
-                        TBDni.Text = DGV1.Rows(cell.RowIndex).Cells("dni_cliente").Value
-                        TBCorreo.Text = DGV1.Rows(cell.RowIndex).Cells("correo_cliente").Value
-                        TBTel.Text = DGV1.Rows(cell.RowIndex).Cells("telefono_cliente").Value
-                        TBDirec.Text = DGV1.Rows(cell.RowIndex).Cells("direccion_cliente").Value
-                        TBEstado.Text = DGV1.Rows(cell.RowIndex).Cells("estado_cliente").Value
+                        TBID.Text = DGV1.Rows(cell.RowIndex).Cells("ID").Value
+                        TBNombre.Text = DGV1.Rows(cell.RowIndex).Cells("nombre").Value
+                        TBApellido.Text = DGV1.Rows(cell.RowIndex).Cells("apellido").Value
+                        TBDni.Text = DGV1.Rows(cell.RowIndex).Cells("DNI").Value
+                        TBCorreo.Text = DGV1.Rows(cell.RowIndex).Cells("correo").Value
+                        TBTel.Text = DGV1.Rows(cell.RowIndex).Cells("telefono").Value
+                        TBDirec.Text = DGV1.Rows(cell.RowIndex).Cells("direccion").Value
+                        'TBEstado.Text = DGV1.Rows(cell.RowIndex).Cells("estado_cliente").Value
 
                         BAgregarVenta.Enabled = mostrarBAgregarVenta
                         BAgregarVenta.Visible = mostrarBAgregarVenta
@@ -153,7 +153,7 @@ Public Class ListarClientes
                 OCliente.dni_cliente = Integer.Parse(TBDni.Text.Trim)
                 OCliente.nombre_cliente = TBNombre.Text.Trim
                 OCliente.telefono_cliente = TBTel.Text.Trim
-                OCliente.estado_cliente = TBEstado.Text.Trim
+                'OCliente.estado_cliente = TBEstado.Text.Trim
 
                 NVenta.CargaCliente(OCliente)
                 Me.Close()

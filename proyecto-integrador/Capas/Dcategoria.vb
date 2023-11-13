@@ -43,44 +43,6 @@
         Return listacategoria
     End Function
 
-    '    Function ExisteMail(ByVal pmail As String, Optional pid As Integer = -1) As Boolean
-    '
-    '        Dim listacategorias = (From p In ctx.categoria
-    '                               Where p.correo_categoria = pmail
-    '                               Select p).ToList
-    '
-    '        If (listacategorias.Count() = 0) Then
-    '            Return False 'Correo no existe
-    '        Else
-    '            If (listacategorias.First.Id_categoria = pid) Then
-    '                Return False 'Correo existe pero es el mismo categoria
-    '            End If
-    '
-    '            MsgBox("ERROR: El Correo ya ha sido registrado", Title:="ERROR")
-    '            Return True 'Correo ya existe
-    '        End If
-    '    End Function
-    '
-    '    Function ExisteDNI(ByVal pdni As String, Optional pid As Integer = -1) As Boolean
-    '
-    '        Dim listacategorias = (From p In ctx.categoria
-    '                               Where p.dni_categoria = pdni
-    '                               Select p).ToList
-    '
-    '        If (listacategorias.Count() = 0) Then
-    '            Return False 'dni no existe
-    '        Else
-    '            If (listacategorias.First.Id_categoria = pid) Then
-    '                Return False 'dni existe pero es el mismo categoria
-    '            End If
-    '
-    '            MsgBox("ERROR: El Dni ya ha sido registrado", Title:="ERROR")
-    '            Return True 'dni ya existe
-    '        End If
-    '    End Function
-    '
-    'Retorna true si existe categoria con la descripcion recibida como parametro
-
     Function Existecategoria(ByVal pdesc As String) As Boolean
 
         Dim buscarCat = (From p In ctx.categoria
@@ -93,55 +55,16 @@
         End If
     End Function
 
-    '    'Devuelve verdadero si existe un teléfono recibido
-    '    Function ExisteTelefono(ByVal ptel As String) As Boolean
-    '
-    '        Dim buscarTel = (From p In ctx.categoria
-    '                         Where p.telefono_categoria = ptel
-    '                         Select p).Count
-    '        If buscarTel = 0 Then
-    '            Return True 'Tel ya existe
-    '        Else
-    '            Return False 'Tel no existe
-    '        End If
-    '    End Function
-    '
-    '
-    '    'Devuelve verdadero si existe un correo recibido
-    '    Function ExisteMail(ByVal pcorreo As String) As Boolean
-    '
-    '        Dim buscarCorreo = (From p In ctx.categoria
-    '                            Where p.correo_categoria = pcorreo
-    '                            Select p).Count
-    '        If buscarCorreo = 0 Then
-    '            Return True 'Correo ya existe
-    '        Else
-    '            Return False 'Correo no existe
-    '        End If
-    '    End Function
-    '
-    Function buscarCategoria(ByVal pdesc As String) As List(Of categoria)
+
+    Function buscarCategoria(ByVal pdesc As String)
         Dim lista
 
         lista = (From p In ctx.categoria
                  Where p.descripcion_cat.Contains(pdesc)
-                 Select p).ToList
+                 Select ID = p.Id_categoria, Descripcion = p.descripcion_cat).ToList
 
 
-        Dim listacategoria = New List(Of categoria)
-
-        For Each valor In lista
-
-            Dim item As categoria = New categoria
-
-            item.Id_categoria = valor.Id_categoria
-            item.descripcion_cat = valor.descripcion_cat
-
-
-            listacategoria.Add(item)
-
-        Next
-        Return listacategoria
+        Return lista
     End Function
     '
     Public Function Modificar(ByVal ocategoria As categoria)
@@ -161,6 +84,17 @@
         End Try
     End Function
     '
-    '
+    Function ObtenerCategorias()
+
+        Dim listacategoria
+        Dim todos = New With {Key .Nombre = "Todas Las Categorias", Key .ID = 0}
+        listacategoria = (From p In ctx.categoria
+                          Order By p.Id_categoria
+                          Select Nombre = p.descripcion_cat, ID = p.Id_categoria).ToList
+
+        listacategoria.Insert(0, todos)
+        Return listacategoria
+
+    End Function
     '
 End Class

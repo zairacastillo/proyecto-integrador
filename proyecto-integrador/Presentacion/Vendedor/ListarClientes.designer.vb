@@ -24,8 +24,7 @@ Partial Class ListarClientes
     Private Sub InitializeComponent()
         Me.DGV1 = New System.Windows.Forms.DataGridView()
         Me.PanelPrincipal = New System.Windows.Forms.Panel()
-        Me.TBEstado = New System.Windows.Forms.TextBox()
-        Me.LEstado = New System.Windows.Forms.Label()
+        Me.BAgregarVenta = New System.Windows.Forms.Button()
         Me.TBID = New System.Windows.Forms.TextBox()
         Me.LID = New System.Windows.Forms.Label()
         Me.TBTel = New System.Windows.Forms.TextBox()
@@ -46,7 +45,6 @@ Partial Class ListarClientes
         Me.TBBuscarAp = New System.Windows.Forms.TextBox()
         Me.BBuscarDni = New System.Windows.Forms.Button()
         Me.BBuscarAp = New System.Windows.Forms.Button()
-        Me.BAgregarVenta = New System.Windows.Forms.Button()
         CType(Me.DGV1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelPrincipal.SuspendLayout()
         Me.SuspendLayout()
@@ -69,8 +67,6 @@ Partial Class ListarClientes
         Me.PanelPrincipal.BackColor = System.Drawing.Color.FromArgb(CType(CType(116, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(47, Byte), Integer))
         Me.PanelPrincipal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.PanelPrincipal.Controls.Add(Me.BAgregarVenta)
-        Me.PanelPrincipal.Controls.Add(Me.TBEstado)
-        Me.PanelPrincipal.Controls.Add(Me.LEstado)
         Me.PanelPrincipal.Controls.Add(Me.TBID)
         Me.PanelPrincipal.Controls.Add(Me.LID)
         Me.PanelPrincipal.Controls.Add(Me.TBTel)
@@ -91,26 +87,14 @@ Partial Class ListarClientes
         Me.PanelPrincipal.Size = New System.Drawing.Size(915, 297)
         Me.PanelPrincipal.TabIndex = 3
         '
-        'TBEstado
+        'BAgregarVenta
         '
-        Me.TBEstado.Enabled = False
-        Me.TBEstado.Location = New System.Drawing.Point(551, 183)
-        Me.TBEstado.Name = "TBEstado"
-        Me.TBEstado.ReadOnly = True
-        Me.TBEstado.Size = New System.Drawing.Size(254, 20)
-        Me.TBEstado.TabIndex = 22
-        '
-        'LEstado
-        '
-        Me.LEstado.AutoSize = True
-        Me.LEstado.BackColor = System.Drawing.Color.Transparent
-        Me.LEstado.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LEstado.ForeColor = System.Drawing.Color.White
-        Me.LEstado.Location = New System.Drawing.Point(443, 178)
-        Me.LEstado.Name = "LEstado"
-        Me.LEstado.Size = New System.Drawing.Size(85, 25)
-        Me.LEstado.TabIndex = 21
-        Me.LEstado.Text = "Estado:"
+        Me.BAgregarVenta.Location = New System.Drawing.Point(825, 109)
+        Me.BAgregarVenta.Name = "BAgregarVenta"
+        Me.BAgregarVenta.Size = New System.Drawing.Size(75, 67)
+        Me.BAgregarVenta.TabIndex = 25
+        Me.BAgregarVenta.Text = "Agregar a Venta"
+        Me.BAgregarVenta.UseVisualStyleBackColor = True
         '
         'TBID
         '
@@ -303,15 +287,6 @@ Partial Class ListarClientes
         Me.BBuscarAp.Text = "Buscar"
         Me.BBuscarAp.UseVisualStyleBackColor = True
         '
-        'BAgregarVenta
-        '
-        Me.BAgregarVenta.Location = New System.Drawing.Point(825, 109)
-        Me.BAgregarVenta.Name = "BAgregarVenta"
-        Me.BAgregarVenta.Size = New System.Drawing.Size(75, 67)
-        Me.BAgregarVenta.TabIndex = 25
-        Me.BAgregarVenta.Text = "Agregar a Venta"
-        Me.BAgregarVenta.UseVisualStyleBackColor = True
-        '
         'ListarClientes
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -360,7 +335,5 @@ Partial Class ListarClientes
     Friend WithEvents BBuscarAp As Button
     Friend WithEvents TBID As TextBox
     Friend WithEvents LID As Label
-    Friend WithEvents TBEstado As TextBox
-    Friend WithEvents LEstado As Label
     Friend WithEvents BAgregarVenta As Button
 End Class

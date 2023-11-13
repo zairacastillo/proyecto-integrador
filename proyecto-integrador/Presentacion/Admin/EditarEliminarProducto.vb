@@ -39,24 +39,21 @@ Public Class EditarEliminarProducto
             DGV1.Columns.Add(colBoton)
         End If
 
-
         'buscamos productos y llenamos la tabla
         ObjProducto.buscarProducto(DGV1, CBCategoria.SelectedValue, TBBuscar.Text.Trim, estado)
-
-        ' If Not DGV1.Columns.Contains("Categorias") Then
-        '     Dim colCat As New System.Windows.Forms.DataGridViewTextBoxColumn
-        '     colCat.HeaderText = "Categorias"
-        '     colCat.Name = "Categorias"
-        '     DGV1.Columns.Add(colCat)
-        ' End If
-        '
-        '
-        ' ObjProducto.llenarCategorias(DGV1)
-        'DGV1.Columns(8).Visible = False
-        'DGV1.Columns(9).Visible = False
     End Sub
 
+    Private Sub DGV1_CellFormatting(sender As Object, e As DataGridViewCellFormattingEventArgs) Handles DGV1.CellFormatting
+        If e.RowIndex >= 0 AndAlso DGV1.Rows(e.RowIndex).Cells("Stock").Value IsNot Nothing Then
+            Dim stock As Integer = Convert.ToInt32(DGV1.Rows(e.RowIndex).Cells("Stock").Value)
+            If stock = 0 Then
+                DGV1.Rows(e.RowIndex).DefaultCellStyle.BackColor = Color.Red ' Cambia el color de fondo a rojo
+            ElseIf stock < 10 Then
+                DGV1.Rows(e.RowIndex).DefaultCellStyle.BackColor = Color.Yellow 'cambia a amarillo
+            End If
 
+        End If
+    End Sub
 
     Private Sub TBBuscar_TextChanged(sender As Object, e As KeyPressEventArgs) Handles TBBuscar.KeyPress
         If Validar_letras(e) Then
@@ -120,8 +117,8 @@ Public Class EditarEliminarProducto
                         CBEstado.Text = DGV1.Rows(cell.RowIndex).Cells("Estado").Value
                         TBPrecio.Text = Decimal.Parse(DGV1.Rows(cell.RowIndex).Cells("Precio").Value)
                         TBStock.Text = DGV1.Rows(cell.RowIndex).Cells("Stock").Value
-                        TBDescripcion.Text = DGV1.Rows(cell.RowIndex).Cells("Descrip").Value
-                        CBCateg.SelectedValue = DGV1.Rows(cell.RowIndex).Cells("CodCat").Value
+                        TBDescripcion.Text = DGV1.Rows(cell.RowIndex).Cells("Descripcion").Value
+                        CBCateg.SelectedValue = DGV1.Rows(cell.RowIndex).Cells("IDCAT").Value
 
                         BEditar.Enabled = True
 
@@ -193,7 +190,7 @@ Public Class EditarEliminarProducto
 
                     MsgBox("Los datos se guardaron correctamente", Title:="Confirmar Inserción")
                     'Reseteamos Form
-                    'BCancelar_Click(sender, e)
+                    BCancelar_Click(sender, e)
                     ObjProducto.buscarProducto(DGV1, CBCategoria.SelectedValue, TBBuscar.Text.Trim, estado)
 
                 Else
@@ -204,4 +201,15 @@ Public Class EditarEliminarProducto
         End If
     End Sub
 
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        TBBuscar.Clear()
+        Dim categorias = ObjCategoria.getAll()
+        'se cargan las categorias
+        CBCategoria.DataSource = categorias
+        CBCategoria.DisplayMember = "descripcion_cat"
+        CBCategoria.ValueMember = "Id_categoria"
+        CBCategoria.SelectedValue = 0
+        'buscamos productos y llenamos la tabla
+        ObjProducto.buscarProducto(DGV1, CBCategoria.SelectedValue, TBBuscar.Text.Trim, estado)
+    End Sub
 End Class

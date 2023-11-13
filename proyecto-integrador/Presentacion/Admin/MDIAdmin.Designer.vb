@@ -25,23 +25,24 @@ Partial Class MDIAdmin
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.MenuStrip = New System.Windows.Forms.MenuStrip()
-        Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.EditarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem1ToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
         Me.BListarVentas = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem3 = New System.Windows.Forms.ToolStripMenuItem()
         Me.BNuevoProducto = New System.Windows.Forms.ToolStripMenuItem()
         Me.BListarProducto = New System.Windows.Forms.ToolStripMenuItem()
         Me.GestionCategoriaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem4 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.BListarVendedores = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem5 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ProductosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CategoriasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ClientesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.VendedoresToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.StatusStrip = New System.Windows.Forms.StatusStrip()
         Me.ToolStripStatusLabel = New System.Windows.Forms.ToolStripStatusLabel()
         Me.ToolTip = New System.Windows.Forms.ToolTip(Me.components)
         Me.LEmpleadoN = New System.Windows.Forms.Label()
         Me.LEmpleadoA = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.BCerrarSesion = New System.Windows.Forms.Button()
         Me.MenuStrip.SuspendLayout()
         Me.StatusStrip.SuspendLayout()
         Me.SuspendLayout()
@@ -49,36 +50,13 @@ Partial Class MDIAdmin
         'MenuStrip
         '
         Me.MenuStrip.Dock = System.Windows.Forms.DockStyle.Left
-        Me.MenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem1, Me.ToolStripMenuItem1ToolStripMenuItem2, Me.ToolStripMenuItem3, Me.ToolStripMenuItem4, Me.ToolStripMenuItem5})
+        Me.MenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem1ToolStripMenuItem2, Me.ToolStripMenuItem3, Me.ToolStripMenuItem5})
         Me.MenuStrip.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip.Name = "MenuStrip"
         Me.MenuStrip.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional
-        Me.MenuStrip.Size = New System.Drawing.Size(124, 431)
+        Me.MenuStrip.Size = New System.Drawing.Size(126, 431)
         Me.MenuStrip.TabIndex = 5
         Me.MenuStrip.Text = "________"
-        '
-        'ToolStripMenuItem1
-        '
-        Me.ToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EditarToolStripMenuItem})
-        Me.ToolStripMenuItem1.Image = Global.proyecto_integrador.My.Resources.Resources.cliente
-        Me.ToolStripMenuItem1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.ToolStripMenuItem1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
-        Me.ToolStripMenuItem1.ImageTransparentColor = System.Drawing.Color.Transparent
-        Me.ToolStripMenuItem1.Margin = New System.Windows.Forms.Padding(0, 5, 0, 5)
-        Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
-        Me.ToolStripMenuItem1.Padding = New System.Windows.Forms.Padding(4, 10, 4, 0)
-        Me.ToolStripMenuItem1.ShowShortcutKeys = False
-        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(111, 46)
-        Me.ToolStripMenuItem1.Text = "  &Clientes"
-        Me.ToolStripMenuItem1.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        '
-        'EditarToolStripMenuItem
-        '
-        Me.EditarToolStripMenuItem.Image = Global.proyecto_integrador.My.Resources.Resources.lapiz
-        Me.EditarToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
-        Me.EditarToolStripMenuItem.Name = "EditarToolStripMenuItem"
-        Me.EditarToolStripMenuItem.Size = New System.Drawing.Size(185, 38)
-        Me.EditarToolStripMenuItem.Text = "Gestionar Clientes"
         '
         'ToolStripMenuItem1ToolStripMenuItem2
         '
@@ -91,7 +69,7 @@ Partial Class MDIAdmin
         Me.ToolStripMenuItem1ToolStripMenuItem2.Name = "ToolStripMenuItem1ToolStripMenuItem2"
         Me.ToolStripMenuItem1ToolStripMenuItem2.Padding = New System.Windows.Forms.Padding(4, 10, 4, 0)
         Me.ToolStripMenuItem1ToolStripMenuItem2.ShowShortcutKeys = False
-        Me.ToolStripMenuItem1ToolStripMenuItem2.Size = New System.Drawing.Size(111, 46)
+        Me.ToolStripMenuItem1ToolStripMenuItem2.Size = New System.Drawing.Size(113, 46)
         Me.ToolStripMenuItem1ToolStripMenuItem2.Text = "  &Ventas"
         Me.ToolStripMenuItem1ToolStripMenuItem2.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
@@ -115,7 +93,7 @@ Partial Class MDIAdmin
         Me.ToolStripMenuItem3.Margin = New System.Windows.Forms.Padding(0, 5, 0, 5)
         Me.ToolStripMenuItem3.Name = "ToolStripMenuItem3"
         Me.ToolStripMenuItem3.Padding = New System.Windows.Forms.Padding(4, 10, 4, 0)
-        Me.ToolStripMenuItem3.Size = New System.Drawing.Size(111, 46)
+        Me.ToolStripMenuItem3.Size = New System.Drawing.Size(113, 46)
         Me.ToolStripMenuItem3.Text = "  &Productos"
         '
         'BNuevoProducto
@@ -140,30 +118,9 @@ Partial Class MDIAdmin
         Me.GestionCategoriaToolStripMenuItem.Size = New System.Drawing.Size(184, 38)
         Me.GestionCategoriaToolStripMenuItem.Text = "Gestion Categoria"
         '
-        'ToolStripMenuItem4
-        '
-        Me.ToolStripMenuItem4.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BListarVendedores})
-        Me.ToolStripMenuItem4.Image = Global.proyecto_integrador.My.Resources.Resources.vendedor
-        Me.ToolStripMenuItem4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.ToolStripMenuItem4.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
-        Me.ToolStripMenuItem4.Margin = New System.Windows.Forms.Padding(0, 5, 0, 5)
-        Me.ToolStripMenuItem4.Name = "ToolStripMenuItem4"
-        Me.ToolStripMenuItem4.Padding = New System.Windows.Forms.Padding(4, 10, 4, 0)
-        Me.ToolStripMenuItem4.Size = New System.Drawing.Size(111, 46)
-        Me.ToolStripMenuItem4.Text = "  &Vendedores"
-        '
-        'BListarVendedores
-        '
-        Me.BListarVendedores.CheckOnClick = True
-        Me.BListarVendedores.Image = Global.proyecto_integrador.My.Resources.Resources.listar
-        Me.BListarVendedores.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
-        Me.BListarVendedores.Name = "BListarVendedores"
-        Me.BListarVendedores.ShowShortcutKeys = False
-        Me.BListarVendedores.Size = New System.Drawing.Size(111, 38)
-        Me.BListarVendedores.Text = "&Listar"
-        '
         'ToolStripMenuItem5
         '
+        Me.ToolStripMenuItem5.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ProductosToolStripMenuItem, Me.CategoriasToolStripMenuItem, Me.ClientesToolStripMenuItem, Me.VendedoresToolStripMenuItem})
         Me.ToolStripMenuItem5.Image = Global.proyecto_integrador.My.Resources.Resources.estadisticas
         Me.ToolStripMenuItem5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.ToolStripMenuItem5.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
@@ -172,9 +129,33 @@ Partial Class MDIAdmin
         Me.ToolStripMenuItem5.Name = "ToolStripMenuItem5"
         Me.ToolStripMenuItem5.Padding = New System.Windows.Forms.Padding(4, 10, 4, 0)
         Me.ToolStripMenuItem5.ShowShortcutKeys = False
-        Me.ToolStripMenuItem5.Size = New System.Drawing.Size(111, 46)
+        Me.ToolStripMenuItem5.Size = New System.Drawing.Size(113, 46)
         Me.ToolStripMenuItem5.Text = "  &Reportes"
         Me.ToolStripMenuItem5.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'ProductosToolStripMenuItem
+        '
+        Me.ProductosToolStripMenuItem.Name = "ProductosToolStripMenuItem"
+        Me.ProductosToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.ProductosToolStripMenuItem.Text = "Categorias"
+        '
+        'CategoriasToolStripMenuItem
+        '
+        Me.CategoriasToolStripMenuItem.Name = "CategoriasToolStripMenuItem"
+        Me.CategoriasToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.CategoriasToolStripMenuItem.Text = "Clientes"
+        '
+        'ClientesToolStripMenuItem
+        '
+        Me.ClientesToolStripMenuItem.Name = "ClientesToolStripMenuItem"
+        Me.ClientesToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.ClientesToolStripMenuItem.Text = "Productos"
+        '
+        'VendedoresToolStripMenuItem
+        '
+        Me.VendedoresToolStripMenuItem.Name = "VendedoresToolStripMenuItem"
+        Me.VendedoresToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.VendedoresToolStripMenuItem.Text = "Vendedores"
         '
         'StatusStrip
         '
@@ -195,7 +176,7 @@ Partial Class MDIAdmin
         '
         Me.LEmpleadoN.AutoSize = True
         Me.LEmpleadoN.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LEmpleadoN.Location = New System.Drawing.Point(25, 368)
+        Me.LEmpleadoN.Location = New System.Drawing.Point(12, 255)
         Me.LEmpleadoN.Name = "LEmpleadoN"
         Me.LEmpleadoN.Size = New System.Drawing.Size(81, 20)
         Me.LEmpleadoN.TabIndex = 11
@@ -205,7 +186,7 @@ Partial Class MDIAdmin
         '
         Me.LEmpleadoA.AutoSize = True
         Me.LEmpleadoA.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LEmpleadoA.Location = New System.Drawing.Point(25, 405)
+        Me.LEmpleadoA.Location = New System.Drawing.Point(12, 306)
         Me.LEmpleadoA.Name = "LEmpleadoA"
         Me.LEmpleadoA.Size = New System.Drawing.Size(81, 20)
         Me.LEmpleadoA.TabIndex = 12
@@ -215,11 +196,24 @@ Partial Class MDIAdmin
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(12, 322)
+        Me.Label1.Location = New System.Drawing.Point(8, 206)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(102, 20)
         Me.Label1.TabIndex = 13
         Me.Label1.Text = "Bienvenido:"
+        '
+        'BCerrarSesion
+        '
+        Me.BCerrarSesion.BackgroundImage = Global.proyecto_integrador.My.Resources.Resources.logout1
+        Me.BCerrarSesion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.BCerrarSesion.DialogResult = System.Windows.Forms.DialogResult.Cancel
+        Me.BCerrarSesion.Location = New System.Drawing.Point(12, 354)
+        Me.BCerrarSesion.Name = "BCerrarSesion"
+        Me.BCerrarSesion.Size = New System.Drawing.Size(88, 63)
+        Me.BCerrarSesion.TabIndex = 15
+        Me.BCerrarSesion.Text = "Cerrar Sesion"
+        Me.BCerrarSesion.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.BCerrarSesion.UseVisualStyleBackColor = True
         '
         'MDIAdmin
         '
@@ -228,11 +222,13 @@ Partial Class MDIAdmin
         Me.BackColor = System.Drawing.SystemColors.Window
         Me.BackgroundImage = Global.proyecto_integrador.My.Resources.Resources.logo11
         Me.ClientSize = New System.Drawing.Size(632, 453)
+        Me.Controls.Add(Me.BCerrarSesion)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.LEmpleadoA)
         Me.Controls.Add(Me.LEmpleadoN)
         Me.Controls.Add(Me.MenuStrip)
         Me.Controls.Add(Me.StatusStrip)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.IsMdiContainer = True
         Me.MainMenuStrip = Me.MenuStrip
         Me.Name = "MDIAdmin"
@@ -254,15 +250,16 @@ Partial Class MDIAdmin
     Friend WithEvents BListarVentas As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents MenuStrip As System.Windows.Forms.MenuStrip
     Friend WithEvents ToolStripMenuItem3 As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents ToolStripMenuItem4 As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents BListarVendedores As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents BNuevoProducto As ToolStripMenuItem
     Friend WithEvents BListarProducto As ToolStripMenuItem
-    Friend WithEvents ToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents ToolStripMenuItem5 As ToolStripMenuItem
-    Friend WithEvents EditarToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents GestionCategoriaToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents LEmpleadoN As Label
     Friend WithEvents LEmpleadoA As Label
     Friend WithEvents Label1 As Label
+    Friend WithEvents BCerrarSesion As Button
+    Friend WithEvents ProductosToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents CategoriasToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ClientesToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents VendedoresToolStripMenuItem As ToolStripMenuItem
 End Class

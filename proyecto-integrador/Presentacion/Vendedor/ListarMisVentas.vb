@@ -30,9 +30,7 @@
         factura.MostrarFactura1(LDni.Text, DVentas)
     End Sub
 
-    Private Sub DGV1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs)
 
-    End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Dim fecha As Date = System.DateTime.Now
@@ -40,14 +38,12 @@
         If DTPDesde.Value > DTPHasta.Value Or DTPHasta.Value > fecha Or DTPDesde.Value > fecha Then
             MsgBox("Fecha incorrecta", MsgBoxStyle.DefaultButton2 + MsgBoxStyle.Critical, "error")
         Else
-            factura.porFecha1(DTPDesde.Value, DTPHasta.Value, DVentas, OEmpleado.Id_empleado)
+            factura.porFecha(DTPDesde.Value, DTPHasta.Value.Date.AddDays(1), DVentas, OEmpleado.Id_empleado)
 
         End If
     End Sub
 
-    Private Sub DVentas_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DVentas.CellContentClick
 
-    End Sub
 
     Private Sub BDetalle_Click(sender As Object, e As EventArgs) Handles BDetalle.Click
         Dim fila As Integer = Me.DVentas.CurrentRow.Index
@@ -60,11 +56,12 @@
 
     End Sub
 
+
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         If DVGDetalleFac.Rows.Count > 0 Then
             Dim idVenta = DVGDetalleFac.Rows(0).Cells(0).Value
             Dim impVenta As New ImprimirVenta(idVenta)
-            impVenta.MdiParent = Me.MdiParent
+            'impVenta.MdiParent = Me.MdiParent
             impVenta.Show()
             wait(1)
             impVenta.imprimir()
@@ -77,4 +74,14 @@
             Application.DoEvents()
         Next
     End Sub
+
+    Private Sub BTodos_Click(sender As Object, e As EventArgs) Handles BTodos.Click
+        DVGDetalleFac.DataSource = Nothing
+        DVGDetalleFac.Rows.Clear()
+        Dim factura As New Dventa
+        LDni.Text = OEmpleado.dni_empleado
+        factura.MostrarFactura1(LDni.Text, DVentas)
+
+    End Sub
 End Class
+

@@ -34,6 +34,8 @@ Partial Class SoloListarVentas
         Me.CBEmpleados = New System.Windows.Forms.ComboBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.BDetalle = New System.Windows.Forms.Button()
+        Me.Button3 = New System.Windows.Forms.Button()
+        Me.PrintDialog1 = New System.Windows.Forms.PrintDialog()
         CType(Me.DVGDetalleFac, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DVentas, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -81,7 +83,7 @@ Partial Class SoloListarVentas
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(521, 78)
+        Me.Button1.Location = New System.Drawing.Point(436, 85)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(111, 57)
         Me.Button1.TabIndex = 106
@@ -145,7 +147,7 @@ Partial Class SoloListarVentas
         'CBEmpleados
         '
         Me.CBEmpleados.FormattingEnabled = True
-        Me.CBEmpleados.Location = New System.Drawing.Point(698, 78)
+        Me.CBEmpleados.Location = New System.Drawing.Point(612, 90)
         Me.CBEmpleados.Name = "CBEmpleados"
         Me.CBEmpleados.Size = New System.Drawing.Size(176, 21)
         Me.CBEmpleados.TabIndex = 114
@@ -154,7 +156,7 @@ Partial Class SoloListarVentas
         '
         Me.Label2.AutoSize = True
         Me.Label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label2.Location = New System.Drawing.Point(749, 48)
+        Me.Label2.Location = New System.Drawing.Point(729, 56)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(59, 13)
         Me.Label2.TabIndex = 115
@@ -169,12 +171,26 @@ Partial Class SoloListarVentas
         Me.BDetalle.Text = "Ver detalle"
         Me.BDetalle.UseVisualStyleBackColor = True
         '
+        'Button3
+        '
+        Me.Button3.Location = New System.Drawing.Point(879, 227)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(68, 35)
+        Me.Button3.TabIndex = 117
+        Me.Button3.Text = "Todos"
+        Me.Button3.UseVisualStyleBackColor = True
+        '
+        'PrintDialog1
+        '
+        Me.PrintDialog1.UseEXDialog = True
+        '
         'SoloListarVentas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(12, Byte), Integer), CType(CType(12, Byte), Integer), CType(CType(30, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(976, 650)
+        Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.BDetalle)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.CBEmpleados)
@@ -210,4 +226,6 @@ Partial Class SoloListarVentas
     Friend WithEvents CBEmpleados As ComboBox
     Friend WithEvents Label2 As Label
     Friend WithEvents BDetalle As Button
+    Friend WithEvents Button3 As Button
+    Friend WithEvents PrintDialog1 As PrintDialog
 End Class

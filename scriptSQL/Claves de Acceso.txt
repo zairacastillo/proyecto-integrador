@@ -1,0 +1,11 @@
+Super Admin: 
+usuario: "superAdmin"
+contraseña: 12345678
+
+admin: 
+usuario: "admin"
+contraseña: 12345678
+
+vendedor: 
+usuario: "vendedor"
+contraseña: 12345678

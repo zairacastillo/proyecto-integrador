@@ -4,20 +4,22 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="5b1e4defe616425ab1260ffd7e496423" Name="Diagram1">
-        <EntityTypeShape EntityType="CLUBMENModel.categoria" Width="1.5" PointX="3" PointY="11.125" IsExpanded="true" />
+      <Diagram DiagramId="c7162c4768de401cbce3c3d9fe77d037" Name="Diagram1">
+        <EntityTypeShape EntityType="CLUBMENModel.categoria" Width="1.5" PointX="3" PointY="13.125" IsExpanded="true" />
         <EntityTypeShape EntityType="CLUBMENModel.cliente" Width="1.5" PointX="3" PointY="6.375" IsExpanded="true" />
         <EntityTypeShape EntityType="CLUBMENModel.detalle_venta" Width="1.5" PointX="7.5" PointY="1.625" IsExpanded="true" />
         <EntityTypeShape EntityType="CLUBMENModel.empleado" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="CLUBMENModel.pago" Width="1.5" PointX="3" PointY="9.875" IsExpanded="true" />
         <EntityTypeShape EntityType="CLUBMENModel.perfil" Width="1.5" PointX="0.75" PointY="2.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="CLUBMENModel.producto" Width="1.5" PointX="5.25" PointY="10.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="CLUBMENModel.venta" Width="1.5" PointX="5.25" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="CLUBMENModel.producto" Width="1.5" PointX="5.25" PointY="12.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CLUBMENModel.venta" Width="1.5" PointX="5.25" PointY="1.375" IsExpanded="true" />
         <AssociationConnector Association="CLUBMENModel.Fk_producto_categoria" ManuallyRouted="false" />
         <AssociationConnector Association="CLUBMENModel.Fk_venta_cliente" ManuallyRouted="false" />
         <AssociationConnector Association="CLUBMENModel.Fk_detalle_venta_producto" ManuallyRouted="false" />
         <AssociationConnector Association="CLUBMENModel.Fk_venta_detalle_venta" ManuallyRouted="false" />
         <AssociationConnector Association="CLUBMENModel.Fk_empleado_perfil" ManuallyRouted="false" />
         <AssociationConnector Association="CLUBMENModel.Fk_venta_empleado" ManuallyRouted="false" />
+        <AssociationConnector Association="CLUBMENModel.Fk_venta_pago" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -19,8 +19,27 @@ Public Class NuevoProducto
 
 
         ObjProducto.GetProductoAll(DGV1)
-        '  establecemos altura de las filas
-        '  DGV1.RowTemplate.Height = 50
+        For fila As Integer = 0 To DGV1.Rows.Count - 1
+            Dim dvgstock = DGV1.Item(6, fila).Value
+            If dvgstock > 1 Then
+                DGV1.Rows(fila).DefaultCellStyle.BackColor = Color.Blue
+
+            End If
+
+        Next
+
+    End Sub
+
+    Private Sub DGV1_CellFormatting(sender As Object, e As DataGridViewCellFormattingEventArgs) Handles DGV1.CellFormatting
+        If e.RowIndex >= 0 AndAlso DGV1.Rows(e.RowIndex).Cells("Stock").Value IsNot Nothing Then
+            Dim stock As Integer = Convert.ToInt32(DGV1.Rows(e.RowIndex).Cells("Stock").Value)
+            If stock = 0 Then
+                DGV1.Rows(e.RowIndex).DefaultCellStyle.BackColor = Color.Red ' Cambia el color de fondo a rojo
+            ElseIf stock < 10 Then
+                DGV1.Rows(e.RowIndex).DefaultCellStyle.BackColor = Color.Yellow
+            End If
+
+        End If
     End Sub
 
 
@@ -109,7 +128,7 @@ Public Class NuevoProducto
         e.Handled = True
     End Sub
 
-    Private Sub LDescripcion_Click(sender As Object, e As EventArgs) Handles LDescripcion.Click
+    Private Sub DGV1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGV1.CellContentClick
 
     End Sub
 End Class

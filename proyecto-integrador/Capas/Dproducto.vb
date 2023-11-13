@@ -25,7 +25,7 @@
                                     Categoria = p.categoria.descripcion_cat, Descrip = p.descripcion_producto, Precio = p.precio, Stock = p.stock, Estado = p.estado_producto).ToList
 
         grid.DataSource = listaproducto
-
+        'grid.DataSource = Control_Stock(grid)
         'grid.Columns(7).Visible = False
 
     End Sub
@@ -84,45 +84,7 @@
         Next
         Return listaproducto
     End Function
-    '
-    '    Function ExisteMail(ByVal pmail As String, Optional pid As Integer = -1) As Boolean
-    '
-    '        Dim listaproductos = (From p In ctx.producto
-    '                              Where p.correo_producto = pmail
-    '                              Select p).ToList
-    '
-    '        If (listaproductos.Count() = 0) Then
-    '            Return False 'Correo no existe
-    '        Else
-    '            If (listaproductos.First.Id_producto = pid) Then
-    '                Return False 'Correo existe pero es el mismo producto
-    '            End If
-    '
-    '            MsgBox("ERROR: El Correo ya ha sido registrado", Title:="ERROR")
-    '            Return True 'Correo ya existe
-    '        End If
-    '    End Function
-    '
-    '    Function ExisteDNI(ByVal pdni As String, Optional pid As Integer = -1) As Boolean
-    '
-    '        Dim listaproductos = (From p In ctx.producto
-    '                              Where p.dni_producto = pdni
-    '                              Select p).ToList
-    '
-    '        If (listaproductos.Count() = 0) Then
-    '            Return False 'dni no existe
-    '        Else
-    '            If (listaproductos.First.Id_producto = pid) Then
-    '                Return False 'dni existe pero es el mismo producto
-    '            End If
-    '
-    '            MsgBox("ERROR: El Dni ya ha sido registrado", Title:="ERROR")
-    '            Return True 'dni ya existe
-    '        End If
-    '    End Function
-    '
-    '    'Retorna true si existe producto con el dni recibido como parametro
-    '
+
     Function ExisteProducto(ByVal pnombre As String, Optional ByVal pid As Integer = -1) As Boolean
 
         Dim buscarProd = (From p In ctx.producto
@@ -147,13 +109,11 @@
         If (pidCategoria > 0) Then
             lista = (From p In ctx.producto
                      Where p.Id_categoria = pidCategoria And p.nombre_producto.Contains(pnombre) And p.estado_producto = pestado
-                     Select Codigo = p.Id_producto, Nombre = p.nombre_producto, CodCat = p.categoria.Id_categoria,
-                                    Categoria = p.categoria.descripcion_cat, Descrip = p.descripcion_producto, Precio = p.precio, Stock = p.stock, Estado = p.estado_producto).ToList
+                     Select Codigo = p.Id_producto, Nombre = p.nombre_producto, Categoria = p.categoria.descripcion_cat, Descripcion = p.descripcion_producto, Precio = p.precio, Stock = p.stock, Estado = p.estado_producto, IDCAT = p.categoria.Id_categoria).ToList
         Else
             lista = (From p In ctx.producto
                      Where p.nombre_producto.Contains(pnombre) And p.estado_producto = pestado
-                     Select Codigo = p.Id_producto, Nombre = p.nombre_producto, CodCat = p.categoria.Id_categoria,
-                                    Categoria = p.categoria.descripcion_cat, Descrip = p.descripcion_producto, Precio = p.precio, Stock = p.stock, Estado = p.estado_producto).ToList
+                     Select Codigo = p.Id_producto, Nombre = p.nombre_producto, Categoria = p.categoria.descripcion_cat, Descripcion = p.descripcion_producto, Precio = p.precio, Stock = p.stock, Estado = p.estado_producto, IDCAT = p.categoria.Id_categoria).ToList
         End If
 
 
@@ -199,8 +159,29 @@
         End Try
     End Function
 
+    Function Control_Stock(ByVal grid As DataGridView) As DataGridView
+        For Each fila As DataGridViewRow In grid.Rows
+            If fila.Cells("Stock").Value < 10000000 Then
+                fila.Cells(6).Style.BackColor = Color.Red
+            ElseIf fila.Cells("Stock").Value < 11 Then
+                fila.DefaultCellStyle.BackColor = Color.Yellow
+            End If
+        Next
 
+        Return grid
+    End Function
     '
+    Function ObtenerProductos()
+
+        Dim listaproducto
+        Dim todos = New With {Key .Nombre = "Todos Los Productos", Key .ID = 0}
+        listaproducto = (From p In ctx.producto
+                         Order By p.Id_producto
+                         Select Nombre = p.categoria.descripcion_cat & " " & p.nombre_producto, ID = p.Id_producto).ToList
+
+        listaproducto.Insert(0, todos)
+        Return listaproducto
+    End Function
     '
     '
 End Class

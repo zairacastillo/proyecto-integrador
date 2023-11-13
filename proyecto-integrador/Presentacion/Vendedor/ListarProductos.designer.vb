@@ -25,7 +25,6 @@ Partial Class ListarProductos
         Me.PanelPrincipal = New System.Windows.Forms.Panel()
         Me.BAgregarVenta = New System.Windows.Forms.Button()
         Me.CBEstado = New System.Windows.Forms.ComboBox()
-        Me.CBCateg = New System.Windows.Forms.ComboBox()
         Me.LCategoria = New System.Windows.Forms.Label()
         Me.LEstado = New System.Windows.Forms.Label()
         Me.TBStock = New System.Windows.Forms.TextBox()
@@ -44,6 +43,8 @@ Partial Class ListarProductos
         Me.CBCategoria = New System.Windows.Forms.ComboBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.BBuscarNombre = New System.Windows.Forms.Button()
+        Me.BTodos = New System.Windows.Forms.Button()
+        Me.TBCat = New System.Windows.Forms.TextBox()
         Me.PanelPrincipal.SuspendLayout()
         CType(Me.DGV1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -52,9 +53,9 @@ Partial Class ListarProductos
         '
         Me.PanelPrincipal.BackColor = System.Drawing.Color.FromArgb(CType(CType(116, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(47, Byte), Integer))
         Me.PanelPrincipal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PanelPrincipal.Controls.Add(Me.TBCat)
         Me.PanelPrincipal.Controls.Add(Me.BAgregarVenta)
         Me.PanelPrincipal.Controls.Add(Me.CBEstado)
-        Me.PanelPrincipal.Controls.Add(Me.CBCateg)
         Me.PanelPrincipal.Controls.Add(Me.LCategoria)
         Me.PanelPrincipal.Controls.Add(Me.LEstado)
         Me.PanelPrincipal.Controls.Add(Me.TBStock)
@@ -93,16 +94,6 @@ Partial Class ListarProductos
         Me.CBEstado.Name = "CBEstado"
         Me.CBEstado.Size = New System.Drawing.Size(187, 28)
         Me.CBEstado.TabIndex = 23
-        '
-        'CBCateg
-        '
-        Me.CBCateg.Enabled = False
-        Me.CBCateg.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CBCateg.FormattingEnabled = True
-        Me.CBCateg.Location = New System.Drawing.Point(520, 151)
-        Me.CBCateg.Name = "CBCateg"
-        Me.CBCateg.Size = New System.Drawing.Size(191, 28)
-        Me.CBCateg.TabIndex = 22
         '
         'LCategoria
         '
@@ -245,7 +236,7 @@ Partial Class ListarProductos
         Me.DGV1.Name = "DGV1"
         Me.DGV1.ReadOnly = True
         Me.DGV1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders
-        Me.DGV1.Size = New System.Drawing.Size(942, 164)
+        Me.DGV1.Size = New System.Drawing.Size(869, 164)
         Me.DGV1.TabIndex = 2
         '
         'Label1
@@ -298,6 +289,24 @@ Partial Class ListarProductos
         Me.BBuscarNombre.Text = "Buscar"
         Me.BBuscarNombre.UseVisualStyleBackColor = True
         '
+        'BTodos
+        '
+        Me.BTodos.Location = New System.Drawing.Point(887, 112)
+        Me.BTodos.Name = "BTodos"
+        Me.BTodos.Size = New System.Drawing.Size(79, 31)
+        Me.BTodos.TabIndex = 24
+        Me.BTodos.Text = "Todos"
+        Me.BTodos.UseVisualStyleBackColor = True
+        '
+        'TBCat
+        '
+        Me.TBCat.Enabled = False
+        Me.TBCat.Location = New System.Drawing.Point(524, 155)
+        Me.TBCat.Name = "TBCat"
+        Me.TBCat.ReadOnly = True
+        Me.TBCat.Size = New System.Drawing.Size(187, 20)
+        Me.TBCat.TabIndex = 25
+        '
         'ListarProductos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -305,6 +314,7 @@ Partial Class ListarProductos
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(12, Byte), Integer), CType(CType(12, Byte), Integer), CType(CType(30, Byte), Integer))
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(976, 650)
+        Me.Controls.Add(Me.BTodos)
         Me.Controls.Add(Me.BBuscarNombre)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.CBCategoria)
@@ -343,7 +353,8 @@ Partial Class ListarProductos
     Friend WithEvents CBCategoria As ComboBox
     Friend WithEvents Label3 As Label
     Friend WithEvents BBuscarNombre As Button
-    Friend WithEvents CBCateg As ComboBox
     Friend WithEvents CBEstado As ComboBox
     Friend WithEvents BAgregarVenta As Button
+    Friend WithEvents BTodos As Button
+    Friend WithEvents TBCat As TextBox
 End Class

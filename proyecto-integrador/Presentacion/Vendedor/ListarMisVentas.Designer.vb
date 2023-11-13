@@ -22,7 +22,6 @@ Partial Class ListarMisVentas
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.LDni = New System.Windows.Forms.Label()
@@ -37,7 +36,8 @@ Partial Class ListarMisVentas
         Me.DVGDetalleFac = New System.Windows.Forms.DataGridView()
         Me.DVentas = New System.Windows.Forms.DataGridView()
         Me.BDetalle = New System.Windows.Forms.Button()
-        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.PrintDialog1 = New System.Windows.Forms.PrintDialog()
+        Me.BTodos = New System.Windows.Forms.Button()
         CType(Me.DVGDetalleFac, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DVentas, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -168,6 +168,7 @@ Partial Class ListarMisVentas
         '
         Me.DVGDetalleFac.AllowUserToAddRows = False
         Me.DVGDetalleFac.AllowUserToDeleteRows = False
+        Me.DVGDetalleFac.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DVGDetalleFac.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DVGDetalleFac.Location = New System.Drawing.Point(524, 262)
         Me.DVGDetalleFac.Margin = New System.Windows.Forms.Padding(2)
@@ -199,10 +200,18 @@ Partial Class ListarMisVentas
         Me.BDetalle.Text = "Ver detalle"
         Me.BDetalle.UseVisualStyleBackColor = True
         '
-        'Timer1
+        'PrintDialog1
         '
-        Me.Timer1.Enabled = True
-        Me.Timer1.Interval = 10
+        Me.PrintDialog1.UseEXDialog = True
+        '
+        'BTodos
+        '
+        Me.BTodos.Location = New System.Drawing.Point(589, 171)
+        Me.BTodos.Name = "BTodos"
+        Me.BTodos.Size = New System.Drawing.Size(92, 39)
+        Me.BTodos.TabIndex = 106
+        Me.BTodos.Text = "Todos"
+        Me.BTodos.UseVisualStyleBackColor = True
         '
         'ListarMisVentas
         '
@@ -210,6 +219,7 @@ Partial Class ListarMisVentas
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(12, Byte), Integer), CType(CType(12, Byte), Integer), CType(CType(30, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(1100, 650)
+        Me.Controls.Add(Me.BTodos)
         Me.Controls.Add(Me.BDetalle)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.DVGDetalleFac)
@@ -249,5 +259,6 @@ Partial Class ListarMisVentas
     Friend WithEvents DVGDetalleFac As DataGridView
     Friend WithEvents DVentas As DataGridView
     Friend WithEvents BDetalle As Button
-    Friend WithEvents Timer1 As Timer
+    Friend WithEvents PrintDialog1 As PrintDialog
+    Friend WithEvents BTodos As Button
 End Class

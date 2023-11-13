@@ -6,7 +6,7 @@ Public Class EditarCliente
     'subclase que maneja la entidad cliente, intermediario entre entity y la tabla
     Dim ObjCliente As Dcliente = New Dcliente
     'variable global estado de cliente
-    Dim estado As String = "Activo"
+    'Dim estado As String = "Activo"
     Private Sub TBNombre_TextChanged(sender As Object, e As KeyPressEventArgs) Handles TBNombre.KeyPress
         If Validar_letras(e) Then
             MessageBox.Show("Solo se admiten letras", "Validación de letras", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
@@ -57,7 +57,7 @@ Public Class EditarCliente
                 OCliente.dni_cliente = Integer.Parse(TBDni.Text.Trim)
                 OCliente.nombre_cliente = TBNombre.Text.Trim
                 OCliente.telefono_cliente = TBTel.Text.Trim
-                OCliente.estado_cliente = TBEstado.Text.Trim
+                'OCliente.estado_cliente = TBEstado.Text.Trim
                 OCliente.fecha_cliente = System.DateTime.Now
 
                 If Not ObjCliente.ExisteDNI(OCliente.dni_cliente, OCliente.Id_cliente) And Not ObjCliente.ExisteMail(OCliente.correo_cliente, OCliente.Id_cliente) AndAlso ObjCliente.Modificar(OCliente) Then
@@ -98,9 +98,9 @@ Public Class EditarCliente
         End If
 
         'buscamos clientes y llenamos la tabla
-        DGV1.DataSource = ObjCliente.buscarCliente(p_dni, TBBuscarAp.Text.Trim, estado)
+        DGV1.DataSource = ObjCliente.buscarCliente(p_dni, TBBuscarAp.Text.Trim)
         DGV1.Columns(1).Visible = False
-        DGV1.Columns(10).Visible = False
+        'DGV1.Columns(9).Visible = False
     End Sub
 
     Private Sub BCancelar_Click(sender As Object, e As EventArgs) Handles BCancelar.Click
@@ -111,7 +111,7 @@ Public Class EditarCliente
         TBCorreo.Clear()
         TBTel.Clear()
         TBDirec.Clear()
-        TBEstado.Clear()
+        'TBEstado.Clear()
         BEditar.Enabled = False
     End Sub
 
@@ -131,14 +131,13 @@ Public Class EditarCliente
                 Select Case bc.HeaderText
                     Case "Seleccionar" 'Nombre del boton / celda
 
-                        TBID.Text = DGV1.Rows(cell.RowIndex).Cells(1).Value
-                        TBNombre.Text = DGV1.Rows(cell.RowIndex).Cells(2).Value
-                        TBApellido.Text = DGV1.Rows(cell.RowIndex).Cells(3).Value
-                        TBDni.Text = DGV1.Rows(cell.RowIndex).Cells(4).Value
-                        TBCorreo.Text = DGV1.Rows(cell.RowIndex).Cells(5).Value
-                        TBTel.Text = DGV1.Rows(cell.RowIndex).Cells(6).Value
-                        TBDirec.Text = DGV1.Rows(cell.RowIndex).Cells(7).Value
-                        TBEstado.Text = DGV1.Rows(cell.RowIndex).Cells(9).Value
+                        TBID.Text = DGV1.Rows(cell.RowIndex).Cells("ID").Value
+                        TBNombre.Text = DGV1.Rows(cell.RowIndex).Cells("Nombre").Value
+                        TBApellido.Text = DGV1.Rows(cell.RowIndex).Cells("Apellido").Value
+                        TBDni.Text = DGV1.Rows(cell.RowIndex).Cells("DNI").Value
+                        TBCorreo.Text = DGV1.Rows(cell.RowIndex).Cells("Correo").Value
+                        TBTel.Text = DGV1.Rows(cell.RowIndex).Cells("Telefono").Value
+                        TBDirec.Text = DGV1.Rows(cell.RowIndex).Cells("Direccion").Value
                         BEditar.Enabled = True
 
                         Exit Select
@@ -157,28 +156,23 @@ Public Class EditarCliente
         EditarCliente_Load(sender, e)
     End Sub
 
-    Private Sub BAEstado_Click(sender As Object, e As EventArgs) Handles BAEstado.Click
-        'intercambia la variable estado entre activo/inactivo
-
-        If estado = "Activo" Then
-            estado = "Inactivo"
-            BAEstado.Text = "Mostrar Activos"
-        Else
-            estado = "Activo"
-            BAEstado.Text = "Mostrar Inactivos"
-        End If
-        EditarCliente_Load(sender, e)
-    End Sub
-
     Private Sub TBBuscarAp_TextChanged(sender As Object, e As KeyPressEventArgs) Handles TBBuscarAp.KeyPress
         If Validar_letras(e) Then
             MessageBox.Show("Solo se admiten letras", "Validación de letras", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
         End If
     End Sub
 
-    Private Sub TBBuscar_TextChanged(sender As Object, e As KeyPressEventArgs)
+    Private Sub TBBuscar_TextChanged(sender As Object, e As KeyPressEventArgs) Handles TBBuscar.KeyPress
         If Validar_numeros(e) Then
             MessageBox.Show("Solo se admiten numeros", "Validación de numeros", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
         End If
     End Sub
+
+    Private Sub BTodos_Click(sender As Object, e As EventArgs) Handles BTodos.Click
+
+        DGV1.DataSource = ObjCliente.buscarCliente(0, "")
+        TBBuscar.Clear()
+        TBBuscarAp.Clear()
+    End Sub
+
 End Class

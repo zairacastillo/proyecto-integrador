@@ -3,10 +3,12 @@
     Dim OBJcliente As Dcliente = New Dcliente
     Dim OBJventa As Dventa = New Dventa
     Dim OBJdetalle_venta As Ddetalle_Venta = New Ddetalle_Venta
+    Dim ObjPago As DPago = New DPago
 
     Dim OProducto As producto = New producto
     Dim OCliente As cliente = New cliente
     Dim OEmpleado As empleado = New empleado
+
 
     Public Sub New(pempleado As empleado)
 
@@ -51,6 +53,7 @@
         TBClienteN.Text = OCliente.apellido_cliente
     End Sub
 
+
     Private Sub BCliente_Click(sender As Object, e As EventArgs) Handles BCliente.Click
 
         Dim listClientes As New ListarClientes(Me, True)
@@ -68,15 +71,16 @@
         TBVacios(listaTB) ' devuelve true si algun TB esta vacio
 
         'si campos estan vacios o empiezan con espacio
-        If TBVacios(listaTB) Or DGV1.Rows.Count < 1 Then
+        If TBVacios(listaTB) OrElse DGV1.Rows.Count = 0 Or CBPago.SelectedValue = 0 Then
             'Mensaje
             MsgBox(msjTxt, MsgBoxStyle.Critical, Title:="Error")
         Else
             ' Dim fecha As Date = New Date(DTPFechaVenta.Value.Year, DTPFechaVenta.Value.Month, DTPFechaVenta.Value.Day)
             Dim id_ultima_venta = guardarVenta()
+
             If guardarDetalleVenta(id_ultima_venta, DGV1) Then
                 MsgBox("venta exitosa")
-                TBID.Clear()
+                'TBID.Clear()
                 'TBVendedorN.Clear()
                 'TBVendedorA.Clear()
                 TBClienteA.Clear()
@@ -140,6 +144,7 @@
 
         Dim numRow As Integer = DGV1.Rows.Add()
         DGV1.Rows(numRow).Cells(0).Value = OProducto.Id_producto
+        'DGV1.Rows(numRow).Cells(0).Visible = False
         DGV1.Rows(numRow).Cells(1).Value = OProducto.nombre_producto
         DGV1.Rows(numRow).Cells(2).Value = OProducto.precio
         DGV1.Rows(numRow).Cells(3).Value = TBCantidad.Text.Trim
@@ -197,7 +202,7 @@
     Private Function actualizarTotalPrecio() As Decimal
         Dim precio = 0.0
         For Each fila In DGV1.Rows
-            precio = precio + fila.Cells(4).Value
+            precio = fila.Cells(2).Value * fila.Cells(3).Value + precio
         Next
         Return precio
     End Function
@@ -209,6 +214,7 @@
         Oventa.Id_cliente = OCliente.Id_cliente
         Oventa.fecha = System.DateTime.Now
         Oventa.total = Decimal.Parse(TBTotal.Text.Trim)
+        Oventa.Id_pago = Integer.Parse(CBPago.SelectedValue)
 
         If OBJventa.agregrar_venta(Oventa) Then
             Return OBJventa.getLastIdVenta()
@@ -225,7 +231,7 @@
             Odetalle_venta.Id_producto = fila.cells("ID").value
             Odetalle_venta.precio_unitario = fila.cells("PrecioUnitario").value
             Odetalle_venta.cantidad = fila.cells("Cantidad").value
-            Odetalle_venta.subtotal = fila.cells("Subtotal").value
+            'Odetalle_venta.subtotal = fila.cells("Subtotal").value
             Odetalle_venta.Id_venta = id_ultima_venta
 
             If Not OBJdetalle_venta.agregrar_detalle_Venta(Odetalle_venta) Then
@@ -265,6 +271,22 @@
 
     Private Sub NuevaVenta_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Label12.Text = System.DateTime.Now.Date
+        CBPago.DataSource = ObjPago.getAll()
+        CBPago.DisplayMember = "descripcion_pago"
+        CBPago.ValueMember = "Id_pago"
+        CBPago.SelectedValue = 0
+
     End Sub
 
+    Private Sub TBClienteA_TextChanged(sender As Object, e As EventArgs) Handles TBClienteA.TextChanged
+
+    End Sub
+
+    Private Sub CBPago_SelectedIndexChanged(sender As Object, e As KeyPressEventArgs) Handles CBPago.KeyPress
+        e.Handled = True
+    End Sub
+
+    Private Sub TBTotal_TextChanged(sender As Object, e As EventArgs) Handles TBTotal.TextChanged
+
+    End Sub
 End Class

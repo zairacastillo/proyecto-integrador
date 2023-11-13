@@ -43,6 +43,8 @@
     End Sub
 
     Private Sub BAgregar_Click(sender As Object, e As EventArgs) Handles BAgregar.Click
+        'define entidad empleado
+
 
         'variable de control
         Dim errorCheck As Boolean = False
@@ -56,7 +58,8 @@
         TBVacios(listaTB) ' devuelve true si algun TB esta vacio
 
         'si campos estan vacios o empiezan con espacio
-        If TBVacios(listaTB) Or Not validar_email(TBCorreo) Then
+        If TBVacios(listaTB) Or Not validar_email(TBCorreo) Or TBCont.Text.Length < 8 Then
+
             'Mensaje
             MsgBox(msjTxt, MsgBoxStyle.Critical, Title:="Error")
 
@@ -78,7 +81,6 @@
             Dim ask = MsgBox("¿Seguro que desea Guardar el Empleado?", MsgBoxStyle.YesNo, Title:="Confirmar Inserción")
             If ask = vbYes Then
 
-                'define entidad empleado
                 Dim OEmpleado As New empleado
 
                 OEmpleado.nombre_empleado = TBNombre.Text.Trim
@@ -121,13 +123,17 @@
     End Sub
 
     Private Sub NuevoEmpleado_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
         CBPerfil.DataSource = ObjPerfil.getAll()
         CBPerfil.DisplayMember = "descripcion_perfil"
         CBPerfil.ValueMember = "Id_perfil"
         CBPerfil.SelectedValue = 0
 
         ObjEmpleado.getAllEmpleado(DGV1)
+
     End Sub
 
+    Private Sub DGV1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGV1.CellContentClick
 
+    End Sub
 End Class

@@ -53,7 +53,7 @@
 
 
 
-    Private Sub BIniciarV_Click(sender As Object, e As EventArgs) Handles BIniciarV.Click
+    Private Sub BIniciarV_Click(sender As Object, e As EventArgs)
         Dim msjTxt As String = "Debe Completar todos los campos: "
 
         ' lista de TB a verificar si estan vacios
@@ -71,7 +71,7 @@
         End If
     End Sub
 
-    Private Sub BIniciarA_Click(sender As Object, e As EventArgs) Handles BIniciarA.Click
+    Private Sub BIniciarA_Click(sender As Object, e As EventArgs)
         Dim msjTxt As String = "Debe Completar todos los campos: "
 
         ' lista de TB a verificar si estan vacios
@@ -89,7 +89,7 @@
         End If
     End Sub
 
-    Private Sub BIniciarS_Click(sender As Object, e As EventArgs) Handles BIniciarS.Click
+    Private Sub BIniciarS_Click(sender As Object, e As EventArgs)
         Dim msjTxt As String = "Debe Completar todos los campos: "
 
         ' lista de TB a verificar si estan vacios
@@ -107,17 +107,11 @@
         End If
     End Sub
 
-    Private Sub Login_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-    End Sub
-
-    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
-
-    End Sub
-
     Private Sub BCancelar_Click(sender As Object, e As EventArgs) Handles BCancelar.Click
         Me.Close()
     End Sub
 
+    Private Sub Login_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+    End Sub
 End Class

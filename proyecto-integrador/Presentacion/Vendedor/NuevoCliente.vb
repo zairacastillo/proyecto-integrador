@@ -50,7 +50,6 @@ Public Class NuevoCliente
                 OCliente.dni_cliente = TBDni.Text.Trim
                 OCliente.nombre_cliente = TBNombre.Text.Trim
                 OCliente.telefono_cliente = TBTel.Text.Trim
-                OCliente.estado_cliente = "Activo"
                 OCliente.fecha_cliente = System.DateTime.Now
 
                 If ObjCliente.agregrar_cliente(OCliente) Then
@@ -105,5 +104,9 @@ Public Class NuevoCliente
     Private Sub NuevoCliente_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         ObjCliente.getAllCliente(DGV1)
+    End Sub
+
+    Private Sub DGV1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGV1.CellContentClick
+
     End Sub
 End Class

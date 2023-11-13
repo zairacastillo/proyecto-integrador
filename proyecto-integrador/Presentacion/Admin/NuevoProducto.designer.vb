@@ -22,6 +22,7 @@ Partial Class NuevoProducto
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.PanelPrincipal = New System.Windows.Forms.Panel()
         Me.CBCategoria = New System.Windows.Forms.ComboBox()
         Me.LCategoria = New System.Windows.Forms.Label()
@@ -181,6 +182,8 @@ Partial Class NuevoProducto
         Me.DGV1.Name = "DGV1"
         Me.DGV1.ReadOnly = True
         Me.DGV1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.White
+        Me.DGV1.RowsDefaultCellStyle = DataGridViewCellStyle1
         Me.DGV1.Size = New System.Drawing.Size(936, 208)
         Me.DGV1.TabIndex = 2
         '

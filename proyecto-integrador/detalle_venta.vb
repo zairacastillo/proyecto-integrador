@@ -15,7 +15,6 @@ Partial Public Class detalle_venta
     Public Property Id_producto As Integer
     Public Property precio_unitario As Decimal
     Public Property cantidad As Integer
-    Public Property subtotal As Decimal
     Public Property Id_venta As Integer
 
     Public Overridable Property producto As producto

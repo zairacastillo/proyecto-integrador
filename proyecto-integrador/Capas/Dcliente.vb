@@ -6,7 +6,6 @@
     Function getAllCliente(ByVal dg As DataGridView) As Boolean
         dg.DataSource = Me.getAll()
         dg.Columns(0).Visible = False
-        dg.Columns(9).Visible = False
         Return False
     End Function
     Function agregrar_cliente(ByVal ocliente As cliente) As Boolean
@@ -22,31 +21,14 @@
 
     End Function
 
-    Function getAll() As List(Of cliente)
+    Function getAll()
         Dim lista = (From p In ctx.cliente
                      Order By p.Id_cliente
-                     Select p).ToList
+                     Select Id_Cliente = p.Id_cliente, Nombre = p.nombre_cliente, Apellido = p.apellido_cliente,
+                     DNI = p.dni_cliente, Direccion = p.direccion_cliente, Correo = p.correo_cliente, Telefono = p.telefono_cliente, Fecha = p.fecha_cliente).ToList
 
-        Dim listacliente = New List(Of cliente)
 
-        For Each valor In lista
-
-            Dim item As cliente = New cliente
-
-            item.Id_cliente = valor.Id_cliente
-            item.nombre_cliente = valor.nombre_cliente
-            item.apellido_cliente = valor.apellido_cliente
-            item.dni_cliente = valor.dni_cliente
-            item.direccion_cliente = valor.direccion_cliente
-            item.correo_cliente = valor.correo_cliente
-            item.telefono_cliente = valor.telefono_cliente
-            item.fecha_cliente = valor.fecha_cliente
-            item.estado_cliente = valor.estado_cliente
-
-            listacliente.Add(item)
-
-        Next
-        Return listacliente
+        Return lista
     End Function
 
     Function ExisteMail(ByVal pmail As String, Optional pid As Integer = -1) As Boolean
@@ -126,17 +108,36 @@
         End If
     End Function
 
-    Function buscarCliente(ByVal pdni As Integer, ByVal papellido As String, Optional ByVal pestado As String = "Activo") As List(Of cliente)
+    Function buscarCliente(ByVal pdni As Integer, ByVal papellido As String)
         Dim lista
 
         If (pdni > 0) Then
             lista = (From p In ctx.cliente
-                     Where p.dni_cliente = pdni And p.estado_cliente = pestado
+                     Where p.dni_cliente = pdni
+                     Select ID = p.Id_cliente, Nombre = p.nombre_cliente, Apellido = p.apellido_cliente, DNI = p.dni_cliente, Correo = p.correo_cliente,
+                        Telefono = p.telefono_cliente, Direccion = p.direccion_cliente, Fecha = p.fecha_cliente).ToList
+
+        Else
+            lista = (From p In ctx.cliente
+                     Where p.apellido_cliente.Contains(papellido)
+                     Select ID = p.Id_cliente, Nombre = p.nombre_cliente, Apellido = p.apellido_cliente, DNI = p.dni_cliente,
+                      Correo = p.correo_cliente, Telefono = p.telefono_cliente, Direccion = p.direccion_cliente, Fecha = p.fecha_cliente).ToList
+        End If
+
+        Return lista
+    End Function
+
+    Function buscarClienteApellido(ByVal pdni As Integer, ByVal papellido As String) As List(Of cliente)
+        Dim lista
+
+        If (pdni > 0) Then
+            lista = (From p In ctx.cliente
+                     Where p.dni_cliente = pdni
                      Select p).ToList
         Else
             lista = (From p In ctx.cliente
-                     Where p.apellido_cliente.Contains(papellido) And p.estado_cliente = pestado
-                     Select p).ToList
+                     Where p.apellido_cliente.Contains(papellido)
+                     Select ID = p.Id_cliente, Nombre = p.nombre_cliente, Apellido = p.apellido_cliente, DNI = p.dni_cliente, Correo = p.correo_cliente, Direccion = p.direccion_cliente, Fecha = p.fecha_cliente).ToList
         End If
 
         Dim listacliente = New List(Of cliente)
@@ -152,7 +153,6 @@
             item.direccion_cliente = valor.direccion_cliente
             item.correo_cliente = valor.correo_cliente
             item.fecha_cliente = valor.fecha_cliente
-            item.estado_cliente = valor.estado_cliente
             item.telefono_cliente = valor.telefono_cliente
 
             listacliente.Add(item)
@@ -172,7 +172,6 @@
         modif.direccion_cliente = ocliente.direccion_cliente
         modif.correo_cliente = ocliente.correo_cliente
         modif.fecha_cliente = ocliente.fecha_cliente
-        modif.estado_cliente = ocliente.estado_cliente
         modif.telefono_cliente = ocliente.telefono_cliente
 
 
@@ -185,6 +184,16 @@
         End Try
     End Function
 
+    Function ObtenerClientes()
 
+        Dim listaclientes
+        Dim todos = New With {Key .Nombre = "Todos Los Clientes", Key .ID = 0}
+        listaclientes = (From p In ctx.cliente
+                         Order By p.Id_cliente
+                         Select Nombre = p.apellido_cliente & ", " & p.nombre_cliente, ID = p.Id_cliente).ToList
+
+        listaclientes.Insert(0, todos)
+        Return listaclientes
+    End Function
 
 End Class

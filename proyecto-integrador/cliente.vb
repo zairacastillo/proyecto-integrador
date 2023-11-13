@@ -19,7 +19,6 @@ Partial Public Class cliente
     Public Property telefono_cliente As Integer
     Public Property direccion_cliente As String
     Public Property fecha_cliente As Date
-    Public Property estado_cliente As String
 
     Public Overridable Property venta As ICollection(Of venta) = New HashSet(Of venta)
 
