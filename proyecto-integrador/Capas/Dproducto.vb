@@ -118,6 +118,8 @@
 
 
         grid.DataSource = lista
+        grid.Columns("Codigo").Visible = False
+        grid.Columns("IDCAT").Visible = False
         Return False
     End Function
     '

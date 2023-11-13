@@ -71,7 +71,7 @@ Partial Class RPorProducto
         Me.BNoFiltrar.Name = "BNoFiltrar"
         Me.BNoFiltrar.Size = New System.Drawing.Size(87, 56)
         Me.BNoFiltrar.TabIndex = 139
-        Me.BNoFiltrar.Text = "Todo el tiempo"
+        Me.BNoFiltrar.Text = "Historico"
         Me.BNoFiltrar.UseVisualStyleBackColor = True
         '
         'BFiltrar

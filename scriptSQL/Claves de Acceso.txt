@@ -1,11 +1,11 @@
 Super Admin: 
-usuario: "superAdmin"
+usuario: "ignacio"
 contraseña: 12345678
 
 admin: 
-usuario: "admin"
+usuario: "zaira"
 contraseña: 12345678
 
 vendedor: 
-usuario: "vendedor"
+usuario: "matias"
 contraseña: 12345678

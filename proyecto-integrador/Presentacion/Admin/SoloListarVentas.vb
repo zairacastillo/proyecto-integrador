@@ -24,10 +24,12 @@
     End Sub
 
     Private Sub BDetalle_Click(sender As Object, e As EventArgs) Handles BDetalle.Click
-        Dim fila As Integer = Me.DVentas.CurrentRow.Index
-        Dim id As Integer = Me.DVentas.Rows(fila).Cells("Nro_factura").Value
+        If DVentas.Rows.Count > 0 Then
+            Dim fila As Integer = Me.DVentas.CurrentRow.Index
+            Dim id As Integer = Me.DVentas.Rows(fila).Cells("Nro_factura").Value
 
-        det.mostrarDetalle(id, DVGDetalleFac)
+            det.mostrarDetalle(id, DVGDetalleFac)
+        End If
     End Sub
 
     Private Sub wait(ByVal seconds As Integer)

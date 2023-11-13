@@ -250,7 +250,7 @@ Partial Class RPorCategoria
         Me.BNoFiltrar.Name = "BNoFiltrar"
         Me.BNoFiltrar.Size = New System.Drawing.Size(87, 56)
         Me.BNoFiltrar.TabIndex = 155
-        Me.BNoFiltrar.Text = "Todo el tiempo"
+        Me.BNoFiltrar.Text = "Historico"
         Me.BNoFiltrar.UseVisualStyleBackColor = True
         '
         'BFiltrar

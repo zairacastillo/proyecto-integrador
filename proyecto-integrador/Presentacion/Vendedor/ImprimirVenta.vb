@@ -28,7 +28,7 @@
 
         Dim cabecera = OBJVenta.GetVentaPorId(idVenta)
         OBJDetalleVenta.mostrarDetalle(idVenta, DVGDetalleFac)
-
+        DVGDetalleFac.Columns("Cantidad_Comprada").HeaderText = "Cantidad"
         With cabecera
             LID.Text = .Nro_factura
 
@@ -40,7 +40,7 @@
             LClienteN.Text = .nombreCliente
 
             LFecha.Text = .fecha_de_factura.Date
-            LTotal.Text = .Total
+            LTotal.Text = "$ " & .Total
 
             LPago.Text = .Pago
         End With
@@ -51,6 +51,10 @@
     End Sub
 
     Private Sub Label7_Click(sender As Object, e As EventArgs) Handles Label7.Click
+
+    End Sub
+
+    Private Sub DVGDetalleFac_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DVGDetalleFac.CellContentClick
 
     End Sub
 

@@ -46,10 +46,12 @@
 
 
     Private Sub BDetalle_Click(sender As Object, e As EventArgs) Handles BDetalle.Click
-        Dim fila As Integer = Me.DVentas.CurrentRow.Index
-        Dim id As Integer = Me.DVentas.Rows(fila).Cells(0).Value
+        If DVentas.Rows.Count > 0 Then
+            Dim fila As Integer = Me.DVentas.CurrentRow.Index
+            Dim id As Integer = Me.DVentas.Rows(fila).Cells(0).Value
 
-        det.mostrarDetalle(id, DVGDetalleFac)
+            det.mostrarDetalle(id, DVGDetalleFac)
+        End If
     End Sub
 
     Private Sub DVGDetalleFac_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DVGDetalleFac.CellContentClick

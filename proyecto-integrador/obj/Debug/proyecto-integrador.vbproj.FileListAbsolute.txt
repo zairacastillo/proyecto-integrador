@@ -198,3 +198,45 @@ C:\Users\Usuario\Desktop\taller 2\proyecto-integrador-8\proyecto-integrador\obj\
 C:\Users\Usuario\Desktop\taller 2\proyecto-integrador-8\proyecto-integrador\obj\Debug\proyecto-integrador.exe
 C:\Users\Usuario\Desktop\taller 2\proyecto-integrador-8\proyecto-integrador\obj\Debug\proyecto-integrador.xml
 C:\Users\Usuario\Desktop\taller 2\proyecto-integrador-8\proyecto-integrador\obj\Debug\proyecto-integrador.pdb
+E:\Users\Usuario\source\repos_proyecto\proyecto-integrador-zaira\proyecto-integrador\bin\Debug\proyecto-integrador.exe.config
+E:\Users\Usuario\source\repos_proyecto\proyecto-integrador-zaira\proyecto-integrador\bin\Debug\proyecto-integrador.exe
+E:\Users\Usuario\source\repos_proyecto\proyecto-integrador-zaira\proyecto-integrador\bin\Debug\proyecto-integrador.pdb
+E:\Users\Usuario\source\repos_proyecto\proyecto-integrador-zaira\proyecto-integrador\bin\Debug\proyecto-integrador.xml
+E:\Users\Usuario\source\repos_proyecto\proyecto-integrador-zaira\proyecto-integrador\bin\Debug\BCrypt.Net-Core.dll
+E:\Users\Usuario\source\repos_proyecto\proyecto-integrador-zaira\proyecto-integrador\bin\Debug\EntityFramework.dll
+E:\Users\Usuario\source\repos_proyecto\proyecto-integrador-zaira\proyecto-integrador\bin\Debug\EntityFramework.SqlServer.dll
+E:\Users\Usuario\source\repos_proyecto\proyecto-integrador-zaira\proyecto-integrador\bin\Debug\BCrypt.Net-Core.pdb
+E:\Users\Usuario\source\repos_proyecto\proyecto-integrador-zaira\proyecto-integrador\bin\Debug\EntityFramework.xml
+E:\Users\Usuario\source\repos_proyecto\proyecto-integrador-zaira\proyecto-integrador\bin\Debug\EntityFramework.SqlServer.xml
+E:\Users\Usuario\source\repos_proyecto\proyecto-integrador-zaira\proyecto-integrador\obj\Debug\proyecto-integrador.vbproj.AssemblyReference.cache
+E:\Users\Usuario\source\repos_proyecto\proyecto-integrador-zaira\proyecto-integrador\obj\Debug\proyecto_integrador.Resources.resources
+E:\Users\Usuario\source\repos_proyecto\proyecto-integrador-zaira\proyecto-integrador\obj\Debug\proyecto_integrador.EditarEliminarProducto.resources
+E:\Users\Usuario\source\repos_proyecto\proyecto-integrador-zaira\proyecto-integrador\obj\Debug\proyecto_integrador.GestionCategoria.resources
+E:\Users\Usuario\source\repos_proyecto\proyecto-integrador-zaira\proyecto-integrador\obj\Debug\proyecto_integrador.MDIAdmin.resources
+E:\Users\Usuario\source\repos_proyecto\proyecto-integrador-zaira\proyecto-integrador\obj\Debug\proyecto_integrador.NuevoProducto.resources
+E:\Users\Usuario\source\repos_proyecto\proyecto-integrador-zaira\proyecto-integrador\obj\Debug\proyecto_integrador.RPorCategoria.resources
+E:\Users\Usuario\source\repos_proyecto\proyecto-integrador-zaira\proyecto-integrador\obj\Debug\proyecto_integrador.RPorCliente.resources
+E:\Users\Usuario\source\repos_proyecto\proyecto-integrador-zaira\proyecto-integrador\obj\Debug\proyecto_integrador.RPorEmpleado.resources
+E:\Users\Usuario\source\repos_proyecto\proyecto-integrador-zaira\proyecto-integrador\obj\Debug\proyecto_integrador.RPorProducto.resources
+E:\Users\Usuario\source\repos_proyecto\proyecto-integrador-zaira\proyecto-integrador\obj\Debug\proyecto_integrador.SoloListarVentas.resources
+E:\Users\Usuario\source\repos_proyecto\proyecto-integrador-zaira\proyecto-integrador\obj\Debug\proyecto_integrador.Login.resources
+E:\Users\Usuario\source\repos_proyecto\proyecto-integrador-zaira\proyecto-integrador\obj\Debug\proyecto_integrador.SoloListarProductos.resources
+E:\Users\Usuario\source\repos_proyecto\proyecto-integrador-zaira\proyecto-integrador\obj\Debug\proyecto_integrador.MDISuperAdmin.resources
+E:\Users\Usuario\source\repos_proyecto\proyecto-integrador-zaira\proyecto-integrador\obj\Debug\proyecto_integrador.EditarEliminarEmpleado.resources
+E:\Users\Usuario\source\repos_proyecto\proyecto-integrador-zaira\proyecto-integrador\obj\Debug\proyecto_integrador.NuevoEmpleado.resources
+E:\Users\Usuario\source\repos_proyecto\proyecto-integrador-zaira\proyecto-integrador\obj\Debug\proyecto_integrador.EditarCliente.resources
+E:\Users\Usuario\source\repos_proyecto\proyecto-integrador-zaira\proyecto-integrador\obj\Debug\proyecto_integrador.ImprimirVenta.resources
+E:\Users\Usuario\source\repos_proyecto\proyecto-integrador-zaira\proyecto-integrador\obj\Debug\proyecto_integrador.ListarClientes.resources
+E:\Users\Usuario\source\repos_proyecto\proyecto-integrador-zaira\proyecto-integrador\obj\Debug\proyecto_integrador.ListarMisVentas.resources
+E:\Users\Usuario\source\repos_proyecto\proyecto-integrador-zaira\proyecto-integrador\obj\Debug\proyecto_integrador.ListarProductos.resources
+E:\Users\Usuario\source\repos_proyecto\proyecto-integrador-zaira\proyecto-integrador\obj\Debug\proyecto_integrador.MDIVendedor.resources
+E:\Users\Usuario\source\repos_proyecto\proyecto-integrador-zaira\proyecto-integrador\obj\Debug\proyecto_integrador.NuevaVenta.resources
+E:\Users\Usuario\source\repos_proyecto\proyecto-integrador-zaira\proyecto-integrador\obj\Debug\proyecto_integrador.NuevoCliente.resources
+E:\Users\Usuario\source\repos_proyecto\proyecto-integrador-zaira\proyecto-integrador\obj\Debug\proyecto_integrador.AgregarClienteVenta.resources
+E:\Users\Usuario\source\repos_proyecto\proyecto-integrador-zaira\proyecto-integrador\obj\Debug\proyecto_integrador.AgregarProductoVenta.resources
+E:\Users\Usuario\source\repos_proyecto\proyecto-integrador-zaira\proyecto-integrador\obj\Debug\proyecto-integrador.vbproj.GenerateResource.cache
+E:\Users\Usuario\source\repos_proyecto\proyecto-integrador-zaira\proyecto-integrador\obj\Debug\proyecto-integrador.vbproj.CoreCompileInputs.cache
+E:\Users\Usuario\source\repos_proyecto\proyecto-integrador-zaira\proyecto-integrador\obj\Debug\proyecto-integrador.vbproj.CopyComplete
+E:\Users\Usuario\source\repos_proyecto\proyecto-integrador-zaira\proyecto-integrador\obj\Debug\proyecto-integrador.exe
+E:\Users\Usuario\source\repos_proyecto\proyecto-integrador-zaira\proyecto-integrador\obj\Debug\proyecto-integrador.xml
+E:\Users\Usuario\source\repos_proyecto\proyecto-integrador-zaira\proyecto-integrador\obj\Debug\proyecto-integrador.pdb

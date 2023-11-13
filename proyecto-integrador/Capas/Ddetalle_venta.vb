@@ -29,7 +29,7 @@
                          Join cat In ctx.categoria On j.Id_categoria Equals cat.Id_categoria
                          Join f In ctx.venta On f.Id_venta Equals df.Id_venta
                          Where df.Id_venta = idFac
-                         Select idVenta = f.Id_venta, id = df.Id_detalle_venta, idPro = df.Id_producto, producto = j.nombre_producto, categoria = cat.descripcion_cat, Cantidad_Comprada = df.cantidad, PrecioUnitario = j.precio, SubTotal = (j.precio * df.cantidad)).ToList
+                         Select idVenta = f.Id_venta, id = df.Id_detalle_venta, idPro = df.Id_producto, Producto = j.nombre_producto, Categoria = cat.descripcion_cat, Cantidad_Comprada = df.cantidad, PrecioUnitario = j.precio, SubTotal = (j.precio * df.cantidad)).ToList
 
             grid.DataSource = datos
 

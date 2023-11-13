@@ -22,6 +22,8 @@ Partial Class ImprimirVenta
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ImprimirVenta))
         Me.DVGDetalleFac = New System.Windows.Forms.DataGridView()
         Me.Label6 = New System.Windows.Forms.Label()
@@ -58,14 +60,38 @@ Partial Class ImprimirVenta
         Me.DVGDetalleFac.AllowUserToDeleteRows = False
         Me.DVGDetalleFac.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DVGDetalleFac.BackgroundColor = System.Drawing.Color.White
+        Me.DVGDetalleFac.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.DVGDetalleFac.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None
+        Me.DVGDetalleFac.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!)
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DVGDetalleFac.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.DVGDetalleFac.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DVGDetalleFac.EnableHeadersVisualStyles = False
+        Me.DVGDetalleFac.GridColor = System.Drawing.Color.White
         Me.DVGDetalleFac.Location = New System.Drawing.Point(11, 300)
         Me.DVGDetalleFac.Margin = New System.Windows.Forms.Padding(2)
         Me.DVGDetalleFac.Name = "DVGDetalleFac"
         Me.DVGDetalleFac.ReadOnly = True
+        Me.DVGDetalleFac.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DVGDetalleFac.RowHeadersDefaultCellStyle = DataGridViewCellStyle2
+        Me.DVGDetalleFac.RowHeadersVisible = False
         Me.DVGDetalleFac.RowHeadersWidth = 51
+        Me.DVGDetalleFac.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
         Me.DVGDetalleFac.RowTemplate.Height = 24
-        Me.DVGDetalleFac.Size = New System.Drawing.Size(779, 658)
+        Me.DVGDetalleFac.Size = New System.Drawing.Size(779, 514)
         Me.DVGDetalleFac.TabIndex = 103
         '
         'Label6
@@ -74,7 +100,7 @@ Partial Class ImprimirVenta
         Me.Label6.BackColor = System.Drawing.Color.Transparent
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.ForeColor = System.Drawing.Color.Black
-        Me.Label6.Location = New System.Drawing.Point(630, 992)
+        Me.Label6.Location = New System.Drawing.Point(630, 848)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(66, 25)
         Me.Label6.TabIndex = 107
@@ -226,7 +252,7 @@ Partial Class ImprimirVenta
         Me.LFecha.AutoSize = True
         Me.LFecha.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LFecha.ForeColor = System.Drawing.Color.Black
-        Me.LFecha.Location = New System.Drawing.Point(716, 113)
+        Me.LFecha.Location = New System.Drawing.Point(711, 108)
         Me.LFecha.Name = "LFecha"
         Me.LFecha.Size = New System.Drawing.Size(64, 16)
         Me.LFecha.TabIndex = 44
@@ -237,7 +263,7 @@ Partial Class ImprimirVenta
         Me.LClienteA.AutoSize = True
         Me.LClienteA.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LClienteA.ForeColor = System.Drawing.Color.Black
-        Me.LClienteA.Location = New System.Drawing.Point(632, 247)
+        Me.LClienteA.Location = New System.Drawing.Point(632, 242)
         Me.LClienteA.Name = "LClienteA"
         Me.LClienteA.Size = New System.Drawing.Size(64, 16)
         Me.LClienteA.TabIndex = 45
@@ -248,7 +274,7 @@ Partial Class ImprimirVenta
         Me.LClienteN.AutoSize = True
         Me.LClienteN.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LClienteN.ForeColor = System.Drawing.Color.Black
-        Me.LClienteN.Location = New System.Drawing.Point(730, 247)
+        Me.LClienteN.Location = New System.Drawing.Point(730, 242)
         Me.LClienteN.Name = "LClienteN"
         Me.LClienteN.Size = New System.Drawing.Size(64, 16)
         Me.LClienteN.TabIndex = 46
@@ -259,7 +285,7 @@ Partial Class ImprimirVenta
         Me.LVendedorN.AutoSize = True
         Me.LVendedorN.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LVendedorN.ForeColor = System.Drawing.Color.Black
-        Me.LVendedorN.Location = New System.Drawing.Point(216, 244)
+        Me.LVendedorN.Location = New System.Drawing.Point(221, 242)
         Me.LVendedorN.Name = "LVendedorN"
         Me.LVendedorN.Size = New System.Drawing.Size(64, 16)
         Me.LVendedorN.TabIndex = 47
@@ -270,7 +296,7 @@ Partial Class ImprimirVenta
         Me.LVendedorA.AutoSize = True
         Me.LVendedorA.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LVendedorA.ForeColor = System.Drawing.Color.Black
-        Me.LVendedorA.Location = New System.Drawing.Point(140, 244)
+        Me.LVendedorA.Location = New System.Drawing.Point(145, 242)
         Me.LVendedorA.Name = "LVendedorA"
         Me.LVendedorA.Size = New System.Drawing.Size(64, 16)
         Me.LVendedorA.TabIndex = 48
@@ -281,7 +307,7 @@ Partial Class ImprimirVenta
         Me.LID.AutoSize = True
         Me.LID.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LID.ForeColor = System.Drawing.Color.Black
-        Me.LID.Location = New System.Drawing.Point(420, 159)
+        Me.LID.Location = New System.Drawing.Point(420, 157)
         Me.LID.Name = "LID"
         Me.LID.Size = New System.Drawing.Size(64, 16)
         Me.LID.TabIndex = 49
@@ -292,7 +318,7 @@ Partial Class ImprimirVenta
         Me.LTotal.AutoSize = True
         Me.LTotal.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LTotal.ForeColor = System.Drawing.Color.Black
-        Me.LTotal.Location = New System.Drawing.Point(711, 999)
+        Me.LTotal.Location = New System.Drawing.Point(711, 855)
         Me.LTotal.Name = "LTotal"
         Me.LTotal.Size = New System.Drawing.Size(64, 16)
         Me.LTotal.TabIndex = 115
@@ -303,7 +329,7 @@ Partial Class ImprimirVenta
         Me.LDNI.AutoSize = True
         Me.LDNI.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LDNI.ForeColor = System.Drawing.Color.Black
-        Me.LDNI.Location = New System.Drawing.Point(542, 247)
+        Me.LDNI.Location = New System.Drawing.Point(542, 242)
         Me.LDNI.Name = "LDNI"
         Me.LDNI.Size = New System.Drawing.Size(64, 16)
         Me.LDNI.TabIndex = 116
@@ -337,7 +363,7 @@ Partial Class ImprimirVenta
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(810, 1050)
+        Me.ClientSize = New System.Drawing.Size(810, 900)
         Me.ControlBox = False
         Me.Controls.Add(Me.LPago)
         Me.Controls.Add(Me.Label7)
