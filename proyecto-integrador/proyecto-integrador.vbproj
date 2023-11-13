@@ -63,6 +63,9 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BCrypt.Net-Core, Version=1.6.0.0, Culture=neutral, PublicKeyToken=4d63bfbfdfd3c6e4, processorArchitecture=MSIL">
+      <HintPath>..\packages\BCrypt.Net-Core.1.6.0\lib\net452\BCrypt.Net-Core.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -77,6 +80,7 @@
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -97,33 +101,40 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Capas\Dcategoria.vb" />
     <Compile Include="Capas\Dcliente.vb" />
+    <Compile Include="Capas\Ddetalle_venta.vb" />
+    <Compile Include="Capas\Dempleado.vb" />
+    <Compile Include="Capas\DPago.vb" />
+    <Compile Include="Capas\Dperfil.vb" />
+    <Compile Include="Capas\Dproducto.vb" />
+    <Compile Include="Capas\Dventa.vb" />
     <Compile Include="categoria.vb">
-      <DependentUpon>ModelProyecto.tt</DependentUpon>
+      <DependentUpon>ModelClubMen.tt</DependentUpon>
     </Compile>
     <Compile Include="cliente.vb">
-      <DependentUpon>ModelProyecto.tt</DependentUpon>
+      <DependentUpon>ModelClubMen.tt</DependentUpon>
     </Compile>
     <Compile Include="detalle_venta.vb">
-      <DependentUpon>ModelProyecto.tt</DependentUpon>
+      <DependentUpon>ModelClubMen.tt</DependentUpon>
     </Compile>
     <Compile Include="empleado.vb">
-      <DependentUpon>ModelProyecto.tt</DependentUpon>
+      <DependentUpon>ModelClubMen.tt</DependentUpon>
     </Compile>
-    <Compile Include="ModelProyecto.Context.vb">
+    <Compile Include="ModelClubMen.Context.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ModelProyecto.Context.tt</DependentUpon>
+      <DependentUpon>ModelClubMen.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="ModelProyecto.Designer.vb">
+    <Compile Include="ModelClubMen.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ModelProyecto.edmx</DependentUpon>
+      <DependentUpon>ModelClubMen.edmx</DependentUpon>
     </Compile>
-    <Compile Include="ModelProyecto.vb">
+    <Compile Include="ModelClubMen.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ModelProyecto.tt</DependentUpon>
+      <DependentUpon>ModelClubMen.tt</DependentUpon>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
@@ -141,8 +152,11 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="pago.vb">
+      <DependentUpon>ModelClubMen.tt</DependentUpon>
+    </Compile>
     <Compile Include="perfil.vb">
-      <DependentUpon>ModelProyecto.tt</DependentUpon>
+      <DependentUpon>ModelClubMen.tt</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\Admin\EditarEliminarProducto.designer.vb">
       <DependentUpon>EditarEliminarProducto.vb</DependentUpon>
@@ -150,16 +164,10 @@
     <Compile Include="Presentacion\Admin\EditarEliminarProducto.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentacion\Admin\EliminarCliente.Designer.vb">
-      <DependentUpon>EliminarCliente.vb</DependentUpon>
+    <Compile Include="Presentacion\Admin\GestionCategoria.designer.vb">
+      <DependentUpon>GestionCategoria.vb</DependentUpon>
     </Compile>
-    <Compile Include="Presentacion\Admin\EliminarCliente.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Presentacion\Admin\SoloListarEmpleados.Designer.vb">
-      <DependentUpon>SoloListarEmpleados.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Presentacion\Admin\SoloListarEmpleados.vb">
+    <Compile Include="Presentacion\Admin\GestionCategoria.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Presentacion\Admin\MDIAdmin.Designer.vb">
@@ -172,6 +180,31 @@
       <DependentUpon>NuevoProducto.vb</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\Admin\NuevoProducto.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Admin\Reportes\consultas.vb" />
+    <Compile Include="Presentacion\Admin\Reportes\RPorCategoria.designer.vb">
+      <DependentUpon>RPorCategoria.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Admin\Reportes\RPorCategoria.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Admin\Reportes\RPorCliente.designer.vb">
+      <DependentUpon>RPorCliente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Admin\Reportes\RPorCliente.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Admin\Reportes\RPorEmpleado.designer.vb">
+      <DependentUpon>RPorEmpleado.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Admin\Reportes\RPorEmpleado.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Admin\Reportes\RPorProducto.designer.vb">
+      <DependentUpon>RPorProducto.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Admin\Reportes\RPorProducto.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Presentacion\Admin\SoloListarVentas.Designer.vb">
@@ -210,16 +243,34 @@
     <Compile Include="Presentacion\SuperAdmin\NuevoEmpleado.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentacion\Admin\SoloListarClientes.Designer.vb">
-      <DependentUpon>SoloListarClientes.vb</DependentUpon>
+    <Compile Include="Presentacion\Vendedor\EditarCliente.designer.vb">
+      <DependentUpon>EditarCliente.vb</DependentUpon>
     </Compile>
-    <Compile Include="Presentacion\Admin\SoloListarClientes.vb">
+    <Compile Include="Presentacion\Vendedor\EditarCliente.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Vendedor\ImprimirVenta.Designer.vb">
+      <DependentUpon>ImprimirVenta.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Vendedor\ImprimirVenta.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Vendedor\ListarClientes.designer.vb">
+      <DependentUpon>ListarClientes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Vendedor\ListarClientes.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Presentacion\Vendedor\ListarMisVentas.Designer.vb">
       <DependentUpon>ListarMisVentas.vb</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\Vendedor\ListarMisVentas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Vendedor\ListarProductos.designer.vb">
+      <DependentUpon>ListarProductos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Vendedor\ListarProductos.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Presentacion\Vendedor\MDIVendedor.designer.vb">
@@ -232,12 +283,6 @@
       <DependentUpon>NuevaVenta.vb</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\Vendedor\NuevaVenta.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Presentacion\Vendedor\EditarCliente.designer.vb">
-      <DependentUpon>EditarCliente.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Presentacion\Vendedor\EditarCliente.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Presentacion\Vendedor\NuevoCliente.designer.vb">
@@ -259,11 +304,11 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="producto.vb">
-      <DependentUpon>ModelProyecto.tt</DependentUpon>
+      <DependentUpon>ModelClubMen.tt</DependentUpon>
     </Compile>
     <Compile Include="validaciones\validar.vb" />
     <Compile Include="venta.vb">
-      <DependentUpon>ModelProyecto.tt</DependentUpon>
+      <DependentUpon>ModelClubMen.tt</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -276,17 +321,26 @@
     <EmbeddedResource Include="Presentacion\Admin\EditarEliminarProducto.resx">
       <DependentUpon>EditarEliminarProducto.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentacion\Admin\EliminarCliente.resx">
-      <DependentUpon>EliminarCliente.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Presentacion\Admin\SoloListarEmpleados.resx">
-      <DependentUpon>SoloListarEmpleados.vb</DependentUpon>
+    <EmbeddedResource Include="Presentacion\Admin\GestionCategoria.resx">
+      <DependentUpon>GestionCategoria.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Admin\MDIAdmin.resx">
       <DependentUpon>MDIAdmin.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Admin\NuevoProducto.resx">
       <DependentUpon>NuevoProducto.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Admin\Reportes\RPorCategoria.resx">
+      <DependentUpon>RPorCategoria.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Admin\Reportes\RPorCliente.resx">
+      <DependentUpon>RPorCliente.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Admin\Reportes\RPorEmpleado.resx">
+      <DependentUpon>RPorEmpleado.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Admin\Reportes\RPorProducto.resx">
+      <DependentUpon>RPorProducto.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Admin\SoloListarVentas.resx">
       <DependentUpon>SoloListarVentas.vb</DependentUpon>
@@ -306,20 +360,26 @@
     <EmbeddedResource Include="Presentacion\SuperAdmin\NuevoEmpleado.resx">
       <DependentUpon>NuevoEmpleado.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentacion\Admin\SoloListarClientes.resx">
-      <DependentUpon>SoloListarClientes.vb</DependentUpon>
+    <EmbeddedResource Include="Presentacion\Vendedor\EditarCliente.resx">
+      <DependentUpon>EditarCliente.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Vendedor\ImprimirVenta.resx">
+      <DependentUpon>ImprimirVenta.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Vendedor\ListarClientes.resx">
+      <DependentUpon>ListarClientes.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Vendedor\ListarMisVentas.resx">
       <DependentUpon>ListarMisVentas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Vendedor\ListarProductos.resx">
+      <DependentUpon>ListarProductos.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Vendedor\MDIVendedor.resx">
       <DependentUpon>MDIVendedor.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Vendedor\NuevaVenta.resx">
       <DependentUpon>NuevaVenta.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Presentacion\Vendedor\EditarCliente.resx">
-      <DependentUpon>EditarCliente.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Vendedor\NuevoCliente.resx">
       <DependentUpon>NuevoCliente.vb</DependentUpon>
@@ -332,12 +392,12 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EntityDeploy Include="ModelProyecto.edmx">
+    <EntityDeploy Include="ModelClubMen.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>ModelProyecto.Designer.vb</LastGenOutput>
+      <LastGenOutput>ModelClubMen.Designer.vb</LastGenOutput>
     </EntityDeploy>
-    <None Include="ModelProyecto.edmx.diagram">
-      <DependentUpon>ModelProyecto.edmx</DependentUpon>
+    <None Include="ModelClubMen.edmx.diagram">
+      <DependentUpon>ModelClubMen.edmx</DependentUpon>
     </None>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
@@ -351,6 +411,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="packages.config" />
     <None Include="Resources\avatar.png" />
   </ItemGroup>
   <ItemGroup>
@@ -438,16 +499,6 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="ModelProyecto.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>ModelProyecto.Context.vb</LastGenOutput>
-      <DependentUpon>ModelProyecto.edmx</DependentUpon>
-    </Content>
-    <Content Include="ModelProyecto.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ModelProyecto.edmx</DependentUpon>
-      <LastGenOutput>ModelProyecto.vb</LastGenOutput>
-    </Content>
     <None Include="Resources\copia-de-respaldo.png" />
     <None Include="Resources\respaldo.png" />
     <None Include="Resources\portapapeles1.png" />
@@ -457,6 +508,31 @@
     <None Include="Resources\lapiz.png" />
     <None Include="Resources\actualizar-flecha.png" />
     <None Include="Resources\cerrar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo21.png" />
+    <None Include="Resources\logo2.png" />
+    <None Include="Resources\IMG_38911.jpg" />
+    <None Include="Resources\logo11.png" />
+    <None Include="Resources\logo1.png" />
+    <None Include="Resources\IMG_3891.jpg" />
+    <None Include="Resources\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ModelClubMen.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelClubMen.edmx</DependentUpon>
+      <LastGenOutput>ModelClubMen.Context.vb</LastGenOutput>
+    </Content>
+    <Content Include="ModelClubMen.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelClubMen.edmx</DependentUpon>
+      <LastGenOutput>ModelClubMen.vb</LastGenOutput>
+    </Content>
+    <None Include="Resources\logout1.png" />
+    <None Include="Resources\logout.png" />
+    <None Include="Resources\logout_2105636.png" />
+    <None Include="Resources\login_5785442.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

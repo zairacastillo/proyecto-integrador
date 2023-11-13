@@ -17,6 +17,7 @@ Partial Public Class producto
     Public Property precio As Decimal
     Public Property stock As Integer
     Public Property Id_categoria As Integer
+    Public Property descripcion_producto As String
 
     Public Overridable Property categoria As categoria
     Public Overridable Property detalle_venta As ICollection(Of detalle_venta) = New HashSet(Of detalle_venta)

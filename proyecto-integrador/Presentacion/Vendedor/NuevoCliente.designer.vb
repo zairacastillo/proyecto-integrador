@@ -48,15 +48,15 @@ Partial Class NuevoCliente
         Me.DGV1.AllowUserToOrderColumns = True
         Me.DGV1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DGV1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DGV1.Location = New System.Drawing.Point(0, 374)
+        Me.DGV1.Location = New System.Drawing.Point(61, 374)
         Me.DGV1.Name = "DGV1"
         Me.DGV1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders
-        Me.DGV1.Size = New System.Drawing.Size(971, 164)
+        Me.DGV1.Size = New System.Drawing.Size(836, 164)
         Me.DGV1.TabIndex = 5
         '
         'PanelPrincipal
         '
-        Me.PanelPrincipal.BackgroundImage = Global.proyecto_integrador.My.Resources.Resources.bg
+        Me.PanelPrincipal.BackColor = System.Drawing.Color.FromArgb(CType(CType(116, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(47, Byte), Integer))
         Me.PanelPrincipal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.PanelPrincipal.Controls.Add(Me.TBTel)
         Me.PanelPrincipal.Controls.Add(Me.LTel)
@@ -72,14 +72,14 @@ Partial Class NuevoCliente
         Me.PanelPrincipal.Controls.Add(Me.LApellido)
         Me.PanelPrincipal.Controls.Add(Me.LNombre)
         Me.PanelPrincipal.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.PanelPrincipal.Location = New System.Drawing.Point(247, 2)
+        Me.PanelPrincipal.Location = New System.Drawing.Point(61, 52)
         Me.PanelPrincipal.Name = "PanelPrincipal"
-        Me.PanelPrincipal.Size = New System.Drawing.Size(401, 337)
+        Me.PanelPrincipal.Size = New System.Drawing.Size(836, 230)
         Me.PanelPrincipal.TabIndex = 3
         '
         'TBTel
         '
-        Me.TBTel.Location = New System.Drawing.Point(124, 191)
+        Me.TBTel.Location = New System.Drawing.Point(510, 75)
         Me.TBTel.Name = "TBTel"
         Me.TBTel.Size = New System.Drawing.Size(254, 20)
         Me.TBTel.TabIndex = 18
@@ -90,7 +90,7 @@ Partial Class NuevoCliente
         Me.LTel.BackColor = System.Drawing.Color.Transparent
         Me.LTel.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LTel.ForeColor = System.Drawing.Color.White
-        Me.LTel.Location = New System.Drawing.Point(16, 186)
+        Me.LTel.Location = New System.Drawing.Point(402, 70)
         Me.LTel.Name = "LTel"
         Me.LTel.Size = New System.Drawing.Size(102, 25)
         Me.LTel.TabIndex = 17
@@ -98,7 +98,7 @@ Partial Class NuevoCliente
         '
         'TBDirec
         '
-        Me.TBDirec.Location = New System.Drawing.Point(124, 226)
+        Me.TBDirec.Location = New System.Drawing.Point(510, 110)
         Me.TBDirec.Name = "TBDirec"
         Me.TBDirec.Size = New System.Drawing.Size(254, 20)
         Me.TBDirec.TabIndex = 16
@@ -109,7 +109,7 @@ Partial Class NuevoCliente
         Me.LDireccion.BackColor = System.Drawing.Color.Transparent
         Me.LDireccion.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LDireccion.ForeColor = System.Drawing.Color.White
-        Me.LDireccion.Location = New System.Drawing.Point(16, 221)
+        Me.LDireccion.Location = New System.Drawing.Point(402, 105)
         Me.LDireccion.Name = "LDireccion"
         Me.LDireccion.Size = New System.Drawing.Size(108, 25)
         Me.LDireccion.TabIndex = 15
@@ -117,7 +117,7 @@ Partial Class NuevoCliente
         '
         'TBCorreo
         '
-        Me.TBCorreo.Location = New System.Drawing.Point(124, 152)
+        Me.TBCorreo.Location = New System.Drawing.Point(510, 36)
         Me.TBCorreo.Name = "TBCorreo"
         Me.TBCorreo.Size = New System.Drawing.Size(254, 20)
         Me.TBCorreo.TabIndex = 14
@@ -128,7 +128,7 @@ Partial Class NuevoCliente
         Me.LCorreo.BackColor = System.Drawing.Color.Transparent
         Me.LCorreo.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LCorreo.ForeColor = System.Drawing.Color.White
-        Me.LCorreo.Location = New System.Drawing.Point(19, 146)
+        Me.LCorreo.Location = New System.Drawing.Point(405, 30)
         Me.LCorreo.Name = "LCorreo"
         Me.LCorreo.Size = New System.Drawing.Size(83, 25)
         Me.LCorreo.TabIndex = 13
@@ -157,7 +157,7 @@ Partial Class NuevoCliente
         '
         Me.BAgregar.Image = Global.proyecto_integrador.My.Resources.Resources.diskette
         Me.BAgregar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BAgregar.Location = New System.Drawing.Point(157, 267)
+        Me.BAgregar.Location = New System.Drawing.Point(358, 159)
         Me.BAgregar.Name = "BAgregar"
         Me.BAgregar.Padding = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.BAgregar.Size = New System.Drawing.Size(110, 47)
@@ -208,11 +208,13 @@ Partial Class NuevoCliente
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackgroundImage = Global.proyecto_integrador.My.Resources.Resources.cuadros_negros_734708
-        Me.ClientSize = New System.Drawing.Size(959, 538)
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(12, Byte), Integer), CType(CType(12, Byte), Integer), CType(CType(30, Byte), Integer))
+        Me.ClientSize = New System.Drawing.Size(976, 650)
         Me.Controls.Add(Me.DGV1)
         Me.Controls.Add(Me.PanelPrincipal)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "NuevoCliente"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "AgregarCliente"
         CType(Me.DGV1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelPrincipal.ResumeLayout(False)

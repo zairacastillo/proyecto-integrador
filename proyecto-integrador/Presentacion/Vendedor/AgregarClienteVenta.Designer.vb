@@ -40,7 +40,7 @@ Partial Class AgregarClienteVenta
         '
         'TextBox1
         '
-        Me.TextBox1.Location = New System.Drawing.Point(221, 66)
+        Me.TextBox1.Location = New System.Drawing.Point(292, 99)
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(169, 20)
         Me.TextBox1.TabIndex = 16
@@ -51,7 +51,7 @@ Partial Class AgregarClienteVenta
         Me.LNombre.BackColor = System.Drawing.Color.Transparent
         Me.LNombre.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LNombre.ForeColor = System.Drawing.Color.White
-        Me.LNombre.Location = New System.Drawing.Point(12, 61)
+        Me.LNombre.Location = New System.Drawing.Point(79, 94)
         Me.LNombre.Name = "LNombre"
         Me.LNombre.Size = New System.Drawing.Size(193, 25)
         Me.LNombre.TabIndex = 17
@@ -59,7 +59,7 @@ Partial Class AgregarClienteVenta
         '
         'TextBox2
         '
-        Me.TextBox2.Location = New System.Drawing.Point(615, 66)
+        Me.TextBox2.Location = New System.Drawing.Point(731, 99)
         Me.TextBox2.Name = "TextBox2"
         Me.TextBox2.Size = New System.Drawing.Size(169, 20)
         Me.TextBox2.TabIndex = 18
@@ -70,7 +70,7 @@ Partial Class AgregarClienteVenta
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(410, 61)
+        Me.Label1.Location = New System.Drawing.Point(526, 94)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(211, 25)
         Me.Label1.TabIndex = 19
@@ -78,7 +78,7 @@ Partial Class AgregarClienteVenta
         '
         'Button4
         '
-        Me.Button4.Location = New System.Drawing.Point(361, 144)
+        Me.Button4.Location = New System.Drawing.Point(449, 181)
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(108, 36)
         Me.Button4.TabIndex = 20
@@ -123,10 +123,10 @@ Partial Class AgregarClienteVenta
         Me.DGV1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DGV1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DGV1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Nombre, Me.Apellido, Me.Dni, Me.Correo, Me.Telefono, Me.Direccion, Me.Agregar})
-        Me.DGV1.Location = New System.Drawing.Point(-1, 274)
+        Me.DGV1.Location = New System.Drawing.Point(45, 366)
         Me.DGV1.Name = "DGV1"
         Me.DGV1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders
-        Me.DGV1.Size = New System.Drawing.Size(848, 187)
+        Me.DGV1.Size = New System.Drawing.Size(894, 222)
         Me.DGV1.TabIndex = 21
         '
         'Agregar
@@ -138,15 +138,17 @@ Partial Class AgregarClienteVenta
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackgroundImage = Global.proyecto_integrador.My.Resources.Resources.cuadros_negros_734708
-        Me.ClientSize = New System.Drawing.Size(847, 484)
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(12, Byte), Integer), CType(CType(12, Byte), Integer), CType(CType(30, Byte), Integer))
+        Me.ClientSize = New System.Drawing.Size(976, 650)
         Me.Controls.Add(Me.DGV1)
         Me.Controls.Add(Me.Button4)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.TextBox2)
         Me.Controls.Add(Me.LNombre)
         Me.Controls.Add(Me.TextBox1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "AgregarClienteVenta"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "ListarClientes"
         CType(Me.DGV1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)

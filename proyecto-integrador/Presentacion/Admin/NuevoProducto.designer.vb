@@ -22,11 +22,10 @@ Partial Class NuevoProducto
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.PanelPrincipal = New System.Windows.Forms.Panel()
-        Me.TBCategoria = New System.Windows.Forms.TextBox()
+        Me.CBCategoria = New System.Windows.Forms.ComboBox()
         Me.LCategoria = New System.Windows.Forms.Label()
-        Me.TBEstado = New System.Windows.Forms.TextBox()
-        Me.LEstado = New System.Windows.Forms.Label()
         Me.TBStock = New System.Windows.Forms.TextBox()
         Me.LStock = New System.Windows.Forms.Label()
         Me.TBDescripcion = New System.Windows.Forms.TextBox()
@@ -37,25 +36,16 @@ Partial Class NuevoProducto
         Me.LDescripcion = New System.Windows.Forms.Label()
         Me.LNombre = New System.Windows.Forms.Label()
         Me.DGV1 = New System.Windows.Forms.DataGridView()
-        Me.ID = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Precio = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Stock = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Categoria = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Descripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Estado = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.PanelPrincipal.SuspendLayout()
         CType(Me.DGV1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'PanelPrincipal
         '
-        Me.PanelPrincipal.BackgroundImage = Global.proyecto_integrador.My.Resources.Resources.bg
+        Me.PanelPrincipal.BackColor = System.Drawing.Color.FromArgb(CType(CType(116, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(47, Byte), Integer))
         Me.PanelPrincipal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PanelPrincipal.Controls.Add(Me.TBCategoria)
+        Me.PanelPrincipal.Controls.Add(Me.CBCategoria)
         Me.PanelPrincipal.Controls.Add(Me.LCategoria)
-        Me.PanelPrincipal.Controls.Add(Me.TBEstado)
-        Me.PanelPrincipal.Controls.Add(Me.LEstado)
         Me.PanelPrincipal.Controls.Add(Me.TBStock)
         Me.PanelPrincipal.Controls.Add(Me.LStock)
         Me.PanelPrincipal.Controls.Add(Me.TBDescripcion)
@@ -66,18 +56,18 @@ Partial Class NuevoProducto
         Me.PanelPrincipal.Controls.Add(Me.LDescripcion)
         Me.PanelPrincipal.Controls.Add(Me.LNombre)
         Me.PanelPrincipal.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.PanelPrincipal.Location = New System.Drawing.Point(213, 23)
+        Me.PanelPrincipal.Location = New System.Drawing.Point(153, 30)
         Me.PanelPrincipal.Name = "PanelPrincipal"
-        Me.PanelPrincipal.Size = New System.Drawing.Size(546, 328)
+        Me.PanelPrincipal.Size = New System.Drawing.Size(673, 328)
         Me.PanelPrincipal.TabIndex = 0
         '
-        'TBCategoria
+        'CBCategoria
         '
-        Me.TBCategoria.Location = New System.Drawing.Point(389, 103)
-        Me.TBCategoria.Multiline = True
-        Me.TBCategoria.Name = "TBCategoria"
-        Me.TBCategoria.Size = New System.Drawing.Size(122, 39)
-        Me.TBCategoria.TabIndex = 22
+        Me.CBCategoria.FormattingEnabled = True
+        Me.CBCategoria.Location = New System.Drawing.Point(474, 107)
+        Me.CBCategoria.Name = "CBCategoria"
+        Me.CBCategoria.Size = New System.Drawing.Size(133, 21)
+        Me.CBCategoria.TabIndex = 3
         '
         'LCategoria
         '
@@ -85,36 +75,17 @@ Partial Class NuevoProducto
         Me.LCategoria.BackColor = System.Drawing.Color.Transparent
         Me.LCategoria.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LCategoria.ForeColor = System.Drawing.Color.White
-        Me.LCategoria.Location = New System.Drawing.Point(272, 99)
+        Me.LCategoria.Location = New System.Drawing.Point(357, 101)
         Me.LCategoria.Name = "LCategoria"
         Me.LCategoria.Size = New System.Drawing.Size(111, 25)
         Me.LCategoria.TabIndex = 21
         Me.LCategoria.Text = "Categoria:"
         '
-        'TBEstado
-        '
-        Me.TBEstado.Location = New System.Drawing.Point(115, 89)
-        Me.TBEstado.Name = "TBEstado"
-        Me.TBEstado.Size = New System.Drawing.Size(130, 20)
-        Me.TBEstado.TabIndex = 20
-        '
-        'LEstado
-        '
-        Me.LEstado.AutoSize = True
-        Me.LEstado.BackColor = System.Drawing.Color.Transparent
-        Me.LEstado.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LEstado.ForeColor = System.Drawing.Color.White
-        Me.LEstado.Location = New System.Drawing.Point(16, 84)
-        Me.LEstado.Name = "LEstado"
-        Me.LEstado.Size = New System.Drawing.Size(85, 25)
-        Me.LEstado.TabIndex = 19
-        Me.LEstado.Text = "Estado:"
-        '
         'TBStock
         '
-        Me.TBStock.Location = New System.Drawing.Point(389, 60)
+        Me.TBStock.Location = New System.Drawing.Point(474, 44)
         Me.TBStock.Name = "TBStock"
-        Me.TBStock.Size = New System.Drawing.Size(122, 20)
+        Me.TBStock.Size = New System.Drawing.Size(133, 20)
         Me.TBStock.TabIndex = 18
         '
         'LStock
@@ -123,7 +94,7 @@ Partial Class NuevoProducto
         Me.LStock.BackColor = System.Drawing.Color.Transparent
         Me.LStock.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LStock.ForeColor = System.Drawing.Color.White
-        Me.LStock.Location = New System.Drawing.Point(272, 55)
+        Me.LStock.Location = New System.Drawing.Point(357, 38)
         Me.LStock.Name = "LStock"
         Me.LStock.Size = New System.Drawing.Size(72, 25)
         Me.LStock.TabIndex = 17
@@ -131,17 +102,17 @@ Partial Class NuevoProducto
         '
         'TBDescripcion
         '
-        Me.TBDescripcion.Location = New System.Drawing.Point(157, 167)
+        Me.TBDescripcion.Location = New System.Drawing.Point(189, 183)
         Me.TBDescripcion.Multiline = True
         Me.TBDescripcion.Name = "TBDescripcion"
-        Me.TBDescripcion.Size = New System.Drawing.Size(354, 68)
+        Me.TBDescripcion.Size = New System.Drawing.Size(354, 56)
         Me.TBDescripcion.TabIndex = 16
         '
         'BAgregar
         '
         Me.BAgregar.Image = Global.proyecto_integrador.My.Resources.Resources.diskette
         Me.BAgregar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BAgregar.Location = New System.Drawing.Point(389, 260)
+        Me.BAgregar.Location = New System.Drawing.Point(426, 269)
         Me.BAgregar.Name = "BAgregar"
         Me.BAgregar.Padding = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.BAgregar.Size = New System.Drawing.Size(117, 45)
@@ -152,17 +123,17 @@ Partial Class NuevoProducto
         '
         'TBPrecio
         '
-        Me.TBPrecio.Location = New System.Drawing.Point(389, 16)
+        Me.TBPrecio.Location = New System.Drawing.Point(169, 107)
         Me.TBPrecio.Name = "TBPrecio"
-        Me.TBPrecio.Size = New System.Drawing.Size(122, 20)
+        Me.TBPrecio.Size = New System.Drawing.Size(133, 20)
         Me.TBPrecio.TabIndex = 7
         '
         'TBNombre
         '
-        Me.TBNombre.Location = New System.Drawing.Point(115, 15)
+        Me.TBNombre.Location = New System.Drawing.Point(169, 38)
         Me.TBNombre.Multiline = True
         Me.TBNombre.Name = "TBNombre"
-        Me.TBNombre.Size = New System.Drawing.Size(130, 39)
+        Me.TBNombre.Size = New System.Drawing.Size(130, 20)
         Me.TBNombre.TabIndex = 5
         '
         'LPrecio
@@ -171,7 +142,7 @@ Partial Class NuevoProducto
         Me.LPrecio.BackColor = System.Drawing.Color.Transparent
         Me.LPrecio.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LPrecio.ForeColor = System.Drawing.Color.White
-        Me.LPrecio.Location = New System.Drawing.Point(272, 9)
+        Me.LPrecio.Location = New System.Drawing.Point(52, 102)
         Me.LPrecio.Name = "LPrecio"
         Me.LPrecio.Size = New System.Drawing.Size(79, 25)
         Me.LPrecio.TabIndex = 3
@@ -183,7 +154,7 @@ Partial Class NuevoProducto
         Me.LDescripcion.BackColor = System.Drawing.Color.Transparent
         Me.LDescripcion.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LDescripcion.ForeColor = System.Drawing.Color.White
-        Me.LDescripcion.Location = New System.Drawing.Point(16, 161)
+        Me.LDescripcion.Location = New System.Drawing.Point(52, 177)
         Me.LDescripcion.Name = "LDescripcion"
         Me.LDescripcion.Size = New System.Drawing.Size(131, 25)
         Me.LDescripcion.TabIndex = 2
@@ -195,7 +166,7 @@ Partial Class NuevoProducto
         Me.LNombre.BackColor = System.Drawing.Color.Transparent
         Me.LNombre.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LNombre.ForeColor = System.Drawing.Color.White
-        Me.LNombre.Location = New System.Drawing.Point(16, 16)
+        Me.LNombre.Location = New System.Drawing.Point(52, 32)
         Me.LNombre.Name = "LNombre"
         Me.LNombre.Size = New System.Drawing.Size(93, 25)
         Me.LNombre.TabIndex = 1
@@ -205,70 +176,30 @@ Partial Class NuevoProducto
         '
         Me.DGV1.AllowUserToAddRows = False
         Me.DGV1.AllowUserToDeleteRows = False
-        Me.DGV1.AllowUserToOrderColumns = True
         Me.DGV1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DGV1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DGV1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ID, Me.Nombre, Me.Precio, Me.Stock, Me.Categoria, Me.Descripcion, Me.Estado})
-        Me.DGV1.Location = New System.Drawing.Point(23, 389)
+        Me.DGV1.Location = New System.Drawing.Point(12, 395)
         Me.DGV1.Name = "DGV1"
+        Me.DGV1.ReadOnly = True
         Me.DGV1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders
-        Me.DGV1.Size = New System.Drawing.Size(942, 164)
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.White
+        Me.DGV1.RowsDefaultCellStyle = DataGridViewCellStyle1
+        Me.DGV1.Size = New System.Drawing.Size(936, 208)
         Me.DGV1.TabIndex = 2
-        '
-        'ID
-        '
-        Me.ID.HeaderText = "ID"
-        Me.ID.Name = "ID"
-        Me.ID.ReadOnly = True
-        '
-        'Nombre
-        '
-        Me.Nombre.HeaderText = "Nombre"
-        Me.Nombre.Name = "Nombre"
-        Me.Nombre.ReadOnly = True
-        '
-        'Precio
-        '
-        Me.Precio.HeaderText = "Precio"
-        Me.Precio.Name = "Precio"
-        Me.Precio.ReadOnly = True
-        '
-        'Stock
-        '
-        Me.Stock.HeaderText = "Stock"
-        Me.Stock.Name = "Stock"
-        Me.Stock.ReadOnly = True
-        '
-        'Categoria
-        '
-        Me.Categoria.HeaderText = "Categoria"
-        Me.Categoria.Name = "Categoria"
-        '
-        'Descripcion
-        '
-        Me.Descripcion.HeaderText = "Descripcion"
-        Me.Descripcion.Name = "Descripcion"
-        Me.Descripcion.ReadOnly = True
-        '
-        'Estado
-        '
-        Me.Estado.HeaderText = "Estado"
-        Me.Estado.Name = "Estado"
-        Me.Estado.ReadOnly = True
         '
         'NuevoProducto
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackgroundImage = Global.proyecto_integrador.My.Resources.Resources.cuadros_negros_734708
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(12, Byte), Integer), CType(CType(12, Byte), Integer), CType(CType(30, Byte), Integer))
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(977, 579)
+        Me.ClientSize = New System.Drawing.Size(976, 650)
         Me.Controls.Add(Me.DGV1)
         Me.Controls.Add(Me.PanelPrincipal)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "NuevoProducto"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Nuevo Producto"
-        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.PanelPrincipal.ResumeLayout(False)
         Me.PanelPrincipal.PerformLayout()
         CType(Me.DGV1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -283,19 +214,10 @@ Partial Class NuevoProducto
     Friend WithEvents LDescripcion As Label
     Friend WithEvents LNombre As Label
     Friend WithEvents BAgregar As Button
-    Friend WithEvents TBCategoria As TextBox
     Friend WithEvents LCategoria As Label
-    Friend WithEvents TBEstado As TextBox
-    Friend WithEvents LEstado As Label
     Friend WithEvents TBStock As TextBox
     Friend WithEvents LStock As Label
     Friend WithEvents TBDescripcion As TextBox
     Friend WithEvents DGV1 As DataGridView
-    Friend WithEvents ID As DataGridViewTextBoxColumn
-    Friend WithEvents Nombre As DataGridViewTextBoxColumn
-    Friend WithEvents Precio As DataGridViewTextBoxColumn
-    Friend WithEvents Stock As DataGridViewTextBoxColumn
-    Friend WithEvents Categoria As DataGridViewTextBoxColumn
-    Friend WithEvents Descripcion As DataGridViewTextBoxColumn
-    Friend WithEvents Estado As DataGridViewTextBoxColumn
+    Friend WithEvents CBCategoria As ComboBox
 End Class

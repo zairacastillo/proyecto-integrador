@@ -142,6 +142,16 @@ proyecto-integrador
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:proyecto_integrador.My.Resources.Resources.IMG_3891">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:proyecto_integrador.My.Resources.Resources.IMG_38911">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:proyecto_integrador.My.Resources.Resources.lapiz">
 <summary>
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
@@ -163,6 +173,51 @@ proyecto-integrador
 </summary>
 </member>
 <member name="P:proyecto_integrador.My.Resources.Resources.listar">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:proyecto_integrador.My.Resources.Resources.login_5785442">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:proyecto_integrador.My.Resources.Resources.logo">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:proyecto_integrador.My.Resources.Resources.logo1">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:proyecto_integrador.My.Resources.Resources.logo11">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:proyecto_integrador.My.Resources.Resources.logo2">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:proyecto_integrador.My.Resources.Resources.logo21">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:proyecto_integrador.My.Resources.Resources.logout">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:proyecto_integrador.My.Resources.Resources.logout_2105636">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:proyecto_integrador.My.Resources.Resources.logout1">
 <summary>
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>

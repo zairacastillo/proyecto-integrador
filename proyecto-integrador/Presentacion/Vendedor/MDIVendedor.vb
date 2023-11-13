@@ -2,6 +2,29 @@
 
 Public Class MDIVendedor
 
+
+    Dim OEmpleado As empleado = New empleado
+
+    Public Sub New(pempleado As empleado)
+
+        ' Esta llamada es exigida por el diseñador.
+        InitializeComponent()
+
+        ' Agregue cualquier inicialización después de la llamada a InitializeComponent().
+        Oempleado = pempleado
+
+        LEmpleadoA.Text = Oempleado.apellido_empleado
+        LEmpleadoN.Text = Oempleado.nombre_empleado
+    End Sub
+
+    Public Sub New()
+
+        ' Esta llamada es exigida por el diseñador.
+        InitializeComponent()
+
+        ' Agregue cualquier inicialización después de la llamada a InitializeComponent().
+    End Sub
+
     Private Sub ShowNewForm(ByVal sender As Object, ByVal e As EventArgs)
         ' Cree una nueva instancia del formulario secundario.
         Dim ChildForm As New System.Windows.Forms.Form
@@ -37,7 +60,7 @@ Public Class MDIVendedor
             ChildForma.Close()
         Next
         ' Cree una nueva instancia del formulario secundario.
-        Dim ChildForm As New NuevaVenta
+        Dim ChildForm As New NuevaVenta(Oempleado)
         ' Conviértalo en un elemento secundario de este formulario MDI antes de mostrarlo.
         ChildForm.MdiParent = Me
 
@@ -54,7 +77,7 @@ Public Class MDIVendedor
             ChildForma.Close()
         Next
         ' Cree una nueva instancia del formulario secundario.
-        Dim ChildForm As New SoloListarProductos
+        Dim ChildForm As New ListarProductos(New NuevaVenta, False)
         ' Conviértalo en un elemento secundario de este formulario MDI antes de mostrarlo.
         ChildForm.MdiParent = Me
 
@@ -120,7 +143,7 @@ Public Class MDIVendedor
             ChildForma.Close()
         Next
         ' Cree una nueva instancia del formulario secundario.
-        Dim ChildForm As New EditarCliente
+        Dim ChildForm As New EditarCliente()
         ' Conviértalo en un elemento secundario de este formulario MDI antes de mostrarlo.
         ChildForm.MdiParent = Me
 
@@ -135,7 +158,7 @@ Public Class MDIVendedor
             ChildForma.Close()
         Next
         ' Cree una nueva instancia del formulario secundario.
-        Dim ChildForm As New ListarMisVentas
+        Dim ChildForm As New ListarMisVentas(Oempleado)
         ' Conviértalo en un elemento secundario de este formulario MDI antes de mostrarlo.
         ChildForm.MdiParent = Me
 
@@ -161,12 +184,12 @@ Public Class MDIVendedor
         ChildForm.Show()
     End Sub
 
-    Public Sub AgregarProductoVenta(sender As Object, e As EventArgs)
+    Public Sub ListarProductos(sender As Object, e As EventArgs)
         For Each ChildForma As Form In Me.MdiChildren
             ChildForma.Close()
         Next
         ' Cree una nueva instancia del formulario secundario.
-        Dim ChildForm As New AgregarProductoVenta
+        Dim ChildForm As New ListarProductos(New NuevaVenta, False)
         ' Conviértalo en un elemento secundario de este formulario MDI antes de mostrarlo.
         ChildForm.MdiParent = Me
 
@@ -176,5 +199,12 @@ Public Class MDIVendedor
         ChildForm.Show()
     End Sub
 
-
+    Private Sub BCerrarSesion_Click(sender As Object, e As EventArgs) Handles BCerrarSesion.Click
+        Dim ask As MsgBoxResult
+        ask = MessageBox.Show("¿Desea Cerrar Sesion?", "Cerrar", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation)
+        If ask = MsgBoxResult.Yes Then
+            Close()
+            Login.Show()
+        End If
+    End Sub
 End Class
